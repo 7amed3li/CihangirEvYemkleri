@@ -4,12 +4,21 @@ import { prisma } from "@/lib/db/prisma";
 import { redirect } from "next/navigation";
 import LoginForm from "./LoginForm";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Yönetici Girişi | Cihangir Ev Yemekleri & Pide",
 };
 
 export default async function AdminLoginPage() {
-  const userCount = await prisma.adminUser.count();
+  let userCount = 0;
+  try {
+    userCount = await prisma.adminUser.count();
+  } catch (err) {
+    console.warn("[AdminLoginPage] DB check failed (tables may be uninitialized):", err);
+    userCount = 0;
+  }
+
   if (userCount === 0) {
     redirect("/admin/setup");
   }

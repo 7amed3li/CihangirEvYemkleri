@@ -4,6 +4,8 @@ import { prisma } from "@/lib/db/prisma";
 import { redirect } from "next/navigation";
 import AdminSidebar from "@/components/admin/AdminSidebar";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Yönetim Paneli | Cihangir Ev Yemekleri & Pide",
 };
@@ -13,7 +15,14 @@ export default async function AdminDashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const userCount = await prisma.adminUser.count();
+  let userCount = 0;
+  try {
+    userCount = await prisma.adminUser.count();
+  } catch (err) {
+    console.warn("[AdminDashboardLayout] DB check failed (tables may be uninitialized):", err);
+    userCount = 0;
+  }
+
   if (userCount === 0) {
     redirect("/admin/setup");
   }

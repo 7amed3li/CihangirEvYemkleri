@@ -3,12 +3,21 @@ import { prisma } from "@/lib/db/prisma";
 import { redirect } from "next/navigation";
 import SetupForm from "./SetupForm";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "İlk Kurulum | Cihangir Ev Yemekleri & Pide",
 };
 
 export default async function AdminSetupPage() {
-  const userCount = await prisma.adminUser.count();
+  let userCount = 0;
+  try {
+    userCount = await prisma.adminUser.count();
+  } catch (err) {
+    console.warn("[AdminSetupPage] DB check failed (tables may be uninitialized):", err);
+    userCount = 0;
+  }
+
   if (userCount > 0) {
     redirect("/admin/login");
   }
