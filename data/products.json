@@ -1,253 +1,794 @@
 [
   {
-    "slug": "kuru-fasulye",
-    "name": "Kuru Fasulye",
+    "slug": "asci-tabagi",
+    "name": "Aşçı tabağı",
     "category": "Ana Yemekler",
     "ingredients": [
-      "İspir kuru fasulyesi (white beans)",
-      "domates salçası (tomato paste)",
-      "biber salçası (red pepper paste)",
-      "soğan (onion)",
-      "tereyağı (butter)"
+      "Geleneksel Aşçı tabağı taze malzemeleri (fresh authentic ingredients for Turkish Aşçı tabağı)"
     ],
-    "serving": "shallow ceramic dish, rich red buttery broth"
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "baget-firin",
+    "name": "Baget fırın",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Baget fırın taze malzemeleri (fresh authentic ingredients for Turkish Baget fırın)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "biber-dolmasi",
+    "name": "Biber dolması",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Biber dolması taze malzemeleri (fresh authentic ingredients for Turkish Biber dolması)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "ciftlik-kebabi",
+    "name": "Çiftlik kebabı",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Çiftlik kebabı taze malzemeleri (fresh authentic ingredients for Turkish Çiftlik kebabı)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "eksili-kofte",
+    "name": "Ekşili köfte",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Ekşili köfte taze malzemeleri (fresh authentic ingredients for Turkish Ekşili köfte)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "elbasan",
+    "name": "Elbasan",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Elbasan taze malzemeleri (fresh authentic ingredients for Turkish Elbasan)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "et-sote",
+    "name": "Et sote",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Et sote taze malzemeleri (fresh authentic ingredients for Turkish Et sote)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "etli-nohut",
+    "name": "Etli nohut",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Etli nohut taze malzemeleri (fresh authentic ingredients for Turkish Etli nohut)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "firinda-tavuk",
+    "name": "Fırında tavuk",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Fırında tavuk taze malzemeleri (fresh authentic ingredients for Turkish Fırında tavuk)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "gunun-menu",
+    "name": "Günün menü",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Günün menü taze malzemeleri (fresh authentic ingredients for Turkish Günün menü)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "gunun-menu-2",
+    "name": "Günün menü 2",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Günün menü 2 taze malzemeleri (fresh authentic ingredients for Turkish Günün menü 2)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "guvec",
+    "name": "Güveç",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Güveç taze malzemeleri (fresh authentic ingredients for Turkish Güveç)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "ispanak",
+    "name": "Ispanak",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Ispanak taze malzemeleri (fresh authentic ingredients for Turkish Ispanak)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "izmir-kofte",
+    "name": "İzmir köfte",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel İzmir köfte taze malzemeleri (fresh authentic ingredients for Turkish İzmir köfte)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "kara-lahana-dolmasi",
+    "name": "Kara lahana dolması",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Kara lahana dolması taze malzemeleri (fresh authentic ingredients for Turkish Kara lahana dolması)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
   },
   {
     "slug": "karniyarik",
     "name": "Karnıyarık",
     "category": "Ana Yemekler",
     "ingredients": [
-      "patlıcan (roasted whole eggplant split open)",
-      "dana kıyma (seasoned minced beef filling)",
-      "soğan (minced onion)",
-      "domates (diced tomato)",
-      "yeşil biber (green pepper garnish on top)",
-      "zeytinyağı (olive oil)"
+      "Geleneksel Karnıyarık taze malzemeleri (fresh authentic ingredients for Turkish Karnıyarık)"
     ],
-    "serving": "oval serving dish, baked eggplant with glistening meat filling"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "izmir-kofte",
-    "name": "İzmir Köfte",
+    "slug": "kavurma",
+    "name": "Kavurma",
     "category": "Ana Yemekler",
     "ingredients": [
-      "dana köfte (oval spiced minced beef meatballs)",
-      "patates dilimleri (potato wedges)",
-      "yeşil biber (green peppers)",
-      "domates sosu (rich tomato sauce)"
+      "Geleneksel Kavurma taze malzemeleri (fresh authentic ingredients for Turkish Kavurma)"
     ],
-    "serving": "ceramic casserole dish with köfte and roasted potato wedges in savory sauce"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "tas-kebabi-350",
-    "name": "Taş Kebabı",
+    "slug": "kayseri-mantisi",
+    "name": "Kayseri mantısı",
     "category": "Ana Yemekler",
     "ingredients": [
-      "kuşbaşı dana eti (tender cubed braised beef)",
-      "soğan (onion)",
-      "sarımsak (garlic)",
-      "domates salçası (tomato paste)",
-      "et suyu (savory meat jus)"
+      "Geleneksel Kayseri mantısı taze malzemeleri (fresh authentic ingredients for Turkish Kayseri mantısı)"
     ],
-    "serving": "deep ceramic bowl, tender glossy beef cubes in rich brown-red gravy"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "tavuk-sote",
-    "name": "Tavuk Sote",
+    "slug": "kori-mantarli-tavuk",
+    "name": "Köri mantarlı tavuk",
     "category": "Ana Yemekler",
     "ingredients": [
-      "tavuk göğsü küpleri (diced chicken breast)",
-      "yeşil biber (green peppers)",
-      "kırmızı kapya biber (red bell pepper)",
-      "soğan (onion)",
-      "domates (fresh tomatoes)",
-      "kekik (oregano)",
-      "zeytinyağı (olive oil)"
+      "Geleneksel Köri mantarlı tavuk taze malzemeleri (fresh authentic ingredients for Turkish Köri mantarlı tavuk)"
     ],
-    "serving": "shallow rustic bowl, colorful sautéed chicken and peppers in light tomato juices"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "etli-nohut",
-    "name": "Etli Nohut",
+    "slug": "krema-kori-tavuk",
+    "name": "Krema köri tavuk",
     "category": "Ana Yemekler",
     "ingredients": [
-      "nohut (plump cooked chickpeas)",
-      "kuşbaşı dana eti (tender braised beef bites)",
-      "soğan (onion)",
-      "domates salçası (tomato paste)",
-      "tereyağı (butter)"
+      "Geleneksel Krema köri tavuk taze malzemeleri (fresh authentic ingredients for Turkish Krema köri tavuk)"
     ],
-    "serving": "earthenware bowl, golden chickpeas and beef in warm red stew"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "mercimek",
-    "name": "Mercimek Çorbası",
-    "category": "Çorbalar",
+    "slug": "kuru-fasulye",
+    "name": "Kuru fasulye",
+    "category": "Ana Yemekler",
     "ingredients": [
-      "kırmızı mercimek (red lentils)",
-      "havuç (carrot)",
-      "soğan (onion)",
-      "tereyağı (melted butter)",
-      "kimyon (ground cumin)"
+      "Geleneksel Kuru fasulye taze malzemeleri (fresh authentic ingredients for Turkish Kuru fasulye)"
     ],
-    "serving": "deep soup bowl, smooth velvety golden-yellow soup"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "ezogelin",
-    "name": "Ezogelin Çorbası",
-    "category": "Çorbalar",
+    "slug": "kuzu-incik",
+    "name": "Kuzu incik",
+    "category": "Ana Yemekler",
     "ingredients": [
-      "kırmızı mercimek (red lentils)",
-      "bulgur (cracked wheat)",
-      "pirinç (rice)",
-      "nane (dried mint flakes)",
-      "domates salçası (tomato paste)",
-      "pul biber (red pepper flakes)"
+      "Geleneksel Kuzu incik taze malzemeleri (fresh authentic ingredients for Turkish Kuzu incik)"
     ],
-    "serving": "soup bowl, textured rustic reddish soup with specks of dried mint"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "firinda-sutlac",
-    "name": "Fırında Sütlaç",
-    "category": "Tatlılar",
+    "slug": "mantar-tavuk-sote",
+    "name": "Mantar tavuk sote",
+    "category": "Ana Yemekler",
     "ingredients": [
-      "süt (fresh whole milk)",
-      "pirinç (rice)",
-      "şeker (sugar)",
-      "vanilya (vanilla)",
-      "nişasta (starch)"
+      "Geleneksel Mantar tavuk sote taze malzemeleri (fresh authentic ingredients for Turkish Mantar tavuk sote)"
     ],
-    "serving": "traditional circular clay güveç dish, creamy white pudding with caramelized golden-brown charred top surface"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "kiymali-kasarli",
-    "name": "Kıymalı Kaşarlı Pide",
-    "category": "Pideler",
+    "slug": "mix-tabak-2",
+    "name": "Mix tabak 2",
+    "category": "Ana Yemekler",
     "ingredients": [
-      "taş fırın pide hamuru (crisp golden boat-shaped flatbread crust)",
-      "baharatlı dana kıyma (seasoned minced beef)",
-      "erimiş kaşar peyniri (melted golden kashar cheese)"
+      "Geleneksel Mix tabak 2 taze malzemeleri (fresh authentic ingredients for Turkish Mix tabak 2)"
     ],
-    "serving": "wooden presentation board, freshly baked sliced Turkish boat pide with bubbling cheese and meat"
-  },
-  {
-    "slug": "cacik",
-    "name": "Cacık",
-    "category": "Salatalar",
-    "ingredients": [
-      "süzme yoğurt (thick chilled yogurt)",
-      "salatalık (finely diced fresh cucumbers)",
-      "sarımsak (minced garlic)",
-      "kuru nane (dried mint)",
-      "sızma zeytinyağı (extra virgin olive oil drizzle)"
-    ],
-    "serving": "white ceramic bowl, creamy cool yogurt garnished with fresh olive oil swirl and mint flakes"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
     "slug": "musakka",
     "name": "Musakka",
     "category": "Ana Yemekler",
     "ingredients": [
-      "kızarmış patlıcan dilimleri (sliced roasted eggplant)",
-      "dana kıyma harcı (seasoned minced beef filling)",
-      "domates (sliced tomatoes)",
-      "yeşil biber (green peppers)"
+      "Geleneksel Musakka taze malzemeleri (fresh authentic ingredients for Turkish Musakka)"
     ],
-    "serving": "shallow earthenware baking dish, baked layered eggplant and spiced meat"
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "pirasa",
+    "name": "Pırasa",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Pırasa taze malzemeleri (fresh authentic ingredients for Turkish Pırasa)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "sebzeli-kofte",
+    "name": "Sebzeli köfte",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Sebzeli köfte taze malzemeleri (fresh authentic ingredients for Turkish Sebzeli köfte)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "tas-kebabi-500",
+    "name": "Taş kebabı (Büyük)",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Taş kebabı (Büyük) taze malzemeleri (fresh authentic ingredients for Turkish Taş kebabı (Büyük))"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "tas-kebabi-350",
+    "name": "Taş kebabı",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Taş kebabı taze malzemeleri (fresh authentic ingredients for Turkish Taş kebabı)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "tavuk-haslama",
+    "name": "Tavuk haşlama",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Tavuk haşlama taze malzemeleri (fresh authentic ingredients for Turkish Tavuk haşlama)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "tavuk-sote",
+    "name": "Tavuk sote",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Tavuk sote taze malzemeleri (fresh authentic ingredients for Turkish Tavuk sote)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
   },
   {
     "slug": "taze-fasulye",
-    "name": "Taze Fasulye",
+    "name": "Taze fasulye",
     "category": "Ana Yemekler",
     "ingredients": [
-      "taze yeşil fasulye (fresh green flat beans)",
-      "domates (grated ripe tomatoes)",
-      "soğan (sliced sweet onions)",
-      "sızma zeytinyağı (extra virgin olive oil)"
+      "Geleneksel Taze fasulye taze malzemeleri (fresh authentic ingredients for Turkish Taze fasulye)"
     ],
-    "serving": "white ceramic plate, glossy green braised beans with tender braised onions and tomatoes"
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "turlu",
+    "name": "Türlü",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "Geleneksel Türlü taze malzemeleri (fresh authentic ingredients for Turkish Türlü)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "ezogelin",
+    "name": "Ezogelin çorbası",
+    "category": "Çorbalar",
+    "ingredients": [
+      "Geleneksel Ezogelin çorbası taze malzemeleri (fresh authentic ingredients for Turkish Ezogelin çorbası)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "mercimek",
+    "name": "Mercimek çorbası",
+    "category": "Çorbalar",
+    "ingredients": [
+      "Geleneksel Mercimek çorbası taze malzemeleri (fresh authentic ingredients for Turkish Mercimek çorbası)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "sebze-corbasi",
+    "name": "Sebze çorbası",
+    "category": "Çorbalar",
+    "ingredients": [
+      "Geleneksel Sebze çorbası taze malzemeleri (fresh authentic ingredients for Turkish Sebze çorbası)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "tavuk-suyu",
+    "name": "Tavuk suyu çorbası",
+    "category": "Çorbalar",
+    "ingredients": [
+      "Geleneksel Tavuk suyu çorbası taze malzemeleri (fresh authentic ingredients for Turkish Tavuk suyu çorbası)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "yayla-corbasi",
+    "name": "Yayla çorbası",
+    "category": "Çorbalar",
+    "ingredients": [
+      "Geleneksel Yayla çorbası taze malzemeleri (fresh authentic ingredients for Turkish Yayla çorbası)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "cacik",
+    "name": "Cacık",
+    "category": "Salatalar",
+    "ingredients": [
+      "Geleneksel Cacık taze malzemeleri (fresh authentic ingredients for Turkish Cacık)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "coban-salata",
+    "name": "Çoban salata",
+    "category": "Salatalar",
+    "ingredients": [
+      "Geleneksel Çoban salata taze malzemeleri (fresh authentic ingredients for Turkish Çoban salata)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "havuc-tarator",
+    "name": "Havuç tarator",
+    "category": "Salatalar",
+    "ingredients": [
+      "Geleneksel Havuç tarator taze malzemeleri (fresh authentic ingredients for Turkish Havuç tarator)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "mevsim-salatasi",
+    "name": "Mevsim salatası",
+    "category": "Salatalar",
+    "ingredients": [
+      "Geleneksel Mevsim salatası taze malzemeleri (fresh authentic ingredients for Turkish Mevsim salatası)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "semizotu",
+    "name": "Semizotu salatası",
+    "category": "Salatalar",
+    "ingredients": [
+      "Geleneksel Semizotu salatası taze malzemeleri (fresh authentic ingredients for Turkish Semizotu salatası)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "bulgur",
+    "name": "Bulgur pilavı",
+    "category": "Yan Ürünler & Pilavlar",
+    "ingredients": [
+      "Geleneksel Bulgur pilavı taze malzemeleri (fresh authentic ingredients for Turkish Bulgur pilavı)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "makarna",
+    "name": "Makarna",
+    "category": "Yan Ürünler & Pilavlar",
+    "ingredients": [
+      "Geleneksel Makarna taze malzemeleri (fresh authentic ingredients for Turkish Makarna)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "pilavustu-kuru",
+    "name": "Pilavüstü kuru fasulye",
+    "category": "Yan Ürünler & Pilavlar",
+    "ingredients": [
+      "Geleneksel Pilavüstü kuru fasulye taze malzemeleri (fresh authentic ingredients for Turkish Pilavüstü kuru fasulye)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "pirinc-pilavi",
+    "name": "Pirinç pilavı",
+    "category": "Yan Ürünler & Pilavlar",
+    "ingredients": [
+      "Geleneksel Pirinç pilavı taze malzemeleri (fresh authentic ingredients for Turkish Pirinç pilavı)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "yogurt",
+    "name": "Yoğurt",
+    "category": "Yan Ürünler & Pilavlar",
+    "ingredients": [
+      "Geleneksel Yoğurt taze malzemeleri (fresh authentic ingredients for Turkish Yoğurt)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "karisik-pide",
+    "name": "Karışık pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Karışık pide taze malzemeleri (fresh authentic ingredients for Turkish Karışık pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "kasarli-pide",
+    "name": "Kaşarlı pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Kaşarlı pide taze malzemeleri (fresh authentic ingredients for Turkish Kaşarlı pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "kavurmali-kasarli",
+    "name": "Kavurmalı kaşarlı pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Kavurmalı kaşarlı pide taze malzemeleri (fresh authentic ingredients for Turkish Kavurmalı kaşarlı pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "kavurmali-pide",
+    "name": "Kavurmalı pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Kavurmalı pide taze malzemeleri (fresh authentic ingredients for Turkish Kavurmalı pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "kiymali-kasarli",
+    "name": "Kıymalı kaşarlı pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Kıymalı kaşarlı pide taze malzemeleri (fresh authentic ingredients for Turkish Kıymalı kaşarlı pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "kiymali-pide",
+    "name": "Kıymalı pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Kıymalı pide taze malzemeleri (fresh authentic ingredients for Turkish Kıymalı pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "koy-peynirli-pide",
+    "name": "Köy peynirli pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Köy peynirli pide taze malzemeleri (fresh authentic ingredients for Turkish Köy peynirli pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "kusbasili-kasarli",
+    "name": "Kuşbaşılı kaşarlı pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Kuşbaşılı kaşarlı pide taze malzemeleri (fresh authentic ingredients for Turkish Kuşbaşılı kaşarlı pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "kusbasili-pide",
+    "name": "Kuşbaşılı pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Kuşbaşılı pide taze malzemeleri (fresh authentic ingredients for Turkish Kuşbaşılı pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "pastirmali-kasarli",
+    "name": "Pastırmalı kaşarlı pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Pastırmalı kaşarlı pide taze malzemeleri (fresh authentic ingredients for Turkish Pastırmalı kaşarlı pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "pastirmali-pide",
+    "name": "Pastırmalı pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Pastırmalı pide taze malzemeleri (fresh authentic ingredients for Turkish Pastırmalı pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "sosisli-pide",
+    "name": "Sosisli pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Sosisli pide taze malzemeleri (fresh authentic ingredients for Turkish Sosisli pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "sucuklu-kasarli",
+    "name": "Sucuklu kaşarlı pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Sucuklu kaşarlı pide taze malzemeleri (fresh authentic ingredients for Turkish Sucuklu kaşarlı pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "sucuklu-pide",
+    "name": "Sucuklu pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Sucuklu pide taze malzemeleri (fresh authentic ingredients for Turkish Sucuklu pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "tavuklu-pide",
+    "name": "Tavuklu pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Tavuklu pide taze malzemeleri (fresh authentic ingredients for Turkish Tavuklu pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "trabzon-peynirli",
+    "name": "Trabzon peynirli pide",
+    "category": "Taş Fırın Pideler",
+    "ingredients": [
+      "Geleneksel Trabzon peynirli pide taze malzemeleri (fresh authentic ingredients for Turkish Trabzon peynirli pide)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "firinda-sutlac",
+    "name": "Fırında sütlaç",
+    "category": "Tatlı Çeşitleri",
+    "ingredients": [
+      "Geleneksel Fırında sütlaç taze malzemeleri (fresh authentic ingredients for Turkish Fırında sütlaç)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "kadayif",
+    "name": "Kadayıf",
+    "category": "Tatlı Çeşitleri",
+    "ingredients": [
+      "Geleneksel Kadayıf taze malzemeleri (fresh authentic ingredients for Turkish Kadayıf)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "kibris-tatlisi",
+    "name": "Kıbrıs tatlısı",
+    "category": "Tatlı Çeşitleri",
+    "ingredients": [
+      "Geleneksel Kıbrıs tatlısı taze malzemeleri (fresh authentic ingredients for Turkish Kıbrıs tatlısı)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
   },
   {
     "slug": "sekerpare",
     "name": "Şekerpare",
-    "category": "Tatlılar",
+    "category": "Tatlı Çeşitleri",
     "ingredients": [
-      "irmikli hamur (golden baked semolina pastry cakes)",
-      "şerbet (lemon-infused sugar syrup)",
-      "fındık veya badem (whole blanched almond pressed in center)"
+      "Geleneksel Şekerpare taze malzemeleri (fresh authentic ingredients for Turkish Şekerpare)"
     ],
-    "serving": "dessert dish, two plump glossy syrup-soaked golden semolina cakes"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "biber-dolmasi",
-    "name": "Biber Dolması",
-    "category": "Ana Yemekler",
+    "slug": "tatli",
+    "name": "Günün tatlısı",
+    "category": "Tatlı Çeşitleri",
     "ingredients": [
-      "dolmalık yeşil biber (tender stuffed green bell peppers)",
-      "dana kıyma ve pirinç harcı (seasoned minced beef and rice filling)",
-      "domates salçası (tomato reduction)",
-      "soğan ve nane (onion and mint)"
+      "Geleneksel Günün tatlısı taze malzemeleri (fresh authentic ingredients for Turkish Günün tatlısı)"
     ],
-    "serving": "white ceramic plate, upright braised stuffed peppers topped with tomato slices"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "kayseri-mantisi",
-    "name": "Kayseri Mantısı",
-    "category": "Ana Yemekler",
+    "slug": "ayran",
+    "name": "Ayran",
+    "category": "Sıcak & Soğuk İçecekler",
     "ingredients": [
-      "el açması mini mantı (tiny handmade beef-filled dumplings)",
-      "sarımsaklı yoğurt (garlic yogurt sauce)",
-      "kızdırılmış pul biberli tereyağı (sizzling paprika-infused butter drizzle)",
-      "kuru nane (dried mint flakes)"
+      "Geleneksel Ayran taze malzemeleri (fresh authentic ingredients for Turkish Ayran)"
     ],
-    "serving": "shallow ceramic bowl, steaming petite dumplings smothered in creamy garlic yogurt and red butter swirl"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "kuzu-incik",
-    "name": "Kuzu İncik",
-    "category": "Ana Yemekler",
+    "slug": "bitki-caylari",
+    "name": "Bitki çayları",
+    "category": "Sıcak & Soğuk İçecekler",
     "ingredients": [
-      "kuzu incik (slow-braised tender lamb shank on the bone)",
-      "et suyu sosu (rich glistening savory pan reduction jus)",
-      "taze kekik (fresh thyme)"
+      "Geleneksel Bitki çayları taze malzemeleri (fresh authentic ingredients for Turkish Bitki çayları)"
     ],
-    "serving": "large ceramic dish, fork-tender whole lamb shank upright in dark glossy braising glaze"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "kara-lahana-dolmasi",
-    "name": "Kara Lahana Dolması",
-    "category": "Ana Yemekler",
+    "slug": "cola",
+    "name": "Coca-Cola",
+    "category": "Sıcak & Soğuk İçecekler",
     "ingredients": [
-      "kara lahana yaprakları (tender collard green leaves)",
-      "dana kıymalı pirinçli iç harç (spiced minced beef and rice filling)",
-      "tereyağlı salçalı sos (buttery tomato broth)"
+      "Geleneksel Coca-Cola taze malzemeleri (fresh authentic ingredients for Turkish Coca-Cola)"
     ],
-    "serving": "rustic ceramic dish, neatly rolled dark green dolma rolls arranged with a dollop of yogurt"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "coban-salata",
-    "name": "Çoban Salata",
-    "category": "Salatalar",
+    "slug": "cay",
+    "name": "Demleme Çay",
+    "category": "Sıcak & Soğuk İçecekler",
     "ingredients": [
-      "domates (diced ripe red tomatoes)",
-      "salatalık (crisp diced cucumbers)",
-      "sivri biber (green peppers)",
-      "kırmızı soğan (thinly sliced red onions)",
-      "maydanoz (fresh parsley)",
-      "sızma zeytinyağı ve limon (extra virgin olive oil and lemon dressing)"
+      "Geleneksel Demleme Çay taze malzemeleri (fresh authentic ingredients for Turkish Demleme Çay)"
     ],
-    "serving": "white ceramic bowl, freshly tossed vibrant diced vegetables glistening with olive oil"
+    "serving": "traditional Turkish ceramic plate"
   },
   {
-    "slug": "kusbasili-kasarli",
-    "name": "Kuşbaşılı Kaşarlı Pide",
-    "category": "Pideler",
+    "slug": "fanta",
+    "name": "Fanta",
+    "category": "Sıcak & Soğuk İçecekler",
     "ingredients": [
-      "taş fırın pide hamuru (crisp golden boat-shaped flatbread crust)",
-      "marine kuşbaşı dana eti (tender marinated cubed beef bites)",
-      "erimiş kaşar peyniri (melted golden kashar cheese)",
-      "domates ve biber parçaları (diced tomato and green pepper)"
+      "Geleneksel Fanta taze malzemeleri (fresh authentic ingredients for Turkish Fanta)"
     ],
-    "serving": "wooden board, oven-hot sliced Turkish boat pide with bubbling cheese and charred beef pieces"
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "meyve-sulari",
+    "name": "Meyve suları",
+    "category": "Sıcak & Soğuk İçecekler",
+    "ingredients": [
+      "Geleneksel Meyve suları taze malzemeleri (fresh authentic ingredients for Turkish Meyve suları)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "nescafe",
+    "name": "Nescafe",
+    "category": "Sıcak & Soğuk İçecekler",
+    "ingredients": [
+      "Geleneksel Nescafe taze malzemeleri (fresh authentic ingredients for Turkish Nescafe)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "soda",
+    "name": "Maden suyu / Soda",
+    "category": "Sıcak & Soğuk İçecekler",
+    "ingredients": [
+      "Geleneksel Maden suyu / Soda taze malzemeleri (fresh authentic ingredients for Turkish Maden suyu / Soda)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "su",
+    "name": "Su",
+    "category": "Sıcak & Soğuk İçecekler",
+    "ingredients": [
+      "Geleneksel Su taze malzemeleri (fresh authentic ingredients for Turkish Su)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "turk-kahvesi",
+    "name": "Türk kahvesi",
+    "category": "Sıcak & Soğuk İçecekler",
+    "ingredients": [
+      "Geleneksel Türk kahvesi taze malzemeleri (fresh authentic ingredients for Turkish Türk kahvesi)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "az-corba",
+    "name": "Az çorba",
+    "category": "Az Menü (Yarım Porsiyon)",
+    "ingredients": [
+      "Geleneksel Az çorba taze malzemeleri (fresh authentic ingredients for Turkish Az çorba)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "az-dolma",
+    "name": "Az dolma",
+    "category": "Az Menü (Yarım Porsiyon)",
+    "ingredients": [
+      "Geleneksel Az dolma taze malzemeleri (fresh authentic ingredients for Turkish Az dolma)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "az-et-yemegi",
+    "name": "Az et yemeği",
+    "category": "Az Menü (Yarım Porsiyon)",
+    "ingredients": [
+      "Geleneksel Az et yemeği taze malzemeleri (fresh authentic ingredients for Turkish Az et yemeği)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "az-kofte",
+    "name": "Az köfte",
+    "category": "Az Menü (Yarım Porsiyon)",
+    "ingredients": [
+      "Geleneksel Az köfte taze malzemeleri (fresh authentic ingredients for Turkish Az köfte)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "az-kuru",
+    "name": "Az kuru fasulye",
+    "category": "Az Menü (Yarım Porsiyon)",
+    "ingredients": [
+      "Geleneksel Az kuru fasulye taze malzemeleri (fresh authentic ingredients for Turkish Az kuru fasulye)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "az-pilav",
+    "name": "Az pilav",
+    "category": "Az Menü (Yarım Porsiyon)",
+    "ingredients": [
+      "Geleneksel Az pilav taze malzemeleri (fresh authentic ingredients for Turkish Az pilav)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "az-sebze-yemegi",
+    "name": "Az sebze yemeği",
+    "category": "Az Menü (Yarım Porsiyon)",
+    "ingredients": [
+      "Geleneksel Az sebze yemeği taze malzemeleri (fresh authentic ingredients for Turkish Az sebze yemeği)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "az-sehriye",
+    "name": "Az şehriye",
+    "category": "Az Menü (Yarım Porsiyon)",
+    "ingredients": [
+      "Geleneksel Az şehriye taze malzemeleri (fresh authentic ingredients for Turkish Az şehriye)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
+  },
+  {
+    "slug": "az-tavuk",
+    "name": "Az tavuk",
+    "category": "Az Menü (Yarım Porsiyon)",
+    "ingredients": [
+      "Geleneksel Az tavuk taze malzemeleri (fresh authentic ingredients for Turkish Az tavuk)"
+    ],
+    "serving": "traditional Turkish ceramic plate"
   }
 ]
