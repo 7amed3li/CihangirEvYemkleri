@@ -1,0 +1,194 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  OWNER
+  MANAGER
+  EDITOR
+  VIEWER
+}
+
+model AdminUser {
+  id           String     @id @default(uuid())
+  email        String     @unique
+  name         String
+  passwordHash String
+  role         Role       @default(EDITOR)
+  isActive     Boolean    @default(true)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+  auditLogs    AuditLog[]
+
+  @@map("admin_users")
+}
+
+model Category {
+  id           String                @id @default(uuid())
+  slug         String                @unique
+  orderIndex   Int                   @default(0)
+  isActive     Boolean               @default(true)
+  createdAt    DateTime              @default(now())
+  updatedAt    DateTime              @updatedAt
+  translations CategoryTranslation[]
+  products     Product[]
+
+  @@index([isActive, orderIndex])
+  @@map("categories")
+}
+
+model CategoryTranslation {
+  id          String   @id @default(uuid())
+  categoryId  String
+  locale      String
+  name        String
+  description String?
+  category    Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@unique([categoryId, locale])
+  @@index([locale])
+  @@map("category_translations")
+}
+
+model Product {
+  id               String               @id @default(uuid())
+  categoryId       String
+  slug             String               @unique
+  // Canonical price stored as Decimal in TRY (strictly >= 0 enforced via Zod & DB constraint)
+  basePriceTRY     Decimal              @db.Decimal(10, 2)
+  imageUrl         String?
+  isAvailable      Boolean              @default(true)
+  isActive         Boolean              @default(true)
+  isFeatured       Boolean              @default(false)
+  orderIndex       Int                  @default(0)
+  createdAt        DateTime             @default(now())
+  updatedAt        DateTime             @updatedAt
+  category         Category             @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  translations     ProductTranslation[]
+  dailyMenuEntries DailyMenuEntry[]
+  offerItems       OfferItem[]
+  priceHistory     PriceHistory[]
+
+  @@index([categoryId, isActive, isAvailable])
+  @@index([isActive, orderIndex])
+  @@map("products")
+}
+
+model ProductTranslation {
+  id          String  @id @default(uuid())
+  productId   String
+  locale      String
+  name        String
+  description String?
+  product     Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@unique([productId, locale])
+  @@index([locale])
+  @@map("product_translations")
+}
+
+model PriceHistory {
+  id         String   @id @default(uuid())
+  productId  String
+  oldPrice   Decimal  @db.Decimal(10, 2)
+  newPrice   Decimal  @db.Decimal(10, 2)
+  changedBy  String?
+  reason     String?
+  createdAt  DateTime @default(now())
+  product    Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId, createdAt])
+  @@map("price_history")
+}
+
+model DailyMenu {
+  id          String           @id @default(uuid())
+  // Date in Europe/Istanbul business date (YYYY-MM-DD format as unique key)
+  dateString  String           @unique
+  notes       String?
+  isPublished Boolean          @default(true)
+  updatedBy   String?
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  entries     DailyMenuEntry[]
+
+  @@index([dateString, isPublished])
+  @@map("daily_menus")
+}
+
+model DailyMenuEntry {
+  id           String    @id @default(uuid())
+  dailyMenuId  String
+  productId    String
+  displayOrder Int       @default(0)
+  dailyMenu    DailyMenu @relation(fields: [dailyMenuId], references: [id], onDelete: Cascade)
+  product      Product   @relation(fields: [productId], references: [id], onDelete: Restrict)
+
+  @@unique([dailyMenuId, productId])
+  @@index([productId])
+  @@map("daily_menu_entries")
+}
+
+model Offer {
+  id           String             @id @default(uuid())
+  slug         String             @unique
+  // Independent offer selling price (Decimal >= 0)
+  sellingPrice Decimal            @db.Decimal(10, 2)
+  isActive     Boolean            @default(true)
+  validFrom    DateTime?
+  validUntil   DateTime?
+  imageUrl     String?
+  orderIndex   Int                @default(0)
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+  translations OfferTranslation[]
+  items        OfferItem[]
+
+  @@index([isActive, validFrom, validUntil])
+  @@map("offers")
+}
+
+model OfferTranslation {
+  id          String  @id @default(uuid())
+  offerId     String
+  locale      String
+  title       String
+  description String?
+  offer       Offer   @relation(fields: [offerId], references: [id], onDelete: Cascade)
+
+  @@unique([offerId, locale])
+  @@index([locale])
+  @@map("offer_translations")
+}
+
+model OfferItem {
+  id        String  @id @default(uuid())
+  offerId   String
+  productId String
+  quantity  Int     @default(1)
+  offer     Offer   @relation(fields: [offerId], references: [id], onDelete: Cascade)
+  product   Product @relation(fields: [productId], references: [id], onDelete: Restrict)
+
+  @@unique([offerId, productId])
+  @@index([productId])
+  @@map("offer_items")
+}
+
+model AuditLog {
+  id         String     @id @default(uuid())
+  userId     String?
+  action     String
+  entityType String
+  entityId   String?
+  details    String?
+  createdAt  DateTime   @default(now())
+  user       AdminUser? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([entityType, entityId])
+  @@index([userId, createdAt])
+  @@map("audit_logs")
+}

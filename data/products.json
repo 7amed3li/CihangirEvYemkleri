@@ -1,0 +1,253 @@
+[
+  {
+    "slug": "kuru-fasulye",
+    "name": "Kuru Fasulye",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "İspir kuru fasulyesi (white beans)",
+      "domates salçası (tomato paste)",
+      "biber salçası (red pepper paste)",
+      "soğan (onion)",
+      "tereyağı (butter)"
+    ],
+    "serving": "shallow ceramic dish, rich red buttery broth"
+  },
+  {
+    "slug": "karniyarik",
+    "name": "Karnıyarık",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "patlıcan (roasted whole eggplant split open)",
+      "dana kıyma (seasoned minced beef filling)",
+      "soğan (minced onion)",
+      "domates (diced tomato)",
+      "yeşil biber (green pepper garnish on top)",
+      "zeytinyağı (olive oil)"
+    ],
+    "serving": "oval serving dish, baked eggplant with glistening meat filling"
+  },
+  {
+    "slug": "izmir-kofte",
+    "name": "İzmir Köfte",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "dana köfte (oval spiced minced beef meatballs)",
+      "patates dilimleri (potato wedges)",
+      "yeşil biber (green peppers)",
+      "domates sosu (rich tomato sauce)"
+    ],
+    "serving": "ceramic casserole dish with köfte and roasted potato wedges in savory sauce"
+  },
+  {
+    "slug": "tas-kebabi-350",
+    "name": "Taş Kebabı",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "kuşbaşı dana eti (tender cubed braised beef)",
+      "soğan (onion)",
+      "sarımsak (garlic)",
+      "domates salçası (tomato paste)",
+      "et suyu (savory meat jus)"
+    ],
+    "serving": "deep ceramic bowl, tender glossy beef cubes in rich brown-red gravy"
+  },
+  {
+    "slug": "tavuk-sote",
+    "name": "Tavuk Sote",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "tavuk göğsü küpleri (diced chicken breast)",
+      "yeşil biber (green peppers)",
+      "kırmızı kapya biber (red bell pepper)",
+      "soğan (onion)",
+      "domates (fresh tomatoes)",
+      "kekik (oregano)",
+      "zeytinyağı (olive oil)"
+    ],
+    "serving": "shallow rustic bowl, colorful sautéed chicken and peppers in light tomato juices"
+  },
+  {
+    "slug": "etli-nohut",
+    "name": "Etli Nohut",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "nohut (plump cooked chickpeas)",
+      "kuşbaşı dana eti (tender braised beef bites)",
+      "soğan (onion)",
+      "domates salçası (tomato paste)",
+      "tereyağı (butter)"
+    ],
+    "serving": "earthenware bowl, golden chickpeas and beef in warm red stew"
+  },
+  {
+    "slug": "mercimek",
+    "name": "Mercimek Çorbası",
+    "category": "Çorbalar",
+    "ingredients": [
+      "kırmızı mercimek (red lentils)",
+      "havuç (carrot)",
+      "soğan (onion)",
+      "tereyağı (melted butter)",
+      "kimyon (ground cumin)"
+    ],
+    "serving": "deep soup bowl, smooth velvety golden-yellow soup"
+  },
+  {
+    "slug": "ezogelin",
+    "name": "Ezogelin Çorbası",
+    "category": "Çorbalar",
+    "ingredients": [
+      "kırmızı mercimek (red lentils)",
+      "bulgur (cracked wheat)",
+      "pirinç (rice)",
+      "nane (dried mint flakes)",
+      "domates salçası (tomato paste)",
+      "pul biber (red pepper flakes)"
+    ],
+    "serving": "soup bowl, textured rustic reddish soup with specks of dried mint"
+  },
+  {
+    "slug": "firinda-sutlac",
+    "name": "Fırında Sütlaç",
+    "category": "Tatlılar",
+    "ingredients": [
+      "süt (fresh whole milk)",
+      "pirinç (rice)",
+      "şeker (sugar)",
+      "vanilya (vanilla)",
+      "nişasta (starch)"
+    ],
+    "serving": "traditional circular clay güveç dish, creamy white pudding with caramelized golden-brown charred top surface"
+  },
+  {
+    "slug": "kiymali-kasarli",
+    "name": "Kıymalı Kaşarlı Pide",
+    "category": "Pideler",
+    "ingredients": [
+      "taş fırın pide hamuru (crisp golden boat-shaped flatbread crust)",
+      "baharatlı dana kıyma (seasoned minced beef)",
+      "erimiş kaşar peyniri (melted golden kashar cheese)"
+    ],
+    "serving": "wooden presentation board, freshly baked sliced Turkish boat pide with bubbling cheese and meat"
+  },
+  {
+    "slug": "cacik",
+    "name": "Cacık",
+    "category": "Salatalar",
+    "ingredients": [
+      "süzme yoğurt (thick chilled yogurt)",
+      "salatalık (finely diced fresh cucumbers)",
+      "sarımsak (minced garlic)",
+      "kuru nane (dried mint)",
+      "sızma zeytinyağı (extra virgin olive oil drizzle)"
+    ],
+    "serving": "white ceramic bowl, creamy cool yogurt garnished with fresh olive oil swirl and mint flakes"
+  },
+  {
+    "slug": "musakka",
+    "name": "Musakka",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "kızarmış patlıcan dilimleri (sliced roasted eggplant)",
+      "dana kıyma harcı (seasoned minced beef filling)",
+      "domates (sliced tomatoes)",
+      "yeşil biber (green peppers)"
+    ],
+    "serving": "shallow earthenware baking dish, baked layered eggplant and spiced meat"
+  },
+  {
+    "slug": "taze-fasulye",
+    "name": "Taze Fasulye",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "taze yeşil fasulye (fresh green flat beans)",
+      "domates (grated ripe tomatoes)",
+      "soğan (sliced sweet onions)",
+      "sızma zeytinyağı (extra virgin olive oil)"
+    ],
+    "serving": "white ceramic plate, glossy green braised beans with tender braised onions and tomatoes"
+  },
+  {
+    "slug": "sekerpare",
+    "name": "Şekerpare",
+    "category": "Tatlılar",
+    "ingredients": [
+      "irmikli hamur (golden baked semolina pastry cakes)",
+      "şerbet (lemon-infused sugar syrup)",
+      "fındık veya badem (whole blanched almond pressed in center)"
+    ],
+    "serving": "dessert dish, two plump glossy syrup-soaked golden semolina cakes"
+  },
+  {
+    "slug": "biber-dolmasi",
+    "name": "Biber Dolması",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "dolmalık yeşil biber (tender stuffed green bell peppers)",
+      "dana kıyma ve pirinç harcı (seasoned minced beef and rice filling)",
+      "domates salçası (tomato reduction)",
+      "soğan ve nane (onion and mint)"
+    ],
+    "serving": "white ceramic plate, upright braised stuffed peppers topped with tomato slices"
+  },
+  {
+    "slug": "kayseri-mantisi",
+    "name": "Kayseri Mantısı",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "el açması mini mantı (tiny handmade beef-filled dumplings)",
+      "sarımsaklı yoğurt (garlic yogurt sauce)",
+      "kızdırılmış pul biberli tereyağı (sizzling paprika-infused butter drizzle)",
+      "kuru nane (dried mint flakes)"
+    ],
+    "serving": "shallow ceramic bowl, steaming petite dumplings smothered in creamy garlic yogurt and red butter swirl"
+  },
+  {
+    "slug": "kuzu-incik",
+    "name": "Kuzu İncik",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "kuzu incik (slow-braised tender lamb shank on the bone)",
+      "et suyu sosu (rich glistening savory pan reduction jus)",
+      "taze kekik (fresh thyme)"
+    ],
+    "serving": "large ceramic dish, fork-tender whole lamb shank upright in dark glossy braising glaze"
+  },
+  {
+    "slug": "kara-lahana-dolmasi",
+    "name": "Kara Lahana Dolması",
+    "category": "Ana Yemekler",
+    "ingredients": [
+      "kara lahana yaprakları (tender collard green leaves)",
+      "dana kıymalı pirinçli iç harç (spiced minced beef and rice filling)",
+      "tereyağlı salçalı sos (buttery tomato broth)"
+    ],
+    "serving": "rustic ceramic dish, neatly rolled dark green dolma rolls arranged with a dollop of yogurt"
+  },
+  {
+    "slug": "coban-salata",
+    "name": "Çoban Salata",
+    "category": "Salatalar",
+    "ingredients": [
+      "domates (diced ripe red tomatoes)",
+      "salatalık (crisp diced cucumbers)",
+      "sivri biber (green peppers)",
+      "kırmızı soğan (thinly sliced red onions)",
+      "maydanoz (fresh parsley)",
+      "sızma zeytinyağı ve limon (extra virgin olive oil and lemon dressing)"
+    ],
+    "serving": "white ceramic bowl, freshly tossed vibrant diced vegetables glistening with olive oil"
+  },
+  {
+    "slug": "kusbasili-kasarli",
+    "name": "Kuşbaşılı Kaşarlı Pide",
+    "category": "Pideler",
+    "ingredients": [
+      "taş fırın pide hamuru (crisp golden boat-shaped flatbread crust)",
+      "marine kuşbaşı dana eti (tender marinated cubed beef bites)",
+      "erimiş kaşar peyniri (melted golden kashar cheese)",
+      "domates ve biber parçaları (diced tomato and green pepper)"
+    ],
+    "serving": "wooden board, oven-hot sliced Turkish boat pide with bubbling cheese and charred beef pieces"
+  }
+]

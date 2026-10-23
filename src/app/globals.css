@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Color Palette */
+  --bg: #EDE3CE;             /* Beige Marble Background */
+  --bg-card: #F7F2E7;        /* Soft Cream Card Background */
+  --primary: #4E5F4C;        /* Olive Green Primary Button */
+  --primary-dim: #3D4B3B;    /* Darker Olive Green Hover */
+  --accent: #9C7A3F;         /* Ottoman Bronze / Gold */
+  --gold: #9C7A3F;           /* Ottoman Bronze / Gold */
+  --text: #2B2620;           /* Deep Espresso Text */
+  --text-secondary: #7A7364; /* Warm Taupe Secondary Text */
+  --error: #A0422E;          /* Terracotta Accent Alert */
+  
+  /* Legacy mapping aliases */
+  --ink: #EDE3CE;
+  --ink-2: #F7F2E7;
+  --teal: #4E5F4C;
+  --teal-dim: #3D4B3B;
+  --copper: #9C7A3F;
+  --cream: #2B2620;
+  --cream-dim: #7A7364;
+  --brick: #A0422E;
+  --ink-text: #EDE3CE;
+
+  /* Spacing Tokens */
+  --spacing-margin-ext: 16px;
+  --spacing-padding-card: 12px;
+  --spacing-gap-card: 8px;
+  --spacing-gap-section: 28px;
+  --radius-card: 12px;
+  --radius-btn: 8px;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-card: var(--bg-card);
+  --color-primary: var(--primary);
+  --color-primary-dim: var(--primary-dim);
+  --color-accent: var(--accent);
+  --color-gold: var(--accent);
+  --color-text: var(--text);
+  --color-text-secondary: var(--text-secondary);
+  --color-error: var(--error);
+
+  /* Mapping legacy Tailwind utility names */
+  --color-ink: var(--bg);
+  --color-ink-2: var(--bg-card);
+  --color-teal: var(--primary);
+  --color-teal-dim: var(--primary-dim);
+  --color-copper: var(--accent);
+  --color-cream: var(--text);
+  --color-cream-dim: var(--text-secondary);
+  --color-brick: var(--error);
+  
+  --font-cairo: "Cairo", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-amiri: "Amiri", Georgia, serif;
+}
+
+/* ==========================================================================
+   BASE STYLES & LAYOUT
+   ========================================================================== */
+
+html {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Utility to hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ==========================================================================
+   ANIMATION KEYFRAMES
+   ========================================================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out both;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+/* ==========================================================================
+   OTTOMAN DIVIDER (Brand Accent)
+   ========================================================================== */
+
+.ottoman-divider {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(156, 122, 63, 0.25) 15%,
+    rgba(156, 122, 63, 0.8) 50%,
+    rgba(156, 122, 63, 0.25) 85%,
+    transparent 100%
+  );
+  width: 100%;
+}
+
+.ottoman-divider::after {
+  content: "✦";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg);
+  padding: 0 10px;
+  color: var(--accent);
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* Modal animation overrides */
+.modal-overlay {
+  animation: fadeIn 0.2s ease-out both;
+}
+
+.modal-content {
+  animation: scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
