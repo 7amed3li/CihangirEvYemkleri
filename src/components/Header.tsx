@@ -6,6 +6,8 @@ import Image from "next/image";
 import CurrencySwitcher from "./CurrencySwitcher";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { MenuIcon, HomeIcon, BookOpenIcon, PhoneIcon } from "./BrandIcons";
+import { useAppContext } from "@/context/AppContext";
+import { ShoppingBag } from "@phosphor-icons/react";
 
 interface HeaderProps {
   locale: string;
@@ -13,6 +15,7 @@ interface HeaderProps {
 }
 
 export default function Header({ locale, dict }: HeaderProps) {
+  const { cartCount, setIsCartOpen } = useAppContext();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -109,6 +112,50 @@ export default function Header({ locale, dict }: HeaderProps) {
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <CurrencySwitcher />
           <LanguageSwitcher currentLocale={locale} />
+
+          {/* Cart Drawer Trigger Button */}
+          <button
+            onClick={() => setIsCartOpen(true)}
+            style={{
+              position: "relative",
+              width: "38px",
+              height: "38px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: "6px",
+              border: "1px solid rgba(156, 122, 63, 0.35)",
+              backgroundColor: "#F7F2E7",
+              color: "#9C7A3F",
+              cursor: "pointer",
+              transition: "all 0.2s",
+            }}
+            aria-label="Sipariş Sepeti"
+          >
+            <ShoppingBag size={20} weight="bold" />
+            {cartCount > 0 && (
+              <span
+                style={{
+                  position: "absolute",
+                  top: "-4px",
+                  right: "-4px",
+                  backgroundColor: "#A0422E",
+                  color: "#FFFFFF",
+                  fontSize: "10px",
+                  fontWeight: 900,
+                  width: "18px",
+                  height: "18px",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  border: "2px solid #F7F2E7",
+                }}
+              >
+                {cartCount}
+              </span>
+            )}
+          </button>
 
           {/* Navigation Drawer Button */}
           <div style={{ position: "relative" }} ref={menuRef}>

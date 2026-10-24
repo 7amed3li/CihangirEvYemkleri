@@ -101,8 +101,7 @@ export default function FeaturedDishesShowcase({ items }: FeaturedDishesShowcase
               const item = allItems.find((i) => i.id === feat.id);
               if (!item) return null;
 
-              const translatedName =
-                item.name?.[lang as "tr" | "en" | "ar"] || item.name?.tr;
+              const turkishTitle = item.name?.tr || feat.id;
               const translatedBadge =
                 feat.badge[lang as "tr" | "en" | "ar"] || feat.badge.tr;
 
@@ -118,7 +117,7 @@ export default function FeaturedDishesShowcase({ items }: FeaturedDishesShowcase
                       {feat.image || item.image ? (
                         <Image
                           src={feat.image || item.image!}
-                          alt={translatedName}
+                          alt={turkishTitle}
                           fill
                           style={{ objectFit: "cover" }}
                           sizes="84px"
@@ -143,12 +142,12 @@ export default function FeaturedDishesShowcase({ items }: FeaturedDishesShowcase
                     </div>
                   </div>
 
-                  {/* Title */}
+                  {/* Title - strictly Turkish */}
                   <span
                     className="text-[10px] sm:text-[11px] text-center font-bold text-[#2B2620] leading-tight mt-0.5 group-hover:text-[#9C7A3F] transition-colors line-clamp-2 px-0.5"
                     style={{ fontFamily: "var(--font-cairo)" }}
                   >
-                    {translatedName}
+                    {turkishTitle}
                   </span>
                 </div>
               );

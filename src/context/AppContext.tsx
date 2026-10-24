@@ -9,6 +9,7 @@ import React, {
   useRef,
 } from "react";
 import { DEFAULT_FALLBACK_RATES } from "@/app/api/rates/route";
+import { DISH_TRANSLATIONS } from "@/data/dishTranslations";
 
 export type CurrencyCode = "TRY" | "USD" | "EUR" | "GBP" | "RUB" | "SAR";
 
@@ -34,6 +35,7 @@ interface AppContextType {
   cart: CartItem[];
   addToCart: (item: { id: string; name?: string; price: number; image?: string }) => void;
   removeFromCart: (itemId: string) => void;
+  clearCart: () => void;
   getItemQuantity: (itemId: string) => number;
   cartCount: number;
   cartTotalTRY: number;
@@ -90,7 +92,11 @@ export function AppProvider({
       if (savedCart) {
         const parsed = JSON.parse(savedCart);
         if (Array.isArray(parsed)) {
-          setCart(parsed);
+          const sanitized = parsed.map((i: any) => ({
+            ...i,
+            name: DISH_TRANSLATIONS[i.id]?.name?.tr || i.name || i.id,
+          }));
+          setCart(sanitized);
         }
       }
     } catch (_) {}
@@ -134,6 +140,12 @@ export function AppProvider({
   const addToCart = useCallback(
     (item: { id: string; name?: string; price: number; image?: string }) => {
       if (item.price == null) return;
+      // Rule: Name in the cart must ALWAYS be in Turkish
+      const turkishName =
+        DISH_TRANSLATIONS[item.id]?.name?.tr ||
+        item.name ||
+        item.id;
+
       setCart((prev) => {
         const existing = prev.find((i) => i.id === item.id);
         if (existing) {
@@ -145,7 +157,7 @@ export function AppProvider({
           ...prev,
           {
             id: item.id,
-            name: item.name,
+            name: turkishName,
             priceTRY: item.price,
             image: item.image,
             qty: 1,
@@ -169,6 +181,10 @@ export function AppProvider({
     });
   }, []);
 
+  const clearCart = useCallback(() => {
+    setCart([]);
+  }, []);
+
   const getItemQuantity = useCallback(
     (itemId: string) => {
       return cart.find((i) => i.id === itemId)?.qty || 0;
@@ -190,6 +206,7 @@ export function AppProvider({
         cart,
         addToCart,
         removeFromCart,
+        clearCart,
         getItemQuantity,
         cartCount,
         cartTotalTRY,

@@ -1,13 +1,24 @@
+import { DISH_TRANSLATIONS, CATEGORY_TRANSLATIONS } from "./dishTranslations";
+import { Locale } from "@/i18n/translations";
+
 export interface MenuItem {
   id: string;
   name: {
     tr: string;
     en?: string;
     ar?: string;
+    ru?: string;
+    fa?: string;
+    fr?: string;
+    de?: string;
+    it?: string;
+    es?: string;
+    zh?: string;
   };
   price: number;
   image?: string;
   description?: string;
+  descriptions?: Partial<Record<Locale, string>>;
   tags?: string[];
   trending?: boolean;
   priceNeedsConfirmation?: boolean;
@@ -21,12 +32,19 @@ export interface MenuCategory {
     tr: string;
     en: string;
     ar?: string;
+    ru?: string;
+    fa?: string;
+    fr?: string;
+    de?: string;
+    it?: string;
+    es?: string;
+    zh?: string;
   };
   image?: string;
   items: MenuItem[];
 }
 
-export const menuData: MenuCategory[] = [
+const rawMenuData: MenuCategory[] = [
   {
     id: "ana-yemekler",
     slug: "ana-yemekler",
@@ -695,3 +713,43 @@ export const menuData: MenuCategory[] = [
     ],
   },
 ];
+
+export const menuData: MenuCategory[] = rawMenuData.map((cat) => {
+  const catTrans = CATEGORY_TRANSLATIONS[cat.id];
+  return {
+    ...cat,
+    category: {
+      tr: catTrans?.tr || cat.category.tr,
+      en: catTrans?.en || cat.category.en,
+      ar: catTrans?.ar || cat.category.ar,
+      ru: catTrans?.ru,
+      fa: catTrans?.fa,
+      fr: catTrans?.fr,
+      de: catTrans?.de,
+      it: catTrans?.it,
+      es: catTrans?.es,
+      zh: catTrans?.zh,
+    },
+    items: cat.items.map((item) => {
+      const trans = DISH_TRANSLATIONS[item.id];
+      return {
+        ...item,
+        name: {
+          tr: trans?.name?.tr || item.name.tr,
+          en: trans?.name?.en || item.name.en,
+          ar: trans?.name?.ar || item.name.ar,
+          ru: trans?.name?.ru,
+          fa: trans?.name?.fa,
+          fr: trans?.name?.fr,
+          de: trans?.name?.de,
+          it: trans?.name?.it,
+          es: trans?.name?.es,
+          zh: trans?.name?.zh,
+        },
+        description: trans?.desc?.tr || item.description,
+        descriptions: trans?.desc,
+      };
+    }),
+  };
+});
+

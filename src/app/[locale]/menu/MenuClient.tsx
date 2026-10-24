@@ -6,6 +6,7 @@ import FoodCard from "@/components/FoodCard";
 import FeaturedDishesShowcase from "@/components/FeaturedDishesShowcase";
 import MenuCategoryBar from "@/components/MenuCategoryBar";
 import SmartFilters from "@/components/SmartFilters";
+import CartDrawer from "@/components/CartDrawer";
 import { PublicDailyMenu, PublicOffer } from "@/lib/db/menu-loader";
 
 interface MenuClientProps {
@@ -175,6 +176,9 @@ export default function MenuClient({
           );
         })}
       </section>
+
+      {/* Floating Cart Button & Slide-Over Drawer */}
+      <CartDrawer />
     </div>
   );
 }

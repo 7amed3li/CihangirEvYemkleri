@@ -6,18 +6,16 @@ import { useAppContext } from "@/context/AppContext";
 import { Plus, Minus, CaretRight } from "@phosphor-icons/react";
 import { CookingPot, StoneOven } from "./BrandIcons";
 import DishModal from "./DishModal";
+import { getDishDisplay } from "@/data/dishTranslations";
 
 interface MenuItemProps {
   item: {
     id: string;
-    name: {
-      tr: string;
-      en?: string;
-      ar?: string;
-    };
+    name: any;
     price: number;
     image?: string;
     description?: string;
+    descriptions?: any;
     tags?: string[];
     trending?: boolean;
     isAvailable?: boolean;
@@ -29,11 +27,11 @@ export default function FoodCard({ item }: MenuItemProps) {
     useAppContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const { turkishTitle, localizedName, localizedDesc, formattedDesc } =
+    getDishDisplay(item, lang);
+
   const isAvailable = item.isAvailable !== false;
   const isRTL = lang === "ar" || lang === "fa";
-  const name =
-    item.name?.[lang as "tr" | "en" | "ar"] || item.name?.tr || "Lezzet";
-  const description = item.description || "";
   const displayPrice = convertPrice(item.price);
   const symbol = getCurrencySymbol();
   const qty = getItemQuantity(item.id);
@@ -43,9 +41,10 @@ export default function FoodCard({ item }: MenuItemProps) {
 
   const handleAdd = (e: React.MouseEvent) => {
     e.stopPropagation();
+    // Rule: Name in the cart must ALWAYS be in Turkish
     addToCart({
       id: item.id,
-      name,
+      name: turkishTitle,
       price: item.price,
       image: item.image,
     });
@@ -78,7 +77,7 @@ export default function FoodCard({ item }: MenuItemProps) {
             <div className="absolute inset-0 group-hover:scale-105 transition-transform duration-500">
               <Image
                 src={item.image}
-                alt={name}
+                alt={turkishTitle}
                 fill
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 768px) 128px, 160px"
@@ -158,7 +157,7 @@ export default function FoodCard({ item }: MenuItemProps) {
                 className="font-bold text-sm sm:text-base text-[#2B2620] leading-snug truncate md:whitespace-normal group-hover:text-[#9C7A3F] transition-colors text-start"
                 style={{ fontFamily: "var(--font-cairo)" }}
               >
-                {name}
+                {turkishTitle}
               </h3>
               {/* Click Affordance Chevron */}
               <div className="shrink-0 w-6 h-6 rounded-full bg-[#9C7A3F]/10 flex items-center justify-center text-[#9C7A3F] group-hover:bg-[#9C7A3F] group-hover:text-white transition-colors">
@@ -170,12 +169,19 @@ export default function FoodCard({ item }: MenuItemProps) {
               </div>
             </div>
 
-            {description && (
+            {formattedDesc && (
               <p
                 className="text-xs text-[#7A7364] mt-1 line-clamp-2 leading-relaxed font-medium text-start"
                 style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}
               >
-                {description}
+                {lang !== "tr" ? (
+                  <>
+                    <span className="font-semibold text-[#5A5344]">{localizedName}: </span>
+                    {localizedDesc}
+                  </>
+                ) : (
+                  localizedDesc
+                )}
               </p>
             )}
           </div>
@@ -242,8 +248,6 @@ export default function FoodCard({ item }: MenuItemProps) {
         isOpen={isModalOpen}
         setIsOpen={setIsModalOpen}
         item={item}
-        customName={name}
-        customDesc={description}
       />
     </>
   );

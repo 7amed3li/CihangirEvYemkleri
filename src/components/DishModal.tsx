@@ -7,16 +7,18 @@ import { useAppContext } from "@/context/AppContext";
 import { useMounted } from "@/hooks/useMounted";
 import { X, MagnifyingGlassPlus, Plus, Minus, ShareNetwork, Check } from "@phosphor-icons/react";
 import { CookingPot, StoneOven } from "./BrandIcons";
+import { getDishDisplay } from "@/data/dishTranslations";
 
 interface DishModalProps {
   isOpen: boolean;
   setIsOpen: (open: boolean) => void;
   item: {
     id: string;
-    name?: string | { tr?: string; en?: string; ar?: string };
+    name?: any;
     price: number;
     image?: string;
     description?: string;
+    descriptions?: any;
     tags?: string[];
     isAvailable?: boolean;
   };
@@ -39,18 +41,15 @@ export default function DishModal({
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
+  const { turkishTitle, localizedName, localizedDesc, formattedDesc } =
+    getDishDisplay(item, lang);
+
   const isRTL = lang === "ar" || lang === "fa";
-  const name =
-    customName ||
-    (typeof item?.name === "string"
-      ? item.name
-      : item?.name?.[lang as "tr" | "en" | "ar"] || item?.name?.tr || "Yemek");
-  const description = customDesc || item?.description || "";
-  const displayPrice = convertPrice(item.price);
+  const displayPrice = convertPrice(item?.price);
   const symbol = getCurrencySymbol();
-  const image = customImage || item.image;
-  const tags = item.tags || [];
-  const qty = getItemQuantity(item.id);
+  const image = customImage || item?.image;
+  const tags = item?.tags || [];
+  const qty = getItemQuantity(item?.id);
   const isAvailable = item?.isAvailable !== false;
 
   const handleCopyLink = async (e: React.MouseEvent) => {
@@ -107,7 +106,7 @@ export default function DishModal({
               <div className="w-full h-56 sm:h-72 shrink-0 relative bg-white group">
                 <Image
                   src={image}
-                  alt={name}
+                  alt={turkishTitle}
                   fill
                   style={{ objectFit: "contain" }}
                   sizes="(max-width: 768px) 100vw, 400px"
@@ -133,12 +132,22 @@ export default function DishModal({
             {/* Modal Content */}
             <div className="p-6 overflow-y-auto no-scrollbar flex flex-col gap-4 text-start">
               <div className="flex justify-between items-start gap-4">
-                <h2
-                  className="text-2xl font-bold text-[#2B2620] leading-tight"
-                  style={{ fontFamily: "var(--font-cairo)" }}
-                >
-                  {name}
-                </h2>
+                <div className="flex flex-col gap-0.5">
+                  <h2
+                    className="text-2xl font-bold text-[#2B2620] leading-tight"
+                    style={{ fontFamily: "var(--font-cairo)" }}
+                  >
+                    {turkishTitle}
+                  </h2>
+                  {lang !== "tr" && localizedName && (
+                    <span
+                      className="text-sm font-semibold text-[#9C7A3F]"
+                      style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}
+                    >
+                      {localizedName}
+                    </span>
+                  )}
+                </div>
                 {displayPrice != null && (
                   <span
                     className="shrink-0 flex items-center gap-1 text-lg font-bold text-white bg-[#9C7A3F] px-3 py-1 rounded-md shadow-xs"
@@ -176,19 +185,44 @@ export default function DishModal({
               )}
 
               {/* Description */}
-              {description && (
+              {formattedDesc && (
                 <div className="mt-1">
                   <h4
                     className="text-xs font-bold text-[#9C7A3F] mb-1 uppercase tracking-widest"
                     style={{ fontFamily: "var(--font-cairo)" }}
                   >
-                    Detaylar
+                    {lang === "ar"
+                      ? "التفاصيل والمكونات"
+                      : lang === "fa"
+                      ? "جزئیات و ترکیبات"
+                      : lang === "ru"
+                      ? "Описание и состав"
+                      : lang === "zh"
+                      ? "菜品详情与风味"
+                      : lang === "fr"
+                      ? "Détails & Ingrédients"
+                      : lang === "de"
+                      ? "Details & Zutaten"
+                      : lang === "it"
+                      ? "Dettagli & Ingredienti"
+                      : lang === "es"
+                      ? "Detalles e Ingredientes"
+                      : lang === "en"
+                      ? "Details & Description"
+                      : "Detaylar"}
                   </h4>
                   <p
                     className="text-[#7A7364] leading-relaxed text-sm font-medium"
-                    style={{ fontFamily: "var(--font-inter)" }}
+                    style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}
                   >
-                    {description}
+                    {lang !== "tr" ? (
+                      <>
+                        <span className="font-bold text-[#2B2620]">{localizedName}: </span>
+                        {localizedDesc}
+                      </>
+                    ) : (
+                      localizedDesc
+                    )}
                   </p>
                 </div>
               )}
@@ -210,7 +244,7 @@ export default function DishModal({
                     onClick={() =>
                       addToCart({
                         id: item.id,
-                        name: typeof name === "string" ? name : item.id,
+                        name: turkishTitle,
                         price: item.price,
                         image: item.image,
                       })
@@ -233,7 +267,7 @@ export default function DishModal({
                       onClick={() =>
                         addToCart({
                           id: item.id,
-                          name: typeof name === "string" ? name : item.id,
+                          name: turkishTitle,
                           price: item.price,
                           image: item.image,
                         })
@@ -277,7 +311,7 @@ export default function DishModal({
             >
               <Image
                 src={image}
-                alt={name}
+                alt={turkishTitle}
                 fill
                 style={{ objectFit: "contain" }}
                 sizes="100vw"
