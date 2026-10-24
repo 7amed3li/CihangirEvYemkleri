@@ -27,146 +27,62 @@ export default function Header({ locale, dict }: HeaderProps) {
   }, []);
 
   return (
-    <header
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 40,
-        width: "100%",
-        backgroundColor: "#F7F2E7",
-        borderBottom: "2px solid rgba(156, 122, 63, 0.35)",
-        boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1024px",
-          margin: "0 auto",
-          padding: "0 16px",
-          height: "64px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        {/* Brand Logo */}
+    <header className="sticky top-0 z-40 w-full bg-[#F7F2E7] border-b-2 border-[#9C7A3F]/35 shadow-xs">
+      <div className="max-w-5xl mx-auto px-2.5 sm:px-4 md:px-6 h-14 sm:h-16 flex items-center justify-between gap-2">
+        {/* Brand Logo & Name */}
         <Link
           href={`/${locale}`}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px",
-            textDecoration: "none",
-          }}
+          className="flex items-center gap-2 sm:gap-2.5 min-w-0 shrink group select-none"
         >
-          <div
-            style={{
-              position: "relative",
-              width: "48px",
-              height: "48px",
-              flexShrink: 0,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+          <div className="relative w-9 h-9 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center">
             <Image
               src="/splash/logo-original.webp"
               alt="Cihangir Ev Yemekleri Pide"
               fill
               priority
-              style={{ objectFit: "contain" }}
+              className="object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div className="flex flex-col min-w-0">
             <span
-              style={{
-                fontSize: "17px",
-                fontWeight: 900,
-                color: "#2B2620",
-                lineHeight: 1,
-                fontFamily: "var(--font-cairo), sans-serif",
-              }}
+              className="text-sm sm:text-base md:text-lg font-black text-[#2B2620] leading-none tracking-tight truncate group-hover:text-[#9C7A3F] transition-colors"
+              style={{ fontFamily: "var(--font-cairo), sans-serif" }}
             >
               Cihangir
             </span>
-            <span
-              style={{
-                fontSize: "10px",
-                fontWeight: 700,
-                color: "#9C7A3F",
-                textTransform: "uppercase",
-                letterSpacing: "0.12em",
-                marginTop: "2px",
-              }}
-            >
+            <span className="text-[8px] sm:text-[9.5px] font-bold text-[#9C7A3F] uppercase tracking-wider truncate mt-0.5 sm:mt-1">
               Ev Yemekleri & Pide
             </span>
           </div>
         </Link>
 
-        {/* Right Side Controls */}
-        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+        {/* Right Controls: Currency, Language & Navigation Menu */}
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           <CurrencySwitcher />
           <LanguageSwitcher currentLocale={locale} />
 
-          {/* Navigation Drawer Button */}
-          <div style={{ position: "relative" }} ref={menuRef}>
+          {/* Navigation Drawer Menu Button */}
+          <div className="relative inline-block" ref={menuRef}>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              style={{
-                width: "38px",
-                height: "38px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                borderRadius: "6px",
-                border: isMenuOpen
-                  ? "1px solid #9C7A3F"
-                  : "1px solid rgba(156, 122, 63, 0.35)",
-                backgroundColor: isMenuOpen ? "rgba(156, 122, 63, 0.15)" : "#F7F2E7",
-                color: isMenuOpen ? "#9C7A3F" : "#2B2620",
-                cursor: "pointer",
-                transition: "all 0.2s",
-              }}
+              className={`w-9 h-9 flex items-center justify-center rounded-lg border text-[#2B2620] transition-colors cursor-pointer shadow-2xs ${
+                isMenuOpen
+                  ? "border-[#9C7A3F] bg-[#9C7A3F]/15 text-[#9C7A3F]"
+                  : "border-[#9C7A3F]/35 bg-[#F7F2E7] hover:bg-[#EDE3CE]"
+              }`}
               aria-label="Navigation Menu"
             >
-              <MenuIcon size={20} />
+              <MenuIcon size={19} />
             </button>
 
             {isMenuOpen && (
-              <div
-                style={{
-                  position: "absolute",
-                  right: 0,
-                  marginTop: "8px",
-                  width: "220px",
-                  borderRadius: "8px",
-                  backgroundColor: "#F7F2E7",
-                  border: "1px solid rgba(156, 122, 63, 0.3)",
-                  boxShadow: "0 10px 25px rgba(0,0,0,0.12)",
-                  overflow: "hidden",
-                  zIndex: 50,
-                  padding: "6px 0",
-                }}
-              >
+              <div className="absolute top-[calc(100%+6px)] end-0 w-52 rounded-xl bg-[#F7F2E7] border border-[#9C7A3F]/30 shadow-xl overflow-hidden z-50 p-1.5 backdrop-blur-md animate-in fade-in zoom-in-95 duration-150">
                 <Link
                   href={`/${locale}`}
                   onClick={() => setIsMenuOpen(false)}
-                  style={{
-                    padding: "10px 16px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "12px",
-                    fontSize: "13px",
-                    fontWeight: 600,
-                    color: "#2B2620",
-                    transition: "background-color 0.15s",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#EDE3CE")}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+                  className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                 >
-                  <span style={{ color: "#4E5F4C" }}>
+                  <span className="text-[#4E5F4C]">
                     <HomeIcon size={18} />
                   </span>
                   <span>{dict.home || "Ana Sayfa"}</span>
@@ -175,40 +91,19 @@ export default function Header({ locale, dict }: HeaderProps) {
                 <Link
                   href={`/${locale}/menu`}
                   onClick={() => setIsMenuOpen(false)}
-                  style={{
-                    padding: "10px 16px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "12px",
-                    fontSize: "13px",
-                    fontWeight: 600,
-                    color: "#2B2620",
-                    transition: "background-color 0.15s",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#EDE3CE")}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+                  className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-semibold text-[#2B2620] hover:bg-[#EDE3CE] transition-colors"
                 >
-                  <span style={{ color: "#4E5F4C" }}>
+                  <span className="text-[#4E5F4C]">
                     <BookOpenIcon size={18} />
                   </span>
                   <span>{dict.menu || "Menü"}</span>
                 </Link>
 
-                <div style={{ height: "1px", backgroundColor: "rgba(156, 122, 63, 0.2)", margin: "4px 0" }} />
+                <div className="h-px bg-[#9C7A3F]/20 my-1" />
 
                 <a
                   href="tel:+902122513696"
-                  style={{
-                    padding: "10px 16px",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "12px",
-                    fontSize: "13px",
-                    fontWeight: 700,
-                    color: "#9C7A3F",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#EDE3CE")}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+                  className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-bold text-[#9C7A3F] hover:bg-[#EDE3CE] transition-colors"
                 >
                   <PhoneIcon size={16} />
                   <span>{dict.contact || "İletişim & Sipariş"}</span>
