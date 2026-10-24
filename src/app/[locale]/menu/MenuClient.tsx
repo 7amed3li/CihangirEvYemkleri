@@ -129,12 +129,14 @@ export default function MenuClient({
 
         {/* Smart Filters with optional Bugünün Yemekleri filter */}
         <div className="bg-[#F7F2E7] border-b border-[#9C7A3F]/20 py-1">
-          <SmartFilters
-            activeFilter={activeFilter}
-            setActiveFilter={handleFilterSelect}
-            dict={dict}
-            hasDailyMenu={hasDailyMenu}
-          />
+          <div className="max-w-5xl mx-auto px-2.5 sm:px-5">
+            <SmartFilters
+              activeFilter={activeFilter}
+              setActiveFilter={handleFilterSelect}
+              dict={dict}
+              hasDailyMenu={hasDailyMenu}
+            />
+          </div>
         </div>
       </div>
 
