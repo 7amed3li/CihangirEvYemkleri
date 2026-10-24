@@ -714,6 +714,63 @@ const rawMenuData: MenuCategory[] = [
   },
 ];
 
+export const GLUTEN_FREE_DISH_IDS = new Set<string>([
+  // Ana Yemekler (Naturally gluten-free meats, stews & vegetables)
+  "baget-firin",
+  "biber-dolmasi",
+  "ciftlik-kebabi",
+  "et-sote",
+  "etli-nohut",
+  "firinda-tavuk",
+  "guvec",
+  "ispanak",
+  "kara-lahana-dolmasi",
+  "karniyarik",
+  "kavurma",
+  "kuru-fasulye",
+  "kuzu-incik",
+  "mantar-tavuk-sote",
+  "musakka",
+  "pirasa",
+  "tas-kebabi-500",
+  "tas-kebabi-350",
+  "tavuk-haslama",
+  "tavuk-sote",
+  "taze-fasulye",
+  "turlu",
+
+  // Salatalar & Meze
+  "cacik",
+  "coban-salata",
+  "havuc-tarator",
+  "mevsim-salatasi",
+  "semizotu",
+
+  // Yan Ürünler
+  "yogurt",
+
+  // Tatlılar (Rice & milk pudding with no wheat flour)
+  "firinda-sutlac",
+
+  // İçecekler (All naturally gluten-free)
+  "ayran",
+  "bitki-caylari",
+  "cay",
+  "turk-kahvesi",
+  "soda",
+  "su",
+  "cola",
+  "fanta",
+  "meyve-sulari",
+
+  // Az Menü (Gluten-free portioned dishes)
+  "az-kuru",
+  "az-sebze-yemegi",
+  "az-et-yemegi",
+  "az-tavuk",
+  "az-dolma",
+]);
+
 export const menuData: MenuCategory[] = rawMenuData.map((cat) => {
   const catTrans = CATEGORY_TRANSLATIONS[cat.id];
   return {
@@ -732,6 +789,11 @@ export const menuData: MenuCategory[] = rawMenuData.map((cat) => {
     },
     items: cat.items.map((item) => {
       const trans = DISH_TRANSLATIONS[item.id];
+      const tags = new Set(item.tags || []);
+      if (GLUTEN_FREE_DISH_IDS.has(item.id)) {
+        tags.add("gluten-free");
+      }
+
       return {
         ...item,
         name: {
@@ -748,6 +810,7 @@ export const menuData: MenuCategory[] = rawMenuData.map((cat) => {
         },
         description: trans?.desc?.tr || item.description,
         descriptions: trans?.desc,
+        tags: Array.from(tags),
       };
     }),
   };

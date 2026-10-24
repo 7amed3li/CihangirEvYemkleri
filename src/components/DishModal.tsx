@@ -182,6 +182,18 @@ export default function DishModal({
                       Acılı
                     </span>
                   )}
+                  {tags.includes("gluten-free") && (
+                    <span className="px-2.5 py-0.5 bg-[#5C6E58]/15 text-[#3E523A] border border-[#5C6E58]/35 text-xs font-bold rounded-md uppercase tracking-wider flex items-center gap-1">
+                      <span>🌾</span>
+                      <span>
+                        {activeLang === "ar"
+                          ? "خالي من الغلوتين"
+                          : activeLang === "en"
+                          ? "Gluten-Free"
+                          : "Glütensiz"}
+                      </span>
+                    </span>
+                  )}
                   {tags.includes("vegetarian") && (
                     <span className="px-2.5 py-0.5 bg-[#4E5F4C]/15 text-[#4E5F4C] border border-[#4E5F4C]/30 text-xs font-bold rounded-md uppercase tracking-wider">
                       Vejetaryen

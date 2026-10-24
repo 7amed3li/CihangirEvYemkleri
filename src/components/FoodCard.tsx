@@ -140,6 +140,11 @@ export default function FoodCard({ item }: MenuItemProps) {
                 Acılı
               </span>
             )}
+            {item.tags?.includes("gluten-free") && (
+              <span className="px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-[#FFFFFF] bg-[#5C6E58] rounded-[3px] font-bold">
+                {activeLang === "ar" ? "بدون غلوتين" : activeLang === "en" ? "Gluten-Free" : "Glütensiz"}
+              </span>
+            )}
             {item.tags?.includes("vegetarian") && (
               <span className="px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-[#EAF0E6] bg-[#4E5F4C] rounded-[3px] font-bold">
                 Veg
