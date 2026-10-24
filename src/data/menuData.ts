@@ -154,6 +154,7 @@ const rawMenuData: MenuCategory[] = [
         id: "kara-lahana-dolmasi",
         name: { tr: "Kara lahana dolması", en: "Stuffed Collard Greens", ar: "محشي ورق الكرنب الأسود" },
         price: 370,
+        image: "/images/products/kara-lahana-dolmasi.jpg",
         tags: [],
       },
       {

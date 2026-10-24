@@ -7,6 +7,7 @@ import FeaturedDishesShowcase from "@/components/FeaturedDishesShowcase";
 import MenuCategoryBar from "@/components/MenuCategoryBar";
 import SmartFilters from "@/components/SmartFilters";
 import CartDrawer from "@/components/CartDrawer";
+import DishModal from "@/components/DishModal";
 import { OttomanStar } from "@/components/BrandIcons";
 import { PublicDailyMenu, PublicOffer } from "@/lib/db/menu-loader";
 
@@ -63,15 +64,39 @@ export default function MenuClient({
     }
   }, [activeCategories, activeCategory]);
 
-  // Restore state from URL hash
+  const [selectedDishModal, setSelectedDishModal] = useState<any | null>(null);
+
+  // Restore state from URL hash (supports category, filter, and direct dish ID e.g. #kara-lahana-dolmasi)
   useEffect(() => {
     const hash = window.location.hash.slice(1);
     if (!hash) return;
-    const [catPart, queryPart] = hash.split("?");
-    const catId = catPart?.trim();
-    if (catId && activeCategories.find((c) => c.id === catId)) {
-      setActiveCategory(catId);
+    const [targetPart, queryPart] = hash.split("?");
+    const cleanId = targetPart?.trim();
+
+    if (cleanId) {
+      // 1. Check if hash matches a category
+      const matchedCat = activeCategories.find((c) => c.id === cleanId);
+      if (matchedCat) {
+        setActiveCategory(matchedCat.id);
+      } else {
+        // 2. Check if hash matches a specific dish item ID
+        for (const cat of activeCategories) {
+          const matchedItem = cat.items.find((i) => i.id === cleanId);
+          if (matchedItem) {
+            setActiveCategory(cat.id);
+            setSelectedDishModal(matchedItem);
+            setTimeout(() => {
+              const el = document.getElementById(cleanId);
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth", block: "center" });
+              }
+            }, 300);
+            break;
+          }
+        }
+      }
     }
+
     if (queryPart) {
       const params = new URLSearchParams(queryPart);
       const filter = params.get("filter");
@@ -180,6 +205,17 @@ export default function MenuClient({
 
       {/* Floating Cart Button & Slide-Over Drawer */}
       <CartDrawer />
+
+      {/* Auto-opened Dish Modal from URL Hash (e.g. #kara-lahana-dolmasi) */}
+      {selectedDishModal && (
+        <DishModal
+          isOpen={Boolean(selectedDishModal)}
+          setIsOpen={(open) => {
+            if (!open) setSelectedDishModal(null);
+          }}
+          item={selectedDishModal}
+        />
+      )}
     </div>
   );
 }

@@ -63,7 +63,7 @@ export default function DishModal({
     e.stopPropagation();
     try {
       const baseUrl = window.location.origin;
-      const dishUrl = `/${lang}/menu#${item.id}`;
+      const dishUrl = `/${activeLang}/dish/${item.id}`;
       await navigator.clipboard.writeText(`${baseUrl}${dishUrl}`);
       setIsCopied(true);
       setTimeout(() => setIsCopied(false), 2000);
