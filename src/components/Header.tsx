@@ -28,7 +28,7 @@ export default function Header({ locale, dict }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#F7F2E7] border-b-2 border-[#9C7A3F]/35 shadow-xs">
-      <div className="max-w-5xl mx-auto px-2.5 sm:px-4 md:px-6 h-14 sm:h-16 flex items-center justify-between gap-2">
+      <div className="max-w-5xl mx-auto px-2.5 sm:px-4 md:px-6 h-16 flex items-center justify-between gap-2">
         {/* Brand Logo & Name */}
         <Link
           href={`/${locale}`}

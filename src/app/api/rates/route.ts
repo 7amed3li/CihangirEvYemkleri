@@ -1,13 +1,14 @@
 import { NextResponse } from "next/server";
 
-// Server-side cached exchange rate proxy adapted from Kardeşler
-// 5 minutes in-memory caching + stale-while-revalidate headers
+// Server-side cached exchange rate proxy.
+// Fetches from the internet AT MOST once every 12 hours.
+// All other requests are served instantly from in-memory cache.
 let cachedRates: any = null;
 let cacheTimestamp = 0;
-const CACHE_DURATION_MS = 5 * 60 * 1000; // 5 minutes
+const CACHE_DURATION_MS = 12 * 60 * 60 * 1000; // 12 hours
 
 const cacheHeaders = {
-  "Cache-Control": "public, max-age=0, s-maxage=300, stale-while-revalidate=300",
+  "Cache-Control": "public, max-age=0, s-maxage=43200, stale-while-revalidate=43200",
 };
 
 export const DEFAULT_FALLBACK_RATES = {
@@ -27,13 +28,15 @@ export const DEFAULT_FALLBACK_RATES = {
 export async function GET() {
   const now = Date.now();
 
-  // Return cached rates if fresh
+  // Return cached rates if still fresh
   if (cachedRates && now - cacheTimestamp < CACHE_DURATION_MS) {
+    const remainingMs = CACHE_DURATION_MS - (now - cacheTimestamp);
     return NextResponse.json(
       {
         ...cachedRates,
         cached: true,
-        nextUpdate: Math.round((CACHE_DURATION_MS - (now - cacheTimestamp)) / 1000),
+        nextRefreshIn: `${Math.round(remainingMs / 1000 / 60)} دقيقة / ${(remainingMs / 1000 / 60 / 60).toFixed(1)}h`,
+        nextRefreshInMs: Math.round(remainingMs),
       },
       { headers: cacheHeaders }
     );

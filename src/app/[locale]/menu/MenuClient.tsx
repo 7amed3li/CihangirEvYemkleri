@@ -7,6 +7,7 @@ import FeaturedDishesShowcase from "@/components/FeaturedDishesShowcase";
 import MenuCategoryBar from "@/components/MenuCategoryBar";
 import SmartFilters from "@/components/SmartFilters";
 import CartDrawer from "@/components/CartDrawer";
+import { OttomanStar } from "@/components/BrandIcons";
 import { PublicDailyMenu, PublicOffer } from "@/lib/db/menu-loader";
 
 interface MenuClientProps {

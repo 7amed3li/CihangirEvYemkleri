@@ -82,134 +82,127 @@ export default function MenuCategoryBar({
     return <ForkKnife size={22} weight="regular" />;
   };
 
+  const categoryTitle =
+    activeLang === "ar"
+      ? "تصفح أقسام القائمة"
+      : activeLang === "fa"
+      ? "دسته‌بندی‌های منو"
+      : activeLang === "en"
+      ? "Explore Categories"
+      : activeLang === "ru"
+      ? "Категории меню"
+      : activeLang === "fr"
+      ? "Parcourir les catégories"
+      : activeLang === "de"
+      ? "Kategorien durchsuchen"
+      : activeLang === "it"
+      ? "Sfoglia le categorie"
+      : activeLang === "es"
+      ? "Explorar categorías"
+      : activeLang === "zh"
+      ? "浏览菜单分类"
+      : "Menüyü İncele";
+
   return (
-    <div className="relative w-full bg-[#F7F2E7] pt-1 pb-2">
-      {/* Decorative Star Divider */}
-      <div className="max-w-5xl mx-auto px-4 my-1 flex items-center justify-center gap-2">
-        <div className="h-[1px] bg-gradient-to-r from-transparent via-[#9C7A3F]/30 to-transparent flex-grow max-w-[120px]" />
-        <OttomanStar size={10} className="text-[#9C7A3F]/50 shrink-0" />
-        <div className="h-[1px] bg-gradient-to-r from-transparent via-[#9C7A3F]/30 to-transparent flex-grow max-w-[120px]" />
-      </div>
+    <div className="w-full">
+      <div className="bg-[#FAF7F0] border-2 border-[#9C7A3F]/35 rounded-xl p-2 sm:p-3 shadow-xs relative">
+        <div className="px-1 mb-1.5 flex items-center justify-between">
+          <h3
+            className="text-xs sm:text-sm font-bold text-[#7A7364] tracking-wide flex items-center gap-1.5"
+            style={{ fontFamily: "var(--font-cairo)" }}
+          >
+            <span className="text-[#9C7A3F]">
+              <ForkKnife size={15} weight="bold" />
+            </span>
+            <span>{categoryTitle}</span>
+          </h3>
+        </div>
 
-      <div className="max-w-5xl mx-auto px-2.5 sm:px-5">
-        <div className="bg-[#FAF7F0] border-2 border-[#9C7A3F]/35 rounded-xl p-2.5 sm:p-3.5 shadow-xs relative">
-          <div className="px-0.5 mb-2">
-            <h3
-              className="text-xs sm:text-sm font-bold text-[#7A7364] tracking-wide flex items-center gap-1.5"
-              style={{ fontFamily: "var(--font-cairo)" }}
+        <div className="relative">
+          {/* Scroll Left Button */}
+          {canScrollLeft && (
+            <button
+              onClick={() => scroll(-1)}
+              aria-label="Scroll left"
+              className="absolute start-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-r from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent"
             >
-              <span className="text-[#9C7A3F]">
-                <ForkKnife size={15} weight="bold" />
-              </span>
-              <span>
-                {activeLang === "ar"
-                  ? "تصفح أقسام القائمة"
-                  : activeLang === "fa"
-                  ? "دسته‌بندی‌های منو"
-                  : activeLang === "en"
-                  ? "Explore Categories"
-                  : activeLang === "ru"
-                  ? "Категории меню"
-                  : activeLang === "fr"
-                  ? "Parcourir les catégories"
-                  : activeLang === "de"
-                  ? "Kategorien durchsuchen"
-                  : activeLang === "it"
-                  ? "Sfoglia le categorie"
-                  : activeLang === "es"
-                  ? "Explorar categorías"
-                  : activeLang === "zh"
-                  ? "浏览菜单分类"
-                  : "Menüyü İncele"}
-              </span>
-            </h3>
-          </div>
+              <CaretLeft size={18} weight="bold" className="text-[#2B2620]" />
+            </button>
+          )}
 
-          <div className="relative">
-            {/* Scroll Left Button */}
-            {canScrollLeft && (
-              <button
-                onClick={() => scroll(-1)}
-                aria-label="Scroll left"
-                className="absolute start-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-r from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent"
-              >
-                <CaretLeft size={18} weight="bold" className="text-[#2B2620]" />
-              </button>
-            )}
-
-            {/* Scroll Right Button */}
-            {canScrollRight && (
-              <button
-                onClick={() => scroll(1)}
-                aria-label="Scroll right"
-                className="absolute end-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-l from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent"
-              >
-                <CaretRight size={18} weight="bold" className="text-[#2B2620]" />
-              </button>
-            )}
-
-            <div
-              ref={scrollRef}
-              className="flex items-start gap-2 sm:gap-3 px-0.5 pe-8 overflow-x-auto no-scrollbar pb-0.5 pt-0.5"
+          {/* Scroll Right Button */}
+          {canScrollRight && (
+            <button
+              onClick={() => scroll(1)}
+              aria-label="Scroll right"
+              className="absolute end-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-l from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent"
             >
-              {categories.map((cat) => {
-                const isActive = activeCategory === cat.id;
-                const catTrans = CATEGORY_TRANSLATIONS[cat.id];
-                const catName =
-                  catTrans?.[activeLang as Locale] ||
-                  (cat.category as any)?.[activeLang] ||
-                  cat.category.tr;
+              <CaretRight size={18} weight="bold" className="text-[#2B2620]" />
+            </button>
+          )}
 
-                return (
-                  <button
-                    key={cat.id}
-                    data-cat={cat.id}
-                    onClick={() => setActiveCategory(cat.id)}
-                    className={`relative shrink-0 flex flex-col items-center gap-1 w-[68px] sm:w-[80px] group transition-all duration-200 ${
-                      isActive ? "scale-105" : "hover:scale-105"
+          <div
+            ref={scrollRef}
+            className="flex items-start gap-2 sm:gap-3 px-0.5 pe-8 overflow-x-auto no-scrollbar pb-0.5 pt-0.5"
+          >
+            {categories.map((cat) => {
+              const isActive = activeCategory === cat.id;
+              const catTrans = CATEGORY_TRANSLATIONS[cat.id];
+              const catName =
+                catTrans?.[activeLang as Locale] ||
+                (cat.category as any)?.[activeLang] ||
+                cat.category.tr;
+
+              return (
+                <button
+                  key={cat.id}
+                  data-cat={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`relative shrink-0 flex flex-col items-center gap-1 w-[68px] sm:w-[80px] group transition-all duration-200 ${
+                    isActive ? "scale-105" : "hover:scale-105"
+                  }`}
+                >
+                  {/* Thumbnail / Icon Container */}
+                  <div
+                    className={`relative w-[46px] h-[46px] sm:w-[56px] sm:h-[56px] rounded-lg sm:rounded-xl overflow-hidden transition-all duration-200 flex items-center justify-center ${
+                      isActive
+                        ? "border-2 border-[#4E5F4C] bg-[#EDE3CE] shadow-xs text-[#4E5F4C]"
+                        : "border border-[#9C7A3F]/30 bg-[#EDE3CE] text-[#9C7A3F] group-hover:border-[#9C7A3F]"
                     }`}
                   >
-                    {/* Thumbnail / Icon Container */}
-                    <div
-                      className={`relative w-[46px] h-[46px] sm:w-[56px] sm:h-[56px] rounded-lg sm:rounded-xl overflow-hidden transition-all duration-200 flex items-center justify-center ${
-                        isActive
-                          ? "border-2 border-[#4E5F4C] bg-[#EDE3CE] shadow-xs text-[#4E5F4C]"
-                          : "border border-[#9C7A3F]/30 bg-[#EDE3CE] text-[#9C7A3F] group-hover:border-[#9C7A3F]"
-                      }`}
-                    >
-                      {cat.image ? (
-                        <Image
-                          src={cat.image}
-                          alt={catName}
-                          fill
-                          style={{ objectFit: "cover" }}
-                          sizes="56px"
-                          className="transition-transform duration-300 group-hover:scale-105"
-                        />
-                      ) : (
-                        <div className="flex items-center justify-center">
-                          {getCategoryIcon(cat.id)}
-                        </div>
-                      )}
-                    </div>
+                    {cat.image ? (
+                      <Image
+                        src={cat.image}
+                        alt={catName}
+                        fill
+                        style={{ objectFit: "cover" }}
+                        sizes="56px"
+                        className="transition-transform duration-300 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="flex items-center justify-center">
+                        {getCategoryIcon(cat.id)}
+                      </div>
+                    )}
+                  </div>
 
-                    <span
-                      className={`text-[9px] sm:text-[10px] font-bold text-center leading-tight px-0.5 transition-colors line-clamp-2 w-full ${
-                        isActive
-                          ? "text-[#2B2620]"
-                          : "text-[#7A7364] group-hover:text-[#2B2620]"
-                      }`}
-                      style={{ fontFamily: "var(--font-cairo)" }}
-                    >
-                      {catName}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
+                  <span
+                    className={`text-[9px] sm:text-[10px] font-bold text-center leading-tight px-0.5 transition-colors line-clamp-2 w-full ${
+                      isActive
+                        ? "text-[#2B2620]"
+                        : "text-[#7A7364] group-hover:text-[#2B2620]"
+                    }`}
+                    style={{ fontFamily: "var(--font-cairo)" }}
+                  >
+                    {catName}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
     </div>
   );
 }
+

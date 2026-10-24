@@ -2,19 +2,20 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { useCurrency, CurrencyCode } from "@/context/CurrencyContext";
+import FlagIcon from "./FlagIcon";
 
 const CURRENCIES: {
   code: CurrencyCode;
   label: string;
   symbol: string;
-  flag: string;
+  country: string;
 }[] = [
-  { code: "TRY", label: "Türk Lirası", symbol: "₺", flag: "🇹🇷" },
-  { code: "USD", label: "US Dollar", symbol: "$", flag: "🇺🇸" },
-  { code: "EUR", label: "Euro", symbol: "€", flag: "🇪🇺" },
-  { code: "GBP", label: "British Pound", symbol: "£", flag: "🇬🇧" },
-  { code: "SAR", label: "ريال سعودي", symbol: "ر.س", flag: "🇸🇦" },
-  { code: "RUB", label: "Рубль", symbol: "₽", flag: "🇷🇺" },
+  { code: "TRY", label: "Türk Lirası", symbol: "₺", country: "tr" },
+  { code: "USD", label: "US Dollar", symbol: "$", country: "us" },
+  { code: "EUR", label: "Euro", symbol: "€", country: "eu" },
+  { code: "GBP", label: "British Pound", symbol: "£", country: "gb" },
+  { code: "SAR", label: "ريال سعودي", symbol: "ر.س", country: "sa" },
+  { code: "RUB", label: "Рубль", symbol: "₽", country: "ru" },
 ];
 
 export default function CurrencySwitcher() {
@@ -41,11 +42,11 @@ export default function CurrencySwitcher() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-label={`Currency: ${currency}`}
-        className="flex items-center gap-1 sm:gap-1.5 h-9 px-2 sm:px-2.5 rounded-lg border border-[#9C7A3F]/40 bg-[#F7F2E7] hover:bg-[#EDE3CE] text-[#2B2620] text-xs font-semibold shadow-2xs transition-all cursor-pointer"
+        className="flex items-center gap-1.5 h-9 px-2 sm:px-2.5 rounded-lg border border-[#9C7A3F]/40 bg-[#FAF7F0] hover:bg-[#EDE3CE] text-[#2B2620] text-xs font-semibold shadow-2xs transition-all cursor-pointer"
       >
-        <span className="text-sm sm:text-base leading-none select-none">{currentObj.flag}</span>
+        <FlagIcon country={currentObj.country} size={17} />
         <span className="font-bold text-[#9C7A3F]">{currentObj.symbol}</span>
-        <span className="font-semibold text-[#2B2620] text-[11px] sm:text-xs">{currentObj.code}</span>
+        <span className="hidden sm:inline font-semibold text-[#2B2620] text-xs">{currentObj.code}</span>
         <span
           className={`text-[8px] text-[#7A7364] transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
@@ -56,7 +57,7 @@ export default function CurrencySwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute top-[calc(100%+6px)] end-0 w-44 bg-[#F7F2E7] border border-[#9C7A3F]/35 rounded-xl shadow-xl z-50 p-1.5 backdrop-blur-md">
+        <div className="absolute top-[calc(100%+6px)] end-0 w-44 bg-[#FAF7F0] border border-[#9C7A3F]/35 rounded-xl shadow-xl z-50 p-1.5 backdrop-blur-md">
           <div className="px-2 py-1 text-[10px] font-bold text-[#9C7A3F] uppercase tracking-wider border-b border-[#9C7A3F]/20 mb-1 flex items-center justify-between">
             <span>Döviz / Currency</span>
             <span className="text-[9px] font-normal text-[#7A7364]">Canlı Kur</span>
@@ -79,7 +80,7 @@ export default function CurrencySwitcher() {
                   }`}
                 >
                   <div className="flex items-center gap-2">
-                    <span className="text-base leading-none">{c.flag}</span>
+                    <FlagIcon country={c.country} size={16} />
                     <span>{c.code}</span>
                     <span
                       className={`text-[11px] ${
