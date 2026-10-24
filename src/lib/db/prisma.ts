@@ -8,31 +8,36 @@ const globalForPrisma = globalThis as unknown as {
   pgPool: Pool | undefined;
 };
 
-const connectionString = process.env.DATABASE_URL;
+function getPrismaClient(): PrismaClient {
+  if (globalForPrisma.prisma) return globalForPrisma.prisma;
 
-if (!connectionString) {
-  throw new Error("DATABASE_URL environment variable is missing.");
-}
+  const connectionString = process.env.DATABASE_URL;
+  if (!connectionString) {
+    throw new Error("DATABASE_URL environment variable is missing.");
+  }
 
-const pool =
-  globalForPrisma.pgPool ??
-  new Pool({
-    connectionString,
-    max: 10,
-    idleTimeoutMillis: 30000,
-    connectionTimeoutMillis: 5000,
-  });
+  const pool =
+    globalForPrisma.pgPool ??
+    new Pool({
+      connectionString,
+      max: 10,
+      idleTimeoutMillis: 30000,
+      connectionTimeoutMillis: 5000,
+    });
 
-const adapter = new PrismaPg(pool);
+  const adapter = new PrismaPg(pool);
 
-export const prisma =
-  globalForPrisma.prisma ??
-  new PrismaClient({
+  const client = new PrismaClient({
     adapter,
     log: process.env.NODE_ENV === "development" ? ["warn", "error"] : ["error"],
   });
 
-if (process.env.NODE_ENV !== "production") {
-  globalForPrisma.prisma = prisma;
-  globalForPrisma.pgPool = pool;
+  if (process.env.NODE_ENV !== "production") {
+    globalForPrisma.prisma = client;
+    globalForPrisma.pgPool = pool;
+  }
+
+  return client;
 }
+
+export const prisma = getPrismaClient();
