@@ -114,15 +114,15 @@ export default function FeaturedDishesShowcase({ items }: FeaturedDishesShowcase
                 >
                   {/* Flat Circular Avatar */}
                   <div className="relative w-[68px] h-[68px] sm:w-[84px] sm:h-[84px] rounded-full p-[2px] bg-[#9C7A3F]/30 group-hover:bg-[#9C7A3F] transition-colors shadow-xs">
-                    <div className="relative w-full h-full rounded-full overflow-hidden bg-[#EDE3CE] border border-[#F7F2E7] flex items-center justify-center p-0.5">
+                    <div className="relative w-full h-full rounded-full overflow-hidden bg-[#EDE3CE] border border-[#F7F2E7] flex items-center justify-center">
                       {feat.image || item.image ? (
                         <Image
                           src={feat.image || item.image!}
                           alt={translatedName}
                           fill
-                          style={{ objectFit: "contain" }}
+                          style={{ objectFit: "cover" }}
                           sizes="84px"
-                          className="transition-transform duration-500 group-hover:scale-105 p-0.5"
+                          className="transition-transform duration-500 group-hover:scale-110"
                         />
                       ) : (
                         <div className="text-[#9C7A3F] group-hover:scale-110 transition-transform">

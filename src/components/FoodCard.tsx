@@ -80,17 +80,25 @@ export default function FoodCard({ item }: MenuItemProps) {
                 src={item.image}
                 alt={name}
                 fill
-                style={{ objectFit: "contain" }}
-                sizes="(max-width: 768px) 100vw, 160px"
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 128px, 160px"
               />
             </div>
           ) : (
-            <div className="text-[#9C7A3F]/60 group-hover:scale-110 transition-transform duration-300">
-              {item.id.includes("pide") ? (
-                <StoneOven size={36} />
-              ) : (
-                <CookingPot size={36} />
-              )}
+            <div
+              className="absolute inset-0 flex items-center justify-center"
+              style={{
+                background:
+                  "linear-gradient(135deg, #EDE3CE 0%, #E0D5BF 100%)",
+              }}
+            >
+              <div className="text-[#9C7A3F]/50 group-hover:scale-110 transition-transform duration-300">
+                {item.id.includes("pide") ? (
+                  <StoneOven size={40} />
+                ) : (
+                  <CookingPot size={40} />
+                )}
+              </div>
             </div>
           )}
 
