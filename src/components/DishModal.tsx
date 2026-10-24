@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import { useAppContext } from "@/context/AppContext";
 import { useMounted } from "@/hooks/useMounted";
+import { useParams } from "next/navigation";
 import { X, MagnifyingGlassPlus, Plus, Minus, ShareNetwork, Check } from "@phosphor-icons/react";
 import { CookingPot, StoneOven } from "./BrandIcons";
 import { getDishDisplay } from "@/data/dishTranslations";
@@ -40,11 +41,16 @@ export default function DishModal({
   const isMounted = useMounted();
   const [isFullscreenImage, setIsFullscreenImage] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
+  const params = useParams();
+  const activeLang =
+    (typeof params?.locale === "string" ? params.locale : null) ||
+    lang ||
+    "tr";
 
   const { turkishTitle, localizedName, localizedDesc, formattedDesc } =
-    getDishDisplay(item, lang);
+    getDishDisplay(item, activeLang);
 
-  const isRTL = lang === "ar" || lang === "fa";
+  const isRTL = activeLang === "ar" || activeLang === "fa";
   const displayPrice = convertPrice(item?.price);
   const symbol = getCurrencySymbol();
   const image = customImage || item?.image;
@@ -139,7 +145,7 @@ export default function DishModal({
                   >
                     {turkishTitle}
                   </h2>
-                  {lang !== "tr" && localizedName && (
+                  {activeLang !== "tr" && localizedName && (
                     <span
                       className="text-sm font-semibold text-[#9C7A3F]"
                       style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}
@@ -191,23 +197,23 @@ export default function DishModal({
                     className="text-xs font-bold text-[#9C7A3F] mb-1 uppercase tracking-widest"
                     style={{ fontFamily: "var(--font-cairo)" }}
                   >
-                    {lang === "ar"
+                    {activeLang === "ar"
                       ? "التفاصيل والمكونات"
-                      : lang === "fa"
+                      : activeLang === "fa"
                       ? "جزئیات و ترکیبات"
-                      : lang === "ru"
+                      : activeLang === "ru"
                       ? "Описание и состав"
-                      : lang === "zh"
+                      : activeLang === "zh"
                       ? "菜品详情与风味"
-                      : lang === "fr"
+                      : activeLang === "fr"
                       ? "Détails & Ingrédients"
-                      : lang === "de"
+                      : activeLang === "de"
                       ? "Details & Zutaten"
-                      : lang === "it"
+                      : activeLang === "it"
                       ? "Dettagli & Ingredienti"
-                      : lang === "es"
+                      : activeLang === "es"
                       ? "Detalles e Ingredientes"
-                      : lang === "en"
+                      : activeLang === "en"
                       ? "Details & Description"
                       : "Detaylar"}
                   </h4>
@@ -215,7 +221,7 @@ export default function DishModal({
                     className="text-[#7A7364] leading-relaxed text-sm font-medium"
                     style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}
                   >
-                    {lang !== "tr" ? (
+                    {activeLang !== "tr" ? (
                       <>
                         <span className="font-bold text-[#2B2620]">{localizedName}: </span>
                         {localizedDesc}

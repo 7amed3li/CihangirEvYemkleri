@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { useParams } from "next/navigation";
 import { useAppContext } from "@/context/AppContext";
 import { Plus, Minus, CaretRight } from "@phosphor-icons/react";
 import { CookingPot, StoneOven } from "./BrandIcons";
@@ -26,18 +27,23 @@ export default function FoodCard({ item }: MenuItemProps) {
   const { convertPrice, getCurrencySymbol, addToCart, removeFromCart, getItemQuantity, lang } =
     useAppContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const params = useParams();
+  const activeLang =
+    (typeof params?.locale === "string" ? params.locale : null) ||
+    lang ||
+    "tr";
 
   const { turkishTitle, localizedName, localizedDesc, formattedDesc } =
-    getDishDisplay(item, lang);
+    getDishDisplay(item, activeLang);
 
   const isAvailable = item.isAvailable !== false;
-  const isRTL = lang === "ar" || lang === "fa";
+  const isRTL = activeLang === "ar" || activeLang === "fa";
   const displayPrice = convertPrice(item.price);
   const symbol = getCurrencySymbol();
   const qty = getItemQuantity(item.id);
   const isFeatured = item.tags?.includes("signature") || item.trending;
   const outOfStockLabel =
-    lang === "ar" ? "غير متوفر" : lang === "en" ? "Out of Stock" : "Tükendi";
+    activeLang === "ar" ? "غير متوفر" : activeLang === "en" ? "Out of Stock" : "Tükendi";
 
   const handleAdd = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -174,7 +180,7 @@ export default function FoodCard({ item }: MenuItemProps) {
                 className="text-xs text-[#7A7364] mt-1 line-clamp-2 leading-relaxed font-medium text-start"
                 style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}
               >
-                {lang !== "tr" ? (
+                {activeLang !== "tr" ? (
                   <>
                     <span className="font-semibold text-[#5A5344]">{localizedName}: </span>
                     {localizedDesc}

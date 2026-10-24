@@ -2,11 +2,14 @@
 
 import React, { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import { useParams } from "next/navigation";
 import { useAppContext } from "@/context/AppContext";
 import { MenuCategory } from "@/data/menuData";
 import { CaretLeft, CaretRight, ForkKnife, Coffee } from "@phosphor-icons/react";
 import { CupSoda } from "lucide-react";
 import { CookingPot, StoneOven, OttomanStar } from "./BrandIcons";
+import { CATEGORY_TRANSLATIONS } from "@/data/dishTranslations";
+import { Locale } from "@/i18n/translations";
 
 interface MenuCategoryBarProps {
   categories: MenuCategory[];
@@ -20,6 +23,11 @@ export default function MenuCategoryBar({
   setActiveCategory,
 }: MenuCategoryBarProps) {
   const { lang } = useAppContext();
+  const params = useParams();
+  const activeLang =
+    (typeof params?.locale === "string" ? params.locale : null) ||
+    lang ||
+    "tr";
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -90,9 +98,9 @@ export default function MenuCategoryBar({
               className="text-xs sm:text-sm font-bold text-[#7A7364] tracking-wide"
               style={{ fontFamily: "var(--font-cairo)" }}
             >
-              {lang === "ar"
+              {activeLang === "ar"
                 ? "تصفح أقسام القائمة"
-                : lang === "en"
+                : activeLang === "en"
                 ? "Explore Categories"
                 : "Menüyü İncele"}
             </h3>
@@ -127,8 +135,11 @@ export default function MenuCategoryBar({
             >
               {categories.map((cat) => {
                 const isActive = activeCategory === cat.id;
+                const catTrans = CATEGORY_TRANSLATIONS[cat.id];
                 const catName =
-                  cat.category[lang as "tr" | "en" | "ar"] || cat.category.tr;
+                  catTrans?.[activeLang as Locale] ||
+                  (cat.category as any)?.[activeLang] ||
+                  cat.category.tr;
 
                 return (
                   <button

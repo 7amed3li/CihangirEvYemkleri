@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { useParams } from "next/navigation";
 import { useAppContext } from "@/context/AppContext";
 import { menuData } from "@/data/menuData";
 import { CookingPot, StoneOven } from "./BrandIcons";
@@ -13,6 +14,13 @@ interface FeaturedDish {
     tr: string;
     en: string;
     ar: string;
+    ru?: string;
+    fa?: string;
+    fr?: string;
+    de?: string;
+    it?: string;
+    es?: string;
+    zh?: string;
   };
   image?: string;
 }
@@ -66,18 +74,38 @@ interface FeaturedDishesShowcaseProps {
 
 export default function FeaturedDishesShowcase({ items }: FeaturedDishesShowcaseProps = {}) {
   const { lang } = useAppContext();
+  const params = useParams();
+  const activeLang =
+    (typeof params?.locale === "string" ? params.locale : null) ||
+    lang ||
+    "tr";
   const [selectedDish, setSelectedDish] = useState<any | null>(null);
 
-  const isRTL = lang === "ar" || lang === "fa";
+  const isRTL = activeLang === "ar" || activeLang === "fa";
 
   const getBestSellersTitle = () => {
-    if (lang === "ar") return "الأكثر طلباً ومبيعاً";
-    if (lang === "en") return "Best Sellers & Specials";
-    if (lang === "ru") return "Хиты продаж";
-    if (lang === "fa") return "پرفروش‌ترین‌ها";
-    if (lang === "fr") return "Meilleures Ventes";
-    if (lang === "de") return "Bestseller";
-    return "En Çok Satanlar";
+    switch (activeLang) {
+      case "ar":
+        return "الأكثر طلباً ومبيعاً";
+      case "fa":
+        return "پرفروش‌ترین‌ها";
+      case "en":
+        return "Best Sellers & Specials";
+      case "ru":
+        return "Хиты продаж";
+      case "fr":
+        return "Meilleures Ventes";
+      case "de":
+        return "Bestseller";
+      case "it":
+        return "I Più Venduti";
+      case "es":
+        return "Los Más Vendidos";
+      case "zh":
+        return "热销推荐";
+      default:
+        return "En Çok Satanlar";
+    }
   };
 
   const allItems = items && items.length > 0 ? items : menuData.flatMap((c) => c.items);
@@ -103,7 +131,7 @@ export default function FeaturedDishesShowcase({ items }: FeaturedDishesShowcase
 
               const turkishTitle = item.name?.tr || feat.id;
               const translatedBadge =
-                feat.badge[lang as "tr" | "en" | "ar"] || feat.badge.tr;
+                (feat.badge as any)[activeLang] || feat.badge.tr;
 
               return (
                 <div

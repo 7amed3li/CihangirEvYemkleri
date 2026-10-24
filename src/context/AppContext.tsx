@@ -8,6 +8,7 @@ import React, {
   useCallback,
   useRef,
 } from "react";
+import { useParams, usePathname } from "next/navigation";
 import { DEFAULT_FALLBACK_RATES } from "@/app/api/rates/route";
 import { DISH_TRANSLATIONS } from "@/data/dishTranslations";
 
@@ -58,7 +59,22 @@ export function AppProvider({
   children: React.ReactNode;
   initialLocale?: string;
 }) {
-  const [lang] = useState(initialLocale);
+  const params = useParams();
+  const pathname = usePathname();
+  const routeLocale =
+    (typeof params?.locale === "string" ? params.locale : null) ||
+    (pathname ? pathname.split("/").filter(Boolean)[0] : null) ||
+    initialLocale ||
+    "tr";
+
+  const [lang, setLang] = useState(routeLocale);
+
+  useEffect(() => {
+    if (routeLocale && routeLocale !== lang) {
+      setLang(routeLocale);
+    }
+  }, [routeLocale, lang]);
+
   const [currency, setCurrency] = useState<CurrencyCode>("TRY");
   const [rates, setRates] = useState<Record<CurrencyCode, RateInfo>>(
     DEFAULT_FALLBACK_RATES.rates as Record<CurrencyCode, RateInfo>
