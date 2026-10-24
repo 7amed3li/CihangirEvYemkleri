@@ -12,14 +12,64 @@ interface FooterProps {
 export default function Footer({ locale, dict }: FooterProps) {
   const isRtl = locale === "ar" || locale === "fa";
 
+  const getMapTitle = () => {
+    switch (locale) {
+      case "ar":
+        return "الخريطة والموقع";
+      case "fa":
+        return "نقشه و موقعیت";
+      case "en":
+        return "Location & Map";
+      case "ru":
+        return "Карта и адрес";
+      case "fr":
+        return "Carte & Emplacement";
+      case "de":
+        return "Standort & Karte";
+      case "it":
+        return "Mappa e Posizione";
+      case "es":
+        return "Ubicación y Mapa";
+      case "zh":
+        return "地图与地址";
+      default:
+        return "Harita ve Ulaşım";
+    }
+  };
+
+  const getDirectionsLabel = () => {
+    switch (locale) {
+      case "ar":
+        return "فتح في خرائط جوجل";
+      case "fa":
+        return "مسیریابی با گوگل مپ";
+      case "en":
+        return "Open in Google Maps";
+      case "ru":
+        return "Открыть в Google Maps";
+      case "fr":
+        return "Ouvrir dans Google Maps";
+      case "de":
+        return "In Google Maps öffnen";
+      case "it":
+        return "Apri in Google Maps";
+      case "es":
+        return "Abrir en Google Maps";
+      case "zh":
+        return "在谷歌地图中打开";
+      default:
+        return "Google Haritalar'da Aç";
+    }
+  };
+
   return (
     <footer
       dir={isRtl ? "rtl" : "ltr"}
-      className="bg-[#F7F2E7] border-t border-[#9C7A3F]/25 pt-12 pb-24 sm:pb-32 px-4 text-start"
+      className="bg-[#F7F2E7] border-t-2 border-[#9C7A3F]/25 pt-10 pb-20 sm:pb-28 px-4 text-start"
     >
       <div className="max-w-6xl mx-auto">
         {/* Ottoman Divider */}
-        <div className="ottoman-divider max-w-md mx-auto mb-12"></div>
+        <div className="ottoman-divider max-w-md mx-auto mb-10"></div>
 
         {/* 4-Column Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10 text-start">
@@ -82,16 +132,16 @@ export default function Footer({ locale, dict }: FooterProps) {
                   className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
                 >
                   <span className="text-[#9C7A3F]">›</span>
-                  <span>Geleneksel Ev Yemekleri</span>
+                  <span>{locale === "ar" ? "الأطباق المنزلية اليومية" : "Geleneksel Ev Yemekleri"}</span>
                 </Link>
               </li>
               <li>
                 <Link
-                  href={`/${locale}/menu#pideler`}
+                  href={`/${locale}/menu#tas-firin-pideler`}
                   className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
                 >
                   <span className="text-[#9C7A3F]">›</span>
-                  <span>Taş Fırın Pideler</span>
+                  <span>{locale === "ar" ? "فطائر الفرن الحجري (بيدة)" : "Taş Fırın Pideler"}</span>
                 </Link>
               </li>
             </ul>
@@ -126,7 +176,7 @@ export default function Footer({ locale, dict }: FooterProps) {
                 className="text-[#2B2620] text-xs sm:text-sm font-medium leading-relaxed"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
-                Cihangir, Beyoğlu, İstanbul
+                Firuzağa, Firuzağa Camii Sk. No:1 A, 34425 Beyoğlu/İstanbul
               </p>
             </div>
             <div className="flex items-center gap-2.5 mb-2.5">
@@ -167,138 +217,54 @@ export default function Footer({ locale, dict }: FooterProps) {
             </div>
             <a
               href="tel:+902122513696"
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-md bg-[#4E5F4C] text-[#EAF0E6] hover:bg-[#3D4B3B] transition-colors font-bold text-xs sm:text-sm shadow-xs"
+              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#4E5F4C] text-[#EAF0E6] hover:bg-[#3D4B3B] transition-colors font-bold text-xs sm:text-sm shadow-xs"
             >
               <span>{dict?.orderPhone || "Telefonla Sipariş"}</span>
             </a>
           </div>
 
-          {/* Location & Map Preview Card */}
+          {/* Interactive Google Map Preview Card */}
           <div className="flex flex-col items-start text-start w-full">
             <h3 className="text-xs sm:text-sm font-bold text-[#9C7A3F] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#9C7A3F]"></span>
-              <span>Harita ve Ulaşım</span>
+              <span>{getMapTitle()}</span>
             </h3>
-            <div className="w-full h-36 rounded-xl relative bg-[#EDE3CE] overflow-hidden border border-[#9C7A3F]/35 shadow-xs flex flex-col items-center justify-center p-3">
-              <div className="w-8 h-8 rounded-full bg-[#4E5F4C] flex items-center justify-center text-white mb-2 shadow-xs">
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-              </div>
-              <p
-                className="text-xs font-bold text-[#2B2620] mb-1"
-                style={{ fontFamily: "var(--font-cairo)" }}
-              >
-                Cihangir Ev Yemekleri
-              </p>
-              <span className="text-[11px] font-semibold text-[#7A7364]">
-                Taksim Meydanı'na 5 dk
-              </span>
+            
+            <div className="w-full rounded-xl overflow-hidden border border-[#9C7A3F]/35 shadow-xs bg-[#EDE3CE] relative group">
+              <iframe
+                title="Cihangir Ev Yemekleri & Pide Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.8437998399587!2d28.981881676579626!3d41.03204907134707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab764fa6a1249%3A0x8e8fa65fecae72f2!2zRmnJtnV6YcSfYSwgRmnJtnV6YcSfYSBDYW1paSBTay4gTm86MSBBLCAzNDQyNSBCZXlvxJ9sdS_EsHN0YW5idWwsIFTDvHJraXll!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+                width="100%"
+                height="140"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-36 filter contrast-105"
+              />
             </div>
-          </div>
-        </div>
 
-        {/* Payment Methods Section (Identical to Kardeşler) */}
-        <div className="my-8 p-5 sm:p-7 rounded-2xl bg-[#F7F2E7] border border-[#9C7A3F]/30 shadow-xs text-center">
-          <div className="inline-flex items-center justify-center gap-3 mb-1.5">
-            <span className="h-px w-8 bg-[#9C7A3F]/40"></span>
-            <p
-              className="text-xs sm:text-sm font-black uppercase tracking-[0.25em] text-[#9C7A3F]"
-              style={{ fontFamily: "var(--font-inter)" }}
+            <a
+              href="https://maps.google.com/?q=Firuza%C4%9Fa,+Firuza%C4%9Fa+Camii+Sk.+No:1+A,+34425+Beyo%C4%9Flu/%C4%B0stanbul"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2.5 flex items-center justify-center gap-2 w-full py-2 px-3 rounded-lg border border-[#9C7A3F]/40 bg-[#FAF7F0] hover:bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] transition-all font-semibold text-xs shadow-2xs"
             >
-              {dict?.acceptedPayments || "Kabul Edilen Ödeme Yöntemleri"}
-            </p>
-            <span className="h-px w-8 bg-[#9C7A3F]/40"></span>
-          </div>
-          <p
-            className="text-xs text-[#7A7364] mb-5 font-medium"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
-            Nakit, tüm kredi kartları, temassız İstanbulkart ve kurumsal yemek kartları geçerlidir.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 sm:gap-3 max-w-4xl mx-auto">
-            {/* Nakit */}
-            <div className="h-11 rounded-lg px-3 py-1 flex items-center justify-center bg-[#2B2620] border border-[#2B2620]">
-              <span className="text-[11px] font-black text-[#EDE3CE] tracking-wider">
-                NAKİT / CASH
-              </span>
-            </div>
-
-            {/* Visa */}
-            <div className="h-11 rounded-lg px-3 py-1 flex items-center justify-center bg-white border border-[#9C7A3F]/20">
-              <span className="text-sm font-black text-[#1A1F71] tracking-widest italic">
-                VISA
-              </span>
-            </div>
-
-            {/* Mastercard */}
-            <div className="h-11 rounded-lg px-3 py-1 flex items-center justify-center bg-white border border-[#9C7A3F]/20 gap-1.5">
-              <div className="flex -space-x-1.5">
-                <span className="w-4 h-4 rounded-full bg-[#EB001B] inline-block"></span>
-                <span className="w-4 h-4 rounded-full bg-[#F79E1B]/90 inline-block"></span>
-              </div>
-              <span className="text-[10px] font-black text-black">mastercard</span>
-            </div>
-
-            {/* TROY */}
-            <div className="h-11 rounded-lg px-3 py-1 flex items-center justify-center bg-white border border-[#9C7A3F]/20">
-              <span className="text-xs font-black text-[#00579F] tracking-wider">
-                TR<span className="text-[#E30613]">O</span>Y
-              </span>
-            </div>
-
-            {/* İstanbulkart */}
-            <div className="h-11 rounded-lg px-3 py-1 flex items-center justify-center bg-white border border-[#9C7A3F]/20">
-              <span className="text-[10px] font-extrabold text-[#008375]">
-                istanbul<span className="text-[#E30613]">kart</span>
-              </span>
-            </div>
-
-            {/* Multinet */}
-            <div className="h-11 rounded-lg px-3 py-1 flex items-center justify-center bg-white border border-[#9C7A3F]/20">
-              <span className="text-[11px] font-extrabold text-[#E30613]">
-                multi<span className="text-[#2D3192]">net</span>
-              </span>
-            </div>
-
-            {/* Metropol */}
-            <div className="h-11 rounded-lg px-3 py-1 flex items-center justify-center bg-white border border-[#9C7A3F]/20">
-              <span className="text-xs font-black text-[#0A2540]">
-                metropol<span className="text-[#FF5A00]">card</span>
-              </span>
-            </div>
-
-            {/* Setcard */}
-            <div className="h-11 rounded-lg px-3 py-1 flex items-center justify-center bg-white border border-[#9C7A3F]/20">
-              <span className="text-xs font-black text-[#E6332A]">
-                SET<span className="text-[#1A1A1A]">CARD</span>
-              </span>
-            </div>
-
-            {/* Pluxee */}
-            <div className="h-11 rounded-lg px-3 py-1 flex items-center justify-center bg-[#2B2620] border border-[#2B2620]">
-              <span className="text-xs font-black text-[#00EB5E]">pluxee</span>
-            </div>
-
-            {/* Ticket */}
-            <div className="h-11 rounded-lg px-3 py-1 flex items-center justify-center bg-white border border-[#9C7A3F]/20">
-              <span className="text-[11px] font-black text-[#ED1C24]">Ticket</span>
-            </div>
+              <svg
+                className="w-4 h-4 text-[#9C7A3F]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+              <span>{getDirectionsLabel()}</span>
+            </a>
           </div>
         </div>
 
@@ -306,7 +272,7 @@ export default function Footer({ locale, dict }: FooterProps) {
         <div className="ottoman-divider max-w-sm mx-auto mb-6"></div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-start">
+        <div className="pt-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-start">
           <p
             className="text-[#7A7364] text-xs font-medium"
             style={{ fontFamily: "var(--font-inter)" }}
