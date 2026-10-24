@@ -85,7 +85,7 @@ export default function MenuCategoryBar({
 
       <div className="max-w-5xl mx-auto px-2.5 sm:px-5">
         <div className="bg-[#FAF7F0] border-2 border-[#9C7A3F]/35 rounded-xl p-2.5 sm:p-3.5 shadow-xs relative">
-          <div className="px-0.5 mb-2">
+          <div className="px-0.5 mb-2 hidden sm:block">
             <h3
               className="text-xs sm:text-sm font-bold text-[#7A7364] tracking-wide"
               style={{ fontFamily: "var(--font-cairo)" }}
@@ -135,7 +135,7 @@ export default function MenuCategoryBar({
                     key={cat.id}
                     data-cat={cat.id}
                     onClick={() => setActiveCategory(cat.id)}
-                    className={`relative shrink-0 flex flex-col items-center gap-1 w-[60px] sm:w-[72px] group transition-all duration-200 ${
+                    className={`relative shrink-0 flex flex-col items-center gap-1 w-[68px] sm:w-[80px] group transition-all duration-200 ${
                       isActive ? "scale-105" : "hover:scale-105"
                     }`}
                   >
@@ -164,7 +164,7 @@ export default function MenuCategoryBar({
                     </div>
 
                     <span
-                      className={`text-[9.5px] sm:text-[10.5px] font-bold text-center leading-tight px-0.5 transition-colors line-clamp-2 ${
+                      className={`text-[9px] sm:text-[10px] font-bold text-center leading-tight px-0.5 transition-colors line-clamp-2 w-full ${
                         isActive
                           ? "text-[#2B2620]"
                           : "text-[#7A7364] group-hover:text-[#2B2620]"

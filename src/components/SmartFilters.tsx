@@ -27,7 +27,7 @@ export default function SmartFilters({
   ];
 
   return (
-    <div className="px-4 py-2 flex flex-wrap items-center gap-2 bg-transparent">
+    <div className="px-3 py-1.5 flex items-center gap-1.5 bg-transparent overflow-x-auto no-scrollbar">
       {filters.map((f) => {
         const isActive = activeFilter === f.id;
 
@@ -35,14 +35,14 @@ export default function SmartFilters({
           <button
             key={f.id}
             onClick={() => setActiveFilter(isActive ? null : f.id)}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-semibold tracking-wider uppercase transition-colors border ${
+            className={`shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-md text-[10px] sm:text-xs font-semibold tracking-wider uppercase transition-colors border ${
               isActive
                 ? "bg-[#4E5F4C] text-white border-[#4E5F4C]"
                 : "bg-[#F7F2E7] border-[#9C7A3F]/30 text-[#2B2620] hover:border-[#9C7A3F]"
             }`}
           >
             <span>{f.label}</span>
-            {isActive && <X size={12} className="ms-1 opacity-80" />}
+            {isActive && <X size={11} className="ms-1 opacity-80" />}
           </button>
         );
       })}
