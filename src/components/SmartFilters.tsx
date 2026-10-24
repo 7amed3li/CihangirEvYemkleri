@@ -4,6 +4,7 @@ import React from "react";
 import { useParams } from "next/navigation";
 import { X } from "lucide-react";
 import { useAppContext } from "@/context/AppContext";
+import Twemoji from "./Twemoji";
 
 interface SmartFiltersProps {
   activeFilter: string | null;
@@ -15,7 +16,7 @@ interface SmartFiltersProps {
 const FILTER_ITEMS = [
   {
     id: "all",
-    icon: "🍽️",
+    emoji: "🍽️",
     label: {
       tr: "Tümü",
       en: "All Dishes",
@@ -31,7 +32,7 @@ const FILTER_ITEMS = [
   },
   {
     id: "gluten-free",
-    icon: "🌾",
+    emoji: "🌾",
     label: {
       tr: "Glütensiz",
       en: "Gluten-Free",
@@ -47,12 +48,12 @@ const FILTER_ITEMS = [
   },
   {
     id: "signature",
-    icon: "👨‍🍳",
+    emoji: "👨‍🍳",
     label: {
       tr: "Şefin Seçimi",
       en: "Chef's Special",
       ar: "توصية الشيف",
-      ru: "Выбор шефа",
+      ru: "Выбор шеفا",
       fa: "پیشنهاد سرآشپز",
       fr: "Spécialité du chef",
       de: "Empfehlung des Chefs",
@@ -63,7 +64,7 @@ const FILTER_ITEMS = [
   },
   {
     id: "vegetarian",
-    icon: "🌱",
+    emoji: "🌱",
     label: {
       tr: "Vejetaryen",
       en: "Vegetarian",
@@ -79,7 +80,7 @@ const FILTER_ITEMS = [
   },
   {
     id: "spicy",
-    icon: "🌶️",
+    emoji: "🌶️",
     label: {
       tr: "Acılı",
       en: "Spicy",
@@ -95,7 +96,7 @@ const FILTER_ITEMS = [
   },
   {
     id: "daily",
-    icon: "📅",
+    emoji: "📅",
     isDaily: true,
     label: {
       tr: "Bugünün Menüsü",
@@ -158,7 +159,7 @@ export default function SmartFilters({
                 : "bg-[#FAF7F0] border border-[#9C7A3F]/30 text-[#4A4335] hover:bg-[#EDE3CE] hover:border-[#9C7A3F]/60"
             }`}
           >
-            <span className="text-xs sm:text-sm leading-none">{f.icon}</span>
+            <Twemoji emoji={f.emoji} size={15} />
             <span>{localizedLabel}</span>
             {isActive && !isAll && (
               <X size={12} className="ms-0.5 opacity-80 hover:opacity-100" />

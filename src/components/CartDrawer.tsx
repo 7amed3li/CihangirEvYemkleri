@@ -16,6 +16,7 @@ import {
   ArrowRight,
   CaretRight,
 } from "@phosphor-icons/react";
+import Twemoji from "./Twemoji";
 import { CookingPot, StoneOven } from "./BrandIcons";
 
 export default function CartDrawer() {
@@ -200,9 +201,10 @@ export default function CartDrawer() {
               </div>
 
               {/* Kitchen Note Badge */}
-              <div className="bg-[#9C7A3F]/10 border-b border-[#9C7A3F]/20 px-4 py-2 text-[11px] text-[#5A5344] leading-relaxed">
+              <div className="bg-[#9C7A3F]/10 border-b border-[#9C7A3F]/20 px-4 py-2 text-[11px] text-[#5A5344] leading-relaxed flex items-center gap-1.5">
+                <Twemoji emoji="💡" size={14} />
                 <p style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}>
-                  💡 {noteText}
+                  {noteText}
                 </p>
               </div>
 
