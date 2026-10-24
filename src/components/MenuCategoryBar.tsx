@@ -93,16 +93,35 @@ export default function MenuCategoryBar({
 
       <div className="max-w-5xl mx-auto px-2.5 sm:px-5">
         <div className="bg-[#FAF7F0] border-2 border-[#9C7A3F]/35 rounded-xl p-2.5 sm:p-3.5 shadow-xs relative">
-          <div className="px-0.5 mb-2 hidden sm:block">
+          <div className="px-0.5 mb-2">
             <h3
-              className="text-xs sm:text-sm font-bold text-[#7A7364] tracking-wide"
+              className="text-xs sm:text-sm font-bold text-[#7A7364] tracking-wide flex items-center gap-1.5"
               style={{ fontFamily: "var(--font-cairo)" }}
             >
-              {activeLang === "ar"
-                ? "تصفح أقسام القائمة"
-                : activeLang === "en"
-                ? "Explore Categories"
-                : "Menüyü İncele"}
+              <span className="text-[#9C7A3F]">
+                <ForkKnife size={15} weight="bold" />
+              </span>
+              <span>
+                {activeLang === "ar"
+                  ? "تصفح أقسام القائمة"
+                  : activeLang === "fa"
+                  ? "دسته‌بندی‌های منو"
+                  : activeLang === "en"
+                  ? "Explore Categories"
+                  : activeLang === "ru"
+                  ? "Категории меню"
+                  : activeLang === "fr"
+                  ? "Parcourir les catégories"
+                  : activeLang === "de"
+                  ? "Kategorien durchsuchen"
+                  : activeLang === "it"
+                  ? "Sfoglia le categorie"
+                  : activeLang === "es"
+                  ? "Explorar categorías"
+                  : activeLang === "zh"
+                  ? "浏览菜单分类"
+                  : "Menüyü İncele"}
+              </span>
             </h3>
           </div>
 
