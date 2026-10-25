@@ -117,7 +117,7 @@ export async function getDatabaseMenu(): Promise<{
               zh: prod.translations.find((t: any) => t.locale === "zh")?.name || staticMatch?.name?.zh,
             },
             price: Number(prod.basePriceTRY),
-            image: prod.imageUrl || undefined,
+            image: prod.imageUrl || staticMatch?.image || undefined,
             description: descTr || staticMatch?.description,
             descriptions: staticMatch?.descriptions,
             tags: Array.from(tags),

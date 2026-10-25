@@ -149,3 +149,72 @@ body {
 .modal-content {
   animation: scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
+/* ==========================================================================
+   HERO COVER COMPONENT (LTR & RTL Responsive)
+   ========================================================================== */
+
+.hero-cover {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(156, 122, 63, 0.35);
+}
+
+.hero-cover-ltr {
+  background-image: url('/images/hero-ltr.webp');
+  background-position: right center;
+}
+
+.hero-cover-rtl {
+  background-image: url('/images/hero-rtl.webp');
+  background-position: left center;
+}
+
+.hero-overlay-ltr {
+  background: linear-gradient(
+    90deg,
+    rgba(18, 14, 10, 0.96) 0%,
+    rgba(18, 14, 10, 0.92) 35%,
+    rgba(18, 14, 10, 0.72) 58%,
+    rgba(18, 14, 10, 0.25) 85%,
+    rgba(18, 14, 10, 0.05) 100%
+  );
+}
+
+.hero-overlay-rtl {
+  background: linear-gradient(
+    270deg,
+    rgba(18, 14, 10, 0.96) 0%,
+    rgba(18, 14, 10, 0.92) 35%,
+    rgba(18, 14, 10, 0.72) 58%,
+    rgba(18, 14, 10, 0.25) 85%,
+    rgba(18, 14, 10, 0.05) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .hero-cover {
+    min-height: 480px;
+  }
+  .hero-cover-ltr,
+  .hero-cover-rtl {
+    background-position: center center;
+  }
+  .hero-overlay-ltr,
+  .hero-overlay-rtl {
+    background: linear-gradient(
+      180deg,
+      rgba(18, 14, 10, 0.92) 0%,
+      rgba(18, 14, 10, 0.82) 50%,
+      rgba(18, 14, 10, 0.65) 100%
+    );
+  }
+}
+
