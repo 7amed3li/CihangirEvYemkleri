@@ -1,5 +1,6 @@
 import { prisma } from "./prisma";
 import { menuData as staticMenuData, MenuCategory, MenuItem } from "@/data/menuData";
+import { DISH_TRANSLATIONS, CATEGORY_TRANSLATIONS } from "@/data/dishTranslations";
 import { getIstanbulDateString } from "@/lib/date";
 
 export interface PublicDailyMenuEntry {
@@ -77,26 +78,30 @@ export async function getDatabaseMenu(): Promise<{
     const categories: MenuCategory[] = dbCategories
       .filter((c) => c.products.length > 0) // Hide empty categories on public menu
       .map((cat) => {
-        const catTr = cat.translations.find((t) => t.locale === "tr")?.name || cat.slug;
-        const catEn = cat.translations.find((t) => t.locale === "en")?.name || catTr;
-        const catAr = cat.translations.find((t) => t.locale === "ar")?.name || catTr;
+        const catTrans = CATEGORY_TRANSLATIONS[cat.slug];
+        const catTr = cat.translations.find((t) => t.locale === "tr")?.name || catTrans?.tr || cat.slug;
+        const catEn = cat.translations.find((t) => t.locale === "en")?.name || catTrans?.en || catTr;
+        const catAr = cat.translations.find((t) => t.locale === "ar")?.name || catTrans?.ar || catTr;
 
         const items: MenuItem[] = cat.products.map((prod) => {
           const staticMatch = staticDishMap.get(prod.slug);
+          const dishTrans =
+            DISH_TRANSLATIONS[prod.slug] ||
+            (staticMatch ? DISH_TRANSLATIONS[staticMatch.id] : undefined) ||
+            (prod.slug === "tavuklu-pide" ? DISH_TRANSLATIONS["tavuklu"] : undefined);
 
-          const nameTr = prod.translations.find((t) => t.locale === "tr")?.name || prod.slug;
-          const nameEn =
-            prod.translations.find((t) => t.locale === "en")?.name ||
-            staticMatch?.name?.en ||
-            nameTr;
-          const nameAr =
-            prod.translations.find((t) => t.locale === "ar")?.name ||
-            staticMatch?.name?.ar ||
-            nameTr;
+          const nameTr = prod.translations.find((t) => t.locale === "tr")?.name || dishTrans?.name?.tr || staticMatch?.name?.tr || prod.slug;
+          const nameEn = prod.translations.find((t) => t.locale === "en")?.name || dishTrans?.name?.en || staticMatch?.name?.en || nameTr;
+          const nameAr = prod.translations.find((t) => t.locale === "ar")?.name || dishTrans?.name?.ar || staticMatch?.name?.ar || nameTr;
+          const nameRu = prod.translations.find((t: any) => t.locale === "ru")?.name || dishTrans?.name?.ru || staticMatch?.name?.ru || nameTr;
+          const nameFa = prod.translations.find((t: any) => t.locale === "fa")?.name || dishTrans?.name?.fa || staticMatch?.name?.fa || nameTr;
+          const nameFr = prod.translations.find((t: any) => t.locale === "fr")?.name || dishTrans?.name?.fr || staticMatch?.name?.fr || nameTr;
+          const nameDe = prod.translations.find((t: any) => t.locale === "de")?.name || dishTrans?.name?.de || staticMatch?.name?.de || nameTr;
+          const nameIt = prod.translations.find((t: any) => t.locale === "it")?.name || dishTrans?.name?.it || staticMatch?.name?.it || nameTr;
+          const nameEs = prod.translations.find((t: any) => t.locale === "es")?.name || dishTrans?.name?.es || staticMatch?.name?.es || nameTr;
+          const nameZh = prod.translations.find((t: any) => t.locale === "zh")?.name || dishTrans?.name?.zh || staticMatch?.name?.zh || nameTr;
 
-          const descTr =
-            prod.translations.find((t) => t.locale === "tr")?.description ||
-            staticMatch?.description;
+          const descTr = prod.translations.find((t) => t.locale === "tr")?.description || dishTrans?.desc?.tr || staticMatch?.description || "";
 
           // Merge tags
           const tags = new Set<string>(staticMatch?.tags || []);
@@ -108,18 +113,18 @@ export async function getDatabaseMenu(): Promise<{
               tr: nameTr,
               en: nameEn,
               ar: nameAr,
-              ru: prod.translations.find((t: any) => t.locale === "ru")?.name || staticMatch?.name?.ru,
-              fa: prod.translations.find((t: any) => t.locale === "fa")?.name || staticMatch?.name?.fa,
-              fr: prod.translations.find((t: any) => t.locale === "fr")?.name || staticMatch?.name?.fr,
-              de: prod.translations.find((t: any) => t.locale === "de")?.name || staticMatch?.name?.de,
-              it: prod.translations.find((t: any) => t.locale === "it")?.name || staticMatch?.name?.it,
-              es: prod.translations.find((t: any) => t.locale === "es")?.name || staticMatch?.name?.es,
-              zh: prod.translations.find((t: any) => t.locale === "zh")?.name || staticMatch?.name?.zh,
+              ru: nameRu,
+              fa: nameFa,
+              fr: nameFr,
+              de: nameDe,
+              it: nameIt,
+              es: nameEs,
+              zh: nameZh,
             },
             price: Number(prod.basePriceTRY),
             image: prod.imageUrl || staticMatch?.image || undefined,
-            description: descTr || staticMatch?.description,
-            descriptions: staticMatch?.descriptions,
+            description: descTr,
+            descriptions: dishTrans?.desc || staticMatch?.descriptions,
             tags: Array.from(tags),
             trending: prod.isFeatured || staticMatch?.trending || false,
             isAvailable: prod.isAvailable,
@@ -133,6 +138,13 @@ export async function getDatabaseMenu(): Promise<{
             tr: catTr,
             en: catEn,
             ar: catAr,
+            ru: catTrans?.ru,
+            fa: catTrans?.fa,
+            fr: catTrans?.fr,
+            de: catTrans?.de,
+            it: catTrans?.it,
+            es: catTrans?.es,
+            zh: catTrans?.zh,
           },
           items,
         };
@@ -185,14 +197,20 @@ export async function getPublishedDailyMenu(locale: string = "tr"): Promise<Publ
     }
 
     const entries: PublicDailyMenuEntry[] = eligibleEntries.map((e) => {
+      const dishTrans = DISH_TRANSLATIONS[e.product.slug];
+      const catTransDef = CATEGORY_TRANSLATIONS[e.product.category.slug];
       const prodTrans =
         e.product.translations.find((t) => t.locale === locale)?.name ||
+        (dishTrans?.name as any)?.[locale] ||
         e.product.translations.find((t) => t.locale === "tr")?.name ||
+        dishTrans?.name?.tr ||
         e.product.slug;
 
       const catTrans =
         e.product.category.translations.find((t) => t.locale === locale)?.name ||
+        (catTransDef as any)?.[locale] ||
         e.product.category.translations.find((t) => t.locale === "tr")?.name ||
+        catTransDef?.tr ||
         e.product.category.slug;
 
       return {

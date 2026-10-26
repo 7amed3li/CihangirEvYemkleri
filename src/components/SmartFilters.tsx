@@ -2,9 +2,8 @@
 
 import React from "react";
 import { useParams } from "next/navigation";
-import { X } from "lucide-react";
+import { Utensils, Wheat, Crown, Leaf, Flame, CalendarDays, X } from "lucide-react";
 import { useAppContext } from "@/context/AppContext";
-import Twemoji from "./Twemoji";
 
 interface SmartFiltersProps {
   activeFilter: string | null;
@@ -16,7 +15,7 @@ interface SmartFiltersProps {
 const FILTER_ITEMS = [
   {
     id: "all",
-    emoji: "🍽️",
+    icon: Utensils,
     label: {
       tr: "Tümü",
       en: "All Dishes",
@@ -32,7 +31,7 @@ const FILTER_ITEMS = [
   },
   {
     id: "gluten-free",
-    emoji: "🌾",
+    icon: Wheat,
     label: {
       tr: "Glütensiz",
       en: "Gluten-Free",
@@ -48,12 +47,12 @@ const FILTER_ITEMS = [
   },
   {
     id: "signature",
-    emoji: "👨‍🍳",
+    icon: Crown,
     label: {
       tr: "Şefin Seçimi",
       en: "Chef's Special",
       ar: "توصية الشيف",
-      ru: "Выбор шеفا",
+      ru: "Выбор шефа",
       fa: "پیشنهاد سرآشپز",
       fr: "Spécialité du chef",
       de: "Empfehlung des Chefs",
@@ -64,7 +63,7 @@ const FILTER_ITEMS = [
   },
   {
     id: "vegetarian",
-    emoji: "🌱",
+    icon: Leaf,
     label: {
       tr: "Vejetaryen",
       en: "Vegetarian",
@@ -80,7 +79,7 @@ const FILTER_ITEMS = [
   },
   {
     id: "spicy",
-    emoji: "🌶️",
+    icon: Flame,
     label: {
       tr: "Acılı",
       en: "Spicy",
@@ -96,7 +95,7 @@ const FILTER_ITEMS = [
   },
   {
     id: "daily",
-    emoji: "📅",
+    icon: CalendarDays,
     isDaily: true,
     label: {
       tr: "Bugünün Menüsü",
@@ -131,7 +130,7 @@ export default function SmartFilters({
   );
 
   return (
-    <div className="py-2 flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth">
+    <div className="py-2 flex items-center justify-start md:justify-center gap-2 sm:gap-2.5 md:gap-3 overflow-x-auto no-scrollbar scroll-smooth">
       {availableFilters.map((f) => {
         const isAll = f.id === "all";
         const isActive = isAll
@@ -140,6 +139,8 @@ export default function SmartFilters({
 
         const localizedLabel =
           (f.label as any)[activeLang] || f.label.tr;
+
+        const Icon = f.icon;
 
         const handleClick = () => {
           if (isAll) {
@@ -159,7 +160,7 @@ export default function SmartFilters({
                 : "bg-[#FAF7F0] border border-[#9C7A3F]/30 text-[#4A4335] hover:bg-[#EDE3CE] hover:border-[#9C7A3F]/60"
             }`}
           >
-            <Twemoji emoji={f.emoji} size={15} />
+            <Icon size={14} className={isActive ? "text-white" : "text-[#9C7A3F]"} />
             <span>{localizedLabel}</span>
             {isActive && !isAll && (
               <X size={12} className="ms-0.5 opacity-80 hover:opacity-100" />

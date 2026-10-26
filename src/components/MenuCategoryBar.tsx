@@ -104,47 +104,51 @@ export default function MenuCategoryBar({
       : "Menüyü İncele";
 
   return (
-    <div className="w-full">
-      <div className="bg-[#FAF7F0] border-2 border-[#9C7A3F]/35 rounded-xl p-2 sm:p-3 shadow-xs relative">
-        <div className="px-1 mb-1.5 flex items-center justify-between">
-          <h3
-            className="text-xs sm:text-sm font-bold text-[#7A7364] tracking-wide flex items-center gap-1.5"
-            style={{ fontFamily: "var(--font-cairo)" }}
-          >
-            <span className="text-[#9C7A3F]">
-              <ForkKnife size={15} weight="bold" />
+    <div className="w-full bg-[#F7F2E7] pt-2 pb-1">
+      <div className="max-w-6xl mx-auto px-2.5 sm:px-5">
+        <div className="bg-[#FAF7F0] border-2 border-[#9C7A3F]/35 rounded-xl p-2.5 sm:p-3.5 shadow-xs relative">
+          <div className="px-1 mb-2 flex items-center justify-between">
+            <h3
+              className="text-xs sm:text-sm font-bold text-[#7A7364] tracking-wide flex items-center gap-1.5"
+              style={{ fontFamily: "var(--font-cairo)" }}
+            >
+              <span className="text-[#9C7A3F]">
+                <ForkKnife size={15} weight="bold" />
+              </span>
+              <span>{categoryTitle}</span>
+            </h3>
+            <span className="text-[11px] font-bold text-[#9C7A3F] hidden sm:inline-block">
+              {categories.length} {activeLang === "ar" ? "أقسام" : activeLang === "en" ? "Categories" : "Kategori"}
             </span>
-            <span>{categoryTitle}</span>
-          </h3>
-        </div>
+          </div>
 
-        <div className="relative">
-          {/* Scroll Left Button */}
-          {canScrollLeft && (
-            <button
-              onClick={() => scroll(-1)}
-              aria-label="Scroll left"
-              className="absolute start-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-r from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent"
+          <div className="relative">
+            {/* Scroll Left Button (hidden on desktop where items fit) */}
+            {canScrollLeft && (
+              <button
+                onClick={() => scroll(-1)}
+                aria-label="Scroll left"
+                className="absolute start-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-r from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent md:hidden"
+              >
+                <CaretLeft size={18} weight="bold" className="text-[#2B2620]" />
+              </button>
+            )}
+
+            {/* Scroll Right Button (hidden on desktop where items fit) */}
+            {canScrollRight && (
+              <button
+                onClick={() => scroll(1)}
+                aria-label="Scroll right"
+                className="absolute end-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-l from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent md:hidden"
+              >
+                <CaretRight size={18} weight="bold" className="text-[#2B2620]" />
+              </button>
+            )}
+
+            <div
+              ref={scrollRef}
+              className="flex items-start gap-1.5 sm:gap-2.5 md:gap-3 px-1 overflow-x-auto no-scrollbar pb-1 pt-0.5 justify-start md:justify-between w-full"
             >
-              <CaretLeft size={18} weight="bold" className="text-[#2B2620]" />
-            </button>
-          )}
-
-          {/* Scroll Right Button */}
-          {canScrollRight && (
-            <button
-              onClick={() => scroll(1)}
-              aria-label="Scroll right"
-              className="absolute end-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-l from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent"
-            >
-              <CaretRight size={18} weight="bold" className="text-[#2B2620]" />
-            </button>
-          )}
-
-          <div
-            ref={scrollRef}
-            className="flex items-start gap-2 sm:gap-3 px-0.5 pe-8 overflow-x-auto no-scrollbar pb-0.5 pt-0.5"
-          >
             {categories.map((cat) => {
               const isActive = activeCategory === cat.id;
               const catTrans = CATEGORY_TRANSLATIONS[cat.id];
@@ -158,16 +162,16 @@ export default function MenuCategoryBar({
                   key={cat.id}
                   data-cat={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`relative shrink-0 flex flex-col items-center gap-1 w-[68px] sm:w-[80px] group transition-all duration-200 ${
+                  className={`relative shrink-0 md:shrink md:flex-1 flex flex-col items-center gap-1.5 w-[70px] sm:w-[82px] md:w-auto group transition-all duration-200 cursor-pointer ${
                     isActive ? "scale-105" : "hover:scale-105"
                   }`}
                 >
                   {/* Thumbnail / Icon Container */}
                   <div
-                    className={`relative w-[46px] h-[46px] sm:w-[56px] sm:h-[56px] rounded-lg sm:rounded-xl overflow-hidden transition-all duration-200 flex items-center justify-center ${
+                    className={`relative w-[48px] h-[48px] sm:w-[54px] sm:h-[54px] md:w-[58px] md:h-[58px] rounded-xl overflow-hidden transition-all duration-200 flex items-center justify-center ${
                       isActive
-                        ? "border-2 border-[#4E5F4C] bg-[#EDE3CE] shadow-xs text-[#4E5F4C]"
-                        : "border border-[#9C7A3F]/30 bg-[#EDE3CE] text-[#9C7A3F] group-hover:border-[#9C7A3F]"
+                        ? "border-2 border-[#4E5F4C] bg-[#EDE3CE] shadow-sm text-[#4E5F4C] ring-2 ring-[#4E5F4C]/20"
+                        : "border border-[#9C7A3F]/30 bg-[#EDE3CE]/60 text-[#9C7A3F] group-hover:bg-[#EDE3CE] group-hover:border-[#9C7A3F]"
                     }`}
                   >
                     {cat.image ? (
@@ -176,7 +180,7 @@ export default function MenuCategoryBar({
                         alt={catName}
                         fill
                         style={{ objectFit: "cover" }}
-                        sizes="56px"
+                        sizes="58px"
                         className="transition-transform duration-300 group-hover:scale-105"
                       />
                     ) : (
@@ -187,7 +191,7 @@ export default function MenuCategoryBar({
                   </div>
 
                   <span
-                    className={`text-[9px] sm:text-[10px] font-bold text-center leading-tight px-0.5 transition-colors line-clamp-2 w-full ${
+                    className={`text-[10px] sm:text-[11px] md:text-xs font-bold text-center leading-tight px-0.5 transition-colors line-clamp-2 w-full ${
                       isActive
                         ? "text-[#2B2620]"
                         : "text-[#7A7364] group-hover:text-[#2B2620]"
@@ -196,9 +200,15 @@ export default function MenuCategoryBar({
                   >
                     {catName}
                   </span>
+
+                  {/* Active bottom indicator bar */}
+                  {isActive && (
+                    <div className="w-5 h-1 bg-[#4E5F4C] rounded-full mt-0.5" />
+                  )}
                 </button>
               );
             })}
+            </div>
           </div>
         </div>
       </div>

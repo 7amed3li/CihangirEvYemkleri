@@ -16,7 +16,7 @@ import {
   ArrowRight,
   CaretRight,
 } from "@phosphor-icons/react";
-import Twemoji from "./Twemoji";
+import { Info } from "lucide-react";
 import { CookingPot, StoneOven } from "./BrandIcons";
 
 export default function CartDrawer() {
@@ -202,7 +202,7 @@ export default function CartDrawer() {
 
               {/* Kitchen Note Badge */}
               <div className="bg-[#9C7A3F]/10 border-b border-[#9C7A3F]/20 px-4 py-2 text-[11px] text-[#5A5344] leading-relaxed flex items-center gap-1.5">
-                <Twemoji emoji="💡" size={14} />
+                <Info size={14} className="text-[#9C7A3F] shrink-0" />
                 <p style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}>
                   {noteText}
                 </p>
@@ -306,53 +306,70 @@ export default function CartDrawer() {
               {/* Drawer Footer */}
               {cart.length > 0 && (
                 <div className="p-4 sm:p-5 border-t border-[#9C7A3F]/25 bg-[#FAF7F0] space-y-3">
-                  {/* Total calculation */}
-                  <div className="flex items-center justify-between">
-                    <span
-                      className="text-sm font-bold text-[#7A7364]"
-                      style={{ fontFamily: "var(--font-cairo)" }}
-                    >
-                      {lang === "ar" ? "المجموع الكلي:" : lang === "en" ? "Total Amount:" : "Toplam Tutar:"}
-                    </span>
-                    <span
-                      className="text-xl font-black text-[#2B2620]"
-                      style={{ fontFamily: "var(--font-inter)" }}
-                    >
-                      {displayTotal} {symbol}
-                    </span>
+                  {/* Total calculation with Primary TRY */}
+                  <div className="flex flex-col gap-0.5">
+                    <div className="flex items-center justify-between">
+                      <span
+                        className="text-sm font-bold text-[#7A7364]"
+                        style={{ fontFamily: "var(--font-cairo)" }}
+                      >
+                        {lang === "ar" ? "المجموع بالليرة التركية:" : lang === "en" ? "Total in TRY:" : "Toplam Tutar (TRY):"}
+                      </span>
+                      <span
+                        className="text-xl font-black text-[#2B2620]"
+                        style={{ fontFamily: "var(--font-inter)" }}
+                      >
+                        {cartTotalTRY} ₺
+                      </span>
+                    </div>
+
+                    {symbol !== "₺" && (
+                      <div className="flex items-center justify-between text-xs text-[#9C7A3F] font-bold">
+                        <span>{lang === "ar" ? "السعر التقديري:" : "Yaklaşık Tutar:"}</span>
+                        <span>≈ {displayTotal} {symbol}</span>
+                      </div>
+                    )}
                   </div>
+
+                  <p className="text-[11px] text-[#7A7364] leading-tight text-center">
+                    {lang === "ar"
+                      ? "يتم تأكيد الطلب والتحصيل بالليرة التركية نقداً أو بالبطاقة عند الاستلام."
+                      : lang === "en"
+                      ? "Orders are confirmed by phone/message. Payment is settled in TRY upon delivery or pick-up."
+                      : "Siparişler telefon/mesaj ile teyit edilir. Tahsilat Türk Lirası ile masada veya teslimatta yapılır."}
+                  </p>
+
+                  {/* Direct Phone Call - Primary reliable channel */}
+                  <a
+                    href="tel:+902122513696"
+                    className="w-full py-3 px-4 rounded-xl bg-[#4E5F4C] hover:bg-[#3D4B3B] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors shadow-xs"
+                    style={{ fontFamily: "var(--font-cairo)" }}
+                  >
+                    <PhoneCall size={18} weight="bold" />
+                    <span>
+                      {lang === "ar"
+                        ? "الاتصال لتأكيد الطلب فوراً: 251 36 96 (0212)"
+                        : lang === "en"
+                        ? "Call to Confirm Order: +90 212 251 36 96"
+                        : "Siparişi Hemen Ara: 0212 251 36 96"}
+                    </span>
+                  </a>
 
                   {/* WhatsApp Order Button */}
                   <button
                     onClick={handleWhatsAppOrder}
-                    className="w-full py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98]"
+                    className="w-full py-2.5 px-4 rounded-xl border border-[#25D366] bg-[#25D366]/10 hover:bg-[#25D366] text-[#1E7E34] hover:text-white font-bold text-xs flex items-center justify-center gap-2 transition-all active:scale-[0.98] cursor-pointer"
                     style={{ fontFamily: "var(--font-cairo)" }}
                   >
-                    <WhatsappLogo size={20} weight="fill" />
+                    <WhatsappLogo size={18} weight="fill" />
                     <span>
                       {lang === "ar"
-                        ? "إرسال الطلب عبر واتساب (WhatsApp)"
+                        ? "تجهيز رسالة الطلب عبر واتساب (WhatsApp)"
                         : lang === "en"
-                        ? "Order via WhatsApp"
-                        : "WhatsApp ile Sipariş Ver"}
+                        ? "Prepare Order Message for WhatsApp"
+                        : "Sipariş Metnini WhatsApp ile Gönder"}
                     </span>
                   </button>
-
-                  {/* Direct Phone Call */}
-                  <a
-                    href="tel:+902122513696"
-                    className="w-full py-2.5 px-4 rounded-xl bg-[#4E5F4C] hover:bg-[#3D4B3B] text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-xs"
-                    style={{ fontFamily: "var(--font-cairo)" }}
-                  >
-                    <PhoneCall size={16} weight="bold" />
-                    <span>
-                      {lang === "ar"
-                        ? "الاتصال بالمطعم مباشرة: 0212 251 36 96"
-                        : lang === "en"
-                        ? "Call Restaurant: +90 212 251 36 96"
-                        : "Restoranı Ara: 0212 251 36 96"}
-                    </span>
-                  </a>
 
                   {/* Clear cart */}
                   <div className="text-center pt-1">

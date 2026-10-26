@@ -230,12 +230,6 @@ export default function CategoryManager() {
                     </td>
                     <td className="py-3 px-4">
                       <div className="font-semibold text-stone-800">{c.name}</div>
-                      {(c.name_en || c.name_ar) && (
-                        <div className="text-[10px] text-stone-400 flex items-center gap-2 mt-0.5">
-                          {c.name_en && <span>EN: {c.name_en}</span>}
-                          {c.name_ar && <span>AR: {c.name_ar}</span>}
-                        </div>
-                      )}
                     </td>
                     <td className="py-3 px-4 font-mono text-[11px] text-stone-500">
                       {c.slug}
@@ -308,7 +302,7 @@ export default function CategoryManager() {
               <div className="space-y-3">
                 <div>
                   <label className="block font-semibold text-stone-700 mb-1">
-                    Kategori Adı (Türkçe) *
+                    Kategori Adı *
                   </label>
                   <input
                     type="text"
@@ -318,34 +312,6 @@ export default function CategoryManager() {
                     placeholder="Örn: Çorbalar"
                     className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9C7A3F]/50"
                   />
-                </div>
-
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="block font-semibold text-stone-700 mb-1">
-                      İngilizce İsim (EN)
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.name_en}
-                      onChange={(e) => setFormData({ ...formData, name_en: e.target.value })}
-                      placeholder="Soups"
-                      className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9C7A3F]/50"
-                    />
-                  </div>
-                  <div>
-                    <label className="block font-semibold text-stone-700 mb-1">
-                      Arapça İsim (AR)
-                    </label>
-                    <input
-                      type="text"
-                      dir="rtl"
-                      value={formData.name_ar}
-                      onChange={(e) => setFormData({ ...formData, name_ar: e.target.value })}
-                      placeholder="الشوربات"
-                      className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9C7A3F]/50"
-                    />
-                  </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">

@@ -60,7 +60,7 @@ export default function CurrencySwitcher() {
         <div className="absolute top-[calc(100%+6px)] end-0 w-44 bg-[#FAF7F0] border border-[#9C7A3F]/35 rounded-xl shadow-xl z-50 p-1.5 backdrop-blur-md">
           <div className="px-2 py-1 text-[10px] font-bold text-[#9C7A3F] uppercase tracking-wider border-b border-[#9C7A3F]/20 mb-1 flex items-center justify-between">
             <span>Döviz / Currency</span>
-            <span className="text-[9px] font-normal text-[#7A7364]">Canlı Kur</span>
+            <span className="text-[9px] font-normal text-[#7A7364]">Tahmini / Est.</span>
           </div>
 
           <div className="flex flex-col gap-0.5">

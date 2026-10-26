@@ -105,16 +105,16 @@ export default function Footer({ locale, dict }: FooterProps) {
           <div className="flex flex-col items-start text-start w-full">
             <h3 className="text-xs sm:text-sm font-bold text-[#9C7A3F] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#9C7A3F]"></span>
-              <span>{dict?.quickLinks || "Hızlı Bağlantılar"}</span>
+              <span>{dict?.quickLinks || (isRtl ? "روابط سريعة" : "Hızlı Bağlantılar")}</span>
             </h3>
-            <ul className="space-y-2.5 text-xs sm:text-sm">
+            <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <Link
                   href={`/${locale}`}
                   className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
                 >
                   <span className="text-[#9C7A3F]">›</span>
-                  <span>{dict?.home || "Ana Sayfa"}</span>
+                  <span>{dict?.home || (isRtl ? "الرئيسية" : "Ana Sayfa")}</span>
                 </Link>
               </li>
               <li>
@@ -123,25 +123,52 @@ export default function Footer({ locale, dict }: FooterProps) {
                   className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
                 >
                   <span className="text-[#9C7A3F]">›</span>
-                  <span>{dict?.menu || "Menü"}</span>
+                  <span>{dict?.menu || (isRtl ? "قائمة الطعام" : "Menü")}</span>
                 </Link>
               </li>
               <li>
                 <Link
-                  href={`/${locale}/menu#ana-yemekler`}
+                  href={`/${locale}/about`}
                   className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
                 >
                   <span className="text-[#9C7A3F]">›</span>
-                  <span>{locale === "ar" ? "الأطباق المنزلية اليومية" : "Geleneksel Ev Yemekleri"}</span>
+                  <span>{isRtl ? "عن المطعم" : locale === "en" ? "About Us" : "Hakkımızda"}</span>
                 </Link>
               </li>
               <li>
                 <Link
-                  href={`/${locale}/menu#tas-firin-pideler`}
+                  href={`/${locale}/delivery`}
                   className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
                 >
                   <span className="text-[#9C7A3F]">›</span>
-                  <span>{locale === "ar" ? "فطائر الفرن الحجري (بيدة)" : "Taş Fırın Pideler"}</span>
+                  <span>{isRtl ? "التوصيل والاستلام" : locale === "en" ? "Delivery & Pick-up" : "Teslimat & Gel-Al"}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/allergens`}
+                  className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
+                >
+                  <span className="text-[#9C7A3F]">›</span>
+                  <span>{isRtl ? "دليل الحساسية" : locale === "en" ? "Allergens" : "Alerjen Bilgisi"}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/faq`}
+                  className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
+                >
+                  <span className="text-[#9C7A3F]">›</span>
+                  <span>{isRtl ? "الأسئلة الشائعة" : locale === "en" ? "FAQ" : "Sıkça Sorulanlar"}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/contact`}
+                  className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
+                >
+                  <span className="text-[#9C7A3F]">›</span>
+                  <span>{isRtl ? "تواصل معنا والموقع" : locale === "en" ? "Contact & Location" : "İletişim & Konum"}</span>
                 </Link>
               </li>
             </ul>
@@ -151,7 +178,7 @@ export default function Footer({ locale, dict }: FooterProps) {
           <div className="flex flex-col items-start text-start w-full">
             <h3 className="text-xs sm:text-sm font-bold text-[#9C7A3F] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#9C7A3F]"></span>
-              <span>{dict?.contact || "İletişim & Konum"}</span>
+              <span>{dict?.contact || (isRtl ? "التواصل والموقع" : "İletişim & Konum")}</span>
             </h3>
             <div className="flex items-start gap-2.5 mb-3 text-start">
               <svg
@@ -176,7 +203,7 @@ export default function Footer({ locale, dict }: FooterProps) {
                 className="text-[#2B2620] text-xs sm:text-sm font-medium leading-relaxed"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
-                Firuzağa, Firuzağa Camii Sk. No:1 A, 34425 Beyoğlu/İstanbul
+                Firuzağa, Firuzağa Camii Sk. No:1 A, 34425 Beyoğlu / İstanbul
               </p>
             </div>
             <div className="flex items-center gap-2.5 mb-2.5">
@@ -219,7 +246,7 @@ export default function Footer({ locale, dict }: FooterProps) {
               href="tel:+902122513696"
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#4E5F4C] text-[#EAF0E6] hover:bg-[#3D4B3B] transition-colors font-bold text-xs sm:text-sm shadow-xs"
             >
-              <span>{dict?.orderPhone || "Telefonla Sipariş"}</span>
+              <span>{isRtl ? "اتصال هاتفي مباشر" : "Doğrudan Telefonla Arayın"}</span>
             </a>
           </div>
 
@@ -271,14 +298,30 @@ export default function Footer({ locale, dict }: FooterProps) {
         {/* Divider */}
         <div className="ottoman-divider max-w-sm mx-auto mb-6"></div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar with Policy Links */}
         <div className="pt-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-start">
-          <p
-            className="text-[#7A7364] text-xs font-medium"
-            style={{ fontFamily: "var(--font-inter)" }}
-          >
-            © 2026 Cihangir Ev Yemekleri & Pide. Tüm hakları saklıdır.
-          </p>
+          <div className="space-y-1">
+            <p
+              className="text-[#7A7364] text-xs font-medium"
+              style={{ fontFamily: "var(--font-inter)" }}
+            >
+              © 2026 Cihangir Ev Yemekleri & Pide. Tüm hakları saklıdır.
+            </p>
+            {/* Policy Links */}
+            <div className="flex flex-wrap items-center gap-3 text-[11px] text-[#9C7A3F]">
+              <Link href={`/${locale}/terms`} className="hover:underline">
+                {isRtl ? "شروط الاستخدام" : locale === "en" ? "Terms" : "Kullanım Koşulları"}
+              </Link>
+              <span>•</span>
+              <Link href={`/${locale}/privacy`} className="hover:underline">
+                {isRtl ? "سياسة الخصوصية" : locale === "en" ? "Privacy Policy" : "Gizlilik"}
+              </Link>
+              <span>•</span>
+              <Link href={`/${locale}/cancellation`} className="hover:underline">
+                {isRtl ? "سياسة الإلغاء" : locale === "en" ? "Cancellation" : "İptal ve İade"}
+              </Link>
+            </div>
+          </div>
           <p className="text-[#7A7364] text-[10px] tracking-widest uppercase flex items-center gap-1">
             Tasarım ve Geliştirme:
             <span className="text-[#9C7A3F] font-bold">Hamed Mohamed</span>

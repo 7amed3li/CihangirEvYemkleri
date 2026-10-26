@@ -565,10 +565,10 @@ export default function ProductManager() {
               )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {/* Turkish Name */}
+                {/* Product Name */}
                 <div className="sm:col-span-2">
                   <label className="block font-semibold text-stone-700 mb-1">
-                    Ürün Adı (Türkçe) *
+                    Ürün Adı *
                   </label>
                   <input
                     type="text"
@@ -576,35 +576,6 @@ export default function ProductManager() {
                     value={formData.name}
                     onChange={(e) => handleNameChange(e.target.value)}
                     placeholder="Örn: Kuru Fasulye"
-                    className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9C7A3F]/50"
-                  />
-                </div>
-
-                {/* English Name */}
-                <div>
-                  <label className="block font-semibold text-stone-700 mb-1">
-                    İngilizce İsim (EN)
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.name_en}
-                    onChange={(e) => setFormData({ ...formData, name_en: e.target.value })}
-                    placeholder="White Bean Stew"
-                    className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9C7A3F]/50"
-                  />
-                </div>
-
-                {/* Arabic Name */}
-                <div>
-                  <label className="block font-semibold text-stone-700 mb-1">
-                    Arapça İsim (AR)
-                  </label>
-                  <input
-                    type="text"
-                    dir="rtl"
-                    value={formData.name_ar}
-                    onChange={(e) => setFormData({ ...formData, name_ar: e.target.value })}
-                    placeholder="فاصولياء بيضاء"
                     className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9C7A3F]/50"
                   />
                 </div>

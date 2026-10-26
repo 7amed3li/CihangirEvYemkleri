@@ -7,7 +7,7 @@ import { useAppContext } from "@/context/AppContext";
 import { useMounted } from "@/hooks/useMounted";
 import { useParams } from "next/navigation";
 import { X, MagnifyingGlassPlus, Plus, Minus, ShareNetwork, Check } from "@phosphor-icons/react";
-import Twemoji from "./Twemoji";
+import { Wheat } from "lucide-react";
 import { CookingPot, StoneOven } from "./BrandIcons";
 import { getDishDisplay } from "@/data/dishTranslations";
 
@@ -185,7 +185,7 @@ export default function DishModal({
                   )}
                   {tags.includes("gluten-free") && (
                     <span className="px-2.5 py-0.5 bg-[#5C6E58]/15 text-[#3E523A] border border-[#5C6E58]/35 text-xs font-bold rounded-md uppercase tracking-wider flex items-center gap-1.5">
-                      <Twemoji emoji="🌾" size={14} />
+                      <Wheat size={14} className="text-[#3E523A]" />
                       <span>
                         {activeLang === "ar"
                           ? "خالي من الغلوتين"

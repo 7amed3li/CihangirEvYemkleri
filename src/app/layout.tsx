@@ -18,9 +18,13 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "Cihangir Ev Yemekleri Pide",
+  metadataBase: new URL("https://cihangir-ev-yemkleri.vercel.app"),
+  title: {
+    default: "Cihangir Ev Yemekleri & Pide",
+    template: "%s | Cihangir Ev Yemekleri & Pide",
+  },
   description:
-    "Cihangir'in kalbinde geleneksel ev yemekleri ve taş fırın pide lezzetleri.",
+    "Cihangir'in kalbinde geleneksel ev yemekleri ve taş fırın pide lezzetleri. Firuzağa, Beyoğlu, İstanbul.",
 };
 
 export default function RootLayout({

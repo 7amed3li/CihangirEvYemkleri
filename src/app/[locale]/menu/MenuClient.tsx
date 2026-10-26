@@ -156,7 +156,7 @@ export default function MenuClient({
 
         {/* Smart Filters with optional Bugünün Yemekleri filter */}
         <div className="bg-[#F7F2E7] border-b border-[#9C7A3F]/20 py-1">
-          <div className="max-w-5xl mx-auto px-2.5 sm:px-5">
+          <div className="max-w-6xl mx-auto px-2.5 sm:px-5">
             <SmartFilters
               activeFilter={activeFilter}
               setActiveFilter={handleFilterSelect}
@@ -168,7 +168,7 @@ export default function MenuClient({
       </div>
 
       {/* Menu Items Grid */}
-      <section className="max-w-5xl mx-auto px-3 sm:px-6 py-6 min-h-[60vh] bg-[#EDE3CE]">
+      <section className="max-w-6xl mx-auto px-3 sm:px-6 py-6 min-h-[60vh] bg-[#EDE3CE]">
         {activeCategories.map((category) => {
           if (activeCategory !== category.id) return null;
 
@@ -185,7 +185,7 @@ export default function MenuClient({
           return (
             <div
               key={category.id}
-              className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3.5 sm:gap-4 animate-fadeIn"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 animate-fadeIn"
             >
               {filteredItems.length > 0 ? (
                 filteredItems.map((item) => (

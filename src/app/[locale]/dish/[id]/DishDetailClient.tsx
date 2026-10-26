@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useAppContext } from "@/context/AppContext";
 import { Plus, Minus, ShareNetwork, Check } from "@phosphor-icons/react";
-import Twemoji from "@/components/Twemoji";
+import { Wheat } from "lucide-react";
 import CartDrawer from "@/components/CartDrawer";
 
 interface DishDetailClientProps {
@@ -155,7 +155,7 @@ export default function DishDetailClient({
             )}
             {tags.includes("gluten-free") && (
               <span className="px-2.5 py-1 bg-[#5C6E58]/15 text-[#3E523A] border border-[#5C6E58]/35 text-xs font-bold rounded-md uppercase tracking-wider flex items-center gap-1.5">
-                <Twemoji emoji="🌾" size={13} />
+                <Wheat size={13} className="text-[#3E523A]" />
                 <span>
                   {locale === "ar"
                     ? "خالي من الغلوتين"

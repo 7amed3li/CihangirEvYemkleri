@@ -560,6 +560,7 @@ const rawMenuData: MenuCategory[] = [
         id: "tavuklu",
         name: { tr: "Tavuklu", en: "Chicken Pide", ar: "بيدة بالدجاج المتبل" },
         price: 380,
+        image: "/images/products/tavuklu-pide.jpg",
         tags: [],
       },
       {

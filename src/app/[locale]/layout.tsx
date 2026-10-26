@@ -23,7 +23,9 @@ export default async function LocaleLayout({
 
   return (
     <div
+      id="app-root"
       dir={isRtl ? "rtl" : "ltr"}
+      lang={locale}
       style={{
         minHeight: "100vh",
         display: "flex",

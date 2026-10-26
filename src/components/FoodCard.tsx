@@ -76,7 +76,7 @@ export default function FoodCard({ item }: MenuItemProps) {
       >
         {/* Image / Thumbnail Section */}
         <div
-          className="w-32 sm:w-40 h-full shrink-0 relative overflow-hidden bg-[#EDE3CE] z-10 cursor-pointer flex items-center justify-center border-e border-[#9C7A3F]/15"
+          className="w-28 sm:w-36 lg:w-32 xl:w-36 h-full shrink-0 relative overflow-hidden bg-[#EDE3CE] z-10 cursor-pointer flex items-center justify-center border-e border-[#9C7A3F]/15"
           onClick={() => setIsModalOpen(true)}
         >
           {item.image ? (
@@ -86,7 +86,7 @@ export default function FoodCard({ item }: MenuItemProps) {
                 alt={turkishTitle}
                 fill
                 style={{ objectFit: "cover" }}
-                sizes="(max-width: 768px) 128px, 160px"
+                sizes="(max-width: 640px) 112px, (max-width: 1024px) 144px, 130px"
               />
             </div>
           ) : (
@@ -107,46 +107,25 @@ export default function FoodCard({ item }: MenuItemProps) {
             </div>
           )}
 
-          {/* Price Tag Badge */}
-          <div className="absolute top-2 start-2 z-20 flex items-center pointer-events-none">
-            <span
-              className="flex items-center px-2.5 py-1 rounded-[4px] bg-[#9C7A3F] text-[#EAF0E6] font-bold text-xs tracking-wide shadow-xs"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
-              {displayPrice != null ? (
-                <>
-                  {displayPrice} {symbol}
-                </>
-              ) : (
-                "-"
-              )}
-            </span>
-          </div>
-
-          {/* Text Badges */}
-          <div className="absolute bottom-2 start-2 z-20 flex flex-wrap gap-1 pointer-events-none">
+          {/* Category / Status Badges on Thumbnail */}
+          <div className="absolute top-2 start-2 z-20 flex flex-wrap gap-1 pointer-events-none">
             {!isAvailable && (
-              <span className="px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-white bg-[#A0422E] rounded-[3px] font-bold shadow-xs">
+              <span className="px-2 py-0.5 text-[9px] uppercase tracking-wider text-white bg-[#A0422E] rounded-[3px] font-bold shadow-xs">
                 {outOfStockLabel}
               </span>
             )}
             {item.tags?.includes("signature") && (
-              <span className="px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-[#EAF0E6] bg-[#9C7A3F] rounded-[3px] font-bold">
-                Şef
+              <span className="px-2 py-0.5 text-[9px] uppercase tracking-wider text-[#EAF0E6] bg-[#9C7A3F] rounded-[3px] font-bold shadow-2xs">
+                {activeLang === "ar" ? "مميز" : "Şef"}
               </span>
             )}
             {item.tags?.includes("spicy") && (
-              <span className="px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-[#EAF0E6] bg-[#A0422E] rounded-[3px] font-bold">
+              <span className="px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-[#EAF0E6] bg-[#A0422E] rounded-[3px] font-bold shadow-2xs">
                 Acılı
               </span>
             )}
-            {item.tags?.includes("gluten-free") && (
-              <span className="px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-[#FFFFFF] bg-[#5C6E58] rounded-[3px] font-bold">
-                {activeLang === "ar" ? "بدون غلوتين" : activeLang === "en" ? "Gluten-Free" : "Glütensiz"}
-              </span>
-            )}
             {item.tags?.includes("vegetarian") && (
-              <span className="px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-[#EAF0E6] bg-[#4E5F4C] rounded-[3px] font-bold">
+              <span className="px-1.5 py-0.5 text-[9px] uppercase tracking-wider text-[#EAF0E6] bg-[#4E5F4C] rounded-[3px] font-bold shadow-2xs">
                 Veg
               </span>
             )}
@@ -165,7 +144,7 @@ export default function FoodCard({ item }: MenuItemProps) {
           >
             <div className="flex items-start justify-between gap-2 mb-1">
               <h3
-                className="font-bold text-sm sm:text-base text-[#2B2620] leading-snug truncate md:whitespace-normal group-hover:text-[#9C7A3F] transition-colors text-start"
+                className="font-bold text-sm sm:text-base text-[#2B2620] leading-snug group-hover:text-[#9C7A3F] transition-colors text-start"
                 style={{ fontFamily: "var(--font-cairo)" }}
               >
                 {turkishTitle}
@@ -181,30 +160,42 @@ export default function FoodCard({ item }: MenuItemProps) {
             </div>
 
             {formattedDesc && (
-              <p
-                className="text-xs text-[#7A7364] mt-1 line-clamp-2 leading-relaxed font-medium text-start"
-                style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}
-              >
-                {activeLang !== "tr" ? (
-                  <>
-                    <span className="font-semibold text-[#5A5344]">{localizedName}: </span>
-                    {localizedDesc}
-                  </>
-                ) : (
-                  localizedDesc
-                )}
-              </p>
+              <div className="mt-1">
+                <p
+                  className="text-xs text-[#7A7364] line-clamp-2 leading-relaxed font-medium text-start"
+                  style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}
+                >
+                  {activeLang !== "tr" ? (
+                    <>
+                      <span className="font-semibold text-[#5A5344]">{localizedName}: </span>
+                      {localizedDesc}
+                    </>
+                  ) : (
+                    localizedDesc
+                  )}
+                </p>
+                <span className="text-[10px] font-bold text-[#9C7A3F] hover:underline inline-block mt-0.5">
+                  {activeLang === "ar" ? "عرض التفاصيل الكاملة ←" : activeLang === "en" ? "View full details →" : "Detayları gör →"}
+                </span>
+              </div>
             )}
           </div>
 
-          {/* Bottom part - counter controls */}
-          <div className="flex items-center justify-between mt-2 pt-1 border-t border-[#9C7A3F]/15">
-            <span
-              className="text-[#9C7A3F] font-bold text-xs"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
-              {displayPrice} {symbol}
-            </span>
+          {/* Bottom part - single clear price and counter controls */}
+          <div className="flex items-center justify-between mt-2 pt-2 border-t border-[#9C7A3F]/20">
+            <div className="flex flex-col">
+              <span
+                className="text-sm font-black text-[#2B2620]"
+                style={{ fontFamily: "var(--font-inter)" }}
+              >
+                {displayPrice} {symbol}
+              </span>
+              {symbol !== "₺" && (
+                <span className="text-[10px] text-[#7A7364] font-medium">
+                  ≈ {item.price} ₺ (TRY)
+                </span>
+              )}
+            </div>
 
             {/* Cart Counter or Out of Stock */}
             {!isAvailable ? (

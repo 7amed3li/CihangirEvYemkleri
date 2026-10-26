@@ -8,7 +8,7 @@ import { getDishDisplay } from "@/data/dishTranslations";
 import { SUPPORTED_LOCALES, Locale, getDictionary } from "@/i18n/translations";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Twemoji from "@/components/Twemoji";
+import { CookingPot, StoneOven } from "@/components/BrandIcons";
 import DishDetailClient from "./DishDetailClient";
 
 export async function generateStaticParams() {
@@ -137,7 +137,11 @@ export default async function DishPage({
               />
             ) : (
               <div className="flex flex-col items-center justify-center p-8 text-center text-[#9C7A3F]/60">
-                <span className="text-5xl mb-2">🍽️</span>
+                {item.id.includes("pide") ? (
+                  <StoneOven size={52} className="text-[#9C7A3F]/70 mb-2" />
+                ) : (
+                  <CookingPot size={52} className="text-[#9C7A3F]/70 mb-2" />
+                )}
                 <span className="text-sm font-bold text-[#7A7364]">{turkishTitle}</span>
               </div>
             )}

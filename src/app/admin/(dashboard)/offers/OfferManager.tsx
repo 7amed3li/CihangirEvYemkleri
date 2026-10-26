@@ -397,7 +397,7 @@ export default function OfferManager() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="sm:col-span-2">
                   <label className="block font-semibold text-stone-700 mb-1">
-                    Fırsat Paketi Başlığı (Türkçe) *
+                    Fırsat Paketi Başlığı *
                   </label>
                   <input
                     type="text"
@@ -405,33 +405,6 @@ export default function OfferManager() {
                     value={formData.title}
                     onChange={(e) => handleTitleChange(e.target.value)}
                     placeholder="Örn: Cihangir Doyuran Menü"
-                    className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9C7A3F]/50"
-                  />
-                </div>
-
-                <div>
-                  <label className="block font-semibold text-stone-700 mb-1">
-                    İngilizce Başlık (EN)
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.title_en}
-                    onChange={(e) => setFormData({ ...formData, title_en: e.target.value })}
-                    placeholder="Feast Combo Menu"
-                    className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9C7A3F]/50"
-                  />
-                </div>
-
-                <div>
-                  <label className="block font-semibold text-stone-700 mb-1">
-                    Arapça Başlık (AR)
-                  </label>
-                  <input
-                    type="text"
-                    dir="rtl"
-                    value={formData.title_ar}
-                    onChange={(e) => setFormData({ ...formData, title_ar: e.target.value })}
-                    placeholder="وجبة جيهانغير العائلية"
                     className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9C7A3F]/50"
                   />
                 </div>

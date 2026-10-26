@@ -1,27 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand Color Palette */
-  --bg: #EDE3CE;             /* Beige Marble Background */
-  --bg-card: #F7F2E7;        /* Soft Cream Card Background */
-  --primary: #4E5F4C;        /* Olive Green Primary Button */
-  --primary-dim: #3D4B3B;    /* Darker Olive Green Hover */
-  --accent: #9C7A3F;         /* Ottoman Bronze / Gold */
-  --gold: #9C7A3F;           /* Ottoman Bronze / Gold */
-  --text: #2B2620;           /* Deep Espresso Text */
-  --text-secondary: #7A7364; /* Warm Taupe Secondary Text */
-  --error: #A0422E;          /* Terracotta Accent Alert */
+  /* Brand Color Palette: Rich Authentic Home Cooking & Stone-Oven Hearth */
+  --bg: #FAF7F0;             /* Warm Table Linen */
+  --bg-card: #FFFFFF;        /* Warm Crisp Porcelain Card Background */
+  --bg-card-subtle: #FDFBF8; /* Subtle Tinted Card Layer */
+  --primary: #B8381E;        /* Rich Salça Red / Tomato Reduction / التقلية الحمراء */
+  --primary-dim: #992E17;    /* Deep Simmered Stew Hover */
+  --accent: #C87D17;         /* Golden Stone-Oven Crust / Amber Hearth */
+  --gold: #C87D17;           /* Ottoman Hearth Gold */
+  --secondary: #2E6544;      /* Fresh Parsley & Herb Green */
+  --text: #261E1A;           /* Deep Roasted Espresso Text */
+  --text-secondary: #6E5F53; /* Warm Roasted Taupe */
+  --error: #B8381E;          /* Rich Crimson Red */
   
   /* Legacy mapping aliases */
-  --ink: #EDE3CE;
-  --ink-2: #F7F2E7;
-  --teal: #4E5F4C;
-  --teal-dim: #3D4B3B;
-  --copper: #9C7A3F;
-  --cream: #2B2620;
-  --cream-dim: #7A7364;
-  --brick: #A0422E;
-  --ink-text: #EDE3CE;
+  --ink: #FAF7F0;
+  --ink-2: #FFFFFF;
+  --teal: #B8381E;
+  --teal-dim: #992E17;
+  --copper: #C87D17;
+  --cream: #261E1A;
+  --cream-dim: #6E5F53;
+  --brick: #B8381E;
+  --ink-text: #FAF7F0;
 
   /* Spacing Tokens */
   --spacing-margin-ext: 16px;
@@ -35,10 +37,12 @@
 @theme inline {
   --color-bg: var(--bg);
   --color-bg-card: var(--bg-card);
+  --color-bg-card-subtle: var(--bg-card-subtle);
   --color-primary: var(--primary);
   --color-primary-dim: var(--primary-dim);
   --color-accent: var(--accent);
   --color-gold: var(--accent);
+  --color-secondary: var(--secondary);
   --color-text: var(--text);
   --color-text-secondary: var(--text-secondary);
   --color-error: var(--error);
