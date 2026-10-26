@@ -16,52 +16,12 @@
     "prompt": "Editorial culinary food photography of authentic Turkish dish \"Günün menü 2\". Verified Ingredients: The dish is strictly composed of: Geleneksel Günün menü 2 taze malzemeleri (fresh authentic ingredients for Turkish Günün menü 2). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
   },
   {
-    "slug": "krema-kori-tavuk",
-    "name": "Krema köri tavuk",
-    "category": "Ana Yemekler",
-    "targetFilename": "krema-kori-tavuk.jpg",
-    "targetPath": "public/images/products/krema-kori-tavuk.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Krema köri tavuk\". Verified Ingredients: The dish is strictly composed of: Geleneksel Krema köri tavuk taze malzemeleri (fresh authentic ingredients for Turkish Krema köri tavuk). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "kuzu-incik",
-    "name": "Kuzu incik",
-    "category": "Ana Yemekler",
-    "targetFilename": "kuzu-incik.jpg",
-    "targetPath": "public/images/products/kuzu-incik.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Kuzu incik\". Verified Ingredients: The dish is strictly composed of: Geleneksel Kuzu incik taze malzemeleri (fresh authentic ingredients for Turkish Kuzu incik). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "mantar-tavuk-sote",
-    "name": "Mantar tavuk sote",
-    "category": "Ana Yemekler",
-    "targetFilename": "mantar-tavuk-sote.jpg",
-    "targetPath": "public/images/products/mantar-tavuk-sote.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Mantar tavuk sote\". Verified Ingredients: The dish is strictly composed of: Geleneksel Mantar tavuk sote taze malzemeleri (fresh authentic ingredients for Turkish Mantar tavuk sote). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
     "slug": "mix-tabak-2",
     "name": "Mix tabak 2",
     "category": "Ana Yemekler",
     "targetFilename": "mix-tabak-2.jpg",
     "targetPath": "public/images/products/mix-tabak-2.jpg",
     "prompt": "Editorial culinary food photography of authentic Turkish dish \"Mix tabak 2\". Verified Ingredients: The dish is strictly composed of: Geleneksel Mix tabak 2 taze malzemeleri (fresh authentic ingredients for Turkish Mix tabak 2). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "pirasa",
-    "name": "Pırasa",
-    "category": "Ana Yemekler",
-    "targetFilename": "pirasa.jpg",
-    "targetPath": "public/images/products/pirasa.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Pırasa\". Verified Ingredients: The dish is strictly composed of: Geleneksel Pırasa taze malzemeleri (fresh authentic ingredients for Turkish Pırasa). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "sebzeli-kofte",
-    "name": "Sebzeli köfte",
-    "category": "Ana Yemekler",
-    "targetFilename": "sebzeli-kofte.jpg",
-    "targetPath": "public/images/products/sebzeli-kofte.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Sebzeli köfte\". Verified Ingredients: The dish is strictly composed of: Geleneksel Sebzeli köfte taze malzemeleri (fresh authentic ingredients for Turkish Sebzeli köfte). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
   },
   {
     "slug": "tas-kebabi-500",
@@ -72,86 +32,6 @@
     "prompt": "Editorial culinary food photography of authentic Turkish dish \"Taş kebabı (Büyük)\". Verified Ingredients: The dish is strictly composed of: Geleneksel Taş kebabı (Büyük) taze malzemeleri (fresh authentic ingredients for Turkish Taş kebabı (Büyük)). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
   },
   {
-    "slug": "tavuk-haslama",
-    "name": "Tavuk haşlama",
-    "category": "Ana Yemekler",
-    "targetFilename": "tavuk-haslama.jpg",
-    "targetPath": "public/images/products/tavuk-haslama.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Tavuk haşlama\". Verified Ingredients: The dish is strictly composed of: Geleneksel Tavuk haşlama taze malzemeleri (fresh authentic ingredients for Turkish Tavuk haşlama). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "turlu",
-    "name": "Türlü",
-    "category": "Ana Yemekler",
-    "targetFilename": "turlu.jpg",
-    "targetPath": "public/images/products/turlu.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Türlü\". Verified Ingredients: The dish is strictly composed of: Geleneksel Türlü taze malzemeleri (fresh authentic ingredients for Turkish Türlü). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "sebze-corbasi",
-    "name": "Sebze çorbası",
-    "category": "Çorbalar",
-    "targetFilename": "sebze-corbasi.jpg",
-    "targetPath": "public/images/products/sebze-corbasi.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Sebze çorbası\". Verified Ingredients: The dish is strictly composed of: Geleneksel Sebze çorbası taze malzemeleri (fresh authentic ingredients for Turkish Sebze çorbası). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "tavuk-suyu",
-    "name": "Tavuk suyu çorbası",
-    "category": "Çorbalar",
-    "targetFilename": "tavuk-suyu.jpg",
-    "targetPath": "public/images/products/tavuk-suyu.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Tavuk suyu çorbası\". Verified Ingredients: The dish is strictly composed of: Geleneksel Tavuk suyu çorbası taze malzemeleri (fresh authentic ingredients for Turkish Tavuk suyu çorbası). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "yayla-corbasi",
-    "name": "Yayla çorbası",
-    "category": "Çorbalar",
-    "targetFilename": "yayla-corbasi.jpg",
-    "targetPath": "public/images/products/yayla-corbasi.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Yayla çorbası\". Verified Ingredients: The dish is strictly composed of: Geleneksel Yayla çorbası taze malzemeleri (fresh authentic ingredients for Turkish Yayla çorbası). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "coban-salata",
-    "name": "Çoban salata",
-    "category": "Salatalar",
-    "targetFilename": "coban-salata.jpg",
-    "targetPath": "public/images/products/coban-salata.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Çoban salata\". Verified Ingredients: The dish is strictly composed of: Geleneksel Çoban salata taze malzemeleri (fresh authentic ingredients for Turkish Çoban salata). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "havuc-tarator",
-    "name": "Havuç tarator",
-    "category": "Salatalar",
-    "targetFilename": "havuc-tarator.jpg",
-    "targetPath": "public/images/products/havuc-tarator.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Havuç tarator\". Verified Ingredients: The dish is strictly composed of: Geleneksel Havuç tarator taze malzemeleri (fresh authentic ingredients for Turkish Havuç tarator). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "mevsim-salatasi",
-    "name": "Mevsim salatası",
-    "category": "Salatalar",
-    "targetFilename": "mevsim-salatasi.jpg",
-    "targetPath": "public/images/products/mevsim-salatasi.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Mevsim salatası\". Verified Ingredients: The dish is strictly composed of: Geleneksel Mevsim salatası taze malzemeleri (fresh authentic ingredients for Turkish Mevsim salatası). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "semizotu",
-    "name": "Semizotu salatası",
-    "category": "Salatalar",
-    "targetFilename": "semizotu.jpg",
-    "targetPath": "public/images/products/semizotu.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Semizotu salatası\". Verified Ingredients: The dish is strictly composed of: Geleneksel Semizotu salatası taze malzemeleri (fresh authentic ingredients for Turkish Semizotu salatası). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "bulgur",
-    "name": "Bulgur pilavı",
-    "category": "Yan Ürünler & Pilavlar",
-    "targetFilename": "bulgur.jpg",
-    "targetPath": "public/images/products/bulgur.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Bulgur pilavı\". Verified Ingredients: The dish is strictly composed of: Geleneksel Bulgur pilavı taze malzemeleri (fresh authentic ingredients for Turkish Bulgur pilavı). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
     "slug": "makarna",
     "name": "Makarna",
     "category": "Yan Ürünler & Pilavlar",
@@ -160,100 +40,12 @@
     "prompt": "Editorial culinary food photography of authentic Turkish dish \"Makarna\". Verified Ingredients: The dish is strictly composed of: Geleneksel Makarna taze malzemeleri (fresh authentic ingredients for Turkish Makarna). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
   },
   {
-    "slug": "pilavustu-kuru",
-    "name": "Pilavüstü kuru fasulye",
-    "category": "Yan Ürünler & Pilavlar",
-    "targetFilename": "pilavustu-kuru.jpg",
-    "targetPath": "public/images/products/pilavustu-kuru.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Pilavüstü kuru fasulye\". Verified Ingredients: The dish is strictly composed of: Geleneksel Pilavüstü kuru fasulye taze malzemeleri (fresh authentic ingredients for Turkish Pilavüstü kuru fasulye). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "pirinc-pilavi",
-    "name": "Pirinç pilavı",
-    "category": "Yan Ürünler & Pilavlar",
-    "targetFilename": "pirinc-pilavi.jpg",
-    "targetPath": "public/images/products/pirinc-pilavi.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Pirinç pilavı\". Verified Ingredients: The dish is strictly composed of: Geleneksel Pirinç pilavı taze malzemeleri (fresh authentic ingredients for Turkish Pirinç pilavı). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
     "slug": "yogurt",
     "name": "Yoğurt",
     "category": "Yan Ürünler & Pilavlar",
     "targetFilename": "yogurt.jpg",
     "targetPath": "public/images/products/yogurt.jpg",
     "prompt": "Editorial culinary food photography of authentic Turkish dish \"Yoğurt\". Verified Ingredients: The dish is strictly composed of: Geleneksel Yoğurt taze malzemeleri (fresh authentic ingredients for Turkish Yoğurt). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "karisik-pide",
-    "name": "Karışık pide",
-    "category": "Taş Fırın Pideler",
-    "targetFilename": "karisik-pide.jpg",
-    "targetPath": "public/images/products/karisik-pide.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Karışık pide\". Verified Ingredients: The dish is strictly composed of: Geleneksel Karışık pide taze malzemeleri (fresh authentic ingredients for Turkish Karışık pide). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "kasarli-pide",
-    "name": "Kaşarlı pide",
-    "category": "Taş Fırın Pideler",
-    "targetFilename": "kasarli-pide.jpg",
-    "targetPath": "public/images/products/kasarli-pide.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Kaşarlı pide\". Verified Ingredients: The dish is strictly composed of: Geleneksel Kaşarlı pide taze malzemeleri (fresh authentic ingredients for Turkish Kaşarlı pide). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "kavurmali-kasarli",
-    "name": "Kavurmalı kaşarlı pide",
-    "category": "Taş Fırın Pideler",
-    "targetFilename": "kavurmali-kasarli.jpg",
-    "targetPath": "public/images/products/kavurmali-kasarli.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Kavurmalı kaşarlı pide\". Verified Ingredients: The dish is strictly composed of: Geleneksel Kavurmalı kaşarlı pide taze malzemeleri (fresh authentic ingredients for Turkish Kavurmalı kaşarlı pide). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "kavurmali-pide",
-    "name": "Kavurmalı pide",
-    "category": "Taş Fırın Pideler",
-    "targetFilename": "kavurmali-pide.jpg",
-    "targetPath": "public/images/products/kavurmali-pide.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Kavurmalı pide\". Verified Ingredients: The dish is strictly composed of: Geleneksel Kavurmalı pide taze malzemeleri (fresh authentic ingredients for Turkish Kavurmalı pide). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "kiymali-pide",
-    "name": "Kıymalı pide",
-    "category": "Taş Fırın Pideler",
-    "targetFilename": "kiymali-pide.jpg",
-    "targetPath": "public/images/products/kiymali-pide.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Kıymalı pide\". Verified Ingredients: The dish is strictly composed of: Geleneksel Kıymalı pide taze malzemeleri (fresh authentic ingredients for Turkish Kıymalı pide). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "koy-peynirli-pide",
-    "name": "Köy peynirli pide",
-    "category": "Taş Fırın Pideler",
-    "targetFilename": "koy-peynirli-pide.jpg",
-    "targetPath": "public/images/products/koy-peynirli-pide.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Köy peynirli pide\". Verified Ingredients: The dish is strictly composed of: Geleneksel Köy peynirli pide taze malzemeleri (fresh authentic ingredients for Turkish Köy peynirli pide). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "kusbasili-kasarli",
-    "name": "Kuşbaşılı kaşarlı pide",
-    "category": "Taş Fırın Pideler",
-    "targetFilename": "kusbasili-kasarli.jpg",
-    "targetPath": "public/images/products/kusbasili-kasarli.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Kuşbaşılı kaşarlı pide\". Verified Ingredients: The dish is strictly composed of: Geleneksel Kuşbaşılı kaşarlı pide taze malzemeleri (fresh authentic ingredients for Turkish Kuşbaşılı kaşarlı pide). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "kusbasili-pide",
-    "name": "Kuşbaşılı pide",
-    "category": "Taş Fırın Pideler",
-    "targetFilename": "kusbasili-pide.jpg",
-    "targetPath": "public/images/products/kusbasili-pide.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Kuşbaşılı pide\". Verified Ingredients: The dish is strictly composed of: Geleneksel Kuşbaşılı pide taze malzemeleri (fresh authentic ingredients for Turkish Kuşbaşılı pide). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "pastirmali-kasarli",
-    "name": "Pastırmalı kaşarlı pide",
-    "category": "Taş Fırın Pideler",
-    "targetFilename": "pastirmali-kasarli.jpg",
-    "targetPath": "public/images/products/pastirmali-kasarli.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Pastırmalı kaşarlı pide\". Verified Ingredients: The dish is strictly composed of: Geleneksel Pastırmalı kaşarlı pide taze malzemeleri (fresh authentic ingredients for Turkish Pastırmalı kaşarlı pide). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
   },
   {
     "slug": "pastirmali-pide",
@@ -270,14 +62,6 @@
     "targetFilename": "sosisli-pide.jpg",
     "targetPath": "public/images/products/sosisli-pide.jpg",
     "prompt": "Editorial culinary food photography of authentic Turkish dish \"Sosisli pide\". Verified Ingredients: The dish is strictly composed of: Geleneksel Sosisli pide taze malzemeleri (fresh authentic ingredients for Turkish Sosisli pide). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
-  },
-  {
-    "slug": "sucuklu-kasarli",
-    "name": "Sucuklu kaşarlı pide",
-    "category": "Taş Fırın Pideler",
-    "targetFilename": "sucuklu-kasarli.jpg",
-    "targetPath": "public/images/products/sucuklu-kasarli.jpg",
-    "prompt": "Editorial culinary food photography of authentic Turkish dish \"Sucuklu kaşarlı pide\". Verified Ingredients: The dish is strictly composed of: Geleneksel Sucuklu kaşarlı pide taze malzemeleri (fresh authentic ingredients for Turkish Sucuklu kaşarlı pide). Plating details: traditional Turkish ceramic plate. CRITICAL INGREDIENT FIDELITY RULE: Do NOT invent, hallucinate, or add any unverified side dishes, accompaniments, garnishes, or starches. Absolutely NO rice, NO french fries, NO bread, NO pickles, NO extra side salads, NO sauces unless explicitly listed in verified ingredients. Present exclusively the stated dish centered on the plate. Visual Style & Atmosphere: Warm beige textured ceramic tabletop background, soft warm cinematic studio lighting with gentle soft shadows, 45-degree angle food portrait, razor-sharp focus on realistic food textures and authentic simmering glazes, square 1:1 composition, premium gourmet Turkish restaurant aesthetic."
   },
   {
     "slug": "sucuklu-pide",
