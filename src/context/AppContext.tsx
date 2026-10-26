@@ -237,10 +237,30 @@ export function AppProvider({
   );
 }
 
+const fallbackAppContext: AppContextType = {
+  lang: "tr",
+  currency: "TRY",
+  changeCurrency: () => {},
+  convertPrice: (price) => {
+    if (price === null || price === undefined) return null;
+    const num = typeof price === "string" ? parseFloat(price) : price;
+    return isNaN(num) ? null : `${Math.round(num)} ₺`;
+  },
+  getCurrencySymbol: () => "₺",
+  cart: [],
+  addToCart: () => {},
+  removeFromCart: () => {},
+  clearCart: () => {},
+  getItemQuantity: () => 0,
+  cartCount: 0,
+  cartTotalTRY: 0,
+  isCartOpen: false,
+  setIsCartOpen: () => {},
+  rates: DEFAULT_FALLBACK_RATES.rates as Record<CurrencyCode, RateInfo>,
+  ratesSource: "fallback",
+};
+
 export function useAppContext(): AppContextType {
   const ctx = useContext(AppContext);
-  if (!ctx) {
-    throw new Error("useAppContext must be used within an AppProvider");
-  }
-  return ctx;
+  return ctx || fallbackAppContext;
 }

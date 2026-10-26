@@ -2348,7 +2348,7 @@ export const CATEGORY_TRANSLATIONS: Record<string, Record<Locale, string>> = {
     "zh": "配菜与抓饭"
   },
   "pideler": {
-    "tr": "Pideler",
+    "tr": "Taş Fırın Pide",
     "en": "Stone Oven Pide",
     "ar": "فطائر البيدة بالفرن الحجري",
     "ru": "Пиде из каменной печи",

@@ -6,7 +6,7 @@ import { useParams } from "next/navigation";
 import { useAppContext } from "@/context/AppContext";
 import { MenuCategory } from "@/data/menuData";
 import { CaretLeft, CaretRight, ForkKnife, Coffee } from "@phosphor-icons/react";
-import { CupSoda } from "lucide-react";
+import { CupSoda, Soup, Salad, Wheat, CakeSlice, UtensilsCrossed } from "lucide-react";
 import { CookingPot, StoneOven, OttomanStar } from "./BrandIcons";
 import { CATEGORY_TRANSLATIONS } from "@/data/dishTranslations";
 import { Locale } from "@/i18n/translations";
@@ -67,17 +67,29 @@ export default function MenuCategoryBar({
   };
 
   const getCategoryIcon = (catId: string) => {
+    if (catId === "ana-yemekler") {
+      return <CookingPot size={22} />;
+    }
     if (catId.includes("pide")) {
       return <StoneOven size={22} />;
     }
-    if (catId === "icecekler") {
-      return <CupSoda size={22} strokeWidth={1.75} />;
+    if (catId === "corbalar") {
+      return <Soup size={22} strokeWidth={1.8} />;
+    }
+    if (catId === "az-menu") {
+      return <UtensilsCrossed size={22} strokeWidth={1.8} />;
+    }
+    if (catId === "yan-urunler") {
+      return <Wheat size={22} strokeWidth={1.8} />;
+    }
+    if (catId === "salatalar") {
+      return <Salad size={22} strokeWidth={1.8} />;
     }
     if (catId === "tatlilar") {
-      return <Coffee size={22} weight="regular" />;
+      return <CakeSlice size={22} strokeWidth={1.8} />;
     }
-    if (catId === "corbalar" || catId === "ana-yemekler") {
-      return <CookingPot size={22} />;
+    if (catId === "icecekler") {
+      return <CupSoda size={22} strokeWidth={1.8} />;
     }
     return <ForkKnife size={22} weight="regular" />;
   };
