@@ -53,12 +53,14 @@ export interface RestaurantConfig {
     instagram?: string; // TODO: Admin to add verified handle
     facebook?: string;
   };
+  website: string;
 }
 
 export const RESTAURANT_CONFIG: RestaurantConfig = {
   name: "Cihangir Ev Yemekleri & Pide",
   tagline: "Geleneksel Ev Yemekleri & Taş Fırın Pide",
   cuisine: "Traditional Turkish Home Cooking & Stone-Oven Pide",
+  website: "https://cihangirevyemekler.com.tr",
   address: {
     street: "Firuzağa Camii Sk. No:1 A",
     neighborhood: "Firuzağa Mah.",
