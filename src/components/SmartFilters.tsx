@@ -15,6 +15,7 @@ interface SmartFiltersProps {
 const FILTER_ITEMS = [
   {
     id: "all",
+    color: "#354D37",
     icon: Utensils,
     label: {
       tr: "Tümü",
@@ -31,6 +32,7 @@ const FILTER_ITEMS = [
   },
   {
     id: "gluten-free",
+    color: "#A8683B",
     icon: Wheat,
     label: {
       tr: "Glütensiz",
@@ -47,6 +49,7 @@ const FILTER_ITEMS = [
   },
   {
     id: "signature",
+    color: "#C64C32",
     icon: Crown,
     label: {
       tr: "Şefin Seçimi",
@@ -63,6 +66,7 @@ const FILTER_ITEMS = [
   },
   {
     id: "vegetarian",
+    color: "#4F7A45",
     icon: Leaf,
     label: {
       tr: "Vejetaryen",
@@ -79,6 +83,7 @@ const FILTER_ITEMS = [
   },
   {
     id: "spicy",
+    color: "#A8281C",
     icon: Flame,
     label: {
       tr: "Acılı",
@@ -95,6 +100,7 @@ const FILTER_ITEMS = [
   },
   {
     id: "daily",
+    color: "#2F6F73",
     icon: CalendarDays,
     isDaily: true,
     label: {
@@ -154,13 +160,18 @@ export default function SmartFilters({
           <button
             key={f.id}
             onClick={handleClick}
-            className={`shrink-0 flex items-center gap-1.5 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-bold tracking-tight transition-all duration-200 cursor-pointer select-none shadow-2xs ${
-              isActive
-                ? "bg-[#4E5F4C] text-[#FFFFFF] border border-[#4E5F4C] ring-2 ring-[#4E5F4C]/25 shadow-xs scale-[1.02]"
-                : "bg-[#FAF7F0] border border-[#9C7A3F]/30 text-[#4A4335] hover:bg-[#EDE3CE] hover:border-[#9C7A3F]/60"
+            style={{
+              backgroundColor: f.color,
+              borderColor: f.color,
+              color: "#fff",
+              boxShadow: isActive ? `0 0 0 3px #FFFAF0, 0 0 0 5px ${f.color}, 0 8px 18px ${f.color}55` : `0 3px 8px ${f.color}30`,
+              opacity: activeFilter && !isActive && !isAll ? 0.55 : 1,
+            }}
+            className={`group shrink-0 flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full text-[11px] sm:text-xs font-bold tracking-tight transition-all duration-200 cursor-pointer select-none border hover:-translate-y-0.5 hover:brightness-110 hover:!opacity-100 ${
+              isActive ? "scale-[1.06]" : ""
             }`}
           >
-            <Icon size={14} className={isActive ? "text-white" : "text-[#9C7A3F]"} />
+            <Icon size={14} className="text-white" />
             <span>{localizedLabel}</span>
             {isActive && !isAll && (
               <X size={12} className="ms-0.5 opacity-80 hover:opacity-100" />

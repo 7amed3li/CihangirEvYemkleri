@@ -7,9 +7,18 @@ import { useAppContext } from "@/context/AppContext";
 import { useMounted } from "@/hooks/useMounted";
 import { useParams } from "next/navigation";
 import { X, MagnifyingGlassPlus, Plus, Minus, ShareNetwork, Check } from "@phosphor-icons/react";
-import { Wheat } from "lucide-react";
+import { Wheat, Coffee, CupSoda, GlassWater } from "lucide-react";
 import { CookingPot, StoneOven } from "./BrandIcons";
 import { getDishDisplay } from "@/data/dishTranslations";
+
+const HOT_BEVERAGES = new Set(["cay", "turk-kahvesi", "nescafe", "bitki-caylari"]);
+const COLD_BEVERAGES = new Set(["ayran", "cola", "fanta", "meyve-sulari", "soda", "su"]);
+
+function getBeverageType(id: string): "hot" | "cold" | null {
+  if (HOT_BEVERAGES.has(id)) return "hot";
+  if (COLD_BEVERAGES.has(id)) return "cold";
+  return null;
+}
 
 interface DishModalProps {
   isOpen: boolean;
@@ -54,7 +63,8 @@ export default function DishModal({
   const isRTL = activeLang === "ar" || activeLang === "fa";
   const displayPrice = convertPrice(item?.price);
   const symbol = getCurrencySymbol();
-  const image = customImage || item?.image;
+  const isBeverage = getBeverageType(item?.id || "") !== null;
+  const image = isBeverage ? undefined : (customImage || item?.image);
   const tags = item?.tags || [];
   const qty = getItemQuantity(item?.id);
   const isAvailable = item?.isAvailable !== false;
@@ -83,7 +93,7 @@ export default function DishModal({
         >
           <div
             dir={isRTL ? "rtl" : "ltr"}
-            className="bg-[#F7F2E7] rounded-2xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative border border-[#9C7A3F]/30 text-start"
+            className="bg-[#FFFAF0] rounded-2xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col shadow-2xl relative border border-[#253D2C]/17 text-start"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Top Buttons: Share & Close */}
@@ -91,7 +101,7 @@ export default function DishModal({
               <button
                 onClick={handleCopyLink}
                 aria-label="Copy link"
-                className="w-9 h-9 flex items-center justify-center rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] transition-colors border border-[#9C7A3F]/25 shadow-xs"
+                className="w-9 h-9 flex items-center justify-center rounded-md bg-[#F6F1E7] text-[#253D2C] hover:text-[#C64C32] transition-colors border border-[#253D2C]/14 shadow-xs"
               >
                 {isCopied ? (
                   <Check size={16} weight="bold" className="text-green-600" />
@@ -102,7 +112,7 @@ export default function DishModal({
               <button
                 onClick={() => setIsOpen(false)}
                 aria-label="Close modal"
-                className="w-9 h-9 flex items-center justify-center rounded-md bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] transition-colors border border-[#9C7A3F]/25 shadow-xs"
+                className="w-9 h-9 flex items-center justify-center rounded-md bg-[#F6F1E7] text-[#253D2C] hover:text-[#C64C32] transition-colors border border-[#253D2C]/14 shadow-xs"
               >
                 <X size={18} weight="bold" />
               </button>
@@ -121,18 +131,28 @@ export default function DishModal({
                 <button
                   onClick={() => setIsFullscreenImage(true)}
                   aria-label="View fullscreen"
-                  className="absolute bottom-4 end-4 z-20 w-9 h-9 flex items-center justify-center rounded-md bg-[#2B2620] text-white hover:bg-[#9C7A3F] transition-all shadow-md"
+                  className="absolute bottom-4 end-4 z-20 w-9 h-9 flex items-center justify-center rounded-md bg-[#253D2C] text-white hover:bg-[#C64C32] transition-all shadow-md"
                 >
                   <MagnifyingGlassPlus size={16} weight="bold" />
                 </button>
               </div>
             ) : (
-              <div className="w-full h-36 shrink-0 relative bg-gradient-to-br from-[#EDE3CE] to-[#F7F2E7] border-b border-[#9C7A3F]/25 flex items-center justify-center text-[#9C7A3F]">
-                {item.id.includes("pide") ? (
-                  <StoneOven size={48} />
-                ) : (
-                  <CookingPot size={48} />
-                )}
+              <div className="w-full h-28 sm:h-32 shrink-0 relative bg-gradient-to-br from-[#F6F1E7] via-[#FFFAF0] to-[#E5DAC4] border-b border-[#253D2C]/14 flex items-center justify-center text-[#596752]">
+                <div className="w-14 h-14 rounded-full bg-[#FFFAF0] border border-[#253D2C]/17 flex items-center justify-center shadow-xs">
+                  {getBeverageType(item?.id || "") === "hot" ? (
+                    <Coffee size={28} />
+                  ) : getBeverageType(item?.id || "") === "cold" ? (
+                    item?.id === "su" || item?.id === "soda" ? (
+                      <GlassWater size={28} />
+                    ) : (
+                      <CupSoda size={28} />
+                    )
+                  ) : item.id.includes("pide") ? (
+                    <StoneOven size={32} />
+                  ) : (
+                    <CookingPot size={32} />
+                  )}
+                </div>
               </div>
             )}
 
@@ -141,14 +161,14 @@ export default function DishModal({
               <div className="flex justify-between items-start gap-4">
                 <div className="flex flex-col gap-0.5">
                   <h2
-                    className="text-2xl font-bold text-[#2B2620] leading-tight"
+                    className="text-2xl font-bold text-[#253D2C] leading-tight"
                     style={{ fontFamily: "var(--font-cairo)" }}
                   >
                     {turkishTitle}
                   </h2>
                   {activeLang !== "tr" && localizedName && (
                     <span
-                      className="text-sm font-semibold text-[#9C7A3F]"
+                      className="text-sm font-semibold text-[#596752]"
                       style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}
                     >
                       {localizedName}
@@ -157,7 +177,7 @@ export default function DishModal({
                 </div>
                 {displayPrice != null && (
                   <span
-                    className="shrink-0 flex items-center gap-1 text-lg font-bold text-white bg-[#9C7A3F] px-3 py-1 rounded-md shadow-xs"
+                    className="shrink-0 flex items-center gap-1 text-lg font-bold text-white bg-[#C64C32] px-3 py-1 rounded-md shadow-xs"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     {displayPrice} {symbol}
@@ -169,23 +189,23 @@ export default function DishModal({
               {tags.length > 0 && (
                 <div className="flex flex-wrap gap-1.5">
                   {tags.includes("signature") && (
-                    <span className="px-2.5 py-0.5 bg-[#9C7A3F]/15 text-[#9C7A3F] border border-[#9C7A3F]/30 text-xs font-bold rounded-md uppercase tracking-wider">
+                    <span className="px-2.5 py-0.5 bg-[#253D2C]/7 text-[#C64C32] border border-[#253D2C]/17 text-xs font-bold rounded-md uppercase tracking-wider">
                       Şefin Seçimi
                     </span>
                   )}
                   {tags.includes("trending") && (
-                    <span className="px-2.5 py-0.5 bg-[#B8860B]/15 text-[#B8860B] border border-[#B8860B]/30 text-xs font-bold rounded-md uppercase tracking-wider">
+                    <span className="px-2.5 py-0.5 bg-[#253D2C]/7 text-[#C64C32] border border-[#253D2C]/17 text-xs font-bold rounded-md uppercase tracking-wider">
                       En Çok Satan
                     </span>
                   )}
                   {tags.includes("spicy") && (
-                    <span className="px-2.5 py-0.5 bg-[#A0422E]/15 text-[#A0422E] border border-[#A0422E]/30 text-xs font-bold rounded-md uppercase tracking-wider">
+                    <span className="px-2.5 py-0.5 bg-[#C64C32]/15 text-[#C64C32] border border-[#C64C32]/30 text-xs font-bold rounded-md uppercase tracking-wider">
                       Acılı
                     </span>
                   )}
                   {tags.includes("gluten-free") && (
-                    <span className="px-2.5 py-0.5 bg-[#5C6E58]/15 text-[#3E523A] border border-[#5C6E58]/35 text-xs font-bold rounded-md uppercase tracking-wider flex items-center gap-1.5">
-                      <Wheat size={14} className="text-[#3E523A]" />
+                    <span className="px-2.5 py-0.5 bg-[#4A6350]/15 text-[#293F30] border border-[#4A6350]/35 text-xs font-bold rounded-md uppercase tracking-wider flex items-center gap-1.5">
+                      <Wheat size={14} className="text-[#293F30]" />
                       <span>
                         {activeLang === "ar"
                           ? "خالي من الغلوتين"
@@ -196,7 +216,7 @@ export default function DishModal({
                     </span>
                   )}
                   {tags.includes("vegetarian") && (
-                    <span className="px-2.5 py-0.5 bg-[#4E5F4C]/15 text-[#4E5F4C] border border-[#4E5F4C]/30 text-xs font-bold rounded-md uppercase tracking-wider">
+                    <span className="px-2.5 py-0.5 bg-[#354D37]/15 text-[#354D37] border border-[#354D37]/30 text-xs font-bold rounded-md uppercase tracking-wider">
                       Vejetaryen
                     </span>
                   )}
@@ -207,7 +227,7 @@ export default function DishModal({
               {formattedDesc && (
                 <div className="mt-1">
                   <h4
-                    className="text-xs font-bold text-[#9C7A3F] mb-1 uppercase tracking-widest"
+                    className="text-xs font-bold text-[#C64C32] mb-1 uppercase tracking-widest"
                     style={{ fontFamily: "var(--font-cairo)" }}
                   >
                     {activeLang === "ar"
@@ -231,12 +251,12 @@ export default function DishModal({
                       : "Detaylar"}
                   </h4>
                   <p
-                    className="text-[#7A7364] leading-relaxed text-sm font-medium"
+                    className="text-[#76816E] leading-relaxed text-sm font-medium"
                     style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}
                   >
                     {activeLang !== "tr" ? (
                       <>
-                        <span className="font-bold text-[#2B2620]">{localizedName}: </span>
+                        <span className="font-bold text-[#253D2C]">{localizedName}: </span>
                         {localizedDesc}
                       </>
                     ) : (
@@ -249,7 +269,7 @@ export default function DishModal({
               {/* Counter Controls */}
               <div className="mt-3 flex items-center justify-center">
                 {!isAvailable ? (
-                  <div className="flex items-center justify-center px-6 py-2.5 rounded-md bg-[#A0422E]/10 border border-[#A0422E]/30 text-[#A0422E] font-bold text-sm tracking-wide">
+                  <div className="flex items-center justify-center px-6 py-2.5 rounded-md bg-[#C64C32]/10 border border-[#C64C32]/30 text-[#C64C32] font-bold text-sm tracking-wide">
                     <span>
                       {lang === "ar"
                         ? "غير متوفر حالياً"
@@ -268,20 +288,20 @@ export default function DishModal({
                         image: item.image,
                       })
                     }
-                    className="flex items-center justify-center gap-2 px-6 py-2.5 rounded-md bg-[#4E5F4C] text-[#EAF0E6] hover:bg-[#3D4B3B] transition-colors font-bold text-sm shadow-xs"
+                    className="flex items-center justify-center gap-2 px-6 py-2.5 rounded-md bg-[#354D37] text-[#E4EADB] hover:bg-[#293F30] transition-colors font-bold text-sm shadow-xs"
                   >
                     <Plus size={16} weight="bold" />
                     <span>Sepete Ekle</span>
                   </button>
                 ) : (
-                  <div className="flex items-center min-h-[44px] rounded-lg border border-[#9C7A3F]/30 bg-[#EDE3CE] px-2 py-1 gap-2">
+                  <div className="flex items-center min-h-[44px] rounded-lg border border-[#253D2C]/17 bg-[#F6F1E7] px-2 py-1 gap-2">
                     <button
                       onClick={() => removeFromCart(item.id)}
-                      className="w-8 h-8 flex items-center justify-center rounded-md text-[#2B2620] hover:text-[#A0422E]"
+                      className="w-8 h-8 flex items-center justify-center rounded-md text-[#253D2C] hover:text-[#C64C32]"
                     >
                       <Minus size={16} weight="bold" />
                     </button>
-                    <span className="font-bold text-[#2B2620] px-2">{qty}</span>
+                    <span className="font-bold text-[#253D2C] px-2">{qty}</span>
                     <button
                       onClick={() =>
                         addToCart({
@@ -291,7 +311,7 @@ export default function DishModal({
                           image: item.image,
                         })
                       }
-                      className="w-8 h-8 flex items-center justify-center rounded-md text-[#2B2620] hover:text-[#4E5F4C]"
+                      className="w-8 h-8 flex items-center justify-center rounded-md text-[#253D2C] hover:text-[#354D37]"
                     >
                       <Plus size={16} weight="bold" />
                     </button>
@@ -301,7 +321,7 @@ export default function DishModal({
 
               <button
                 onClick={() => setIsOpen(false)}
-                className="mt-2 w-full py-2.5 rounded-md bg-[#EDE3CE] text-[#2B2620] font-bold hover:bg-[#9C7A3F] hover:text-white transition-colors border border-[#9C7A3F]/30 text-xs uppercase tracking-wider"
+                className="mt-2 w-full py-2.5 rounded-md bg-[#F6F1E7] text-[#253D2C] font-bold hover:bg-[#C64C32] hover:text-white transition-colors border border-[#253D2C]/17 text-xs uppercase tracking-wider"
               >
                 Kapat
               </button>
@@ -320,7 +340,7 @@ export default function DishModal({
           >
             <button
               onClick={() => setIsFullscreenImage(false)}
-              className="absolute top-6 end-6 z-[9999999] w-12 h-12 flex items-center justify-center rounded-full bg-[#EDE3CE] text-[#2B2620] hover:bg-[#9C7A3F] hover:text-white transition-all shadow-lg"
+              className="absolute top-6 end-6 z-[9999999] w-12 h-12 flex items-center justify-center rounded-full bg-[#F6F1E7] text-[#253D2C] hover:bg-[#C64C32] hover:text-white transition-all shadow-lg"
             >
               <X size={24} weight="bold" />
             </button>

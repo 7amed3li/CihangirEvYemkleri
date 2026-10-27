@@ -65,7 +65,7 @@ export default function Footer({ locale, dict }: FooterProps) {
   return (
     <footer
       dir={isRtl ? "rtl" : "ltr"}
-      className="bg-[#F7F2E7] border-t-2 border-[#9C7A3F]/25 pt-10 pb-20 sm:pb-28 px-4 text-start"
+      className="bg-[#FFFAF0] border-t-2 border-[#253D2C]/14 pt-10 pb-20 sm:pb-28 px-4 text-start"
     >
       <div className="max-w-6xl mx-auto">
         {/* Ottoman Divider */}
@@ -76,24 +76,24 @@ export default function Footer({ locale, dict }: FooterProps) {
           {/* Brand Column */}
           <div className="flex flex-col items-start text-start">
             <div className="flex items-center gap-2 mb-2">
-              <span className="text-[#9C7A3F]">
+              <span className="text-[#596752]">
                 <OttomanSeal size={28} />
               </span>
               <h2
-                className="text-2xl sm:text-3xl font-black text-[#2B2620] tracking-wide"
+                className="text-2xl sm:text-3xl font-black text-[#253D2C] tracking-wide"
                 style={{ fontFamily: "var(--font-cairo)" }}
               >
                 Cihangir
               </h2>
             </div>
             <p
-              className="text-[#9C7A3F] text-xs font-semibold tracking-[0.25em] uppercase mb-3"
+              className="text-[#C64C32] text-xs font-semibold tracking-[0.25em] uppercase mb-3"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               Ev Yemekleri & Pide
             </p>
             <p
-              className="text-[#7A7364] text-xs sm:text-sm font-normal leading-relaxed max-w-xs"
+              className="text-[#76816E] text-xs sm:text-sm font-normal leading-relaxed max-w-xs"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               {dict?.subtitle ||
@@ -103,71 +103,71 @@ export default function Footer({ locale, dict }: FooterProps) {
 
           {/* Quick Links */}
           <div className="flex flex-col items-start text-start w-full">
-            <h3 className="text-xs sm:text-sm font-bold text-[#9C7A3F] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#9C7A3F]"></span>
+            <h3 className="text-xs sm:text-sm font-bold text-[#C64C32] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C64C32]"></span>
               <span>{dict?.quickLinks || (isRtl ? "روابط سريعة" : "Hızlı Bağlantılar")}</span>
             </h3>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <Link
                   href={`/${locale}`}
-                  className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
+                  className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#9C7A3F]">›</span>
+                  <span className="text-[#596752]">›</span>
                   <span>{dict?.home || (isRtl ? "الرئيسية" : "Ana Sayfa")}</span>
                 </Link>
               </li>
               <li>
                 <Link
                   href={`/${locale}/menu`}
-                  className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
+                  className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#9C7A3F]">›</span>
+                  <span className="text-[#596752]">›</span>
                   <span>{dict?.menu || (isRtl ? "قائمة الطعام" : "Menü")}</span>
                 </Link>
               </li>
               <li>
                 <Link
                   href={`/${locale}/about`}
-                  className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
+                  className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#9C7A3F]">›</span>
+                  <span className="text-[#596752]">›</span>
                   <span>{isRtl ? "عن المطعم" : locale === "en" ? "About Us" : "Hakkımızda"}</span>
                 </Link>
               </li>
               <li>
                 <Link
                   href={`/${locale}/delivery`}
-                  className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
+                  className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#9C7A3F]">›</span>
+                  <span className="text-[#596752]">›</span>
                   <span>{isRtl ? "التوصيل والاستلام" : locale === "en" ? "Delivery & Pick-up" : "Teslimat & Gel-Al"}</span>
                 </Link>
               </li>
               <li>
                 <Link
                   href={`/${locale}/allergens`}
-                  className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
+                  className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#9C7A3F]">›</span>
+                  <span className="text-[#596752]">›</span>
                   <span>{isRtl ? "دليل الحساسية" : locale === "en" ? "Allergens" : "Alerjen Bilgisi"}</span>
                 </Link>
               </li>
               <li>
                 <Link
                   href={`/${locale}/faq`}
-                  className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
+                  className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#9C7A3F]">›</span>
+                  <span className="text-[#596752]">›</span>
                   <span>{isRtl ? "الأسئلة الشائعة" : locale === "en" ? "FAQ" : "Sıkça Sorulanlar"}</span>
                 </Link>
               </li>
               <li>
                 <Link
                   href={`/${locale}/contact`}
-                  className="text-[#7A7364] hover:text-[#2B2620] transition-colors inline-flex items-center gap-1.5"
+                  className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#9C7A3F]">›</span>
+                  <span className="text-[#596752]">›</span>
                   <span>{isRtl ? "تواصل معنا والموقع" : locale === "en" ? "Contact & Location" : "İletişim & Konum"}</span>
                 </Link>
               </li>
@@ -176,13 +176,13 @@ export default function Footer({ locale, dict }: FooterProps) {
 
           {/* Contact & Hours */}
           <div className="flex flex-col items-start text-start w-full">
-            <h3 className="text-xs sm:text-sm font-bold text-[#9C7A3F] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#9C7A3F]"></span>
+            <h3 className="text-xs sm:text-sm font-bold text-[#C64C32] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C64C32]"></span>
               <span>{dict?.contact || (isRtl ? "التواصل والموقع" : "İletişim & Konum")}</span>
             </h3>
             <div className="flex items-start gap-2.5 mb-3 text-start">
               <svg
-                className="w-4 h-4 text-[#4E5F4C] mt-0.5 shrink-0"
+                className="w-4 h-4 text-[#354D37] mt-0.5 shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -200,7 +200,7 @@ export default function Footer({ locale, dict }: FooterProps) {
                 />
               </svg>
               <p
-                className="text-[#2B2620] text-xs sm:text-sm font-medium leading-relaxed"
+                className="text-[#253D2C] text-xs sm:text-sm font-medium leading-relaxed"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 Firuzağa, Firuzağa Camii Sk. No:1 A, 34425 Beyoğlu / İstanbul
@@ -208,7 +208,7 @@ export default function Footer({ locale, dict }: FooterProps) {
             </div>
             <div className="flex items-center gap-2.5 mb-2.5">
               <svg
-                className="w-4 h-4 text-[#4E5F4C] shrink-0"
+                className="w-4 h-4 text-[#354D37] shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -222,14 +222,14 @@ export default function Footer({ locale, dict }: FooterProps) {
               </svg>
               <a
                 href="tel:+902122513696"
-                className="text-[#2B2620] text-xs sm:text-sm font-semibold hover:text-[#9C7A3F] transition-colors"
+                className="text-[#253D2C] text-xs sm:text-sm font-semibold hover:text-[#C64C32] transition-colors"
               >
                 +90 (212) 251 36 96
               </a>
             </div>
             <div className="flex items-center gap-2.5 mb-4">
               <svg
-                className="w-4 h-4 text-[#4E5F4C] shrink-0"
+                className="w-4 h-4 text-[#354D37] shrink-0"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -238,13 +238,13 @@ export default function Footer({ locale, dict }: FooterProps) {
                 <circle cx="12" cy="12" r="10" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
               </svg>
-              <p className="text-[#7A7364] text-xs sm:text-sm font-medium">
+              <p className="text-[#76816E] text-xs sm:text-sm font-medium">
                 {dict?.hours || "Her gün: 08:30 - 22:30"}
               </p>
             </div>
             <a
               href="tel:+902122513696"
-              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#4E5F4C] text-[#EAF0E6] hover:bg-[#3D4B3B] transition-colors font-bold text-xs sm:text-sm shadow-xs"
+              className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#354D37] text-[#E4EADB] hover:bg-[#293F30] transition-colors font-bold text-xs sm:text-sm shadow-xs"
             >
               <span>{isRtl ? "اتصال هاتفي مباشر" : "Doğrudan Telefonla Arayın"}</span>
             </a>
@@ -252,12 +252,12 @@ export default function Footer({ locale, dict }: FooterProps) {
 
           {/* Interactive Google Map Preview Card */}
           <div className="flex flex-col items-start text-start w-full">
-            <h3 className="text-xs sm:text-sm font-bold text-[#9C7A3F] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#9C7A3F]"></span>
+            <h3 className="text-xs sm:text-sm font-bold text-[#C64C32] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C64C32]"></span>
               <span>{getMapTitle()}</span>
             </h3>
             
-            <div className="w-full rounded-xl overflow-hidden border border-[#9C7A3F]/35 shadow-xs bg-[#EDE3CE] relative group">
+            <div className="w-full rounded-xl overflow-hidden border border-[#253D2C]/20 shadow-xs bg-[#F6F1E7] relative group">
               <iframe
                 title="Cihangir Ev Yemekleri & Pide Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.8437998399587!2d28.981881676579626!3d41.03204907134707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab764fa6a1249%3A0x8e8fa65fecae72f2!2zRmnJtnV6YcSfYSwgRmnJtnV6YcSfYSBDYW1paSBTay4gTm86MSBBLCAzNDQyNSBCZXlvxJ9sdS_EsHN0YW5idWwsIFTDvHJraXll!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
@@ -275,10 +275,10 @@ export default function Footer({ locale, dict }: FooterProps) {
               href="https://maps.google.com/?q=Firuza%C4%9Fa,+Firuza%C4%9Fa+Camii+Sk.+No:1+A,+34425+Beyo%C4%9Flu/%C4%B0stanbul"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2.5 flex items-center justify-center gap-2 w-full py-2 px-3 rounded-lg border border-[#9C7A3F]/40 bg-[#FAF7F0] hover:bg-[#EDE3CE] text-[#2B2620] hover:text-[#9C7A3F] transition-all font-semibold text-xs shadow-2xs"
+              className="mt-2.5 flex items-center justify-center gap-2 w-full py-2 px-3 rounded-lg border border-[#253D2C]/24 bg-[#FFFAF0] hover:bg-[#F6F1E7] text-[#253D2C] hover:text-[#C64C32] transition-all font-semibold text-xs shadow-2xs"
             >
               <svg
-                className="w-4 h-4 text-[#9C7A3F]"
+                className="w-4 h-4 text-[#596752]"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -302,13 +302,13 @@ export default function Footer({ locale, dict }: FooterProps) {
         <div className="pt-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-start">
           <div className="space-y-1">
             <p
-              className="text-[#7A7364] text-xs font-medium"
+              className="text-[#76816E] text-xs font-medium"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               © 2026 Cihangir Ev Yemekleri & Pide. Tüm hakları saklıdır.
             </p>
             {/* Policy Links */}
-            <div className="flex flex-wrap items-center gap-3 text-[11px] text-[#9C7A3F]">
+            <div className="flex flex-wrap items-center gap-3 text-[11px] text-[#596752]">
               <Link href={`/${locale}/terms`} className="hover:underline">
                 {isRtl ? "شروط الاستخدام" : locale === "en" ? "Terms" : "Kullanım Koşulları"}
               </Link>
@@ -322,9 +322,9 @@ export default function Footer({ locale, dict }: FooterProps) {
               </Link>
             </div>
           </div>
-          <p className="text-[#7A7364] text-[10px] tracking-widest uppercase flex items-center gap-1">
+          <p className="text-[#76816E] text-[10px] tracking-widest uppercase flex items-center gap-1">
             Tasarım ve Geliştirme:
-            <span className="text-[#9C7A3F] font-bold">Hamed Mohamed</span>
+            <span className="text-[#596752] font-bold">Hamed Mohamed</span>
           </p>
         </div>
       </div>

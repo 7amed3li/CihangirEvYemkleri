@@ -39,16 +39,16 @@ export default function ContactClient({ locale }: ContactClientProps) {
     <div className="max-w-5xl mx-auto px-4 py-8 sm:py-12" dir={isRtl ? "rtl" : "ltr"}>
       {/* Header Banner */}
       <div className="text-center mb-10">
-        <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-[#B8381E]/10 text-[#B8381E] border border-[#B8381E]/25 mb-3">
+        <span className="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-[#C64C32]/10 text-[#C64C32] border border-[#C64C32]/25 mb-3">
           {t.badge}
         </span>
         <h1
-          className="text-2xl sm:text-4xl font-black text-[#261E1A] mb-3"
+          className="text-2xl sm:text-4xl font-black text-[#253D2C] mb-3"
           style={{ fontFamily: "var(--font-cairo)" }}
         >
           {t.title}
         </h1>
-        <p className="text-sm sm:text-base text-[#6E5F53] max-w-2xl mx-auto leading-relaxed">
+        <p className="text-sm sm:text-base text-[#76816E] max-w-2xl mx-auto leading-relaxed">
           {t.subtitle}
         </p>
       </div>
@@ -58,46 +58,46 @@ export default function ContactClient({ locale }: ContactClientProps) {
         {/* Left Column: Direct Info Cards */}
         <div className="lg:col-span-5 space-y-4">
           {/* Phone Card */}
-          <div className="bg-[#FFFFFF] border border-[#B8381E]/20 rounded-2xl p-5 shadow-xs">
+          <div className="bg-[#FFFFFF] border border-[#C64C32]/20 rounded-2xl p-5 shadow-xs">
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#B8381E] text-white flex items-center justify-center shrink-0 shadow-xs">
+              <div className="w-10 h-10 rounded-xl bg-[#C64C32] text-white flex items-center justify-center shrink-0 shadow-xs">
                 <Phone size={22} weight="bold" />
               </div>
               <div className="flex-1">
-                <h2 className="text-sm font-bold text-[#261E1A] uppercase tracking-wider mb-1">
+                <h2 className="text-sm font-bold text-[#253D2C] uppercase tracking-wider mb-1">
                   {t.callUs}
                 </h2>
                 <a
                   href={`tel:${RESTAURANT_CONFIG.phone.tel}`}
-                  className="text-lg font-black text-[#B8381E] hover:text-[#992E17] transition-colors block"
+                  className="text-lg font-black text-[#C64C32] hover:text-[#A83F29] transition-colors block"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {RESTAURANT_CONFIG.phone.display}
                 </a>
-                <p className="text-xs text-[#6E5F53] mt-1">
+                <p className="text-xs text-[#76816E] mt-1">
                   {t.deliveryNoticeDesc}
                 </p>
               </div>
             </div>
             <a
               href={`tel:${RESTAURANT_CONFIG.phone.tel}`}
-              className="mt-4 w-full py-2.5 rounded-xl bg-[#B8381E] hover:bg-[#992E17] text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-xs"
+              className="mt-4 w-full py-2.5 rounded-xl bg-[#C64C32] hover:bg-[#A83F29] text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors shadow-xs"
             >
               <span>{t.callUs}</span>
             </a>
           </div>
 
           {/* Address & Maps Card */}
-          <div className="bg-[#FAF7F0] border border-[#9C7A3F]/25 rounded-2xl p-5 shadow-xs">
+          <div className="bg-[#FFFAF0] border border-[#253D2C]/14 rounded-2xl p-5 shadow-xs">
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#9C7A3F] text-white flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#C64C32] text-white flex items-center justify-center shrink-0">
                 <MapPin size={22} weight="bold" />
               </div>
               <div>
-                <h3 className="text-xs font-bold text-[#2B2620] uppercase tracking-wider mb-1">
+                <h3 className="text-xs font-bold text-[#253D2C] uppercase tracking-wider mb-1">
                   {t.addressTitle}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#5A5344] font-medium leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#596752] font-medium leading-relaxed">
                   {RESTAURANT_CONFIG.address.fullText}
                 </p>
               </div>
@@ -106,26 +106,26 @@ export default function ContactClient({ locale }: ContactClientProps) {
               href={RESTAURANT_CONFIG.address.googleMapsDirectionsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3.5 w-full py-2 rounded-xl border border-[#9C7A3F]/40 bg-[#EDE3CE] hover:bg-[#9C7A3F] hover:text-white text-[#2B2620] font-semibold text-xs flex items-center justify-center gap-2 transition-all shadow-2xs"
+              className="mt-3.5 w-full py-2 rounded-xl border border-[#253D2C]/24 bg-[#F6F1E7] hover:bg-[#C64C32] hover:text-white text-[#253D2C] font-semibold text-xs flex items-center justify-center gap-2 transition-all shadow-2xs"
             >
               <span>{t.openMap}</span>
             </a>
           </div>
 
           {/* Hours Card */}
-          <div className="bg-[#FAF7F0] border border-[#9C7A3F]/25 rounded-2xl p-5 shadow-xs">
+          <div className="bg-[#FFFAF0] border border-[#253D2C]/14 rounded-2xl p-5 shadow-xs">
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#7A7364] text-white flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#76816E] text-white flex items-center justify-center shrink-0">
                 <Clock size={22} weight="bold" />
               </div>
               <div>
-                <h3 className="text-xs font-bold text-[#2B2620] uppercase tracking-wider mb-1">
+                <h3 className="text-xs font-bold text-[#253D2C] uppercase tracking-wider mb-1">
                   {t.hoursTitle}
                 </h3>
-                <p className="text-sm font-black text-[#2B2620]">
+                <p className="text-sm font-black text-[#253D2C]">
                   {RESTAURANT_CONFIG.hours.display}
                 </p>
-                <p className="text-xs text-[#7A7364] mt-0.5">
+                <p className="text-xs text-[#76816E] mt-0.5">
                   {RESTAURANT_CONFIG.hours.days}
                 </p>
               </div>
@@ -136,7 +136,7 @@ export default function ContactClient({ locale }: ContactClientProps) {
         {/* Right Column: Interactive Map & Message Form */}
         <div className="lg:col-span-7 space-y-6">
           {/* Map Embed */}
-          <div className="rounded-2xl overflow-hidden border-2 border-[#9C7A3F]/35 shadow-md bg-[#EDE3CE]">
+          <div className="rounded-2xl overflow-hidden border-2 border-[#253D2C]/20 shadow-md bg-[#F6F1E7]">
             <iframe
               title="Cihangir Ev Yemekleri & Pide Location"
               src={RESTAURANT_CONFIG.address.googleMapsEmbedUrl}
@@ -151,14 +151,14 @@ export default function ContactClient({ locale }: ContactClientProps) {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-[#FAF7F0] border border-[#9C7A3F]/25 rounded-2xl p-6 shadow-xs text-start">
+          <div className="bg-[#FFFAF0] border border-[#253D2C]/14 rounded-2xl p-6 shadow-xs text-start">
             <h3
-              className="text-lg font-bold text-[#2B2620] mb-1"
+              className="text-lg font-bold text-[#253D2C] mb-1"
               style={{ fontFamily: "var(--font-cairo)" }}
             >
               {t.formTitle}
             </h3>
-            <p className="text-xs text-[#7A7364] mb-5 leading-relaxed">
+            <p className="text-xs text-[#76816E] mb-5 leading-relaxed">
               {t.formNotice}
             </p>
 
@@ -185,48 +185,48 @@ export default function ContactClient({ locale }: ContactClientProps) {
                 )}
 
                 <div>
-                  <label className="block text-xs font-bold text-[#2B2620] mb-1">
-                    {t.nameLabel} <span className="text-[#A0422E]">*</span>
+                  <label className="block text-xs font-bold text-[#253D2C] mb-1">
+                    {t.nameLabel} <span className="text-[#C64C32]">*</span>
                   </label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg border border-[#9C7A3F]/30 bg-white text-xs text-[#2B2620] focus:outline-hidden focus:border-[#9C7A3F] transition-colors"
+                    className="w-full px-3 py-2 rounded-lg border border-[#253D2C]/17 bg-white text-xs text-[#253D2C] focus:outline-hidden focus:border-[#253D2C] transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#2B2620] mb-1">
-                    {t.contactLabel} <span className="text-[#A0422E]">*</span>
+                  <label className="block text-xs font-bold text-[#253D2C] mb-1">
+                    {t.contactLabel} <span className="text-[#C64C32]">*</span>
                   </label>
                   <input
                     type="text"
                     required
                     value={formData.contact}
                     onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg border border-[#9C7A3F]/30 bg-white text-xs text-[#2B2620] focus:outline-hidden focus:border-[#9C7A3F] transition-colors"
+                    className="w-full px-3 py-2 rounded-lg border border-[#253D2C]/17 bg-white text-xs text-[#253D2C] focus:outline-hidden focus:border-[#253D2C] transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#2B2620] mb-1">
-                    {t.messageLabel} <span className="text-[#A0422E]">*</span>
+                  <label className="block text-xs font-bold text-[#253D2C] mb-1">
+                    {t.messageLabel} <span className="text-[#C64C32]">*</span>
                   </label>
                   <textarea
                     rows={4}
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg border border-[#9C7A3F]/30 bg-white text-xs text-[#2B2620] focus:outline-hidden focus:border-[#9C7A3F] transition-colors"
+                    className="w-full px-3 py-2 rounded-lg border border-[#253D2C]/17 bg-white text-xs text-[#253D2C] focus:outline-hidden focus:border-[#253D2C] transition-colors"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="w-full py-3 rounded-xl bg-[#9C7A3F] hover:bg-[#856632] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-xs transition-colors cursor-pointer"
+                  className="w-full py-3 rounded-xl bg-[#C64C32] hover:bg-[#856632] text-white font-bold text-xs flex items-center justify-center gap-2 shadow-xs transition-colors cursor-pointer"
                 >
                   <PaperPlaneTilt size={16} weight="bold" />
                   <span>{status === "submitting" ? t.sendingBtn : t.sendBtn}</span>

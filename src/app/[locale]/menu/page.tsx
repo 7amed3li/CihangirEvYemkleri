@@ -51,7 +51,7 @@ export async function generateMetadata({
 
   const title = titles[locale] ?? titles.tr;
   const description = descriptions[locale] ?? descriptions.tr;
-  const canonicalUrl = `https://cihangir-ev-yemkleri.vercel.app/${locale}/menu`;
+  const canonicalUrl = `https://cihangirevyemekler.com.tr/${locale}/menu`;
 
   return {
     title,
@@ -84,7 +84,7 @@ export default async function MenuPage({
   ]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#EDE3CE]">
+    <div className="min-h-screen flex flex-col bg-[#F6F1E7]">
       {/* Sticky Ottoman Header */}
       <Header locale={locale} dict={dict} />
 

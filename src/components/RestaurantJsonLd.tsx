@@ -8,8 +8,8 @@ export default function RestaurantJsonLd({ locale }: { locale: string }) {
     name: RESTAURANT_CONFIG.name,
     description:
       "Cihangir'in kalbinde geleneksel Türk ev yemekleri ve taş fırın pide lezzetleri. Beyoğlu, İstanbul.",
-    image: "https://cihangir-ev-yemkleri.vercel.app/splash/logo-original.webp",
-    url: `https://cihangir-ev-yemkleri.vercel.app/${locale}`,
+    image: "https://cihangirevyemekler.com.tr/splash/logo-original.webp",
+    url: `https://cihangirevyemekler.com.tr/${locale}`,
     telephone: RESTAURANT_CONFIG.phone.tel,
     priceRange: "₺₺",
     servesCuisine: [
@@ -47,7 +47,7 @@ export default function RestaurantJsonLd({ locale }: { locale: string }) {
         closes: "22:30",
       },
     ],
-    hasMenu: `https://cihangir-ev-yemkleri.vercel.app/${locale}/menu`,
+    hasMenu: `https://cihangirevyemekler.com.tr/${locale}/menu`,
     acceptsReservations: "False",
   };
 

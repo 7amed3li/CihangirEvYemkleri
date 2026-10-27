@@ -24,47 +24,58 @@ interface FeaturedDish {
     zh?: string;
   };
   image?: string;
+  color: string;
 }
 
 const featuredDishes: FeaturedDish[] = [
   {
     id: "asci-tabagi",
+    color: "#C64C32",
     badge: { tr: "ŞEFİN SEÇİMİ", en: "CHEF'S SPECIAL", ar: "اختيار الشيف" },
   },
   {
     id: "kavurma",
+    color: "#354D37",
     badge: { tr: "EN ÇOK SATAN", en: "BEST SELLER", ar: "الأكثر طلباً" },
   },
   {
     id: "karisik-pide",
+    color: "#A8683B",
     badge: { tr: "TAŞ FIRIN", en: "STONE OVEN", ar: "فرن حجري" },
   },
   {
     id: "et-sote",
+    color: "#354D37",
     badge: { tr: "EN ÇOK SATAN", en: "BEST SELLER", ar: "الأكثر طلباً" },
   },
   {
     id: "karniyarik",
+    color: "#4F7A45",
     badge: { tr: "GELENEKSEL", en: "TRADITIONAL", ar: "تقليدي أصيل" },
   },
   {
     id: "ezogelin",
+    color: "#A8281C",
     badge: { tr: "SICACIK ÇORBA", en: "HOT SOUP", ar: "شوربة ساخنة" },
   },
   {
     id: "kayseri-mantisi",
+    color: "#7A3E5C",
     badge: { tr: "ŞEFİN İMZASI", en: "SIGNATURE", ar: "توقيع الشيف" },
   },
   {
     id: "kusbasili-kasarli",
+    color: "#A8683B",
     badge: { tr: "TAŞ FIRIN", en: "STONE OVEN", ar: "فرن حجري" },
   },
   {
     id: "kuzu-incik",
+    color: "#2F6F73",
     badge: { tr: "ÖZEL LEZZET", en: "SPECIAL", ar: "طبق مميز" },
   },
   {
     id: "firinda-sutlac",
+    color: "#B5547A",
     badge: { tr: "GÜNLÜK TATLI", en: "DAILY DESSERT", ar: "حلوى طازجة" },
   },
 ];
@@ -138,15 +149,15 @@ export default function FeaturedDishesShowcase({ items }: FeaturedDishesShowcase
   const allItems = items && items.length > 0 ? items : menuData.flatMap((c) => c.items);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#F7F2E7] pt-2.5 pb-2">
+    <section className="relative w-full overflow-hidden bg-[#FFFAF0] pt-2.5 pb-2">
       <div className="max-w-6xl mx-auto px-2.5 sm:px-5">
-        <div className="bg-[#FAF7F0] border-2 border-[#9C7A3F]/35 rounded-xl p-3 sm:p-4 shadow-xs relative">
+        <div className="bg-[#FFFAF0] border-2 border-[#253D2C]/20 rounded-xl p-3 sm:p-4 shadow-xs relative">
           <div className="flex items-center justify-between mb-2.5">
             <h2
-              className="text-base sm:text-lg font-black text-[#2B2620] flex items-center gap-1.5"
+              className="text-base sm:text-lg font-black text-[#253D2C] flex items-center gap-1.5"
               style={{ fontFamily: "var(--font-cairo)" }}
             >
-              <span className="text-[#9C7A3F]">
+              <span className="text-[#596752]">
                 <CookingPot size={18} />
               </span>
               <span>{getBestSellersTitle()}</span>
@@ -159,7 +170,7 @@ export default function FeaturedDishesShowcase({ items }: FeaturedDishesShowcase
               <button
                 onClick={() => scroll(-1)}
                 aria-label="Scroll left"
-                className="absolute -start-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#FAF7F0] border border-[#9C7A3F]/50 shadow-md flex items-center justify-center text-[#2B2620] hover:bg-[#EDE3CE] transition-all cursor-pointer"
+                className="absolute -start-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#FFFAF0] border border-[#253D2C]/30 shadow-md flex items-center justify-center text-[#253D2C] hover:bg-[#F6F1E7] transition-all cursor-pointer"
               >
                 <CaretLeft size={18} weight="bold" />
               </button>
@@ -170,7 +181,7 @@ export default function FeaturedDishesShowcase({ items }: FeaturedDishesShowcase
               <button
                 onClick={() => scroll(1)}
                 aria-label="Scroll right"
-                className="absolute -end-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#FAF7F0] border border-[#9C7A3F]/50 shadow-md flex items-center justify-center text-[#2B2620] hover:bg-[#EDE3CE] transition-all cursor-pointer"
+                className="absolute -end-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-[#FFFAF0] border border-[#253D2C]/30 shadow-md flex items-center justify-center text-[#253D2C] hover:bg-[#F6F1E7] transition-all cursor-pointer"
               >
                 <CaretRight size={18} weight="bold" />
               </button>
@@ -195,8 +206,8 @@ export default function FeaturedDishesShowcase({ items }: FeaturedDishesShowcase
                     onClick={() => setSelectedDish(item)}
                   >
                     {/* Flat Circular Avatar */}
-                    <div className="relative w-[68px] h-[68px] sm:w-[78px] sm:h-[78px] md:w-[82px] md:h-[82px] rounded-full p-[2px] bg-[#9C7A3F]/30 group-hover:bg-[#9C7A3F] transition-colors shadow-xs">
-                      <div className="relative w-full h-full rounded-full overflow-hidden bg-[#EDE3CE] border border-[#F7F2E7] flex items-center justify-center">
+                    <div className="relative w-[68px] h-[68px] sm:w-[78px] sm:h-[78px] md:w-[82px] md:h-[82px] rounded-full p-[2px] transition-colors shadow-xs" style={{ backgroundColor: `${feat.color}55` }}>
+                      <div className="relative w-full h-full rounded-full overflow-hidden bg-[#F6F1E7] border border-[#FFFAF0] flex items-center justify-center">
                         {feat.image || item.image ? (
                           <Image
                             src={feat.image || item.image!}
@@ -207,7 +218,7 @@ export default function FeaturedDishesShowcase({ items }: FeaturedDishesShowcase
                             className="transition-transform duration-500 group-hover:scale-110"
                           />
                         ) : (
-                          <div className="text-[#9C7A3F] group-hover:scale-110 transition-transform">
+                          <div className="text-[#596752] group-hover:scale-110 transition-transform">
                             {item.id.includes("pide") ? (
                               <StoneOven size={28} />
                             ) : (
@@ -219,7 +230,7 @@ export default function FeaturedDishesShowcase({ items }: FeaturedDishesShowcase
 
                       {/* Badge Overlapping Bottom */}
                       <div className="absolute -bottom-1.5 inset-x-0 flex justify-center z-10">
-                        <span className="px-1.5 py-0.5 bg-[#4E5F4C] text-[#EAF0E6] rounded text-[8px] sm:text-[9px] font-bold whitespace-nowrap shadow-xs uppercase tracking-tight scale-90 max-w-full overflow-hidden text-ellipsis">
+                        <span style={{ backgroundColor: feat.color, boxShadow: `0 3px 8px ${feat.color}55` }} className="px-1.5 py-0.5 text-white border border-[#FFFAF0] rounded text-[8px] sm:text-[9px] font-bold whitespace-nowrap uppercase tracking-tight scale-90 max-w-full overflow-hidden text-ellipsis">
                           {translatedBadge}
                         </span>
                       </div>
@@ -227,7 +238,7 @@ export default function FeaturedDishesShowcase({ items }: FeaturedDishesShowcase
 
                     {/* Title - strictly Turkish */}
                     <span
-                      className="text-[10px] sm:text-[11px] md:text-xs text-center font-bold text-[#2B2620] leading-tight mt-0.5 group-hover:text-[#9C7A3F] transition-colors line-clamp-2 px-0.5 w-full"
+                      className="text-[10px] sm:text-[11px] md:text-xs text-center font-bold text-[#253D2C] leading-tight mt-0.5 group-hover:text-[#C64C32] transition-colors line-clamp-2 px-0.5 w-full"
                       style={{ fontFamily: "var(--font-cairo)" }}
                     >
                       {turkishTitle}

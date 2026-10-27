@@ -122,7 +122,11 @@ export async function getDatabaseMenu(): Promise<{
               zh: nameZh,
             },
             price: Number(prod.basePriceTRY),
-            image: prod.imageUrl || staticMatch?.image || undefined,
+            image:
+              cat.slug === "icecekler" ||
+              ["turk-kahvesi", "ayran", "bitki-caylari", "cola", "cay", "fanta", "meyve-sulari", "nescafe", "soda", "su"].includes(prod.slug)
+                ? undefined
+                : prod.imageUrl || staticMatch?.image || undefined,
             description: descTr,
             descriptions: dishTrans?.desc || staticMatch?.descriptions,
             tags: Array.from(tags),

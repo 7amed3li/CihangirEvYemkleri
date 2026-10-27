@@ -101,13 +101,13 @@ export default function DishDetailClient({
         <div className="flex items-start justify-between gap-4 mb-3">
           <div>
             <h1
-              className="text-2xl sm:text-3xl font-extrabold text-[#2B2620] leading-tight"
+              className="text-2xl sm:text-3xl font-extrabold text-[#253D2C] leading-tight"
               style={{ fontFamily: "var(--font-cairo)" }}
             >
               {turkishTitle}
             </h1>
             {locale !== "tr" && localizedName && (
-              <p className="text-sm sm:text-base font-semibold text-[#7A7364] mt-0.5">
+              <p className="text-sm sm:text-base font-semibold text-[#76816E] mt-0.5">
                 {localizedName}
               </p>
             )}
@@ -116,7 +116,7 @@ export default function DishDetailClient({
           <button
             onClick={handleCopyLink}
             aria-label="Share"
-            className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#EDE3CE] hover:bg-[#9C7A3F] hover:text-white text-[#2B2620] text-xs font-bold transition-all border border-[#9C7A3F]/25 cursor-pointer shadow-2xs"
+            className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F6F1E7] hover:bg-[#C64C32] hover:text-white text-[#253D2C] text-xs font-bold transition-all border border-[#253D2C]/14 cursor-pointer shadow-2xs"
           >
             {isCopied ? (
               <>
@@ -135,7 +135,7 @@ export default function DishDetailClient({
         {/* Live Converted Price & Tags */}
         <div className="flex items-center gap-3 my-4">
           <div
-            className="px-3.5 py-1.5 bg-[#9C7A3F] text-[#EAF0E6] font-extrabold text-lg sm:text-xl rounded-lg shadow-xs"
+            className="px-3.5 py-1.5 bg-[#C64C32] text-[#E4EADB] font-extrabold text-lg sm:text-xl rounded-lg shadow-xs"
             style={{ fontFamily: "var(--font-inter)" }}
           >
             {displayPrice != null ? (
@@ -149,13 +149,13 @@ export default function DishDetailClient({
 
           <div className="flex flex-wrap items-center gap-1.5">
             {tags.includes("signature") && (
-              <span className="px-2.5 py-1 bg-[#9C7A3F]/15 text-[#9C7A3F] border border-[#9C7A3F]/30 text-xs font-bold rounded-md uppercase tracking-wider">
+              <span className="px-2.5 py-1 bg-[#253D2C]/7 text-[#C64C32] border border-[#253D2C]/17 text-xs font-bold rounded-md uppercase tracking-wider">
                 Şefin Seçimi
               </span>
             )}
             {tags.includes("gluten-free") && (
-              <span className="px-2.5 py-1 bg-[#5C6E58]/15 text-[#3E523A] border border-[#5C6E58]/35 text-xs font-bold rounded-md uppercase tracking-wider flex items-center gap-1.5">
-                <Wheat size={13} className="text-[#3E523A]" />
+              <span className="px-2.5 py-1 bg-[#4A6350]/15 text-[#293F30] border border-[#4A6350]/35 text-xs font-bold rounded-md uppercase tracking-wider flex items-center gap-1.5">
+                <Wheat size={13} className="text-[#293F30]" />
                 <span>
                   {locale === "ar"
                     ? "خالي من الغلوتين"
@@ -166,12 +166,12 @@ export default function DishDetailClient({
               </span>
             )}
             {tags.includes("vegetarian") && (
-              <span className="px-2.5 py-1 bg-[#4E5F4C]/15 text-[#4E5F4C] border border-[#4E5F4C]/30 text-xs font-bold rounded-md uppercase tracking-wider">
+              <span className="px-2.5 py-1 bg-[#354D37]/15 text-[#354D37] border border-[#354D37]/30 text-xs font-bold rounded-md uppercase tracking-wider">
                 Vejetaryen
               </span>
             )}
             {tags.includes("spicy") && (
-              <span className="px-2.5 py-1 bg-[#A0422E]/15 text-[#A0422E] border border-[#A0422E]/30 text-xs font-bold rounded-md uppercase tracking-wider">
+              <span className="px-2.5 py-1 bg-[#C64C32]/15 text-[#C64C32] border border-[#C64C32]/30 text-xs font-bold rounded-md uppercase tracking-wider">
                 Acılı
               </span>
             )}
@@ -179,12 +179,12 @@ export default function DishDetailClient({
         </div>
 
         {/* Description formatted according to user rule */}
-        <div className="mt-4 pt-4 border-t border-[#9C7A3F]/20">
-          <h3 className="text-xs font-bold uppercase tracking-wider text-[#9C7A3F] mb-1.5">
+        <div className="mt-4 pt-4 border-t border-[#253D2C]/12">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-[#C64C32] mb-1.5">
             {detailsLabel}
           </h3>
           <p
-            className="text-sm sm:text-base text-[#4A4335] leading-relaxed"
+            className="text-sm sm:text-base text-[#3F5442] leading-relaxed"
             style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}
           >
             {formattedDesc}
@@ -193,25 +193,25 @@ export default function DishDetailClient({
       </div>
 
       {/* Cart Actions */}
-      <div className="mt-8 pt-4 border-t border-[#9C7A3F]/20">
+      <div className="mt-8 pt-4 border-t border-[#253D2C]/12">
         {!isAvailable ? (
-          <div className="w-full py-3 text-center bg-[#A0422E]/15 text-[#A0422E] font-bold rounded-xl border border-[#A0422E]/30 text-sm">
+          <div className="w-full py-3 text-center bg-[#C64C32]/15 text-[#C64C32] font-bold rounded-xl border border-[#C64C32]/30 text-sm">
             {locale === "ar" ? "الطبق غير متوفر حالياً" : "Şu an mevcut değil"}
           </div>
         ) : qty > 0 ? (
-          <div className="flex items-center justify-between bg-[#EDE3CE] border border-[#4E5F4C]/30 rounded-xl p-1.5">
+          <div className="flex items-center justify-between bg-[#F6F1E7] border border-[#354D37]/30 rounded-xl p-1.5">
             <button
               onClick={handleRemove}
-              className="w-10 h-10 rounded-lg bg-[#FAF7F0] hover:bg-[#A0422E] hover:text-white text-[#2B2620] flex items-center justify-center font-bold transition-colors cursor-pointer"
+              className="w-10 h-10 rounded-lg bg-[#FFFAF0] hover:bg-[#C64C32] hover:text-white text-[#253D2C] flex items-center justify-center font-bold transition-colors cursor-pointer"
             >
               <Minus size={18} weight="bold" />
             </button>
-            <span className="font-extrabold text-base text-[#2B2620]">
+            <span className="font-extrabold text-base text-[#253D2C]">
               {qty}
             </span>
             <button
               onClick={handleAdd}
-              className="w-10 h-10 rounded-lg bg-[#4E5F4C] hover:bg-[#3E523A] text-white flex items-center justify-center font-bold transition-colors cursor-pointer"
+              className="w-10 h-10 rounded-lg bg-[#354D37] hover:bg-[#293F30] text-white flex items-center justify-center font-bold transition-colors cursor-pointer"
             >
               <Plus size={18} weight="bold" />
             </button>
@@ -219,7 +219,7 @@ export default function DishDetailClient({
         ) : (
           <button
             onClick={handleAdd}
-            className="w-full py-3.5 px-4 bg-[#4E5F4C] hover:bg-[#3E523A] text-white font-extrabold text-sm sm:text-base rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all duration-200 cursor-pointer"
+            className="w-full py-3.5 px-4 bg-[#354D37] hover:bg-[#293F30] text-white font-extrabold text-sm sm:text-base rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all duration-200 cursor-pointer"
           >
             <Plus size={18} weight="bold" />
             <span>{addToCartText}</span>

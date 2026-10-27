@@ -17,11 +17,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const meta = PAGES_META.contact[locale as Locale] || PAGES_META.contact.tr;
-  const canonicalUrl = `https://cihangir-ev-yemkleri.vercel.app/${locale}/contact`;
+  const canonicalUrl = `https://cihangirevyemekler.com.tr/${locale}/contact`;
 
   const languageAlternates: Record<string, string> = {};
   SUPPORTED_LOCALES.forEach((l) => {
-    languageAlternates[l] = `https://cihangir-ev-yemkleri.vercel.app/${l}/contact`;
+    languageAlternates[l] = `https://cihangirevyemekler.com.tr/${l}/contact`;
   });
 
   return {
@@ -51,7 +51,7 @@ export default async function ContactPage({
   const dict = getDictionary(locale);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#EDE3CE]">
+    <div className="min-h-screen flex flex-col bg-[#F6F1E7]">
       <Header locale={locale} dict={dict} />
       <main className="flex-1">
         <ContactClient locale={locale} />

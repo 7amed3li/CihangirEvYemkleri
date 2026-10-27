@@ -25,7 +25,7 @@ export default function FlagIcon({ country, size = 18, className = "" }: FlagIco
         height={size}
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#9C7A3F"
+        stroke="#D5CFBC"
         strokeWidth="1.5"
         className={`shrink-0 ${className}`}
       >

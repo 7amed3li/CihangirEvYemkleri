@@ -42,13 +42,13 @@ export default function CurrencySwitcher() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-label={`Currency: ${currency}`}
-        className="flex items-center gap-1.5 h-9 px-2 sm:px-2.5 rounded-lg border border-[#9C7A3F]/40 bg-[#FAF7F0] hover:bg-[#EDE3CE] text-[#2B2620] text-xs font-semibold shadow-2xs transition-all cursor-pointer"
+        className="flex items-center gap-1.5 h-9 px-2 sm:px-2.5 rounded-lg border border-[#253D2C]/24 bg-[#FFFAF0] hover:bg-[#F6F1E7] text-[#253D2C] text-xs font-semibold shadow-2xs transition-all cursor-pointer"
       >
         <FlagIcon country={currentObj.country} size={17} />
-        <span className="font-bold text-[#9C7A3F]">{currentObj.symbol}</span>
-        <span className="hidden sm:inline font-semibold text-[#2B2620] text-xs">{currentObj.code}</span>
+        <span className="font-bold text-[#596752]">{currentObj.symbol}</span>
+        <span className="hidden sm:inline font-semibold text-[#253D2C] text-xs">{currentObj.code}</span>
         <span
-          className={`text-[8px] text-[#7A7364] transition-transform duration-200 ${
+          className={`text-[8px] text-[#76816E] transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
         >
@@ -57,10 +57,10 @@ export default function CurrencySwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute top-[calc(100%+6px)] end-0 w-44 bg-[#FAF7F0] border border-[#9C7A3F]/35 rounded-xl shadow-xl z-50 p-1.5 backdrop-blur-md">
-          <div className="px-2 py-1 text-[10px] font-bold text-[#9C7A3F] uppercase tracking-wider border-b border-[#9C7A3F]/20 mb-1 flex items-center justify-between">
+        <div className="absolute top-[calc(100%+6px)] end-0 w-44 bg-[#FFFAF0] border border-[#253D2C]/20 rounded-xl shadow-xl z-50 p-1.5 backdrop-blur-md">
+          <div className="px-2 py-1 text-[10px] font-bold text-[#C64C32] uppercase tracking-wider border-b border-[#253D2C]/12 mb-1 flex items-center justify-between">
             <span>Döviz / Currency</span>
-            <span className="text-[9px] font-normal text-[#7A7364]">Tahmini / Est.</span>
+            <span className="text-[9px] font-normal text-[#76816E]">Tahmini / Est.</span>
           </div>
 
           <div className="flex flex-col gap-0.5">
@@ -75,8 +75,8 @@ export default function CurrencySwitcher() {
                   }}
                   className={`flex items-center justify-between w-full px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer text-start ${
                     isSelected
-                      ? "bg-[#9C7A3F] text-[#FFFFFF] font-bold shadow-xs"
-                      : "hover:bg-[#EDE3CE] text-[#2B2620]"
+                      ? "bg-[#C64C32] text-[#FFFFFF] font-bold shadow-xs"
+                      : "hover:bg-[#F6F1E7] text-[#253D2C]"
                   }`}
                 >
                   <div className="flex items-center gap-2">
@@ -84,7 +84,7 @@ export default function CurrencySwitcher() {
                     <span>{c.code}</span>
                     <span
                       className={`text-[11px] ${
-                        isSelected ? "text-[#EDE3CE]" : "text-[#7A7364]"
+                        isSelected ? "text-[#F6F1E7]" : "text-[#76816E]"
                       }`}
                     >
                       ({c.symbol})

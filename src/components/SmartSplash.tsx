@@ -113,9 +113,9 @@ export default function SmartSplash() {
           border-radius: 50%;
           background: radial-gradient(
             circle,
-            rgba(230, 139, 48, 0.2) 0,
-            rgba(230, 139, 48, 0.08) 38%,
-            rgba(230, 139, 48, 0) 72%
+            rgba(37, 61, 44, 0.2) 0,
+            rgba(37, 61, 44, 0.08) 38%,
+            rgba(37, 61, 44, 0) 72%
           );
           opacity: 0;
           transform: scale(0.82);

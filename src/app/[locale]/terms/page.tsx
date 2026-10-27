@@ -17,11 +17,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const meta = PAGES_META.terms[locale as Locale] || PAGES_META.terms.tr;
-  const canonicalUrl = `https://cihangir-ev-yemkleri.vercel.app/${locale}/terms`;
+  const canonicalUrl = `https://cihangirevyemekler.com.tr/${locale}/terms`;
 
   const languageAlternates: Record<string, string> = {};
   SUPPORTED_LOCALES.forEach((l) => {
-    languageAlternates[l] = `https://cihangir-ev-yemkleri.vercel.app/${l}/terms`;
+    languageAlternates[l] = `https://cihangirevyemekler.com.tr/${l}/terms`;
   });
 
   return {
@@ -64,41 +64,41 @@ export default async function TermsPage({
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#EDE3CE]" dir={isRtl ? "rtl" : "ltr"}>
+    <div className="min-h-screen flex flex-col bg-[#F6F1E7]" dir={isRtl ? "rtl" : "ltr"}>
       <Header locale={locale} dict={dict} />
 
       <main className="flex-1 py-10 sm:py-16 px-4">
         <div className="max-w-3xl mx-auto space-y-6 text-start">
           <div className="text-center space-y-2 mb-8">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-[#9C7A3F]/15 text-[#9C7A3F] border border-[#9C7A3F]/30">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-[#253D2C]/7 text-[#596752] border border-[#253D2C]/17">
               {t.badge}
             </span>
             <h1
-              className="text-2xl sm:text-3xl font-black text-[#2B2620]"
+              className="text-2xl sm:text-3xl font-black text-[#253D2C]"
               style={{ fontFamily: "var(--font-cairo)" }}
             >
               {t.title}
             </h1>
-            <p className="text-xs text-[#7A7364]">
+            <p className="text-xs text-[#76816E]">
               {RESTAURANT_CONFIG.name} — {RESTAURANT_CONFIG.address.fullText}
             </p>
           </div>
 
-          <div className="bg-[#FAF7F0] border border-[#9C7A3F]/25 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xs leading-relaxed text-xs sm:text-sm text-[#5A5344]">
-            <p className="font-medium text-[#2B2620]">{t.notice}</p>
+          <div className="bg-[#FFFAF0] border border-[#253D2C]/14 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xs leading-relaxed text-xs sm:text-sm text-[#596752]">
+            <p className="font-medium text-[#253D2C]">{t.notice}</p>
 
             <div>
-              <h2 className="text-base font-bold text-[#2B2620] mb-2">{t.sec1Title}</h2>
+              <h2 className="text-base font-bold text-[#253D2C] mb-2">{t.sec1Title}</h2>
               <p>{t.sec1Body}</p>
             </div>
 
             <div>
-              <h2 className="text-base font-bold text-[#2B2620] mb-2">{t.sec2Title}</h2>
+              <h2 className="text-base font-bold text-[#253D2C] mb-2">{t.sec2Title}</h2>
               <p>{t.sec2Body}</p>
             </div>
 
             <div>
-              <h2 className="text-base font-bold text-[#2B2620] mb-2">{t.sec3Title}</h2>
+              <h2 className="text-base font-bold text-[#253D2C] mb-2">{t.sec3Title}</h2>
               <p>{t.sec3Body}</p>
             </div>
           </div>

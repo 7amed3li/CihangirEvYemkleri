@@ -9,6 +9,7 @@ import { SUPPORTED_LOCALES, Locale, getDictionary } from "@/i18n/translations";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CookingPot, StoneOven } from "@/components/BrandIcons";
+import { Coffee, CupSoda, GlassWater } from "lucide-react";
 import DishDetailClient from "./DishDetailClient";
 
 export async function generateStaticParams() {
@@ -102,7 +103,7 @@ export default async function DishPage({
       : "Menüye Dön";
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#EDE3CE]" dir={isRTL ? "rtl" : "ltr"}>
+    <div className="min-h-screen flex flex-col bg-[#F6F1E7]" dir={isRTL ? "rtl" : "ltr"}>
       {/* Sticky Header with active language & currency support */}
       <Header locale={locale} dict={dict} />
 
@@ -110,7 +111,7 @@ export default async function DishPage({
         {/* Back Button linking directly to the dish anchor on the menu */}
         <Link
           href={`/${locale}/menu#${item.id}`}
-          className="inline-flex items-center gap-2 text-[#9C7A3F] hover:text-[#2B2620] font-bold text-sm mb-6 transition-colors group cursor-pointer"
+          className="inline-flex items-center gap-2 text-[#596752] hover:text-[#253D2C] font-bold text-sm mb-6 transition-colors group cursor-pointer"
         >
           <CaretLeft
             size={18}
@@ -123,10 +124,10 @@ export default async function DishPage({
         </Link>
 
         {/* Dish Showcase Card */}
-        <div className="bg-[#FAF7F0] rounded-2xl shadow-xl overflow-hidden border-2 border-[#9C7A3F]/35 flex flex-col md:flex-row">
+        <div className="bg-[#FFFAF0] rounded-2xl shadow-xl overflow-hidden border-2 border-[#253D2C]/20 flex flex-col md:flex-row">
           {/* Image Section */}
-          <div className="w-full md:w-1/2 min-h-[300px] md:min-h-[420px] relative bg-[#EDE3CE] flex items-center justify-center overflow-hidden border-b md:border-b-0 md:border-e border-[#9C7A3F]/20">
-            {item.image ? (
+          <div className="w-full md:w-1/2 min-h-[300px] md:min-h-[420px] relative bg-[#F6F1E7] flex items-center justify-center overflow-hidden border-b md:border-b-0 md:border-e border-[#253D2C]/12">
+            {item.image && !["turk-kahvesi", "ayran", "bitki-caylari", "cola", "cay", "fanta", "meyve-sulari", "nescafe", "soda", "su"].includes(item.id) ? (
               <Image
                 src={item.image}
                 alt={turkishTitle}
@@ -136,13 +137,23 @@ export default async function DishPage({
                 className="object-cover"
               />
             ) : (
-              <div className="flex flex-col items-center justify-center p-8 text-center text-[#9C7A3F]/60">
-                {item.id.includes("pide") ? (
-                  <StoneOven size={52} className="text-[#9C7A3F]/70 mb-2" />
-                ) : (
-                  <CookingPot size={52} className="text-[#9C7A3F]/70 mb-2" />
-                )}
-                <span className="text-sm font-bold text-[#7A7364]">{turkishTitle}</span>
+              <div className="flex flex-col items-center justify-center p-8 text-center text-[#596752]">
+                <div className="w-20 h-20 rounded-full bg-[#FFFAF0] border-2 border-[#253D2C]/17 flex items-center justify-center mb-3 shadow-xs">
+                  {["cay", "turk-kahvesi", "nescafe", "bitki-caylari"].includes(item.id) ? (
+                    <Coffee size={40} className="text-[#596752]" />
+                  ) : ["ayran", "cola", "fanta", "meyve-sulari", "soda", "su"].includes(item.id) ? (
+                    item.id === "su" || item.id === "soda" ? (
+                      <GlassWater size={40} className="text-[#354D37]" />
+                    ) : (
+                      <CupSoda size={40} className="text-[#354D37]" />
+                    )
+                  ) : item.id.includes("pide") ? (
+                    <StoneOven size={42} className="text-[#596752]" />
+                  ) : (
+                    <CookingPot size={42} className="text-[#596752]" />
+                  )}
+                </div>
+                <span className="text-sm font-bold text-[#76816E]">{turkishTitle}</span>
               </div>
             )}
           </div>

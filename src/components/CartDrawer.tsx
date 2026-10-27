@@ -111,25 +111,25 @@ export default function CartDrawer() {
           <button
             onClick={() => setIsCartOpen(true)}
             dir={isRTL ? "rtl" : "ltr"}
-            className="pointer-events-auto w-full max-w-lg bg-[#2B2620] hover:bg-[#3D372E] text-[#F7F2E7] p-2.5 sm:p-3 rounded-2xl shadow-2xl border-2 border-[#9C7A3F] flex items-center justify-between transition-all duration-300 transform hover:scale-[1.02] cursor-pointer"
+            className="pointer-events-auto w-full max-w-lg bg-[#253D2C] hover:bg-[#3D372E] text-[#FFFAF0] p-2.5 sm:p-3 rounded-2xl shadow-2xl border-2 border-[#253D2C]/40 flex items-center justify-between transition-all duration-300 transform hover:scale-[1.02] cursor-pointer"
           >
             {/* Left side: Icon + Counter */}
             <div className="flex items-center gap-2.5">
-              <div className="relative w-10 h-10 rounded-xl bg-[#9C7A3F] text-[#F7F2E7] flex items-center justify-center shrink-0 shadow-xs">
+              <div className="relative w-10 h-10 rounded-xl bg-[#C64C32] text-[#FFFAF0] flex items-center justify-center shrink-0 shadow-xs">
                 <ShoppingBag size={20} weight="bold" />
-                <span className="absolute -top-1.5 -end-1.5 bg-[#A0422E] text-white text-[11px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#2B2620]">
+                <span className="absolute -top-1.5 -end-1.5 bg-[#C64C32] text-white text-[11px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#253D2C]">
                   {cartCount}
                 </span>
               </div>
               <div className="flex flex-col text-start">
                 <span
-                  className="text-xs sm:text-sm font-bold text-[#F7F2E7] leading-tight"
+                  className="text-xs sm:text-sm font-bold text-[#FFFAF0] leading-tight"
                   style={{ fontFamily: "var(--font-cairo)" }}
                 >
                   {cartTitle}
                 </span>
                 <span
-                  className="text-[11px] text-[#EDE3CE]/80"
+                  className="text-[11px] text-[#F6F1E7]/80"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {cartCount} {lang === "ar" ? "أصناف" : lang === "en" ? "items" : "ürün"}
@@ -140,12 +140,12 @@ export default function CartDrawer() {
             {/* Right side: Price + View Cart Arrow */}
             <div className="flex items-center gap-2">
               <div
-                className="px-3 py-1 rounded-lg bg-[#F7F2E7]/10 border border-[#9C7A3F]/40 text-sm font-black text-[#EDE3CE] tracking-wide"
+                className="px-3 py-1 rounded-lg bg-[#FFFAF0]/10 border border-[#253D2C]/24 text-sm font-black text-[#F6F1E7] tracking-wide"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
                 {displayTotal} {symbol}
               </div>
-              <div className="w-8 h-8 rounded-lg bg-[#9C7A3F] text-white flex items-center justify-center shrink-0">
+              <div className="w-8 h-8 rounded-lg bg-[#C64C32] text-white flex items-center justify-center shrink-0">
                 <CaretRight
                   size={16}
                   weight="bold"
@@ -167,23 +167,23 @@ export default function CartDrawer() {
             <div
               dir={isRTL ? "rtl" : "ltr"}
               onClick={(e) => e.stopPropagation()}
-              className="w-full max-w-md h-full bg-[#F7F2E7] shadow-2xl flex flex-col border-s border-[#9C7A3F]/30 overflow-hidden text-start animate-slideInRight"
+              className="w-full max-w-md h-full bg-[#FFFAF0] shadow-2xl flex flex-col border-s border-[#253D2C]/17 overflow-hidden text-start animate-slideInRight"
             >
               {/* Drawer Header */}
-              <div className="p-4 sm:p-5 border-b border-[#9C7A3F]/20 bg-[#FAF7F0] flex items-center justify-between">
+              <div className="p-4 sm:p-5 border-b border-[#253D2C]/12 bg-[#FFFAF0] flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-lg bg-[#9C7A3F] text-white flex items-center justify-center shrink-0 shadow-xs">
+                  <div className="w-9 h-9 rounded-lg bg-[#C64C32] text-white flex items-center justify-center shrink-0 shadow-xs">
                     <ShoppingBag size={20} weight="bold" />
                   </div>
                   <div>
                     <h2
-                      className="text-base sm:text-lg font-black text-[#2B2620] leading-none"
+                      className="text-base sm:text-lg font-black text-[#253D2C] leading-none"
                       style={{ fontFamily: "var(--font-cairo)" }}
                     >
                       {cartTitle}
                     </h2>
                     <span
-                      className="text-[11px] text-[#7A7364] font-medium"
+                      className="text-[11px] text-[#76816E] font-medium"
                       style={{ fontFamily: "var(--font-inter)" }}
                     >
                       {cartCount} {lang === "ar" ? "أصناف محددة" : lang === "en" ? "items in basket" : "ürün"}
@@ -194,15 +194,15 @@ export default function CartDrawer() {
                 <button
                   onClick={() => setIsCartOpen(false)}
                   aria-label="Close cart"
-                  className="w-8 h-8 rounded-lg bg-[#EDE3CE] hover:bg-[#9C7A3F] hover:text-white text-[#2B2620] flex items-center justify-center transition-colors"
+                  className="w-8 h-8 rounded-lg bg-[#F6F1E7] hover:bg-[#C64C32] hover:text-white text-[#253D2C] flex items-center justify-center transition-colors"
                 >
                   <X size={18} weight="bold" />
                 </button>
               </div>
 
               {/* Kitchen Note Badge */}
-              <div className="bg-[#9C7A3F]/10 border-b border-[#9C7A3F]/20 px-4 py-2 text-[11px] text-[#5A5344] leading-relaxed flex items-center gap-1.5">
-                <Info size={14} className="text-[#9C7A3F] shrink-0" />
+              <div className="bg-[#253D2C]/5 border-b border-[#253D2C]/12 px-4 py-2 text-[11px] text-[#596752] leading-relaxed flex items-center gap-1.5">
+                <Info size={14} className="text-[#596752] shrink-0" />
                 <p style={{ fontFamily: isRTL ? "var(--font-cairo)" : "var(--font-inter)" }}>
                   {noteText}
                 </p>
@@ -211,17 +211,17 @@ export default function CartDrawer() {
               {/* Drawer Body: Items List */}
               <div className="flex-1 overflow-y-auto p-4 space-y-3 no-scrollbar">
                 {cart.length === 0 ? (
-                  <div className="h-full flex flex-col items-center justify-center text-center p-6 text-[#7A7364]">
-                    <div className="w-16 h-16 rounded-full bg-[#EDE3CE] flex items-center justify-center text-[#9C7A3F] mb-3">
+                  <div className="h-full flex flex-col items-center justify-center text-center p-6 text-[#76816E]">
+                    <div className="w-16 h-16 rounded-full bg-[#F6F1E7] flex items-center justify-center text-[#596752] mb-3">
                       <CookingPot size={32} />
                     </div>
                     <p
-                      className="text-base font-bold text-[#2B2620] mb-1"
+                      className="text-base font-bold text-[#253D2C] mb-1"
                       style={{ fontFamily: "var(--font-cairo)" }}
                     >
                       {emptyText}
                     </p>
-                    <p className="text-xs text-[#7A7364] max-w-xs">{emptySub}</p>
+                    <p className="text-xs text-[#76816E] max-w-xs">{emptySub}</p>
                   </div>
                 ) : (
                   cart.map((item) => {
@@ -231,10 +231,10 @@ export default function CartDrawer() {
                     return (
                       <div
                         key={item.id}
-                        className="bg-[#FAF7F0] border border-[#9C7A3F]/25 rounded-xl p-3 flex items-center gap-3 shadow-xs hover:border-[#9C7A3F]/50 transition-colors"
+                        className="bg-[#FFFAF0] border border-[#253D2C]/14 rounded-xl p-3 flex items-center gap-3 shadow-xs hover:border-[#253D2C]/30 transition-colors"
                       >
                         {/* Thumbnail */}
-                        <div className="w-14 h-14 rounded-lg bg-[#EDE3CE] overflow-hidden shrink-0 relative flex items-center justify-center border border-[#9C7A3F]/15">
+                        <div className="w-14 h-14 rounded-lg bg-[#F6F1E7] overflow-hidden shrink-0 relative flex items-center justify-center border border-[#253D2C]/9">
                           {item.image ? (
                             <Image
                               src={item.image}
@@ -244,7 +244,7 @@ export default function CartDrawer() {
                               sizes="56px"
                             />
                           ) : (
-                            <div className="text-[#9C7A3F]/60">
+                            <div className="text-[#596752]/60">
                               {item.id.includes("pide") ? (
                                 <StoneOven size={24} />
                               ) : (
@@ -257,13 +257,13 @@ export default function CartDrawer() {
                         {/* Title & Price - strictly Turkish */}
                         <div className="flex-1 min-w-0">
                           <h4
-                            className="font-bold text-sm text-[#2B2620] leading-snug truncate"
+                            className="font-bold text-sm text-[#253D2C] leading-snug truncate"
                             style={{ fontFamily: "var(--font-cairo)" }}
                           >
                             {item.name || item.id}
                           </h4>
                           <div
-                            className="text-xs text-[#9C7A3F] font-bold mt-0.5"
+                            className="text-xs text-[#596752] font-bold mt-0.5"
                             style={{ fontFamily: "var(--font-inter)" }}
                           >
                             {itemUnit} {symbol}
@@ -271,15 +271,15 @@ export default function CartDrawer() {
                         </div>
 
                         {/* Quantity Stepper */}
-                        <div className="flex items-center bg-[#EDE3CE] rounded-lg border border-[#9C7A3F]/30 px-1 py-0.5 gap-1 shrink-0">
+                        <div className="flex items-center bg-[#F6F1E7] rounded-lg border border-[#253D2C]/17 px-1 py-0.5 gap-1 shrink-0">
                           <button
                             onClick={() => removeFromCart(item.id)}
                             aria-label="Decrease quantity"
-                            className="w-6 h-6 flex items-center justify-center rounded text-[#2B2620] hover:text-[#A0422E] transition-colors"
+                            className="w-6 h-6 flex items-center justify-center rounded text-[#253D2C] hover:text-[#C64C32] transition-colors"
                           >
                             <Minus size={12} weight="bold" />
                           </button>
-                          <span className="w-5 text-center text-xs font-bold text-[#2B2620]">
+                          <span className="w-5 text-center text-xs font-bold text-[#253D2C]">
                             {item.qty}
                           </span>
                           <button
@@ -292,7 +292,7 @@ export default function CartDrawer() {
                               })
                             }
                             aria-label="Increase quantity"
-                            className="w-6 h-6 flex items-center justify-center rounded text-[#2B2620] hover:text-[#4E5F4C] transition-colors"
+                            className="w-6 h-6 flex items-center justify-center rounded text-[#253D2C] hover:text-[#354D37] transition-colors"
                           >
                             <Plus size={12} weight="bold" />
                           </button>
@@ -305,18 +305,18 @@ export default function CartDrawer() {
 
               {/* Drawer Footer */}
               {cart.length > 0 && (
-                <div className="p-4 sm:p-5 border-t border-[#9C7A3F]/25 bg-[#FAF7F0] space-y-3">
+                <div className="p-4 sm:p-5 border-t border-[#253D2C]/14 bg-[#FFFAF0] space-y-3">
                   {/* Total calculation with Primary TRY */}
                   <div className="flex flex-col gap-0.5">
                     <div className="flex items-center justify-between">
                       <span
-                        className="text-sm font-bold text-[#7A7364]"
+                        className="text-sm font-bold text-[#76816E]"
                         style={{ fontFamily: "var(--font-cairo)" }}
                       >
                         {lang === "ar" ? "المجموع بالليرة التركية:" : lang === "en" ? "Total in TRY:" : "Toplam Tutar (TRY):"}
                       </span>
                       <span
-                        className="text-xl font-black text-[#2B2620]"
+                        className="text-xl font-black text-[#253D2C]"
                         style={{ fontFamily: "var(--font-inter)" }}
                       >
                         {cartTotalTRY} ₺
@@ -324,14 +324,14 @@ export default function CartDrawer() {
                     </div>
 
                     {symbol !== "₺" && (
-                      <div className="flex items-center justify-between text-xs text-[#9C7A3F] font-bold">
+                      <div className="flex items-center justify-between text-xs text-[#596752] font-bold">
                         <span>{lang === "ar" ? "السعر التقديري:" : "Yaklaşık Tutar:"}</span>
                         <span>≈ {displayTotal} {symbol}</span>
                       </div>
                     )}
                   </div>
 
-                  <p className="text-[11px] text-[#7A7364] leading-tight text-center">
+                  <p className="text-[11px] text-[#76816E] leading-tight text-center">
                     {lang === "ar"
                       ? "يتم تأكيد الطلب والتحصيل بالليرة التركية نقداً أو بالبطاقة عند الاستلام."
                       : lang === "en"
@@ -342,7 +342,7 @@ export default function CartDrawer() {
                   {/* Direct Phone Call - Primary reliable channel */}
                   <a
                     href="tel:+902122513696"
-                    className="w-full py-3 px-4 rounded-xl bg-[#4E5F4C] hover:bg-[#3D4B3B] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors shadow-xs"
+                    className="w-full py-3 px-4 rounded-xl bg-[#354D37] hover:bg-[#293F30] text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors shadow-xs"
                     style={{ fontFamily: "var(--font-cairo)" }}
                   >
                     <PhoneCall size={18} weight="bold" />
@@ -375,7 +375,7 @@ export default function CartDrawer() {
                   <div className="text-center pt-1">
                     <button
                       onClick={clearCart}
-                      className="text-[11px] font-semibold text-[#A0422E] hover:underline transition-colors"
+                      className="text-[11px] font-semibold text-[#C64C32] hover:underline transition-colors"
                     >
                       {lang === "ar" ? "إفراغ السلة بالكامل" : lang === "en" ? "Clear entire basket" : "Sepeti Temizle"}
                     </button>

@@ -32,14 +32,14 @@ export default function PriceDisplay({
         fontVariantNumeric: "tabular-nums",
       }}
     >
-      <span style={{ fontWeight: 800, fontSize: "1.15em", color: "#2B2620" }}>
+      <span style={{ fontWeight: 800, fontSize: "1.15em", color: "#253D2C" }}>
         {formattedCurrent} {symbol}
       </span>
       {formattedOriginal && (
         <span
           style={{
             textDecoration: "line-through",
-            color: "#7A7364",
+            color: "#76816E",
             fontSize: "0.85em",
           }}
         >
@@ -47,7 +47,7 @@ export default function PriceDisplay({
         </span>
       )}
       {currency !== "TRY" && (
-        <span style={{ fontSize: "0.75em", color: "#9C7A3F" }}>
+        <span style={{ fontSize: "0.75em", color: "#76816E" }}>
           (≈ {priceTRY} ₺)
         </span>
       )}

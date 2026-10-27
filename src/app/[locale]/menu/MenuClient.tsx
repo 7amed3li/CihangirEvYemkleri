@@ -139,7 +139,7 @@ export default function MenuClient({
   );
 
   return (
-    <div className="pb-12 bg-[#EDE3CE] min-h-screen text-[#2B2620]">
+    <div className="pb-12 bg-[#F6F1E7] min-h-screen text-[#253D2C]">
       {/* Appetite-Inducing Featured Specials Showcase (Exact Kardesler Style) */}
       <FeaturedDishesShowcase items={allItems} />
 
@@ -155,7 +155,7 @@ export default function MenuClient({
         />
 
         {/* Smart Filters with optional Bugünün Yemekleri filter */}
-        <div className="bg-[#F7F2E7] border-b border-[#9C7A3F]/20 py-1">
+        <div className="bg-[#FFFAF0] border-b border-[#253D2C]/12 py-1">
           <div className="max-w-6xl mx-auto px-2.5 sm:px-5">
             <SmartFilters
               activeFilter={activeFilter}
@@ -168,7 +168,7 @@ export default function MenuClient({
       </div>
 
       {/* Menu Items Grid */}
-      <section className="max-w-6xl mx-auto px-3 sm:px-6 py-6 min-h-[60vh] bg-[#EDE3CE]">
+      <section className="max-w-6xl mx-auto px-3 sm:px-6 py-6 min-h-[60vh] bg-[#F6F1E7]">
         {activeCategories.map((category) => {
           if (activeCategory !== category.id) return null;
 
@@ -193,7 +193,7 @@ export default function MenuClient({
                 ))
               ) : (
                 <div className="col-span-full py-20 text-center">
-                  <p className="text-[#7A7364] font-medium tracking-wide">
+                  <p className="text-[#76816E] font-medium tracking-wide">
                     {dict?.noResults || "Bu filtreye uygun yemek bulunamadı."}
                   </p>
                 </div>

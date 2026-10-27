@@ -84,13 +84,13 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: str
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-label={`Language: ${currentLabel}`}
-        className="flex items-center gap-1.5 h-9 px-2 sm:px-2.5 rounded-lg border border-[#4E5F4C]/35 bg-[#FAF7F0] hover:bg-[#EDE3CE] text-[#2B2620] text-xs font-semibold shadow-2xs transition-all cursor-pointer"
+        className="flex items-center gap-1.5 h-9 px-2 sm:px-2.5 rounded-lg border border-[#354D37]/35 bg-[#FFFAF0] hover:bg-[#F6F1E7] text-[#253D2C] text-xs font-semibold shadow-2xs transition-all cursor-pointer"
       >
         <FlagIcon country={currentFlagCode} size={16} />
         <span className="hidden sm:inline font-medium">{currentLabel}</span>
-        <span className="inline sm:hidden font-bold text-[11px] text-[#4E5F4C]">{currentShort}</span>
+        <span className="inline sm:hidden font-bold text-[11px] text-[#354D37]">{currentShort}</span>
         <span
-          className={`text-[8px] text-[#5A5344] transition-transform duration-200 ${
+          className={`text-[8px] text-[#596752] transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
         >
@@ -99,10 +99,10 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: str
       </button>
 
       {isOpen && (
-        <div className="absolute top-[calc(100%+6px)] end-0 w-44 max-h-72 overflow-y-auto bg-[#FAF7F0] border border-[#4E5F4C]/30 rounded-xl shadow-xl z-50 p-1.5">
-          <div className="px-2 py-1 text-[10px] font-bold text-[#4E5F4C] uppercase tracking-wider border-b border-[#4E5F4C]/15 mb-1 flex items-center justify-between">
+        <div className="absolute top-[calc(100%+6px)] end-0 w-44 max-h-72 overflow-y-auto bg-[#FFFAF0] border border-[#354D37]/30 rounded-xl shadow-xl z-50 p-1.5">
+          <div className="px-2 py-1 text-[10px] font-bold text-[#354D37] uppercase tracking-wider border-b border-[#354D37]/15 mb-1 flex items-center justify-between">
             <span>Diller / Languages</span>
-            <span className="text-[9px] font-normal text-[#7A7364]">10 Dil</span>
+            <span className="text-[9px] font-normal text-[#76816E]">10 Dil</span>
           </div>
 
           <div className="flex flex-col gap-0.5">
@@ -117,8 +117,8 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: str
                   onClick={() => handleSelect(loc)}
                   className={`flex items-center justify-between w-full px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer text-start ${
                     isSelected
-                      ? "bg-[#4E5F4C] text-[#FFFFFF] font-bold"
-                      : "hover:bg-[#EDE3CE] text-[#2B2620]"
+                      ? "bg-[#354D37] text-[#FFFFFF] font-bold"
+                      : "hover:bg-[#F6F1E7] text-[#253D2C]"
                   }`}
                 >
                   <div className="flex items-center gap-2">

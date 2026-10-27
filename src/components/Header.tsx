@@ -28,7 +28,7 @@ export default function Header({ locale, dict }: HeaderProps) {
   }, []);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#FAF7F0] border-b border-[#B8381E]/20 shadow-xs">
+    <header className="sticky top-0 z-40 w-full bg-[#FFFAF0] border-b border-[#C64C32]/20 shadow-xs">
       <div className="max-w-6xl mx-auto px-2.5 sm:px-4 md:px-6 h-16 flex items-center justify-between gap-2">
         {/* Brand Logo & Name */}
         <Link
@@ -47,12 +47,12 @@ export default function Header({ locale, dict }: HeaderProps) {
           </div>
           <div className="flex flex-col min-w-0">
             <span
-              className="text-sm sm:text-base md:text-lg font-black text-[#261E1A] leading-none tracking-tight truncate group-hover:text-[#B8381E] transition-colors"
+              className="text-sm sm:text-base md:text-lg font-black text-[#253D2C] leading-none tracking-tight truncate group-hover:text-[#C64C32] transition-colors"
               style={{ fontFamily: "var(--font-cairo), sans-serif" }}
             >
               Cihangir
             </span>
-            <span className="text-[8px] sm:text-[9.5px] font-bold text-[#C87D17] uppercase tracking-wider truncate mt-0.5 sm:mt-1">
+            <span className="text-[8px] sm:text-[9.5px] font-bold text-[#C64C32] uppercase tracking-wider truncate mt-0.5 sm:mt-1">
               Ev Yemekleri & Pide
             </span>
           </div>
@@ -67,10 +67,10 @@ export default function Header({ locale, dict }: HeaderProps) {
           <div className="relative inline-block" ref={menuRef}>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`w-9 h-9 flex items-center justify-center rounded-lg border text-[#261E1A] transition-colors cursor-pointer shadow-2xs ${
+              className={`w-9 h-9 flex items-center justify-center rounded-lg border text-[#253D2C] transition-colors cursor-pointer shadow-2xs ${
                 isMenuOpen
-                  ? "border-[#B8381E] bg-[#B8381E]/10 text-[#B8381E]"
-                  : "border-[#B8381E]/25 bg-[#FFFFFF] hover:bg-[#FAF7F0]"
+                  ? "border-[#C64C32] bg-[#C64C32]/10 text-[#C64C32]"
+                  : "border-[#C64C32]/25 bg-[#FFFFFF] hover:bg-[#FFFAF0]"
               }`}
               aria-label="Navigation Menu"
             >
@@ -78,7 +78,7 @@ export default function Header({ locale, dict }: HeaderProps) {
             </button>
 
             {isMenuOpen && (
-              <div className="absolute top-[calc(100%+6px)] end-0 w-64 rounded-2xl bg-[#FFFFFF] border border-[#B8381E]/20 shadow-2xl overflow-hidden z-50 p-2.5 backdrop-blur-md animate-in fade-in zoom-in-95 duration-150 text-start">
+              <div className="absolute top-[calc(100%+6px)] end-0 w-64 rounded-2xl bg-[#FFFFFF] border border-[#C64C32]/20 shadow-2xl overflow-hidden z-50 p-2.5 backdrop-blur-md animate-in fade-in zoom-in-95 duration-150 text-start">
                 <nav className="flex flex-col space-y-1">
                   {[
                     {
@@ -198,20 +198,20 @@ export default function Header({ locale, dict }: HeaderProps) {
                       key={index}
                       href={item.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className="group flex items-center gap-3 px-2.5 py-2 rounded-xl text-xs font-semibold text-[#261E1A] hover:bg-[#FAF7F0] transition-colors"
+                      className="group flex items-center gap-3 px-2.5 py-2 rounded-xl text-xs font-semibold text-[#253D2C] hover:bg-[#FFFAF0] transition-colors"
                     >
-                      <span className="w-7 h-7 rounded-lg bg-[#B8381E]/10 text-[#B8381E] flex items-center justify-center shrink-0 group-hover:bg-[#B8381E] group-hover:text-white transition-colors">
+                      <span className="w-7 h-7 rounded-lg bg-[#C64C32]/10 text-[#C64C32] flex items-center justify-center shrink-0 group-hover:bg-[#C64C32] group-hover:text-white transition-colors">
                         {item.icon}
                       </span>
-                      <span className="truncate group-hover:text-[#B8381E] transition-colors">{item.label}</span>
+                      <span className="truncate group-hover:text-[#C64C32] transition-colors">{item.label}</span>
                     </Link>
                   ))}
 
-                  <div className="h-px bg-[#B8381E]/15 my-1.5" />
+                  <div className="h-px bg-[#C64C32]/15 my-1.5" />
 
                   <a
                     href="tel:+902122513696"
-                    className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl text-xs font-bold bg-[#B8381E] text-white hover:bg-[#992E17] transition-all shadow-sm active:scale-[0.98]"
+                    className="flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl text-xs font-bold bg-[#C64C32] text-white hover:bg-[#A83F29] transition-all shadow-sm active:scale-[0.98]"
                   >
                     <PhoneIcon size={15} />
                     <span>

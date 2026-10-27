@@ -18,7 +18,7 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cihangir-ev-yemkleri.vercel.app"),
+  metadataBase: new URL("https://cihangirevyemekler.com.tr"),
   title: {
     default: "Cihangir Ev Yemekleri & Pide",
     template: "%s | Cihangir Ev Yemekleri & Pide",

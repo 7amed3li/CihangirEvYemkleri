@@ -116,20 +116,20 @@ export default function MenuCategoryBar({
       : "Menüyü İncele";
 
   return (
-    <div className="w-full bg-[#F7F2E7] pt-2 pb-1">
+    <div className="w-full bg-[#FFFAF0] pt-2 pb-1">
       <div className="max-w-6xl mx-auto px-2.5 sm:px-5">
-        <div className="bg-[#FAF7F0] border-2 border-[#9C7A3F]/35 rounded-xl p-2.5 sm:p-3.5 shadow-xs relative">
+        <div className="bg-[#FFFAF0] border-2 border-[#253D2C]/20 rounded-xl p-2.5 sm:p-3.5 shadow-xs relative">
           <div className="px-1 mb-2 flex items-center justify-between">
             <h3
-              className="text-xs sm:text-sm font-bold text-[#7A7364] tracking-wide flex items-center gap-1.5"
+              className="text-xs sm:text-sm font-bold text-[#76816E] tracking-wide flex items-center gap-1.5"
               style={{ fontFamily: "var(--font-cairo)" }}
             >
-              <span className="text-[#9C7A3F]">
+              <span className="text-[#596752]">
                 <ForkKnife size={15} weight="bold" />
               </span>
               <span>{categoryTitle}</span>
             </h3>
-            <span className="text-[11px] font-bold text-[#9C7A3F] hidden sm:inline-block">
+            <span className="text-[11px] font-bold text-[#596752] hidden sm:inline-block">
               {categories.length} {activeLang === "ar" ? "أقسام" : activeLang === "en" ? "Categories" : "Kategori"}
             </span>
           </div>
@@ -140,9 +140,9 @@ export default function MenuCategoryBar({
               <button
                 onClick={() => scroll(-1)}
                 aria-label="Scroll left"
-                className="absolute start-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-r from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent md:hidden"
+                className="absolute start-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-r from-[#FFFAF0] via-[#FFFAF0]/90 to-transparent md:hidden"
               >
-                <CaretLeft size={18} weight="bold" className="text-[#2B2620]" />
+                <CaretLeft size={18} weight="bold" className="text-[#253D2C]" />
               </button>
             )}
 
@@ -151,9 +151,9 @@ export default function MenuCategoryBar({
               <button
                 onClick={() => scroll(1)}
                 aria-label="Scroll right"
-                className="absolute end-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-l from-[#FAF7F0] via-[#FAF7F0]/90 to-transparent md:hidden"
+                className="absolute end-0 top-0 bottom-0 z-10 w-7 sm:w-9 flex items-center justify-center bg-gradient-to-l from-[#FFFAF0] via-[#FFFAF0]/90 to-transparent md:hidden"
               >
-                <CaretRight size={18} weight="bold" className="text-[#2B2620]" />
+                <CaretRight size={18} weight="bold" className="text-[#253D2C]" />
               </button>
             )}
 
@@ -182,8 +182,8 @@ export default function MenuCategoryBar({
                   <div
                     className={`relative w-[48px] h-[48px] sm:w-[54px] sm:h-[54px] md:w-[58px] md:h-[58px] rounded-xl overflow-hidden transition-all duration-200 flex items-center justify-center ${
                       isActive
-                        ? "border-2 border-[#4E5F4C] bg-[#EDE3CE] shadow-sm text-[#4E5F4C] ring-2 ring-[#4E5F4C]/20"
-                        : "border border-[#9C7A3F]/30 bg-[#EDE3CE]/60 text-[#9C7A3F] group-hover:bg-[#EDE3CE] group-hover:border-[#9C7A3F]"
+                        ? "border-2 border-[#354D37] bg-[#F6F1E7] shadow-sm text-[#354D37] ring-2 ring-[#354D37]/20"
+                        : "border border-[#253D2C]/17 bg-[#F6F1E7]/60 text-[#596752] group-hover:bg-[#F6F1E7] group-hover:border-[#253D2C]"
                     }`}
                   >
                     {cat.image ? (
@@ -205,8 +205,8 @@ export default function MenuCategoryBar({
                   <span
                     className={`text-[10px] sm:text-[11px] md:text-xs font-bold text-center leading-tight px-0.5 transition-colors line-clamp-2 w-full ${
                       isActive
-                        ? "text-[#2B2620]"
-                        : "text-[#7A7364] group-hover:text-[#2B2620]"
+                        ? "text-[#253D2C]"
+                        : "text-[#76816E] group-hover:text-[#253D2C]"
                     }`}
                     style={{ fontFamily: "var(--font-cairo)" }}
                   >
@@ -215,7 +215,7 @@ export default function MenuCategoryBar({
 
                   {/* Active bottom indicator bar */}
                   {isActive && (
-                    <div className="w-5 h-1 bg-[#4E5F4C] rounded-full mt-0.5" />
+                    <div className="w-5 h-1 bg-[#354D37] rounded-full mt-0.5" />
                   )}
                 </button>
               );
