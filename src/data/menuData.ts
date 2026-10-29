@@ -302,9 +302,9 @@ const rawMenuData: MenuCategory[] = [
       id: "pideler",
       slug: "pideler",
       category: {
-        tr: "Pideler",
-        en: "Stone Oven Pide",
-        ar: "فطائر البيدة بالفرن الحجري",
+        tr: "Pide",
+        en: "Pide",
+        ar: "بيدة",
       },
       items: [
         {

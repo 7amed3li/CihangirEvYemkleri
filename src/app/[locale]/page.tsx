@@ -42,34 +42,34 @@ export async function generateMetadata({
   const dict = getDictionary(locale);
 
   const titles: Record<string, string> = {
-    tr: "Cihangir Ev Yemekleri & Taş Fırın Pide | Ana Sayfa",
-    en: "Cihangir Home Kitchen & Stone Oven Pide | Home",
-    ar: "جيهانغير للمطبخ البيتي وبيدة الفرن الحجري | الرئيسية",
-    de: "Cihangir Hausküche & Steinofenpide | Startseite",
-    fr: "Cihangir Cuisine Maison & Pide au Four | Accueil",
+    tr: "Cihangir Ev Yemekleri & Pide | Ana Sayfa",
+    en: "Cihangir Home Kitchen & Pide | Home",
+    ar: "جيهانغير للمطبخ البيتي وفطائر البيدة | الرئيسية",
+    de: "Cihangir Hausküche & Pide | Startseite",
+    fr: "Cihangir Cuisine Maison & Pide | Accueil",
     ru: "Cihangir Домашняя Кухня & Пиде | Главная",
     es: "Cihangir Cocina Casera & Pide | Inicio",
     it: "Cihangir Cucina Casalinga & Pide | Home",
-    zh: "贾汉吉尔家常菜 & 石炉皮得 | 首页",
+    zh: "贾汉吉尔家常菜 & 皮得 | 首页",
     fa: "آشپزخانه خانگی جیهانگیر و پیده | صفحه اصلی",
   };
 
   const descriptions: Record<string, string> = {
-    tr: "Cihangir'in kalbinde geleneksel ev yemekleri ve taş fırından çıkan sıcak pide çeşitleri. Beyoğlu, İstanbul.",
-    en: "Authentic Turkish home-cooked meals and stone-oven pide in the heart of Cihangir, Beyoğlu, Istanbul.",
-    ar: "أطباق المطبخ البيتي التركي الأصيل وبيدة الفرن الحجري في قلب جيهانغير، بيوغلو، إسطنبول.",
-    de: "Traditionelle türkische Hausmannskost und Steinofenpide im Herzen von Cihangir, Beyoğlu, Istanbul.",
-    fr: "Cuisine familiale turque traditionnelle et pide au four en pierre au cœur de Cihangir, Beyoğlu, Istanbul.",
-    ru: "Традиционная турецкая домашняя кухня и пиде из каменной печи в сердце Джихангира, Бейоглу, Стамбул.",
-    es: "Cocina casera turca tradicional y pide al horno de piedra en el corazón de Cihangir, Beyoğlu, Estambul.",
-    it: "Cucina casalinga turca tradizionale e pide dal forno a pietra nel cuore di Cihangir, Beyoğlu, Istanbul.",
-    zh: "伊斯坦布尔贾汉吉尔正宗土耳其家常菜和石炉皮得。",
-    fa: "غذاهای خانگی سنتی ترکی و پیده از فر سنگی در قلب جیهانگیر، بیوغلو، استانبول.",
+    tr: "Anne şefkatiyle pişen taze tencere yemekleri, fırından yeni çıkmış çıtır pideler ve Cihangir'in en samimi esnaf sofrası. Beyoğlu'nda evinizin sıcaklığı.",
+    en: "Fresh home-cooked stews made with love, oven-fresh crispy pides, and Cihangir's warmest neighborhood table. The comforting taste of home in Beyoğlu, Istanbul.",
+    ar: "أطباق بيتيّة يومية طازجة تفيض بدفء البيت، وفطائر بيدة مقرمشة وشهية من قلب جيهانغير. كرم الضيافة وأصالة المائدة في بيوغلو، إسطنبول.",
+    de: "Täglich frisch zubereitete Hausmannskost mit Liebe gekocht, ofenfrische knusprige Pide und Cihangirs herzlichste Nachbarschaftstafel. Beyoğlu, Istanbul.",
+    fr: "Plats mijotés maison préparés avec amour, pides chauds et croustillants et l'atmosphère chaleureuse de Cihangir. La vraie saveur du fait maison à Beyoğlu, Istanbul.",
+    ru: "Домашняя турецкая кухня, приготовленная с душой, горячие хрустящие пиде и самое уютное гостеприимство Джихангира. Бейоглу, Стамбул.",
+    es: "Guisos caseros preparados con amor, pides recién horneados y crujientes, y la calidez del barrio de Cihangir. El sabor de casa en Beyoğlu, Estambul.",
+    it: "Cucina casalinga tradizionale preparata con passione, pide appena sfornato e la calda accoglienza di Cihangir. Il sapore di casa a Beyoğlu, Istanbul.",
+    zh: "每日用心熬煮的温暖家常热菜、新鲜出炉的香脆皮得，以及贾汉吉尔街区最真诚热情的待客之道。贝伊奥卢，伊斯坦布尔。",
+    fa: "خوراک‌های خانگی روزانه با عشق، پیده‌های تازه و ترد، و گرمای صمیمی سفره محلی در قلب جیهانگیر، بیوغلو، استانبول.",
   };
 
   const title = titles[locale] ?? titles.tr;
   const description = descriptions[locale] ?? descriptions.tr;
-  const canonicalUrl = `https://cihangirevyemekler.com.tr/${locale}`;
+  const canonicalUrl = `https://www.cihangirevyemekler.com.tr/${locale}`;
 
   return {
     title,
@@ -79,7 +79,7 @@ export async function generateMetadata({
       languages: Object.fromEntries(
         SUPPORTED_LOCALES.map((l) => [
           l,
-          `https://cihangirevyemekler.com.tr/${l}`,
+          `https://www.cihangirevyemekler.com.tr/${l}`,
         ])
       ),
     },
@@ -92,7 +92,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: "https://cihangirevyemekler.com.tr/splash/logo-original.webp",
+          url: "https://www.cihangirevyemekler.com.tr/splash/logo-original.webp",
           width: 800,
           alt: "Cihangir Ev Yemekleri & Pide",
         },
@@ -102,7 +102,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: ["https://cihangirevyemekler.com.tr/splash/logo-original.webp"],
+      images: ["https://www.cihangirevyemekler.com.tr/splash/logo-original.webp"],
     },
   };
 }
@@ -199,7 +199,7 @@ async function FeaturedDishes({ locale }: { locale: string }) {
               <div className="text-[#596752]/60 flex flex-col items-center gap-2 group-hover:scale-110 transition-transform duration-300">
                 {dish.isPide ? <StoneOven size={44} /> : <CookingPot size={44} />}
                 <span className="text-[11px] font-bold text-[#76816E] tracking-wide uppercase">
-                  {dish.isPide ? "Taş Fırın" : "Ev Yemeği"}
+                  {dish.isPide ? "Pide" : "Ev Yemeği"}
                 </span>
               </div>
             )}
@@ -258,16 +258,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const isRtl = locale === "ar" || locale === "fa";
 
   const heroTitles: Record<string, string> = {
-    tr: "Cihangir Ev Yemekleri & Taş Fırın Pide",
-    en: "Cihangir Home Kitchen & Stone Oven Pide",
-    ar: "جيهانغير للمطبخ البيتي وبيدة الفرن الحجري",
-    fa: "آشپزخانه خانگی جیهانگیر و پیده تنوری",
-    de: "Cihangir Hausküche & Steinofenpide",
-    fr: "Cihangir Cuisine Maison & Pide au Four",
+    tr: "Cihangir Ev Yemekleri & Pide",
+    en: "Cihangir Home Kitchen & Pide",
+    ar: "جيهانغير للمطبخ البيتي وفطائر البيدة",
+    fa: "آشپزخانه خانگی جیهانگیر و پیده",
+    de: "Cihangir Hausküche & Pide",
+    fr: "Cihangir Cuisine Maison & Pide",
     ru: "Cihangir Домашняя Кухня & Пиде",
-    es: "Cihangir Cocina Casera & Pide al Horno",
+    es: "Cihangir Cocina Casera & Pide",
     it: "Cihangir Cucina Casalinga & Pide",
-    zh: "贾汉吉尔家常菜 & 石炉皮得",
+    zh: "贾汉吉尔家常菜 & 皮得",
   };
 
   const heroBadges: Record<string, string> = {

@@ -1,9 +1,9 @@
 {
   "language": "Français",
   "welcome": "Cihangir",
-  "heroTagline": "Cuisine Maison & Pide au Four en Pierre",
+  "heroTagline": "Cuisine Maison Traditionnelle & Pide",
   "subtitle": "Où la tradition rencontre le goût au cœur de Cihangir",
-  "heroLocation": "Firuzağa Mah. Firuzağa Camii Sok. No:1A, Cihangir, Beyoğlu",
+  "heroLocation": "Cihangir, Yeni Yuva Sk. no:50A, 34433 Beyoğlu/İstanbul",
   "heroRating": "4.6",
   "heroRatingText": "note",
   "heroItems": "100+",
@@ -37,10 +37,10 @@
   "reviewsTitle": "Ce Que Disent Nos Invités",
   "reviewsSubtitle": "Évaluations réelles sur des plateformes de confiance. Cliquez pour vérifier.",
   "reviewsCountText": "avis",
-  "review1": "Le jarret d'agneau mijoté et le ragoût d'haricots blancs étaient délicieux. Les pides au four à pierre sont superbes.",
+  "review1": "Le jarret d'agneau mijoté et le ragoût d'haricots blancs étaient délicieux. Les pides croustillantes sont superbes.",
   "review2": "Cuisine familiale turque authentique, personnel chaleureux et ambiance conviviale à Cihangir.",
   "review3": "La chaleur d'un véritable restaurant traditionnel avec des plats mijotés frais chaque jour.",
-  "review4": "Une excellente adresse juste à côté de la mosquée Firuzağa. Portions généreuses et prix très corrects.",
+  "review4": "Une excellente adresse au cœur de Cihangir. Portions généreuses et prix très corrects.",
   "review5": "Livraison rapide et plats arrivés bien chauds. La pide à la viande braisée et fromage était parfaite.",
   "review6": "Notre étape favorite pour une soupe Ezogelin chaude et l'assiette dégustation du chef.",
   "orderFlow": {
@@ -74,15 +74,15 @@
     "rights": "Tous droits réservés.",
     "madeBy": "Conçu et développé par",
     "paymentMethods": "Modes de Paiement Acceptés",
-    "paymentSubtitle": "Toutes les cartes bancaires, İstanbulkart sans contact et cartes repas d'entreprise sont acceptées",
-    "paymentNote": "Nous acceptons les espèces, les cartes de crédit (Visa, Mastercard, Troy), İstanbulkart sans contact et toutes les cartes repas d'entreprise turques (MultiNet, Metropol, Setcard, Pluxee, Ticket)."
+    "paymentSubtitle": "Espèces et toutes les cartes bancaires acceptées",
+    "paymentNote": "Nous acceptons les espèces et les cartes de crédit/débit (Visa, Mastercard, Troy). (Les titres repas et İstanbulkart ne sont pas acceptés)."
   },
   "aboutPage": {
     "storyTitle": "Cihangir Cuisine Maison & Pide",
-    "storyP1": "Situé près de la mosquée Firuzağa, nous accueillons les convives avec des saveurs turques maison authentiques.",
+    "storyP1": "Situé au cœur de Cihangir, nous accueillons les convives avec des saveurs turques maison authentiques.",
     "storyP2": "Les plats du jour sont préparés frais chaque matin et les pides sont cuits à la commande.",
     "contactTitle": "Contact & Horaires",
-    "address": "Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, İstanbul",
+    "address": "Cihangir, Yeni Yuva Sk. no:50A, 34433 Beyoğlu/İstanbul",
     "orderLine": "Ligne de commande",
     "workHoursLabel": "Horaires d'ouverture",
     "workHours": "Tous les jours : 08h30 - 22h30",
@@ -93,7 +93,7 @@
   "contactPage": {
     "title": "Contact",
     "subtitle": "Contactez-nous, réservez ou passez commande",
-    "address": "Firuzağa Mah. Firuzağa Camii Sok. No: 1A, Cihangir, Beyoğlu, Istanbul",
+    "address": "Cihangir, Yeni Yuva Sk. no:50A, 34433 Beyoğlu/İstanbul",
     "addressLabel": "Adresse",
     "phoneLabel": "Ligne de commande",
     "hoursLabel": "Horaires d'ouverture",

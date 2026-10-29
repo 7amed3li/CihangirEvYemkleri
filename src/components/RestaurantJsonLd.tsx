@@ -7,15 +7,16 @@ export default function RestaurantJsonLd({ locale }: { locale: string }) {
     "@type": "Restaurant",
     name: RESTAURANT_CONFIG.name,
     description:
-      "Cihangir'in kalbinde geleneksel Türk ev yemekleri ve taş fırın pide lezzetleri. Beyoğlu, İstanbul.",
-    image: "https://cihangirevyemekler.com.tr/splash/logo-original.webp",
-    url: `https://cihangirevyemekler.com.tr/${locale}`,
+      "Anne şefkatiyle pişen taze tencere yemekleri, fırından yeni çıkmış çıtır pideler ve Cihangir'in en samimi esnaf sofrası. Beyoğlu, İstanbul.",
+    image: "https://www.cihangirevyemekler.com.tr/splash/logo-original.webp",
+    url: `https://www.cihangirevyemekler.com.tr/${locale}`,
+    hasMap: RESTAURANT_CONFIG.address.googleMapsDirectionsUrl,
     telephone: RESTAURANT_CONFIG.phone.tel,
     priceRange: "₺₺",
     servesCuisine: [
       "Turkish",
       "Traditional Home Cooking",
-      "Stone Oven Pide",
+      "Pide",
       "Ev Yemekleri",
     ],
     address: {
@@ -28,8 +29,8 @@ export default function RestaurantJsonLd({ locale }: { locale: string }) {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "41.032049",
-      longitude: "28.981881",
+      latitude: RESTAURANT_CONFIG.address.coordinates.latitude.toString(),
+      longitude: RESTAURANT_CONFIG.address.coordinates.longitude.toString(),
     },
     openingHoursSpecification: [
       {
@@ -47,7 +48,7 @@ export default function RestaurantJsonLd({ locale }: { locale: string }) {
         closes: "22:30",
       },
     ],
-    hasMenu: `https://cihangirevyemekler.com.tr/${locale}/menu`,
+    hasMenu: `https://www.cihangirevyemekler.com.tr/${locale}/menu`,
     acceptsReservations: "False",
   };
 

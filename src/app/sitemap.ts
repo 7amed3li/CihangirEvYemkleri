@@ -3,7 +3,7 @@ import { SUPPORTED_LOCALES } from "@/i18n/translations";
 import { menuData } from "@/data/menuData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://cihangirevyemekler.com.tr";
+  const baseUrl = "https://www.cihangirevyemekler.com.tr";
   const now = new Date();
 
   const coreRoutes = [

@@ -69,6 +69,45 @@ export default function DishModal({
   const qty = getItemQuantity(item?.id);
   const isAvailable = item?.isAvailable !== false;
 
+  const addToCartText =
+    activeLang === "ar"
+      ? "إضافة إلى السلة"
+      : activeLang === "en"
+      ? "Add to Basket"
+      : activeLang === "ru"
+      ? "В корзину"
+      : activeLang === "de"
+      ? "In den Warenkorb"
+      : activeLang === "fr"
+      ? "Ajouter au panier"
+      : activeLang === "fa"
+      ? "افزودن به سبد"
+      : "Sepete Ekle";
+
+  const closeText =
+    activeLang === "ar"
+      ? "إغلاق"
+      : activeLang === "en"
+      ? "Close"
+      : activeLang === "ru"
+      ? "Закрыть"
+      : activeLang === "de"
+      ? "Schließen"
+      : activeLang === "fr"
+      ? "Fermer"
+      : activeLang === "fa"
+      ? "بستن"
+      : "Kapat";
+
+  const currencyDisclaimerText =
+    activeLang === "ar"
+      ? "تنبيه قانوني: السعر بالعملة الأجنبية تقريبي استرشادي فقط. الحساب الرسمي والملزم قانونياً عند الدفع هو بالليرة التركية (₺) في المطعم."
+      : activeLang === "en"
+      ? "Legal Notice: Foreign currency amount is an indicative estimate only. The official and legally binding bill is strictly in Turkish Lira (₺)."
+      : activeLang === "ru"
+      ? "Юридическое примечание: Цена в иностранной валюте является ориентировочной. Официальный расчет производится строго в турецких лирах (₺)."
+      : "Yasal Bilgilendirme: Döviz fiyatı yalnızca yaklaşık bilgilendirme amaçlıdır. Restoranda yasal ve bağlayıcı ödeme Türk Lirası (₺) iledir.";
+
   const handleCopyLink = async (e: React.MouseEvent) => {
     e.stopPropagation();
     try {
@@ -176,14 +215,27 @@ export default function DishModal({
                   )}
                 </div>
                 {displayPrice != null && (
-                  <span
-                    className="shrink-0 flex items-center gap-1 text-lg font-bold text-white bg-[#C64C32] px-3 py-1 rounded-md shadow-xs"
-                    style={{ fontFamily: "var(--font-inter)" }}
-                  >
-                    {displayPrice} {symbol}
-                  </span>
+                  <div className="shrink-0 flex flex-col items-end gap-1">
+                    <span
+                      className="flex items-center gap-1 text-lg font-bold text-white bg-[#C64C32] px-3 py-1 rounded-md shadow-xs"
+                      style={{ fontFamily: "var(--font-inter)" }}
+                    >
+                      {symbol !== "₺" ? `≈ ${displayPrice} ${symbol}` : `${item?.price} ₺`}
+                    </span>
+                    {symbol !== "₺" && (
+                      <span className="text-[11px] font-bold text-[#C64C32]">
+                        {item?.price} ₺ ({activeLang === "ar" ? "السعر الرسمي" : activeLang === "en" ? "Official Price" : "Esas Fiyat"})
+                      </span>
+                    )}
+                  </div>
                 )}
               </div>
+
+              {symbol !== "₺" && (
+                <div className="p-2 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-[11px] leading-relaxed">
+                  {currencyDisclaimerText}
+                </div>
+              )}
 
               {/* Tags */}
               {tags.length > 0 && (
@@ -288,10 +340,10 @@ export default function DishModal({
                         image: item.image,
                       })
                     }
-                    className="flex items-center justify-center gap-2 px-6 py-2.5 rounded-md bg-[#354D37] text-[#E4EADB] hover:bg-[#293F30] transition-colors font-bold text-sm shadow-xs"
+                    className="flex items-center justify-center gap-2 px-6 py-2.5 rounded-md bg-[#354D37] text-[#E4EADB] hover:bg-[#293F30] transition-colors font-bold text-sm shadow-xs cursor-pointer"
                   >
                     <Plus size={16} weight="bold" />
-                    <span>Sepete Ekle</span>
+                    <span>{addToCartText}</span>
                   </button>
                 ) : (
                   <div className="flex items-center min-h-[44px] rounded-lg border border-[#253D2C]/17 bg-[#F6F1E7] px-2 py-1 gap-2">
@@ -321,9 +373,9 @@ export default function DishModal({
 
               <button
                 onClick={() => setIsOpen(false)}
-                className="mt-2 w-full py-2.5 rounded-md bg-[#F6F1E7] text-[#253D2C] font-bold hover:bg-[#C64C32] hover:text-white transition-colors border border-[#253D2C]/17 text-xs uppercase tracking-wider"
+                className="mt-2 w-full py-2.5 rounded-md bg-[#F6F1E7] text-[#253D2C] font-bold hover:bg-[#C64C32] hover:text-white transition-colors border border-[#253D2C]/17 text-xs uppercase tracking-wider cursor-pointer"
               >
-                Kapat
+                {closeText}
               </button>
             </div>
           </div>

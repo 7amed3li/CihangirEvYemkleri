@@ -51,12 +51,19 @@ export async function generateMetadata({
 
   const title = titles[locale] ?? titles.tr;
   const description = descriptions[locale] ?? descriptions.tr;
-  const canonicalUrl = `https://cihangirevyemekler.com.tr/${locale}/menu`;
+  const canonicalUrl = `https://www.cihangirevyemekler.com.tr/${locale}/menu`;
+  const languageAlternates: Record<string, string> = {};
+  SUPPORTED_LOCALES.forEach((l) => {
+    languageAlternates[l] = `https://www.cihangirevyemekler.com.tr/${l}/menu`;
+  });
 
   return {
     title,
     description,
-    alternates: { canonical: canonicalUrl },
+    alternates: {
+      canonical: canonicalUrl,
+      languages: languageAlternates,
+    },
     openGraph: {
       title,
       description,

@@ -51,12 +51,23 @@ export async function generateMetadata({
     localizedDesc ||
     `${turkishTitle} - Cihangir Ev Yemekleri & Pide İstanbul Beyoğlu`;
 
+  const canonicalUrl = `https://www.cihangirevyemekler.com.tr/${locale}/dish/${id}`;
+  const languageAlternates: Record<string, string> = {};
+  SUPPORTED_LOCALES.forEach((l) => {
+    languageAlternates[l] = `https://www.cihangirevyemekler.com.tr/${l}/dish/${id}`;
+  });
+
   return {
     title,
     description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: languageAlternates,
+    },
     openGraph: {
       title,
       description,
+      url: canonicalUrl,
       images: item.image ? [{ url: item.image }] : [],
     },
   };

@@ -11,16 +11,25 @@ const cacheHeaders = {
   "Cache-Control": "public, max-age=0, s-maxage=43200, stale-while-revalidate=43200",
 };
 
+export const LEGAL_CURRENCY_DISCLAIMER = {
+  tr: "Menüdeki tüm döviz karşılıkları yalnızca anlık yaklaşık bilgilendirme amaçlıdır. Yasal ve bağlayıcı hesaplama masada sadece Türk Lirası (₺) üzerinden tahsil edilir.",
+  en: "All foreign currency amounts are purely approximate indicative estimates. Legally binding bills and payments are settled strictly in Turkish Lira (₺).",
+  ar: "جميع الأسعار بالعملات الأجنبية هي أسعار تقريبية إرشادية فقط. الحساب الرسمي والملزم قانونياً يُدفع حصراً بالليرة التركية (₺) في المطعم.",
+  ru: "Все цены в иностранной валюте являются ориентировочными. Официальный и юридически обязательный расчет производится строго в турецких лирах (₺).",
+};
+
 export const DEFAULT_FALLBACK_RATES = {
   rates: {
     TRY: { symbol: "₺", rate: 1 },
-    USD: { symbol: "$", rate: 0.02121 },
-    EUR: { symbol: "€", rate: 0.01855 },
-    GBP: { symbol: "£", rate: 0.01579 },
-    RUB: { symbol: "₽", rate: 2.65 },
-    SAR: { symbol: "ر.س", rate: 0.0795 },
+    USD: { symbol: "$", rate: 0.0201 },
+    EUR: { symbol: "€", rate: 0.018 },
+    GBP: { symbol: "£", rate: 0.0151 },
+    RUB: { symbol: "₽", rate: 1.62 },
+    SAR: { symbol: "ر.س", rate: 0.0752 },
   },
   source: "fallback",
+  isLive: false,
+  disclaimer: LEGAL_CURRENCY_DISCLAIMER,
   lastUpdated: new Date().toISOString().split("T")[0],
   fetchedAt: new Date().toISOString(),
 };
@@ -35,6 +44,8 @@ export async function GET() {
       {
         ...cachedRates,
         cached: true,
+        isLive: true,
+        disclaimer: LEGAL_CURRENCY_DISCLAIMER,
         nextRefreshIn: `${Math.round(remainingMs / 1000 / 60)} دقيقة / ${(remainingMs / 1000 / 60 / 60).toFixed(1)}h`,
         nextRefreshInMs: Math.round(remainingMs),
       },
@@ -58,16 +69,18 @@ export async function GET() {
     cachedRates = {
       rates: {
         TRY: { symbol: "₺", rate: 1 },
-        USD: { symbol: "$", rate: data.rates?.USD || 0.02121 },
-        EUR: { symbol: "€", rate: data.rates?.EUR || 0.01855 },
-        GBP: { symbol: "£", rate: data.rates?.GBP || 0.01579 },
-        RUB: { symbol: "₽", rate: 2.65 },
+        USD: { symbol: "$", rate: data.rates?.USD || 0.0201 },
+        EUR: { symbol: "€", rate: data.rates?.EUR || 0.018 },
+        GBP: { symbol: "£", rate: data.rates?.GBP || 0.0151 },
+        RUB: { symbol: "₽", rate: data.rates?.RUB || 1.62 },
         SAR: {
           symbol: "ر.س",
-          rate: data.rates?.SAR || (data.rates?.USD ? Number((data.rates.USD * 3.75).toFixed(5)) : 0.0795),
+          rate: data.rates?.SAR || (data.rates?.USD ? Number((data.rates.USD * 3.75).toFixed(5)) : 0.0752),
         },
       },
       source: "exchangerate-api.com",
+      isLive: true,
+      disclaimer: LEGAL_CURRENCY_DISCLAIMER,
       lastUpdated: data.date || new Date().toISOString().split("T")[0],
       fetchedAt: new Date().toISOString(),
     };
@@ -79,7 +92,10 @@ export async function GET() {
     return NextResponse.json(
       {
         ...fallback,
-        cached: true,
+        cached: Boolean(cachedRates),
+        isLive: false,
+        warning: "Live rates temporarily unavailable. Using approximate fallback.",
+        disclaimer: LEGAL_CURRENCY_DISCLAIMER,
         error: error instanceof Error ? error.message : "Fetch failed",
       },
       { headers: cacheHeaders }

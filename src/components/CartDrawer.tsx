@@ -324,19 +324,30 @@ export default function CartDrawer() {
                     </div>
 
                     {symbol !== "₺" && (
-                      <div className="flex items-center justify-between text-xs text-[#596752] font-bold">
-                        <span>{lang === "ar" ? "السعر التقديري:" : "Yaklaşık Tutar:"}</span>
-                        <span>≈ {displayTotal} {symbol}</span>
+                      <div className="p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs leading-relaxed space-y-1">
+                        <div className="flex items-center justify-between font-bold">
+                          <span>{lang === "ar" ? "السعر التقديري بالعملة:" : lang === "en" ? "Estimated Currency Total:" : "Yaklaşık Döviz Tutarı:"}</span>
+                          <span className="text-sm font-black text-[#C64C32]">≈ {displayTotal} {symbol}</span>
+                        </div>
+                        <p className="text-[11px] text-amber-800">
+                          {lang === "ar"
+                            ? `⚠️ تنبيه قانوني: الحساب الرسمي والملزم قانونياً عند الدفع هو بالليرة التركية (₺) فقط بمبلغ ${cartTotalTRY} ₺. أسعار العملات الأخرى تقريبية استرشادية.`
+                            : lang === "en"
+                            ? `⚠️ Legal Notice: The official and legally binding payment at the restaurant is strictly in Turkish Lira (${cartTotalTRY} ₺). Foreign currency amounts are indicative estimates only.`
+                            : lang === "ru"
+                            ? `⚠️ Юридическое примечание: Официальный счет к оплате составляет строго ${cartTotalTRY} ₺. Суммы в валюте ориентировочные.`
+                            : `⚠️ Yasal Bilgilendirme: Masada geçerli ve yasal olarak bağlayıcı tutar istisnasız Türk Lirası (${cartTotalTRY} ₺)'dir. Döviz karşılığı yalnızca yaklaşık göstergedir.`}
+                        </p>
                       </div>
                     )}
                   </div>
 
                   <p className="text-[11px] text-[#76816E] leading-tight text-center">
                     {lang === "ar"
-                      ? "يتم تأكيد الطلب والتحصيل بالليرة التركية نقداً أو بالبطاقة عند الاستلام."
+                      ? "يتم الدفع بالليرة التركية نقداً أو بالبطاقة عند الطاولة أو عند الاستلام سفري (Gel-Al)."
                       : lang === "en"
-                      ? "Orders are confirmed by phone/message. Payment is settled in TRY upon delivery or pick-up."
-                      : "Siparişler telefon/mesaj ile teyit edilir. Tahsilat Türk Lirası ile masada veya teslimatta yapılır."}
+                      ? "Payment is settled in TRY at the table or upon pick-up by cash or credit/debit card."
+                      : "Ödeme masada veya gel-al tesliminde nakit veya kredi/banka kartı ile yapılır."}
                   </p>
 
                   {/* Direct Phone Call - Primary reliable channel */}

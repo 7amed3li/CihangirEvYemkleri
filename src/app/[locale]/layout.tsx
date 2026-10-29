@@ -2,6 +2,8 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { SUPPORTED_LOCALES, Locale } from "@/i18n/translations";
 
+import CartDrawer from "@/components/CartDrawer";
+
 export async function generateStaticParams() {
   return SUPPORTED_LOCALES.map((locale) => ({ locale }));
 }
@@ -34,6 +36,7 @@ export default async function LocaleLayout({
       }}
     >
       {children}
+      <CartDrawer />
     </div>
   );
 }

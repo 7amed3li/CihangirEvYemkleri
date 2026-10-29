@@ -6,7 +6,6 @@ import FoodCard from "@/components/FoodCard";
 import FeaturedDishesShowcase from "@/components/FeaturedDishesShowcase";
 import MenuCategoryBar from "@/components/MenuCategoryBar";
 import SmartFilters from "@/components/SmartFilters";
-import CartDrawer from "@/components/CartDrawer";
 import DishModal from "@/components/DishModal";
 import { OttomanStar } from "@/components/BrandIcons";
 import { PublicDailyMenu, PublicOffer } from "@/lib/db/menu-loader";
@@ -202,9 +201,6 @@ export default function MenuClient({
           );
         })}
       </section>
-
-      {/* Floating Cart Button & Slide-Over Drawer */}
-      <CartDrawer />
 
       {/* Auto-opened Dish Modal from URL Hash (e.g. #kara-lahana-dolmasi) */}
       {selectedDishModal && (

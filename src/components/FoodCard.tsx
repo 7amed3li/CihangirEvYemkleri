@@ -187,11 +187,11 @@ export default function FoodCard({ item }: MenuItemProps) {
                 className="text-sm sm:text-base font-black text-[#253D2C]"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
-                {displayPrice} {symbol}
+                {symbol !== "₺" ? `≈ ${displayPrice} ${symbol}` : `${item.price} ₺`}
               </span>
               {symbol !== "₺" && (
-                <span className="text-[10px] text-[#76816E] font-medium">
-                  ≈ {item.price} ₺ (TRY)
+                <span className="text-[10px] text-[#C64C32] font-bold">
+                  {item.price} ₺ ({activeLang === "ar" ? "السعر الرسمي الملزم" : activeLang === "en" ? "Official Price" : activeLang === "ru" ? "Официальная цена" : "Esas Fiyat"})
                 </span>
               )}
             </div>
@@ -381,11 +381,11 @@ export default function FoodCard({ item }: MenuItemProps) {
                 className="text-sm font-black text-[#253D2C]"
                 style={{ fontFamily: "var(--font-inter)" }}
               >
-                {displayPrice} {symbol}
+                {symbol !== "₺" ? `≈ ${displayPrice} ${symbol}` : `${item.price} ₺`}
               </span>
               {symbol !== "₺" && (
-                <span className="text-[10px] text-[#76816E] font-medium">
-                  ≈ {item.price} ₺ (TRY)
+                <span className="text-[10px] text-[#C64C32] font-bold">
+                  {item.price} ₺ ({activeLang === "ar" ? "السعر الرسمي الملزم" : activeLang === "en" ? "Official Price" : activeLang === "ru" ? "Официальная цена" : "Esas Fiyat"})
                 </span>
               )}
             </div>

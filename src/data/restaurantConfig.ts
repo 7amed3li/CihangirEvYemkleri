@@ -19,6 +19,10 @@ export interface RestaurantConfig {
     postalCode: string;
     country: string;
     fullText: string;
+    coordinates: {
+      latitude: number;
+      longitude: number;
+    };
     googleMapsEmbedUrl: string;
     googleMapsDirectionsUrl: string;
   };
@@ -41,6 +45,7 @@ export interface RestaurantConfig {
   delivery: {
     pickupAvailable: boolean;
     localDeliveryAvailable: boolean;
+    dineInAvailable: boolean;
     callToConfirmDelivery: boolean;
     serviceAreas: string[];
     notice: string;
@@ -58,21 +63,25 @@ export interface RestaurantConfig {
 
 export const RESTAURANT_CONFIG: RestaurantConfig = {
   name: "Cihangir Ev Yemekleri & Pide",
-  tagline: "Geleneksel Ev Yemekleri & Taş Fırın Pide",
-  cuisine: "Traditional Turkish Home Cooking & Stone-Oven Pide",
-  website: "https://cihangirevyemekler.com.tr",
+  tagline: "Geleneksel Ev Yemekleri & Pide",
+  cuisine: "Traditional Turkish Home Cooking & Pide",
+  website: "https://www.cihangirevyemekler.com.tr",
   address: {
-    street: "Firuzağa Camii Sk. No:1 A",
-    neighborhood: "Firuzağa Mah.",
+    street: "Yeni Yuva Sk. no:50A",
+    neighborhood: "Cihangir",
     district: "Beyoğlu",
     city: "İstanbul",
-    postalCode: "34425",
+    postalCode: "34433",
     country: "Türkiye",
-    fullText: "Firuzağa, Firuzağa Camii Sk. No:1 A, 34425 Beyoğlu / İstanbul, Türkiye",
+    fullText: "Cihangir, Yeni Yuva Sk. no:50A, 34433 Beyoğlu/İstanbul",
+    coordinates: {
+      latitude: 41.0316557,
+      longitude: 28.9830629,
+    },
     googleMapsEmbedUrl:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.8437998399587!2d28.981881676579626!3d41.03204907134707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab764fa6a1249%3A0x8e8fa65fecae72f2!2zRmnJtnV6YcSfYSwgRmnJtnV6YcSfYSBDYW1paSBTay4gTm86MSBBLCAzNDQyNSBCZXlvxJ9sdS_EsHN0YW5idWwsIFTDvHJraXll!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.8437998399587!2d28.9830629!3d41.0316557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab70055f09e5d%3A0xadf8e3693f45bf6e!2sCihangir%20Ev%20Yemekleri%20Pide!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str",
     googleMapsDirectionsUrl:
-      "https://maps.google.com/?q=Firuza%C4%9Fa,+Firuza%C4%9Fa+Camii+Sk.+No:1+A,+34425+Beyo%C4%9Flu/%C4%B0stanbul",
+      "https://maps.app.goo.gl/AwAhkhwyL2DzQ97q8",
   },
   phone: {
     display: "+90 (212) 251 36 96",
@@ -94,17 +103,12 @@ export const RESTAURANT_CONFIG: RestaurantConfig = {
   },
   delivery: {
     pickupAvailable: true,
-    localDeliveryAvailable: true,
-    callToConfirmDelivery: true,
-    serviceAreas: [
-      "Cihangir",
-      "Firuzağa",
-      "Çukurcuma",
-      "Karaköy (Yakın Çevre)",
-      "Taksim / Beyoğlu Çevresi",
-    ],
+    localDeliveryAvailable: false,
+    dineInAvailable: true,
+    callToConfirmDelivery: false,
+    serviceAreas: ["Cihangir"],
     notice:
-      "Paket servis mesafesi, minimum sipariş tutarı ve anlık yoğunluk durumu için lütfen telefonla iletişime geçiniz.",
+      "Restoranımızda masada yemek (Dine-in) ve doğrudan gel-al (Takeaway / Paket yaptırma) hizmeti verilmektedir. Kurye ile adrese paket servisimiz bulunmamaktadır.",
   },
   allergens: {
     sharedKitchenWarning: true,

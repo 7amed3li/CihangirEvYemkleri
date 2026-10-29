@@ -95,6 +95,10 @@ export default function CurrencySwitcher() {
               );
             })}
           </div>
+
+          <div className="mt-1 pt-1.5 border-t border-[#253D2C]/10 px-1 text-[9px] text-[#76816E] leading-tight text-center">
+            <span>Kurlar tahmini göstergedir. Yasal hesap ve ödeme masada <strong>Türk Lirası (₺)</strong> iledir.</span>
+          </div>
         </div>
       )}
     </div>

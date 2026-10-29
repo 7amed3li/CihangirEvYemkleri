@@ -22,11 +22,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const meta = PAGES_META.about[locale as Locale] || PAGES_META.about.tr;
-  const canonicalUrl = `https://cihangirevyemekler.com.tr/${locale}/about`;
+  const canonicalUrl = `https://www.cihangirevyemekler.com.tr/${locale}/about`;
 
   const languageAlternates: Record<string, string> = {};
   SUPPORTED_LOCALES.forEach((l) => {
-    languageAlternates[l] = `https://cihangirevyemekler.com.tr/${l}/about`;
+    languageAlternates[l] = `https://www.cihangirevyemekler.com.tr/${l}/about`;
   });
 
   return {

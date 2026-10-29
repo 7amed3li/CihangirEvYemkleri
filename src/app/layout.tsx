@@ -18,13 +18,22 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cihangirevyemekler.com.tr"),
+  metadataBase: new URL("https://www.cihangirevyemekler.com.tr"),
   title: {
     default: "Cihangir Ev Yemekleri & Pide",
     template: "%s | Cihangir Ev Yemekleri & Pide",
   },
   description:
-    "Cihangir'in kalbinde geleneksel ev yemekleri ve taş fırın pide lezzetleri. Firuzağa, Beyoğlu, İstanbul.",
+    "Anne şefkatiyle pişen taze tencere yemekleri, fırından yeni çıkmış çıtır pideler ve Cihangir'in en samimi esnaf sofrası. Beyoğlu'nda evinizin lezzeti ve sıcaklığı.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({

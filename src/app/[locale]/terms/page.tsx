@@ -17,11 +17,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const meta = PAGES_META.terms[locale as Locale] || PAGES_META.terms.tr;
-  const canonicalUrl = `https://cihangirevyemekler.com.tr/${locale}/terms`;
+  const canonicalUrl = `https://www.cihangirevyemekler.com.tr/${locale}/terms`;
 
   const languageAlternates: Record<string, string> = {};
   SUPPORTED_LOCALES.forEach((l) => {
-    languageAlternates[l] = `https://cihangirevyemekler.com.tr/${l}/terms`;
+    languageAlternates[l] = `https://www.cihangirevyemekler.com.tr/${l}/terms`;
   });
 
   return {

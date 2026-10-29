@@ -2348,16 +2348,16 @@ export const CATEGORY_TRANSLATIONS: Record<string, Record<Locale, string>> = {
     "zh": "配菜与抓饭"
   },
   "pideler": {
-    "tr": "Taş Fırın Pide",
-    "en": "Stone Oven Pide",
-    "ar": "فطائر البيدة بالفرن الحجري",
-    "ru": "Пиде из каменной печи",
-    "fa": "پیده‌های تنور سنگی",
-    "fr": "Pides au four à pierre",
-    "de": "Steinofen-Pide",
-    "it": "Pide al forno a legna",
-    "es": "Pides al horno de piedra",
-    "zh": "石炉烘烤皮迭"
+    "tr": "Pide Çeşitleri",
+    "en": "Pide",
+    "ar": "بيدة",
+    "ru": "Пиде",
+    "fa": "پیده",
+    "fr": "Pide",
+    "de": "Pide",
+    "it": "Pide",
+    "es": "Pide",
+    "zh": "皮得"
   },
   "tatlilar": {
     "tr": "Tatlı Çeşitleri",

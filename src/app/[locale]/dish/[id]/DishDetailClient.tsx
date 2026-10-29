@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { useAppContext } from "@/context/AppContext";
 import { Plus, Minus, ShareNetwork, Check } from "@phosphor-icons/react";
 import { Wheat } from "lucide-react";
-import CartDrawer from "@/components/CartDrawer";
 
 interface DishDetailClientProps {
   item: {
@@ -226,9 +225,6 @@ export default function DishDetailClient({
           </button>
         )}
       </div>
-
-      {/* Floating Bottom Cart Drawer */}
-      <CartDrawer />
     </div>
   );
 }

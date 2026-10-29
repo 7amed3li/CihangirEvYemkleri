@@ -21,11 +21,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const meta = PAGES_META.faq[locale as Locale] || PAGES_META.faq.tr;
-  const canonicalUrl = `https://cihangirevyemekler.com.tr/${locale}/faq`;
+  const canonicalUrl = `https://www.cihangirevyemekler.com.tr/${locale}/faq`;
 
   const languageAlternates: Record<string, string> = {};
   SUPPORTED_LOCALES.forEach((l) => {
-    languageAlternates[l] = `https://cihangirevyemekler.com.tr/${l}/faq`;
+    languageAlternates[l] = `https://www.cihangirevyemekler.com.tr/${l}/faq`;
   });
 
   return {

@@ -9,71 +9,71 @@ export interface PageMeta {
 export const PAGES_META: Record<string, Record<Locale, PageMeta>> = {
   about: {
     tr: {
-      title: "Hakkımızda | Cihangir Ev Yemekleri & Taş Fırın Pide",
+      title: "Hakkımızda | Cihangir Ev Yemekleri & Pide",
       description:
-        "Cihangir'in kalbinde geleneksel Türk ev yemekleri ve taş fırın pide lezzetleri. Taze tencere yemekleri, günlük menüler ve esnaf lokantası samimiyeti.",
+        "Anne şefkatiyle pişen taze tencere yemekleri, fırından yeni çıkmış çıtır pideler ve Cihangir'in en samimi esnaf sofrası. Beyoğlu, İstanbul.",
     },
     en: {
-      title: "About Us | Cihangir Home Kitchen & Stone-Oven Pide",
+      title: "About Us | Cihangir Home Kitchen & Pide",
       description:
-        "Traditional Turkish home-cooked dishes and authentic stone-oven pide in Cihangir, Beyoğlu, Istanbul. Fresh daily stews and welcoming hospitality.",
+        "Authentic Turkish home cooking and freshly baked pide in Cihangir, Beyoğlu, Istanbul. Fresh daily stews, warm hospitality and family recipes.",
     },
     ar: {
-      title: "عن المطعم | جيهانغير للمطبخ البيتي وبيدة الفرن الحجري",
+      title: "عن المطعم | جيهانغير للمطبخ البيتي وفطائر البيدة",
       description:
-        "مأكولات المطبخ التركي البيتي الأصيل وبيدة الفرن الحجري في قلب جيهانغير، بيوغلو، إسطنبول. يخنات يومية طازجة ونكهات عريقة.",
+        "أشهى مأكولات المطبخ التركي البيتي الطازجة وفطائر البيدة الساخنة في قلب جيهانغير، بيوغلو، إسطنبول. وصفات عائلية عريقة ونكهات دافئة.",
     },
     ru: {
       title: "О нас | Cihangir Домашняя Кухня & Пиде",
       description:
-        "Традиционная турецкая домашняя кухня и пиде из каменной печи в Джихангире, Бейоглу, Стамбул.",
+        "Традиционная турецкая домашняя кухня и свежие хрустящие пиде в Джихангире, Бейоглу, Стамбул.",
     },
     fa: {
-      title: "درباره ما | آشپزخانه خانگی جیهانگیر و پیده تنوری",
+      title: "درباره ما | آشپزخانه خانگی جیهانگیر و پیده",
       description:
-        "غذاهای خانگی اصیل ترکی و پیده تنوری در قلب جیهانگیر، بیوغلو، استانبول.",
+        "غذاهای خانگی اصیل ترکی و پیده داغ و تازه در قلب جیهانگیر، بیوغلو، استانبول.",
     },
     fr: {
-      title: "À Propos | Cihangir Cuisine Maison & Pide au Four",
+      title: "À Propos | Cihangir Cuisine Maison & Pide",
       description:
-        "Cuisine familiale turque traditionnelle et pide cuit au four en pierre à Cihangir, Beyoğlu, Istanbul.",
+        "Cuisine familiale turque traditionnelle et pide frais et croustillant à Cihangir, Beyoğlu, Istanbul.",
     },
     de: {
-      title: "Über Uns | Cihangir Hausküche & Steinofenpide",
+      title: "Über Uns | Cihangir Hausküche & Pide",
       description:
-        "Traditionelle türkische Hausmannskost und Steinofenpide im Herzen von Cihangir, Beyoğlu, Istanbul.",
+        "Traditionelle türkische Hausmannskost und ofenfrische Pide im Herzen von Cihangir, Beyoğlu, Istanbul.",
     },
     it: {
       title: "Chi Siamo | Cihangir Cucina Casalinga & Pide",
       description:
-        "Cucina casalinga tradizionale turca e pide dal forno a pietra a Cihangir, Beyoğlu, Istanbul.",
+        "Cucina casalinga tradizionale turca e pide appena sfornato a Cihangir, Beyoğlu, Istanbul.",
     },
     es: {
       title: "Sobre Nosotros | Cihangir Cocina Casera & Pide",
       description:
-        "Cocina casera turca tradicional y pide al horno de piedra en Cihangir, Beyoğlu, Estambul.",
+        "Cocina casera turca tradicional y pide recién horneado en Cihangir, Beyoğlu, Estambul.",
     },
     zh: {
-      title: "关于我们 | 贾汉吉尔家常菜与石炉皮得",
+      title: "关于我们 | 贾汉吉尔家常菜与皮得",
       description:
-        "位于伊斯坦布尔贝伊奥卢贾汉吉尔的正宗土耳其家常热菜与石炉皮得面饼。",
+        "位于伊斯坦布尔贝伊奥卢贾汉吉尔的正宗土耳其家常热菜与新鲜现烤皮得。",
     },
   },
   contact: {
     tr: {
       title: "İletişim & Konum | Cihangir Ev Yemekleri & Pide",
       description:
-        "Cihangir Ev Yemekleri & Pide adres, telefon ve çalışma saatleri. Firuzağa Camii Sokak No:1 A, Beyoğlu, İstanbul.",
+        "Cihangir Ev Yemekleri & Pide adres, telefon ve çalışma saatleri. Cihangir, Yeni Yuva Sk. no:50A, Beyoğlu, İstanbul.",
     },
     en: {
       title: "Contact & Location | Cihangir Home Kitchen & Pide",
       description:
-        "Address, phone number and opening hours for Cihangir Ev Yemekleri & Pide in Firuzağa, Beyoğlu, Istanbul.",
+        "Address, phone number and opening hours for Cihangir Ev Yemekleri & Pide in Cihangir, Yeni Yuva Sk. no:50A, Beyoğlu, Istanbul.",
     },
     ar: {
       title: "تواصل معنا والموقع | جيهانغير للمطبخ البيتي",
       description:
-        "العنوان ورقم الهاتف وساعات العمل لمطعم جيهانغير للمطبخ البيتي، فيروز أغا، بيوغلو، إسطنبول.",
+        "العنوان ورقم الهاتف وساعات العمل لمطعم جيهانغير للمطبخ البيتي، جيهانغير، شارع يني يوفا رقم 50A، بيوغلو، إسطنبول.",
     },
     ru: {
       title: "Контакты и адрес | Cihangir Ev Yemekleri",
@@ -107,7 +107,7 @@ export const PAGES_META: Record<string, Record<Locale, PageMeta>> = {
     },
     zh: {
       title: "联系我们与地址 | 贾汉吉尔家常菜",
-      description: "贾汉吉尔家常菜与石炉皮得的地址、电话及营业时间信息。",
+      description: "贾汉吉尔家常菜与皮得的地址、电话及营业时间信息。",
     },
   },
   delivery: {

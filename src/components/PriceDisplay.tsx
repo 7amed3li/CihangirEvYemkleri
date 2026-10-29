@@ -33,7 +33,7 @@ export default function PriceDisplay({
       }}
     >
       <span style={{ fontWeight: 800, fontSize: "1.15em", color: "#253D2C" }}>
-        {formattedCurrent} {symbol}
+        {currency !== "TRY" ? `≈ ${formattedCurrent}` : formattedCurrent} {symbol}
       </span>
       {formattedOriginal && (
         <span
@@ -43,12 +43,12 @@ export default function PriceDisplay({
             fontSize: "0.85em",
           }}
         >
-          {formattedOriginal} {symbol}
+          {currency !== "TRY" ? `≈ ${formattedOriginal}` : formattedOriginal} {symbol}
         </span>
       )}
       {currency !== "TRY" && (
-        <span style={{ fontSize: "0.75em", color: "#76816E" }}>
-          (≈ {priceTRY} ₺)
+        <span style={{ fontSize: "0.75em", color: "#C64C32", fontWeight: 700 }}>
+          ({priceTRY} ₺ Esas Fiyat)
         </span>
       )}
     </div>

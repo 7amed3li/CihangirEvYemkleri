@@ -28,11 +28,14 @@ export default function ContactClient({ locale }: ContactClientProps) {
     }
 
     setStatus("submitting");
-    setTimeout(() => {
-      // Clean, honest client acknowledgment (no fake backend simulation)
-      setStatus("success");
-      setFormData({ name: "", contact: "", message: "" });
-    }, 600);
+    try {
+      const message = `Merhaba Cihangir Ev Yemekleri,\nİletişim Formu Mesajı:\n\nAd Soyad: ${formData.name}\nİletişim: ${formData.contact}\nMesaj: ${formData.message}`;
+      const encoded = encodeURIComponent(message);
+      window.open(`https://wa.me/902122513696?text=${encoded}`, "_blank");
+    } catch (_) {}
+
+    setStatus("success");
+    setFormData({ name: "", contact: "", message: "" });
   };
 
   return (

@@ -2,7 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { OttomanSeal } from "./BrandIcons";
+import { RESTAURANT_CONFIG } from "@/data/restaurantConfig";
+import { FOOTER_TRANSLATIONS } from "@/data/footerTranslations";
+import { Locale } from "@/i18n/translations";
 
 interface FooterProps {
   locale: string;
@@ -11,56 +15,7 @@ interface FooterProps {
 
 export default function Footer({ locale, dict }: FooterProps) {
   const isRtl = locale === "ar" || locale === "fa";
-
-  const getMapTitle = () => {
-    switch (locale) {
-      case "ar":
-        return "الخريطة والموقع";
-      case "fa":
-        return "نقشه و موقعیت";
-      case "en":
-        return "Location & Map";
-      case "ru":
-        return "Карта и адрес";
-      case "fr":
-        return "Carte & Emplacement";
-      case "de":
-        return "Standort & Karte";
-      case "it":
-        return "Mappa e Posizione";
-      case "es":
-        return "Ubicación y Mapa";
-      case "zh":
-        return "地图与地址";
-      default:
-        return "Harita ve Ulaşım";
-    }
-  };
-
-  const getDirectionsLabel = () => {
-    switch (locale) {
-      case "ar":
-        return "فتح في خرائط جوجل";
-      case "fa":
-        return "مسیریابی با گوگل مپ";
-      case "en":
-        return "Open in Google Maps";
-      case "ru":
-        return "Открыть в Google Maps";
-      case "fr":
-        return "Ouvrir dans Google Maps";
-      case "de":
-        return "In Google Maps öffnen";
-      case "it":
-        return "Apri in Google Maps";
-      case "es":
-        return "Abrir en Google Maps";
-      case "zh":
-        return "在谷歌地图中打开";
-      default:
-        return "Google Haritalar'da Aç";
-    }
-  };
+  const t = FOOTER_TRANSLATIONS[(locale as Locale) || "tr"] || FOOTER_TRANSLATIONS.tr;
 
   return (
     <footer
@@ -75,29 +30,36 @@ export default function Footer({ locale, dict }: FooterProps) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-10 text-start">
           {/* Brand Column */}
           <div className="flex flex-col items-start text-start">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-[#596752]">
-                <OttomanSeal size={28} />
-              </span>
-              <h2
-                className="text-2xl sm:text-3xl font-black text-[#253D2C] tracking-wide"
-                style={{ fontFamily: "var(--font-cairo)" }}
-              >
-                Cihangir
-              </h2>
-            </div>
-            <p
-              className="text-[#C64C32] text-xs font-semibold tracking-[0.25em] uppercase mb-3"
-              style={{ fontFamily: "var(--font-inter)" }}
-            >
-              Ev Yemekleri & Pide
-            </p>
+            <Link href={`/${locale}`} className="flex items-center gap-3 mb-2 group">
+              <div className="relative w-11 h-11 shrink-0 flex items-center justify-center">
+                <Image
+                  src="/splash/logo-original.webp"
+                  alt="Cihangir Ev Yemekleri Pide"
+                  fill
+                  sizes="44px"
+                  className="object-contain transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div className="flex flex-col">
+                <h2
+                  className="text-2xl sm:text-3xl font-black text-[#253D2C] tracking-wide group-hover:text-[#C64C32] transition-colors"
+                  style={{ fontFamily: "var(--font-cairo)" }}
+                >
+                  Cihangir
+                </h2>
+                <span
+                  className="text-[#C64C32] text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase"
+                  style={{ fontFamily: "var(--font-inter)" }}
+                >
+                  Ev Yemekleri & Pide
+                </span>
+              </div>
+            </Link>
             <p
               className="text-[#76816E] text-xs sm:text-sm font-normal leading-relaxed max-w-xs"
-              style={{ fontFamily: "var(--font-inter)" }}
+              style={{ fontFamily: isRtl ? "var(--font-cairo)" : "var(--font-inter)" }}
             >
-              {dict?.subtitle ||
-                "Cihangir'in kalbinde, geleneksel ev yemekleri ve taş fırın pide lezzetleri."}
+              {t.brandSubtitle}
             </p>
           </div>
 
@@ -105,7 +67,7 @@ export default function Footer({ locale, dict }: FooterProps) {
           <div className="flex flex-col items-start text-start w-full">
             <h3 className="text-xs sm:text-sm font-bold text-[#C64C32] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C64C32]"></span>
-              <span>{dict?.quickLinks || (isRtl ? "روابط سريعة" : "Hızlı Bağlantılar")}</span>
+              <span>{t.quickLinksTitle}</span>
             </h3>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
@@ -113,8 +75,8 @@ export default function Footer({ locale, dict }: FooterProps) {
                   href={`/${locale}`}
                   className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#596752]">›</span>
-                  <span>{dict?.home || (isRtl ? "الرئيسية" : "Ana Sayfa")}</span>
+                  <span className="text-[#596752]">{isRtl ? "‹" : "›"}</span>
+                  <span>{t.home}</span>
                 </Link>
               </li>
               <li>
@@ -122,8 +84,8 @@ export default function Footer({ locale, dict }: FooterProps) {
                   href={`/${locale}/menu`}
                   className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#596752]">›</span>
-                  <span>{dict?.menu || (isRtl ? "قائمة الطعام" : "Menü")}</span>
+                  <span className="text-[#596752]">{isRtl ? "‹" : "›"}</span>
+                  <span>{t.menu}</span>
                 </Link>
               </li>
               <li>
@@ -131,8 +93,8 @@ export default function Footer({ locale, dict }: FooterProps) {
                   href={`/${locale}/about`}
                   className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#596752]">›</span>
-                  <span>{isRtl ? "عن المطعم" : locale === "en" ? "About Us" : "Hakkımızda"}</span>
+                  <span className="text-[#596752]">{isRtl ? "‹" : "›"}</span>
+                  <span>{t.about}</span>
                 </Link>
               </li>
               <li>
@@ -140,8 +102,8 @@ export default function Footer({ locale, dict }: FooterProps) {
                   href={`/${locale}/delivery`}
                   className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#596752]">›</span>
-                  <span>{isRtl ? "التوصيل والاستلام" : locale === "en" ? "Delivery & Pick-up" : "Teslimat & Gel-Al"}</span>
+                  <span className="text-[#596752]">{isRtl ? "‹" : "›"}</span>
+                  <span>{t.delivery}</span>
                 </Link>
               </li>
               <li>
@@ -149,8 +111,8 @@ export default function Footer({ locale, dict }: FooterProps) {
                   href={`/${locale}/allergens`}
                   className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#596752]">›</span>
-                  <span>{isRtl ? "دليل الحساسية" : locale === "en" ? "Allergens" : "Alerjen Bilgisi"}</span>
+                  <span className="text-[#596752]">{isRtl ? "‹" : "›"}</span>
+                  <span>{t.allergens}</span>
                 </Link>
               </li>
               <li>
@@ -158,8 +120,8 @@ export default function Footer({ locale, dict }: FooterProps) {
                   href={`/${locale}/faq`}
                   className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#596752]">›</span>
-                  <span>{isRtl ? "الأسئلة الشائعة" : locale === "en" ? "FAQ" : "Sıkça Sorulanlar"}</span>
+                  <span className="text-[#596752]">{isRtl ? "‹" : "›"}</span>
+                  <span>{t.faq}</span>
                 </Link>
               </li>
               <li>
@@ -167,8 +129,8 @@ export default function Footer({ locale, dict }: FooterProps) {
                   href={`/${locale}/contact`}
                   className="text-[#76816E] hover:text-[#253D2C] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <span className="text-[#596752]">›</span>
-                  <span>{isRtl ? "تواصل معنا والموقع" : locale === "en" ? "Contact & Location" : "İletişim & Konum"}</span>
+                  <span className="text-[#596752]">{isRtl ? "‹" : "›"}</span>
+                  <span>{t.contact}</span>
                 </Link>
               </li>
             </ul>
@@ -178,7 +140,7 @@ export default function Footer({ locale, dict }: FooterProps) {
           <div className="flex flex-col items-start text-start w-full">
             <h3 className="text-xs sm:text-sm font-bold text-[#C64C32] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C64C32]"></span>
-              <span>{dict?.contact || (isRtl ? "التواصل والموقع" : "İletişim & Konum")}</span>
+              <span>{t.contactTitle}</span>
             </h3>
             <div className="flex items-start gap-2.5 mb-3 text-start">
               <svg
@@ -201,9 +163,9 @@ export default function Footer({ locale, dict }: FooterProps) {
               </svg>
               <p
                 className="text-[#253D2C] text-xs sm:text-sm font-medium leading-relaxed"
-                style={{ fontFamily: "var(--font-inter)" }}
+                style={{ fontFamily: isRtl ? "var(--font-cairo)" : "var(--font-inter)" }}
               >
-                Firuzağa, Firuzağa Camii Sk. No:1 A, 34425 Beyoğlu / İstanbul
+                Cihangir, Yeni Yuva Sk. no:50A, 34433 Beyoğlu / İstanbul
               </p>
             </div>
             <div className="flex items-center gap-2.5 mb-2.5">
@@ -223,6 +185,7 @@ export default function Footer({ locale, dict }: FooterProps) {
               <a
                 href="tel:+902122513696"
                 className="text-[#253D2C] text-xs sm:text-sm font-semibold hover:text-[#C64C32] transition-colors"
+                dir="ltr"
               >
                 +90 (212) 251 36 96
               </a>
@@ -239,14 +202,14 @@ export default function Footer({ locale, dict }: FooterProps) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
               </svg>
               <p className="text-[#76816E] text-xs sm:text-sm font-medium">
-                {dict?.hours || "Her gün: 08:30 - 22:30"}
+                {t.hours}
               </p>
             </div>
             <a
               href="tel:+902122513696"
               className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-[#354D37] text-[#E4EADB] hover:bg-[#293F30] transition-colors font-bold text-xs sm:text-sm shadow-xs"
             >
-              <span>{isRtl ? "اتصال هاتفي مباشر" : "Doğrudan Telefonla Arayın"}</span>
+              <span>{t.callBtn}</span>
             </a>
           </div>
 
@@ -254,13 +217,13 @@ export default function Footer({ locale, dict }: FooterProps) {
           <div className="flex flex-col items-start text-start w-full">
             <h3 className="text-xs sm:text-sm font-bold text-[#C64C32] tracking-widest uppercase mb-4 sm:mb-6 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C64C32]"></span>
-              <span>{getMapTitle()}</span>
+              <span>{t.mapTitle}</span>
             </h3>
             
             <div className="w-full rounded-xl overflow-hidden border border-[#253D2C]/20 shadow-xs bg-[#F6F1E7] relative group">
               <iframe
                 title="Cihangir Ev Yemekleri & Pide Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.8437998399587!2d28.981881676579626!3d41.03204907134707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab764fa6a1249%3A0x8e8fa65fecae72f2!2zRmnJtnV6YcSfYSwgRmnJtnV6YcSfYSBDYW1paSBTay4gTm86MSBBLCAzNDQyNSBCZXlvxJ9sdS_EsHN0YW5idWwsIFTDvHJraXll!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str"
+                src={RESTAURANT_CONFIG.address.googleMapsEmbedUrl}
                 width="100%"
                 height="140"
                 style={{ border: 0 }}
@@ -272,7 +235,7 @@ export default function Footer({ locale, dict }: FooterProps) {
             </div>
 
             <a
-              href="https://maps.google.com/?q=Firuza%C4%9Fa,+Firuza%C4%9Fa+Camii+Sk.+No:1+A,+34425+Beyo%C4%9Flu/%C4%B0stanbul"
+              href={RESTAURANT_CONFIG.address.googleMapsDirectionsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2.5 flex items-center justify-center gap-2 w-full py-2 px-3 rounded-lg border border-[#253D2C]/24 bg-[#FFFAF0] hover:bg-[#F6F1E7] text-[#253D2C] hover:text-[#C64C32] transition-all font-semibold text-xs shadow-2xs"
@@ -290,7 +253,7 @@ export default function Footer({ locale, dict }: FooterProps) {
                   d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                 />
               </svg>
-              <span>{getDirectionsLabel()}</span>
+              <span>{t.directionsLabel}</span>
             </a>
           </div>
         </div>
@@ -303,27 +266,27 @@ export default function Footer({ locale, dict }: FooterProps) {
           <div className="space-y-1">
             <p
               className="text-[#76816E] text-xs font-medium"
-              style={{ fontFamily: "var(--font-inter)" }}
+              style={{ fontFamily: isRtl ? "var(--font-cairo)" : "var(--font-inter)" }}
             >
-              © 2026 Cihangir Ev Yemekleri & Pide. Tüm hakları saklıdır.
+              {t.rights}
             </p>
             {/* Policy Links */}
             <div className="flex flex-wrap items-center gap-3 text-[11px] text-[#596752]">
               <Link href={`/${locale}/terms`} className="hover:underline">
-                {isRtl ? "شروط الاستخدام" : locale === "en" ? "Terms" : "Kullanım Koşulları"}
+                {t.terms}
               </Link>
               <span>•</span>
               <Link href={`/${locale}/privacy`} className="hover:underline">
-                {isRtl ? "سياسة الخصوصية" : locale === "en" ? "Privacy Policy" : "Gizlilik"}
+                {t.privacy}
               </Link>
               <span>•</span>
               <Link href={`/${locale}/cancellation`} className="hover:underline">
-                {isRtl ? "سياسة الإلغاء" : locale === "en" ? "Cancellation" : "İptal ve İade"}
+                {t.cancellation}
               </Link>
             </div>
           </div>
           <p className="text-[#76816E] text-[10px] tracking-widest uppercase flex items-center gap-1">
-            Tasarım ve Geliştirme:
+            {t.devCredit}
             <span className="text-[#596752] font-bold">Hamed Mohamed</span>
           </p>
         </div>
