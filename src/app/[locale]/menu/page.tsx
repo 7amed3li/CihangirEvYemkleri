@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MenuClient from "./MenuClient";
 import { getDictionary, SUPPORTED_LOCALES } from "@/i18n/translations";
+import { buildPageMetadata } from "@/lib/seo";
 import {
   getDatabaseMenu,
   getPublishedDailyMenu,
@@ -16,6 +17,19 @@ export async function generateStaticParams() {
   return SUPPORTED_LOCALES.map((locale) => ({ locale }));
 }
 
+const MENU_TITLES: Record<string, string> = {
+  tr: "Menü | Cihangir Ev Yemekleri & Taş Fırın Pide",
+  en: "Menu | Cihangir Home Kitchen & Stone Oven Pide",
+  ar: "قائمة الطعام | جيهانغير للمطبخ البيتي، بيوغلو، إسطنبول",
+  de: "Menü | Cihangir Hausküche & Steinofenpide",
+  fr: "Menu | Cihangir Cuisine Maison & Pide au Four",
+  ru: "Меню | Cihangir Домашняя Кухня & Пиде",
+  es: "Menú | Cihangir Cocina Casera & Pide",
+  it: "Menù | Cihangir Cucina Casalinga & Pide",
+  zh: "菜单 | 贾汉吉尔家常菜 & 石炉皮得",
+  fa: "منو | آشپزخانه خانگی جیهانگیر",
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -23,18 +37,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
 
-  const titles: Record<string, string> = {
-    tr: "Menü | Cihangir Ev Yemekleri & Taş Fırın Pide",
-    en: "Menu | Cihangir Home Kitchen & Stone Oven Pide",
-    ar: "قائمة الطعام | جيهانغير للمطبخ البيتي، بيوغلو، إسطنبول",
-    de: "Menü | Cihangir Hausküche & Steinofenpide",
-    fr: "Menu | Cihangir Cuisine Maison & Pide au Four",
-    ru: "Меню | Cihangir Домашняя Кухня & Пиде",
-    es: "Menú | Cihangir Cocina Casera & Pide",
-    it: "Menù | Cihangir Cucina Casalinga & Pide",
-    zh: "菜单 | 贾汉吉尔家常菜 & 石炉皮得",
-    fa: "منو | آشپزخانه خانگی جیهانگیر",
-  };
+  const titles = MENU_TITLES;
 
   const descriptions: Record<string, string> = {
     tr: "Ana yemekler, çorbalar, taş fırın pide çeşitleri, tatlılar ve içecekler. Cihangir Ev Yemekleri & Pide menüsü, Beyoğlu, İstanbul.",
@@ -51,28 +54,7 @@ export async function generateMetadata({
 
   const title = titles[locale] ?? titles.tr;
   const description = descriptions[locale] ?? descriptions.tr;
-  const canonicalUrl = `https://www.cihangirevyemekler.com.tr/${locale}/menu`;
-  const languageAlternates: Record<string, string> = {};
-  SUPPORTED_LOCALES.forEach((l) => {
-    languageAlternates[l] = `https://www.cihangirevyemekler.com.tr/${l}/menu`;
-  });
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: languageAlternates,
-    },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "Cihangir Ev Yemekleri & Pide",
-      locale,
-      type: "website",
-    },
-  };
+  return buildPageMetadata({ locale, path: "/menu", title, description });
 }
 
 export default async function MenuPage({
@@ -97,6 +79,12 @@ export default async function MenuPage({
 
       {/* Main Interactive Menu Client */}
       <main className="flex-1">
+        <h1
+          className="max-w-6xl mx-auto px-4 sm:px-6 pt-5 text-lg sm:text-xl font-black text-[#253D2C] text-start"
+          style={{ fontFamily: "var(--font-cairo)" }}
+        >
+          {(MENU_TITLES[locale] ?? MENU_TITLES.tr).replace(" | ", " · ")}
+        </h1>
         <MenuClient
           dict={dict}
           categories={categories}

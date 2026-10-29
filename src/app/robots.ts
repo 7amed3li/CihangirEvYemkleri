@@ -1,16 +1,20 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/seo";
 
+/**
+ * Public pages, assets and /api/rates (used client-side for price display)
+ * stay crawlable. Only the private admin UI and admin API are excluded from
+ * crawling; admin pages additionally send noindex via their layout metadata.
+ */
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = "https://www.cihangirevyemekler.com.tr";
-
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin/", "/api/admin/"],
+        disallow: ["/admin", "/api/admin"],
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

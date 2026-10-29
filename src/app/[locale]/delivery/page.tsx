@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -21,29 +22,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const meta = PAGES_META.delivery[locale as Locale] || PAGES_META.delivery.tr;
-  const canonicalUrl = `https://www.cihangirevyemekler.com.tr/${locale}/delivery`;
-
-  const languageAlternates: Record<string, string> = {};
-  SUPPORTED_LOCALES.forEach((l) => {
-    languageAlternates[l] = `https://www.cihangirevyemekler.com.tr/${l}/delivery`;
-  });
-
-  return {
+  return buildPageMetadata({
+    locale,
+    path: "/delivery",
     title: meta.title,
     description: meta.description,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: languageAlternates,
-    },
-    openGraph: {
-      title: meta.title,
-      description: meta.description,
-      url: canonicalUrl,
-      siteName: "Cihangir Ev Yemekleri & Pide",
-      locale,
-      type: "website",
-    },
-  };
+  });
 }
 
 export default async function DeliveryPage({

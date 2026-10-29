@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useAppContext } from "@/context/AppContext";
 import { Plus, Minus, CaretRight } from "@phosphor-icons/react";
@@ -105,7 +106,18 @@ export default function FoodCard({ item }: MenuItemProps) {
                     className="font-bold text-base sm:text-lg text-[#253D2C] leading-snug group-hover:text-[#C64C32] transition-colors text-start"
                     style={{ fontFamily: "var(--font-cairo)" }}
                   >
-                    {turkishTitle}
+                    <Link
+                      href={`/${activeLang}/dish/${item.id}`}
+                      onClick={(e) => {
+                        if (!e.metaKey && !e.ctrlKey && !e.shiftKey) {
+                          e.preventDefault();
+                          setIsModalOpen(true);
+                        }
+                      }}
+                      className="hover:underline"
+                    >
+                      {turkishTitle}
+                    </Link>
                   </h3>
                   {/* Status & Characteristic Badges */}
                   {!isAvailable && (
@@ -340,7 +352,18 @@ export default function FoodCard({ item }: MenuItemProps) {
                 className="font-bold text-sm sm:text-base text-[#253D2C] leading-snug group-hover:text-[#C64C32] transition-colors text-start"
                 style={{ fontFamily: "var(--font-cairo)" }}
               >
-                {turkishTitle}
+                <Link
+                  href={`/${activeLang}/dish/${item.id}`}
+                  onClick={(e) => {
+                    if (!e.metaKey && !e.ctrlKey && !e.shiftKey) {
+                      e.preventDefault();
+                      setIsModalOpen(true);
+                    }
+                  }}
+                  className="hover:underline"
+                >
+                  {turkishTitle}
+                </Link>
               </h3>
               {/* Click Affordance Chevron */}
               <div className="shrink-0 w-6 h-6 rounded-full bg-[#253D2C]/5 flex items-center justify-center text-[#596752] group-hover:bg-[#C64C32] group-hover:text-white transition-colors">
@@ -367,9 +390,18 @@ export default function FoodCard({ item }: MenuItemProps) {
                     localizedDesc
                   )}
                 </p>
-                <span className="text-[10px] font-bold text-[#596752] hover:underline inline-block mt-0.5">
+                <Link
+                  href={`/${activeLang}/dish/${item.id}`}
+                  onClick={(e) => {
+                    if (!e.metaKey && !e.ctrlKey && !e.shiftKey) {
+                      e.preventDefault();
+                      setIsModalOpen(true);
+                    }
+                  }}
+                  className="text-[10px] font-bold text-[#596752] hover:underline inline-block mt-0.5"
+                >
                   {activeLang === "ar" ? "عرض التفاصيل الكاملة ←" : activeLang === "en" ? "View full details →" : "Detayları gör →"}
-                </span>
+                </Link>
               </div>
             )}
           </div>

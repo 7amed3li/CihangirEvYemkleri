@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactClient from "./ContactClient";
@@ -17,29 +18,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const meta = PAGES_META.contact[locale as Locale] || PAGES_META.contact.tr;
-  const canonicalUrl = `https://www.cihangirevyemekler.com.tr/${locale}/contact`;
-
-  const languageAlternates: Record<string, string> = {};
-  SUPPORTED_LOCALES.forEach((l) => {
-    languageAlternates[l] = `https://www.cihangirevyemekler.com.tr/${l}/contact`;
-  });
-
-  return {
+  return buildPageMetadata({
+    locale,
+    path: "/contact",
     title: meta.title,
     description: meta.description,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: languageAlternates,
-    },
-    openGraph: {
-      title: meta.title,
-      description: meta.description,
-      url: canonicalUrl,
-      siteName: "Cihangir Ev Yemekleri & Pide",
-      locale,
-      type: "website",
-    },
-  };
+  });
 }
 
 export default async function ContactPage({

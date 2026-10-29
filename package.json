@@ -8,6 +8,7 @@
     "postinstall": "prisma generate",
     "start": "next start",
     "lint": "eslint",
+    "test:seo": "tsx scripts/validate-seo.ts",
     "generate:images": "tsx scripts/generate-product-images.ts",
     "generate:images:dry-run": "tsx scripts/generate-product-images.ts --dry-run"
   },

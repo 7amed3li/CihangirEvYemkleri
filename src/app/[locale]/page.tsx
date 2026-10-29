@@ -23,6 +23,7 @@ import {
 import { getDictionary, SUPPORTED_LOCALES } from "@/i18n/translations";
 import { prisma } from "@/lib/db/prisma";
 import RestaurantJsonLd from "@/components/RestaurantJsonLd";
+import { buildPageMetadata } from "@/lib/seo";
 import { menuData } from "@/data/menuData";
 import { getDishDisplay } from "@/data/dishTranslations";
 import { RESTAURANT_CONFIG } from "@/data/restaurantConfig";
@@ -32,6 +33,19 @@ export const revalidate = 0;
 export async function generateStaticParams() {
   return SUPPORTED_LOCALES.map((locale) => ({ locale }));
 }
+
+const HOME_DESCRIPTIONS: Record<string, string> = {
+  tr: "Anne şefkatiyle pişen taze tencere yemekleri, fırından yeni çıkmış çıtır pideler ve Cihangir'in en samimi esnaf sofrası. Beyoğlu'nda evinizin sıcaklığı.",
+  en: "Fresh home-cooked stews made with love, oven-fresh crispy pides, and Cihangir's warmest neighborhood table. The comforting taste of home in Beyoğlu, Istanbul.",
+  ar: "أطباق بيتيّة يومية طازجة تفيض بدفء البيت، وفطائر بيدة مقرمشة وشهية من قلب جيهانغير. كرم الضيافة وأصالة المائدة في بيوغلو، إسطنبول.",
+  de: "Täglich frisch zubereitete Hausmannskost mit Liebe gekocht, ofenfrische knusprige Pide und Cihangirs herzlichste Nachbarschaftstafel. Beyoğlu, Istanbul.",
+  fr: "Plats mijotés maison préparés avec amour, pides chauds et croustillants et l'atmosphère chaleureuse de Cihangir. La vraie saveur du fait maison à Beyoğlu, Istanbul.",
+  ru: "Домашняя турецкая кухня, приготовленная с душой, горячие хрустящие пиде и самое уютное гостеприимство Джихангира. Бейоглу, Стамбул.",
+  es: "Guisos caseros preparados con amor, pides recién horneados y crujientes, y la calidez del barrio de Cihangir. El sabor de casa en Beyoğlu, Estambul.",
+  it: "Cucina casalinga tradizionale preparata con passione, pide appena sfornato e la calda accoglienza di Cihangir. Il sapore di casa a Beyoğlu, Istanbul.",
+  zh: "每日用心熬煮的温暖家常热菜、新鲜出炉的香脆皮得，以及贾汉吉尔街区最真诚热情的待客之道。贝伊奥卢，伊斯坦布尔。",
+  fa: "خوراک‌های خانگی روزانه با عشق، پیده‌های تازه و ترد، و گرمای صمیمی سفره محلی در قلب جیهانگیر، بیوغلو، استانبول.",
+};
 
 export async function generateMetadata({
   params,
@@ -54,57 +68,11 @@ export async function generateMetadata({
     fa: "آشپزخانه خانگی جیهانگیر و پیده | صفحه اصلی",
   };
 
-  const descriptions: Record<string, string> = {
-    tr: "Anne şefkatiyle pişen taze tencere yemekleri, fırından yeni çıkmış çıtır pideler ve Cihangir'in en samimi esnaf sofrası. Beyoğlu'nda evinizin sıcaklığı.",
-    en: "Fresh home-cooked stews made with love, oven-fresh crispy pides, and Cihangir's warmest neighborhood table. The comforting taste of home in Beyoğlu, Istanbul.",
-    ar: "أطباق بيتيّة يومية طازجة تفيض بدفء البيت، وفطائر بيدة مقرمشة وشهية من قلب جيهانغير. كرم الضيافة وأصالة المائدة في بيوغلو، إسطنبول.",
-    de: "Täglich frisch zubereitete Hausmannskost mit Liebe gekocht, ofenfrische knusprige Pide und Cihangirs herzlichste Nachbarschaftstafel. Beyoğlu, Istanbul.",
-    fr: "Plats mijotés maison préparés avec amour, pides chauds et croustillants et l'atmosphère chaleureuse de Cihangir. La vraie saveur du fait maison à Beyoğlu, Istanbul.",
-    ru: "Домашняя турецкая кухня, приготовленная с душой, горячие хрустящие пиде и самое уютное гостеприимство Джихангира. Бейоглу, Стамбул.",
-    es: "Guisos caseros preparados con amor, pides recién horneados y crujientes, y la calidez del barrio de Cihangir. El sabor de casa en Beyoğlu, Estambul.",
-    it: "Cucina casalinga tradizionale preparata con passione, pide appena sfornato e la calda accoglienza di Cihangir. Il sapore di casa a Beyoğlu, Istanbul.",
-    zh: "每日用心熬煮的温暖家常热菜、新鲜出炉的香脆皮得，以及贾汉吉尔街区最真诚热情的待客之道。贝伊奥卢，伊斯坦布尔。",
-    fa: "خوراک‌های خانگی روزانه با عشق، پیده‌های تازه و ترد، و گرمای صمیمی سفره محلی در قلب جیهانگیر، بیوغلو، استانبول.",
-  };
+  const descriptions = HOME_DESCRIPTIONS;
 
   const title = titles[locale] ?? titles.tr;
   const description = descriptions[locale] ?? descriptions.tr;
-  const canonicalUrl = `https://www.cihangirevyemekler.com.tr/${locale}`;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: Object.fromEntries(
-        SUPPORTED_LOCALES.map((l) => [
-          l,
-          `https://www.cihangirevyemekler.com.tr/${l}`,
-        ])
-      ),
-    },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "Cihangir Ev Yemekleri & Pide",
-      locale: locale,
-      type: "website",
-      images: [
-        {
-          url: "https://www.cihangirevyemekler.com.tr/splash/logo-original.webp",
-          width: 800,
-          alt: "Cihangir Ev Yemekleri & Pide",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: ["https://www.cihangirevyemekler.com.tr/splash/logo-original.webp"],
-    },
-  };
+  return buildPageMetadata({ locale, path: "", title, description });
 }
 
 async function FeaturedDishes({ locale }: { locale: string }) {
@@ -332,7 +300,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <div className="min-h-screen flex flex-col bg-[#F6F1E7] text-[#253D2C]">
       {/* Schema.org Structured Data */}
-      <RestaurantJsonLd locale={locale} />
+      <RestaurantJsonLd locale={locale} description={HOME_DESCRIPTIONS[locale] ?? HOME_DESCRIPTIONS.tr} />
 
       {/* Top Header */}
       <Header locale={locale} dict={dict} />

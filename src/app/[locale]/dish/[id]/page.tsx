@@ -6,6 +6,7 @@ import { CaretLeft } from "@phosphor-icons/react/dist/ssr";
 import { menuData } from "@/data/menuData";
 import { getDishDisplay } from "@/data/dishTranslations";
 import { SUPPORTED_LOCALES, Locale, getDictionary } from "@/i18n/translations";
+import { buildPageMetadata, SITE_URL } from "@/lib/seo";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CookingPot, StoneOven } from "@/components/BrandIcons";
@@ -35,7 +36,7 @@ export async function generateMetadata({
   const allItems = menuData.flatMap((c) => c.items);
   const item = allItems.find((i) => i.id === id);
 
-  if (!item) return { title: "Dish Not Found" };
+  if (!item) return { title: "404", robots: { index: false } };
 
   const { turkishTitle, localizedName, localizedDesc } = getDishDisplay(
     item,
@@ -43,34 +44,21 @@ export async function generateMetadata({
   );
 
   const title =
-    locale === "tr"
+    locale === "tr" || !localizedName || localizedName === turkishTitle
       ? `${turkishTitle} | Cihangir Ev Yemekleri & Pide`
-      : `${turkishTitle} (${localizedName}) | Cihangir Ev Yemekleri`;
+      : `${turkishTitle} (${localizedName}) | Cihangir Ev Yemekleri & Pide`;
 
   const description =
     localizedDesc ||
-    `${turkishTitle} - Cihangir Ev Yemekleri & Pide İstanbul Beyoğlu`;
+    `${turkishTitle} - Cihangir Ev Yemekleri & Pide, Beyoğlu, İstanbul`;
 
-  const canonicalUrl = `https://www.cihangirevyemekler.com.tr/${locale}/dish/${id}`;
-  const languageAlternates: Record<string, string> = {};
-  SUPPORTED_LOCALES.forEach((l) => {
-    languageAlternates[l] = `https://www.cihangirevyemekler.com.tr/${l}/dish/${id}`;
-  });
-
-  return {
+  return buildPageMetadata({
+    locale,
+    path: `/dish/${id}`,
     title,
     description,
-    alternates: {
-      canonical: canonicalUrl,
-      languages: languageAlternates,
-    },
-    openGraph: {
-      title,
-      description,
-      url: canonicalUrl,
-      images: item.image ? [{ url: item.image }] : [],
-    },
-  };
+    image: item.image ? { url: item.image, alt: turkishTitle } : undefined,
+  });
 }
 
 export default async function DishPage({
@@ -113,8 +101,32 @@ export default async function DishPage({
       ? "返回菜单"
       : "Menüye Dön";
 
+  const menuItemSchema = {
+    "@context": "https://schema.org",
+    "@type": "MenuItem",
+    name: turkishTitle,
+    alternateName: localizedName && localizedName !== turkishTitle ? localizedName : undefined,
+    description: localizedDesc || `${turkishTitle} - Cihangir Ev Yemekleri & Pide`,
+    image: item.image ? `${SITE_URL}${item.image}` : undefined,
+    inLanguage: locale,
+    offers: {
+      "@type": "Offer",
+      price: item.price,
+      priceCurrency: "TRY",
+    },
+    suitableForDiet: item.tags?.includes("vegetarian")
+      ? "https://schema.org/VegetarianDiet"
+      : undefined,
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-[#F6F1E7]" dir={isRTL ? "rtl" : "ltr"}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(menuItemSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       {/* Sticky Header with active language & currency support */}
       <Header locale={locale} dict={dict} />
 
