@@ -14,7 +14,7 @@ export default function AdminRootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <RootDocument lang="tr">
+    <RootDocument lang="tr" showSplash={false}>
       <div className="admin-portal antialiased">{children}</div>
     </RootDocument>
   );

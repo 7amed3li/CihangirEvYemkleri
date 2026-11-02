@@ -10,7 +10,7 @@
   overflow: hidden;
   opacity: 1;
   visibility: visible;
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s ease;
+  transition: opacity 0.48s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.48s ease;
   pointer-events: auto;
   cursor: pointer;
 }
@@ -31,7 +31,7 @@
   justify-content: center;
 }
 
-/* Radiant glow behind the emblem */
+/* Radiant warm glow behind the emblem */
 .splash-stage::before {
   content: "";
   position: absolute;
@@ -43,8 +43,8 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(198, 76, 50, 0.18) 0%,
-    rgba(168, 104, 59, 0.1) 40%,
+    rgba(198, 76, 50, 0.16) 0%,
+    rgba(168, 104, 59, 0.08) 45%,
     rgba(253, 252, 247, 0) 70%
   );
   opacity: 0;
@@ -67,28 +67,28 @@
 .splash-layer-ring {
   z-index: 2;
   opacity: 0;
-  animation: splash-ring-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+  animation: splash-ring-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
 }
 
 /* Layer 2: Cooking Pot with Spoon */
 .splash-layer-pot {
   z-index: 3;
   opacity: 0;
-  animation: splash-pot-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+  animation: splash-pot-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
 /* Layer 3: Stone Oven Pide */
 .splash-layer-pide {
   z-index: 4;
   opacity: 0;
-  animation: splash-pide-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+  animation: splash-pide-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
 }
 
 /* Layer 4: Fresh Herb Garnish */
 .splash-layer-garnish {
   z-index: 5;
   opacity: 0;
-  animation: splash-garnish-in 0.5s ease-out 0.65s forwards;
+  animation: splash-garnish-in 0.45s ease-out 0.5s forwards;
 }
 
 /* Layer 5: Steam Wisps */
@@ -103,32 +103,32 @@
 }
 
 .splash-layer-steam-b {
-  animation: splash-steam-rise 1.3s ease-in-out 0.7s infinite alternate;
+  animation: splash-steam-rise 1.3s ease-in-out 0.68s infinite alternate;
 }
 
 .splash-layer-steam-c {
-  animation: splash-steam-rise 1.4s ease-in-out 0.8s infinite alternate;
+  animation: splash-steam-rise 1.4s ease-in-out 0.75s infinite alternate;
 }
 
 /* Layer 6: Typography "Cihangir Ev Yemekleri & Pide" */
 .splash-layer-type {
   z-index: 7;
   opacity: 0;
-  animation: splash-type-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+  animation: splash-type-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
 }
 
 /* Layer 7: Subtitle / Restaurant details */
 .splash-layer-detail {
   z-index: 8;
   opacity: 0;
-  animation: splash-detail-in 0.5s ease-out 1.1s forwards;
+  animation: splash-detail-in 0.45s ease-out 1s forwards;
 }
 
 /* Layer 8: Complete Master Emblem (harmonized finish) */
 .splash-layer-master {
   z-index: 10;
   opacity: 0;
-  animation: splash-master-in 0.6s ease-out 1.5s forwards;
+  animation: splash-master-in 0.45s ease-out 1.35s forwards;
 }
 
 /* Skip hint at bottom */
@@ -189,7 +189,7 @@
   }
   70% {
     opacity: 1;
-    transform: translateY(-4px) scale(1.01);
+    transform: translateY(-3px) scale(1.01);
   }
   100% {
     opacity: 1;

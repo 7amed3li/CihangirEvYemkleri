@@ -25,18 +25,31 @@ const cairo = Cairo({
 export default function RootDocument({
   lang,
   dir = "ltr",
+  showSplash = true,
   children,
 }: {
   lang: string;
   dir?: "ltr" | "rtl";
+  showSplash?: boolean;
   children: React.ReactNode;
 }) {
   return (
     <html lang={lang} dir={dir} className={`${inter.variable} ${cairo.variable}`}>
+      <head>
+        {showSplash && (
+          <>
+            <link rel="preload" as="image" href="/splash/red-ring.webp" type="image/webp" />
+            <link rel="preload" as="image" href="/splash/pot-spoon.webp" type="image/webp" />
+            <link rel="preload" as="image" href="/splash/pide.webp" type="image/webp" />
+            <link rel="preload" as="image" href="/splash/typography.webp" type="image/webp" />
+            <link rel="preload" as="image" href="/splash/logo-original.webp" type="image/webp" />
+          </>
+        )}
+      </head>
       <body>
         <AppProvider>
           <CurrencyProvider>
-            <SmartSplash />
+            {showSplash && <SmartSplash />}
             {children}
           </CurrencyProvider>
         </AppProvider>
