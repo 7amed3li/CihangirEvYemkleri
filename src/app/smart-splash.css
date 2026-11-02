@@ -1,0 +1,270 @@
+/* Smart Splash Screen - Cihangir Ev Yemekleri & Taş Fırın Pide */
+
+.cihangir-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 99999999;
+  display: grid;
+  place-items: center;
+  background: #fdfcf7;
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.cihangir-splash.is-exiting {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.splash-stage {
+  position: relative;
+  width: min(85vw, 85vh, 520px);
+  aspect-ratio: 1;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Radiant glow behind the emblem */
+.splash-stage::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 15%;
+  top: 15%;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(198, 76, 50, 0.18) 0%,
+    rgba(168, 104, 59, 0.1) 40%,
+    rgba(253, 252, 247, 0) 70%
+  );
+  opacity: 0;
+  transform: scale(0.8);
+  animation: splash-hearth-glow 2s ease-out 0.1s forwards;
+}
+
+.splash-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* Layer 1: Red Artisan Ring */
+.splash-layer-ring {
+  z-index: 2;
+  opacity: 0;
+  animation: splash-ring-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+}
+
+/* Layer 2: Cooking Pot with Spoon */
+.splash-layer-pot {
+  z-index: 3;
+  opacity: 0;
+  animation: splash-pot-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+}
+
+/* Layer 3: Stone Oven Pide */
+.splash-layer-pide {
+  z-index: 4;
+  opacity: 0;
+  animation: splash-pide-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+}
+
+/* Layer 4: Fresh Herb Garnish */
+.splash-layer-garnish {
+  z-index: 5;
+  opacity: 0;
+  animation: splash-garnish-in 0.5s ease-out 0.65s forwards;
+}
+
+/* Layer 5: Steam Wisps */
+.splash-layer-steam {
+  z-index: 6;
+  opacity: 0;
+  transform-origin: 50% 25%;
+}
+
+.splash-layer-steam-a {
+  animation: splash-steam-rise 1.2s ease-in-out 0.6s infinite alternate;
+}
+
+.splash-layer-steam-b {
+  animation: splash-steam-rise 1.3s ease-in-out 0.7s infinite alternate;
+}
+
+.splash-layer-steam-c {
+  animation: splash-steam-rise 1.4s ease-in-out 0.8s infinite alternate;
+}
+
+/* Layer 6: Typography "Cihangir Ev Yemekleri & Pide" */
+.splash-layer-type {
+  z-index: 7;
+  opacity: 0;
+  animation: splash-type-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+}
+
+/* Layer 7: Subtitle / Restaurant details */
+.splash-layer-detail {
+  z-index: 8;
+  opacity: 0;
+  animation: splash-detail-in 0.5s ease-out 1.1s forwards;
+}
+
+/* Layer 8: Complete Master Emblem (harmonized finish) */
+.splash-layer-master {
+  z-index: 10;
+  opacity: 0;
+  animation: splash-master-in 0.6s ease-out 1.5s forwards;
+}
+
+/* Skip hint at bottom */
+.splash-skip-hint {
+  position: absolute;
+  bottom: 28px;
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 500;
+  color: #253d2c;
+  opacity: 0.45;
+  letter-spacing: 0.5px;
+  background: rgba(37, 61, 44, 0.06);
+  padding: 6px 14px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  user-select: none;
+  z-index: 20;
+}
+
+.splash-skip-hint:hover {
+  opacity: 0.9;
+  background: rgba(37, 61, 44, 0.12);
+}
+
+/* Keyframes */
+
+@keyframes splash-hearth-glow {
+  0% {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}
+
+@keyframes splash-ring-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes splash-pot-in {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.95);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes splash-pide-in {
+  0% {
+    opacity: 0;
+    transform: translate(22px, 18px) scale(0.95);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(-3px, -2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes splash-garnish-in {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes splash-steam-rise {
+  0% {
+    opacity: 0.2;
+    transform: translateY(6px) rotate(-1deg);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-2px) rotate(1deg);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateY(-8px) rotate(0deg);
+  }
+}
+
+@keyframes splash-type-in {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes splash-detail-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes splash-master-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
