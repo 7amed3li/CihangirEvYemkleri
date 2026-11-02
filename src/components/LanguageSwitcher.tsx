@@ -65,13 +65,26 @@ export default function LanguageSwitcher({ currentLocale }: { currentLocale: str
 
   const handleSelect = (locale: Locale) => {
     setIsOpen(false);
+
+    // 1. Mark language-switch so SmartSplash does not trigger
+    try {
+      sessionStorage.setItem("cihangir_skip_splash", "1");
+      document.cookie = "cihangir_skip_splash=1; path=/; max-age=10; SameSite=Lax";
+    } catch (_) {}
+
+    // 2. Build target path preserving all route segments
     const segments = pathname.split("/").filter(Boolean);
     if (SUPPORTED_LOCALES.includes(segments[0] as Locale)) {
       segments[0] = locale;
     } else {
       segments.unshift(locale);
     }
-    router.push(`/${segments.join("/")}`);
+
+    // 3. Preserve search parameters and URL hash (category, filter, etc.)
+    const search = typeof window !== "undefined" ? window.location.search : "";
+    const hash = typeof window !== "undefined" ? window.location.hash : "";
+
+    router.push(`/${segments.join("/")}${search}${hash}`);
   };
 
   const activeLocale = (currentLocale as Locale) || "tr";

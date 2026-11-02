@@ -36,6 +36,11 @@ export default function RootDocument({
   return (
     <html lang={lang} dir={dir} className={`${inter.variable} ${cairo.variable}`}>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(sessionStorage.getItem('cihangir_skip_splash')==='1'||document.cookie.indexOf('cihangir_skip_splash=1')!==-1){document.documentElement.classList.add('splash-dismissed');}}catch(e){}`,
+          }}
+        />
         {showSplash && (
           <>
             <link rel="preload" as="image" href="/splash/red-ring.webp" type="image/webp" />

@@ -65,20 +65,45 @@ export default function MenuClient({
 
   const [selectedDishModal, setSelectedDishModal] = useState<any | null>(null);
 
-  // Restore state from URL hash (supports category, filter, and direct dish ID e.g. #kara-lahana-dolmasi)
+  // Restore state from URL hash, query parameters, or sessionStorage
   useEffect(() => {
+    let cleanId = "";
+    let queryPart = "";
+
+    // 1. Try URL hash first (#pideler?filter=daily)
     const hash = window.location.hash.slice(1);
-    if (!hash) return;
-    const [targetPart, queryPart] = hash.split("?");
-    const cleanId = targetPart?.trim();
+    if (hash) {
+      const parts = hash.split("?");
+      cleanId = parts[0]?.trim() || "";
+      queryPart = parts[1] || "";
+    }
+
+    // 2. Try URL search parameters (?category=pideler&filter=daily)
+    if (!cleanId) {
+      const searchParams = new URLSearchParams(window.location.search);
+      const catQuery = searchParams.get("category");
+      if (catQuery) cleanId = catQuery;
+      if (!queryPart) {
+        const filterQuery = searchParams.get("filter");
+        if (filterQuery) queryPart = `filter=${filterQuery}`;
+      }
+    }
+
+    // 3. Fallback to sessionStorage if empty
+    if (!cleanId) {
+      try {
+        const savedCat = sessionStorage.getItem("cihangir_active_category");
+        if (savedCat) cleanId = savedCat;
+      } catch (_) {}
+    }
 
     if (cleanId) {
-      // 1. Check if hash matches a category
+      // Check if matches a category
       const matchedCat = activeCategories.find((c) => c.id === cleanId);
       if (matchedCat) {
         setActiveCategory(matchedCat.id);
       } else {
-        // 2. Check if hash matches a specific dish item ID
+        // Check if matches a specific dish item ID
         for (const cat of activeCategories) {
           const matchedItem = cat.items.find((i) => i.id === cleanId);
           if (matchedItem) {
@@ -96,26 +121,45 @@ export default function MenuClient({
       }
     }
 
+    let resolvedFilter = "";
     if (queryPart) {
       const params = new URLSearchParams(queryPart);
       const filter = params.get("filter");
-      if (filter) {
-        if (filter === "daily" && !hasDailyMenu) {
-          // ignore daily filter if no published daily menu
-        } else {
-          setActiveFilter(filter);
-        }
+      if (filter) resolvedFilter = filter;
+    }
+
+    if (!resolvedFilter) {
+      try {
+        const savedFilter = sessionStorage.getItem("cihangir_active_filter");
+        if (savedFilter) resolvedFilter = savedFilter;
+      } catch (_) {}
+    }
+
+    if (resolvedFilter) {
+      if (resolvedFilter === "daily" && !hasDailyMenu) {
+        // ignore daily filter if no published daily menu
+      } else {
+        setActiveFilter(resolvedFilter);
       }
     }
   }, [activeCategories, hasDailyMenu]);
 
-  // Sync state to URL hash
+  // Sync state to URL hash and sessionStorage
   useEffect(() => {
     const hash = activeFilter
       ? `${activeCategory}?filter=${activeFilter}`
       : activeCategory;
     const url = `${window.location.pathname}${window.location.search}#${hash}`;
     window.history.replaceState(null, "", url);
+
+    try {
+      sessionStorage.setItem("cihangir_active_category", activeCategory);
+      if (activeFilter) {
+        sessionStorage.setItem("cihangir_active_filter", activeFilter);
+      } else {
+        sessionStorage.removeItem("cihangir_active_filter");
+      }
+    } catch (_) {}
   }, [activeCategory, activeFilter]);
 
   const scrollToMenu = () => {

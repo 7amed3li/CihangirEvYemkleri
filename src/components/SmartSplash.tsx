@@ -32,6 +32,19 @@ export default function SmartSplash() {
   }, []);
 
   useEffect(() => {
+    // Check if splash should be bypassed (e.g. user is switching language)
+    try {
+      const skipSession = sessionStorage.getItem("cihangir_skip_splash") === "1";
+      const skipCookie = document.cookie.indexOf("cihangir_skip_splash=1") !== -1;
+      if (skipSession || skipCookie) {
+        sessionStorage.removeItem("cihangir_skip_splash");
+        document.cookie = "cihangir_skip_splash=; path=/; max-age=0";
+        document.documentElement.classList.remove("splash-dismissed");
+        setIsDismissed(true);
+        return;
+      }
+    } catch (_) {}
+
     // Preload all layers into browser memory immediately
     SPLASH_LAYERS.forEach((layer) => {
       const img = new window.Image();
