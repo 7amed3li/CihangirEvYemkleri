@@ -79,10 +79,7 @@ export default async function MenuPage({
 
       {/* Main Interactive Menu Client */}
       <main className="flex-1">
-        <h1
-          className="max-w-6xl mx-auto px-4 sm:px-6 pt-5 text-lg sm:text-xl font-black text-[#253D2C] text-start"
-          style={{ fontFamily: "var(--font-cairo)" }}
-        >
+        <h1 className="sr-only">
           {(MENU_TITLES[locale] ?? MENU_TITLES.tr).replace(" | ", " · ")}
         </h1>
         <MenuClient
