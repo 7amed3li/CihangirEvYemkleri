@@ -59,6 +59,17 @@ export default function SettingsManager() {
     role: "EDITOR" as "OWNER" | "MANAGER" | "EDITOR" | "VIEWER",
   });
 
+  // Edit user state
+  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [editingUser, setEditingUser] = useState<AdminUser | null>(null);
+  const [editUserData, setEditUserData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    role: "EDITOR" as "OWNER" | "MANAGER" | "EDITOR" | "VIEWER",
+    isActive: true,
+  });
+
   // Audit state
   const [auditLogs, setAuditLogs] = useState<AuditLogItem[]>([]);
   const [auditLoading, setAuditLoading] = useState(false);
@@ -172,6 +183,71 @@ export default function SettingsManager() {
       if (res.ok) fetchUsers();
     } catch (err) {
       console.error(err);
+    }
+  };
+
+  // Open edit modal
+  const handleOpenEdit = (user: AdminUser) => {
+    setEditingUser(user);
+    setEditUserData({
+      name: user.name,
+      email: user.email,
+      password: "",
+      role: user.role,
+      isActive: user.isActive,
+    });
+    setUserError(null);
+    setEditModalOpen(true);
+  };
+
+  // Update user
+  const handleUpdateUser = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingUser) return;
+    setSubmittingUser(true);
+    setUserError(null);
+
+    try {
+      const payload: any = {
+        name: editUserData.name,
+        email: editUserData.email,
+      };
+
+      if (editingUser.id !== currentUser?.id) {
+        payload.role = editUserData.role;
+        payload.isActive = editUserData.isActive;
+      }
+
+      if (editUserData.password.trim()) {
+        if (editUserData.password.trim().length < 6) {
+          setUserError("Şifre en az 6 karakter olmalıdır.");
+          setSubmittingUser(false);
+          return;
+        }
+        payload.password = editUserData.password.trim();
+      }
+
+      const res = await fetch(`/api/admin/users/${editingUser.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        setUserError(data.error || "Güncelleme sırasında bir hata oluştu.");
+        return;
+      }
+
+      setEditModalOpen(false);
+      fetchUsers();
+      if (editingUser.id === currentUser?.id) {
+        setCurrentUser((prev) => (prev ? { ...prev, name: editUserData.name } : null));
+      }
+    } catch {
+      setUserError("Sunucuya bağlanırken bir hata oluştu.");
+    } finally {
+      setSubmittingUser(false);
     }
   };
 
@@ -308,23 +384,35 @@ export default function SettingsManager() {
                           </span>
                         </td>
                         <td className="py-3 px-4 text-right">
-                          {isOwner && u.id !== currentUser?.id && (
-                            <div className="flex items-center justify-end gap-1">
+                          <div className="flex items-center justify-end gap-1.5">
+                            {isOwner && (
                               <button
-                                onClick={() => handleToggleUserStatus(u)}
-                                className="px-2 py-1 rounded bg-stone-100 hover:bg-stone-200 text-stone-600 text-[11px]"
+                                onClick={() => handleOpenEdit(u)}
+                                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 text-[#9C7A3F] border border-amber-200 text-[11px] font-semibold transition-colors"
+                                title="Kullanıcıyı Güncelle / Şifre Değiştir"
                               >
-                                {u.isActive ? "Pasife Al" : "Aktifleştir"}
+                                <PencilSimple size={13} weight="bold" />
+                                <span>Düzenle</span>
                               </button>
-                              <button
-                                onClick={() => handleDeleteUser(u)}
-                                className="p-1.5 rounded text-stone-400 hover:text-red-600 hover:bg-red-50"
-                                title="Kullanıcıyı Sil"
-                              >
-                                <Trash size={15} />
-                              </button>
-                            </div>
-                          )}
+                            )}
+                            {isOwner && u.id !== currentUser?.id && (
+                              <>
+                                <button
+                                  onClick={() => handleToggleUserStatus(u)}
+                                  className="px-2 py-1 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-600 text-[11px]"
+                                >
+                                  {u.isActive ? "Pasife Al" : "Aktifleştir"}
+                                </button>
+                                <button
+                                  onClick={() => handleDeleteUser(u)}
+                                  className="p-1.5 rounded-lg text-stone-400 hover:text-red-600 hover:bg-red-50"
+                                  title="Kullanıcıyı Sil"
+                                >
+                                  <Trash size={15} />
+                                </button>
+                              </>
+                            )}
+                          </div>
                         </td>
                       </tr>
                     ))}
@@ -543,6 +631,132 @@ export default function SettingsManager() {
                 >
                   {submittingUser && <CircleNotch size={14} className="animate-spin" />}
                   <span>Kullanıcıyı Kaydet</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Edit User Modal */}
+      {editModalOpen && editingUser && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-xs">
+          <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl border border-[#EDE3CE] overflow-hidden text-xs">
+            <div className="px-6 py-4 bg-[#2B2620] text-[#EDE3CE] flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <PencilSimple size={18} className="text-[#9C7A3F]" />
+                <h3 className="font-bold text-sm">
+                  {editingUser.id === currentUser?.id ? "Profilimi Güncelle" : "Kullanıcıyı Düzenle"}
+                </h3>
+              </div>
+              <button
+                onClick={() => setEditModalOpen(false)}
+                className="p-1 text-white/60 hover:text-white"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <form onSubmit={handleUpdateUser} className="p-6 space-y-3.5">
+              {userError && (
+                <div className="p-3 bg-red-50 border border-red-200 text-red-700 rounded-xl">
+                  {userError}
+                </div>
+              )}
+
+              <div>
+                <label className="block font-semibold text-stone-700 mb-1">
+                  Ad Soyad *
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={editUserData.name}
+                  onChange={(e) => setEditUserData({ ...editUserData, name: e.target.value })}
+                  placeholder="Ad Soyad"
+                  className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl"
+                />
+              </div>
+
+              <div>
+                <label className="block font-semibold text-stone-700 mb-1">
+                  E-Posta Adresi *
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={editUserData.email}
+                  onChange={(e) => setEditUserData({ ...editUserData, email: e.target.value })}
+                  placeholder="eposta@cihangir.com"
+                  className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl"
+                />
+              </div>
+
+              <div>
+                <label className="block font-semibold text-stone-700 mb-1">
+                  Yeni Şifre Belirle
+                </label>
+                <input
+                  type="password"
+                  minLength={6}
+                  value={editUserData.password}
+                  onChange={(e) => setEditUserData({ ...editUserData, password: e.target.value })}
+                  placeholder="Değiştirmek istemiyorsanız boş bırakın"
+                  className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl placeholder:text-stone-400"
+                />
+                <span className="text-[10px] text-stone-400 mt-1 block">
+                  En az 6 karakter. Boş bırakırsanız mevcut şifre korunur.
+                </span>
+              </div>
+
+              {editingUser.id !== currentUser?.id && (
+                <>
+                  <div>
+                    <label className="block font-semibold text-stone-700 mb-1">
+                      Erişim Rolü *
+                    </label>
+                    <select
+                      value={editUserData.role}
+                      onChange={(e: any) => setEditUserData({ ...editUserData, role: e.target.value })}
+                      className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl"
+                    >
+                      <option value="MANAGER">MANAGER (Ürün, Kategori, Günün Menüsü, Teklifler ve Silme)</option>
+                      <option value="EDITOR">EDITOR (Ürün, Kategori, Günün Menüsü, Teklifler Ekleme & Düzenleme)</option>
+                      <option value="VIEWER">VIEWER (Salt Okunur - Değişiklik Yapamaz)</option>
+                      <option value="OWNER">OWNER (Tam Sistem Sahibi Yetkisi)</option>
+                    </select>
+                  </div>
+
+                  <div className="flex items-center gap-2 pt-1">
+                    <input
+                      type="checkbox"
+                      id="edit-is-active"
+                      checked={editUserData.isActive}
+                      onChange={(e) => setEditUserData({ ...editUserData, isActive: e.target.checked })}
+                      className="w-4 h-4 rounded text-[#9C7A3F] border-stone-300 focus:ring-[#9C7A3F]"
+                    />
+                    <label htmlFor="edit-is-active" className="font-semibold text-stone-700 cursor-pointer">
+                      Hesap Aktif
+                    </label>
+                  </div>
+                </>
+              )}
+
+              <div className="pt-3 border-t border-stone-100 flex items-center justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setEditModalOpen(false)}
+                  className="px-4 py-2 rounded-xl border border-stone-200 text-stone-600 hover:bg-stone-50"
+                >
+                  İptal
+                </button>
+                <button
+                  type="submit"
+                  disabled={submittingUser}
+                  className="px-5 py-2 rounded-xl bg-[#9C7A3F] hover:bg-[#836531] text-white font-semibold flex items-center gap-2 disabled:opacity-50"
+                >
+                  {submittingUser && <CircleNotch size={14} className="animate-spin" />}
+                  <span>Değişiklikleri Kaydet</span>
                 </button>
               </div>
             </form>
