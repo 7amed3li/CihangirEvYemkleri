@@ -4,9 +4,13 @@ import { setupSchema } from "@/lib/validation/schemas";
 import { hash } from "@node-rs/argon2";
 import { createSessionToken, sessionCookieOptions } from "@/lib/auth/session";
 import { recordAuditLog } from "@/lib/audit/audit";
+import { ensureDatabaseTables } from "@/lib/db/init-schema";
 
 export async function POST(req: Request) {
   try {
+    // 0. Ensure database tables exist (auto-provision schema if first time)
+    await ensureDatabaseTables();
+
     // 1. Guard against unauthorized multiple owner creations:
     // This endpoint strictly operates only when zero admin users exist in the database.
     const userCount = await prisma.adminUser.count();

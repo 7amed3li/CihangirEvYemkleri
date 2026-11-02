@@ -2,6 +2,7 @@ import React from "react";
 import { prisma } from "@/lib/db/prisma";
 import { redirect } from "next/navigation";
 import SetupForm from "./SetupForm";
+import { ensureDatabaseTables } from "@/lib/db/init-schema";
 
 export const dynamic = "force-dynamic";
 
@@ -12,6 +13,7 @@ export const metadata = {
 export default async function AdminSetupPage() {
   let userCount = 0;
   try {
+    await ensureDatabaseTables();
     userCount = await prisma.adminUser.count();
   } catch (err) {
     console.warn("[AdminSetupPage] DB check failed (tables may be uninitialized):", err);
