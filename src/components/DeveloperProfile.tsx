@@ -94,11 +94,11 @@ export default function DeveloperProfile({
             </div>
           </div>
 
-          <div className="hero-visual" aria-label="Cihangir Stone Oven and Dish Showcase">
+          <div className="hero-visual" aria-label="Cihangir pide and Dish Showcase">
             <div className="hero-image-frame">
               <Image
                 src="/images/hero-ltr.jpg"
-                alt="Cihangir Ev Yemekleri & Taş Fırın Pide"
+                alt="Cihangir Ev Yemekleri & Pide"
                 className="hero-food-image"
                 width={540}
                 height={520}
@@ -427,7 +427,7 @@ export default function DeveloperProfile({
       <section className="closing-section">
         <Image
           src="/images/hero-ltr.jpg"
-          alt="Cihangir Ev Yemekleri & Taş Fırın Pide"
+          alt="Cihangir Ev Yemekleri & Pide"
           fill
           className="closing-photo object-cover"
         />

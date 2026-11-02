@@ -1,6 +1,6 @@
 /**
  * Developer Profile & Case Study Data — Hamed Mohamed
- * Cihangir Ev Yemekleri & Taş Fırın Pide Digital Case Study
+ * Cihangir Ev Yemekleri & Pide Digital Case Study
  */
 
 export interface CaseStudyContent {
@@ -130,7 +130,7 @@ export const devCaseStudyContent: Record<string, CaseStudyContent> = {
   tr: {
     meta: {
       title: "Tasarım ve Geliştirme — Hamed Mohamed | Cihangir Ev Yemekleri Case Study",
-      description: "Tarihi Cihangir taş fırını ve ev yemekleri kültürünü, 10 dilde ve çoklu para biriminde çalışan yüksek performanslı bir dijital deneyime dönüştürdüm: Hamed Mohamed.",
+      description: "Tarihi Cihangir fırını ve ev yemekleri kültürünü, 10 dilde ve çoklu para biriminde çalışan yüksek performanslı bir dijital deneyime dönüştürdüm: Hamed Mohamed.",
     },
     hero: {
       eyebrowTag: "DIGITAL CASE STUDY",
@@ -139,7 +139,7 @@ export const devCaseStudyContent: Record<string, CaseStudyContent> = {
       titleLine2: "çağdaş ",
       titleEm: "Cihangir",
       titleLine3: "dijital zanaatına.",
-      description: "Beyoğlu’nun bohem sokaklarındaki tencere lezzetlerini ve odun ateşinde taş fırın pidelerini; 10 dilde, çoklu kur dönüşümüyle ve saniyeler içinde açılan akıcı bir dijital deneyimde buluşturdum.",
+      description: "Beyoğlu’nun bohem sokaklarındaki tencere lezzetlerini ve odun ateşinde taze pide çeşitlerini; 10 dilde, çoklu kur dönüşümüyle ve saniyeler içinde açılan akıcı bir dijital deneyimde buluşturdum.",
       ctaExplore: "Vaka Analizini Keşfet",
       ctaMenu: "Canlı Menü Deneyimi",
       devAvatar: "HM",
@@ -177,11 +177,11 @@ export const devCaseStudyContent: Record<string, CaseStudyContent> = {
       h2Part1: "Mutfak gelenekseldi.",
       h2Em: "Deneyim çağdaş",
       h2Part2: "olmalıydı.",
-      lead: "Cihangir Ev Yemekleri & Taş Fırın Pide yalnızca sipariş verilen bir menü değil. Her sabah kaynayan tencereleri, Beyoğlu'na gelen yerli-yabancı misafirleri ve taş fırının sıcaklığını aynı akışta birleştiren bir mahalle simgesi.",
+      lead: "Cihangir Ev Yemekleri & Pide yalnızca sipariş verilen bir menü değil. Her sabah kaynayan tencereleri, Beyoğlu'na gelen yerli-yabancı misafirleri ve fırının sıcaklığını aynı akışta birleştiren bir mahalle simgesi.",
       p: "Benim amacım, bu zengin mutfağı mobilde yormayan, her dilden turistin ve mahalle sakininin saniyeler içinde aradığını bulduğu, kur farkını anında hesaplayan modern bir dijital gastronomi ürününe dönüştürmekti.",
       linkText: "Restoran Hakkında",
       photoBadge: "CİHANGİR EV YEMEKLERİ",
-      photoHeadline: "Beyoğlu'nun kalbinde taş fırın & tencere lezzeti.",
+      photoHeadline: "Beyoğlu'nun kalbinde fırın & tencere lezzeti.",
       photoLocation: "CİHANGİR · İSTANBUL",
       photoCoord: "41°01′55″ N",
       principles: [
@@ -206,7 +206,7 @@ export const devCaseStudyContent: Record<string, CaseStudyContent> = {
       index: "02",
       sectionName: "İNTERAKTİF DENEYİM",
       tag: "CANLI ARAYÜZ PROTOTİPİ",
-      h2Part1: "Günün tenceresi ve taş fırın,",
+      h2Part1: "Günün tenceresi ve fırın,",
       h2Em: "parmaklarınızın ucunda.",
       intro: "Aşağıdaki interaktif telefon simülasyonunda sekmeler arasında geçiş yapabilir, para birimini değiştirebilir ve anlık fiyat dönüşümlerini canlı test edebilirsiniz.",
       stageCaption: "İnteraktif Arayüz Simülasyonu · Gerçek Kur ve Menü Akışı",
@@ -218,7 +218,7 @@ export const devCaseStudyContent: Record<string, CaseStudyContent> = {
         },
         {
           symbol: "🔥",
-          title: "Odun Ateşinde Taş Fırın",
+          title: "Odun Ateşinde fırın",
           desc: "Kıymalı, kaşarlı ve karışık pide siparişleri fırın sıcaklığıyla menüde öne çıkar.",
         },
         {
@@ -327,7 +327,7 @@ export const devCaseStudyContent: Record<string, CaseStudyContent> = {
   en: {
     meta: {
       title: "Design & Development — Hamed Mohamed | Cihangir Ev Yemekleri Case Study",
-      description: "Transforming historic Beyoğlu stone-oven pide and home-style dishes into an ultra-fast, 10-language digital culinary experience: Hamed Mohamed.",
+      description: "Transforming historic Beyoğlu pide pide and home-style dishes into an ultra-fast, 10-language digital culinary experience: Hamed Mohamed.",
     },
     hero: {
       eyebrowTag: "DIGITAL CASE STUDY",
@@ -336,7 +336,7 @@ export const devCaseStudyContent: Record<string, CaseStudyContent> = {
       titleLine2: "to modern ",
       titleEm: "Cihangir",
       titleLine3: "digital craft.",
-      description: "Bringing Beyoğlu’s bohemian stews and wood-fired stone-oven pides together into a fluid digital experience in 10 languages and multi-currency conversion.",
+      description: "Bringing Beyoğlu’s bohemian stews and wood-fired artisan pides together into a fluid digital experience in 10 languages and multi-currency conversion.",
       ctaExplore: "Explore Case Study",
       ctaMenu: "Live Menu Experience",
       devAvatar: "HM",
@@ -374,11 +374,11 @@ export const devCaseStudyContent: Record<string, CaseStudyContent> = {
       h2Part1: "The food was heritage.",
       h2Em: "The experience",
       h2Part2: "had to be contemporary.",
-      lead: "Cihangir Ev Yemekleri & Taş Fırın Pide is not just a digital menu. It is an Istanbul culinary landmark uniting daily simmering pots, wood-fired hearth ovens, and cosmopolitan diners from across the world.",
+      lead: "Cihangir Ev Yemekleri & Pide is not just a digital menu. It is an Istanbul culinary landmark uniting daily simmering pots, wood-fired hearth ovens, and cosmopolitan diners from across the world.",
       p: "My mission was to translate this rich gastronomic heritage into a frictionless mobile product: effortless discovery, instant currency adaptation, and zero-latency page loads in any language.",
       linkText: "About the Restaurant",
       photoBadge: "CİHANGİR EV YEMEKLERİ",
-      photoHeadline: "Authentic stone-oven & stew heritage in Istanbul.",
+      photoHeadline: "Authentic pide & stew heritage in Istanbul.",
       photoLocation: "CİHANGİR · ISTANBUL",
       photoCoord: "41°01′55″ N",
       principles: [
@@ -403,7 +403,7 @@ export const devCaseStudyContent: Record<string, CaseStudyContent> = {
       index: "02",
       sectionName: "INTERACTIVE EXPERIENCE",
       tag: "LIVE UI PROTOTYPE",
-      h2Part1: "Daily pots and stone oven,",
+      h2Part1: "Daily pots and pide,",
       h2Em: "right at your fingertips.",
       intro: "Interact with the phone prototype below to toggle categories, switch currencies, and see real-time price calculations.",
       stageCaption: "Interactive UI Simulation · Real Exchange & Menu Flow",
@@ -415,7 +415,7 @@ export const devCaseStudyContent: Record<string, CaseStudyContent> = {
         },
         {
           symbol: "🔥",
-          title: "Wood-Fired Stone Oven",
+          title: "Wood-Fired pide",
           desc: "Minced meat, kasar cheese, and artisan pides highlighted straight from the hearth.",
         },
         {
@@ -545,7 +545,7 @@ export const devCaseStudyContent: Record<string, CaseStudyContent> = {
       roundelMinute: "00",
       roundelBottom: "أطباق اليوم الطازجة",
       noteTitle: "أكل بيتي",
-      noteSubtitle: "فطائر فرن الحجر",
+      noteSubtitle: "فطائر الفطائر",
       sideLabel: "منيو اليوم · طواجن · فطائر",
       bottomline: "تصميم منتجات ✳ هندسة برمجية شاملة ✳ تجربة مستخدم بـ 10 لغات",
       scrollDown: "مرر للأسفل",
@@ -571,11 +571,11 @@ export const devCaseStudyContent: Record<string, CaseStudyContent> = {
       h2Part1: "المذاق كان أصيلاً.",
       h2Em: "والتجربة",
       h2Part2: "يجب أن تكون عصرية.",
-      lead: "مطعم جهانجير للأكلات المنزلية وفطائر فرن الحجر ليس مجرد قائمة طعام، بل هو أيقونة عريقة تجمع بين الأواني الطازجة يومياً وأفران الحطب وزوار إسطنبول من كل أنحاء العالم.",
+      lead: "مطعم جهانجير للأكلات المنزلية والفطائر ليس مجرد قائمة طعام، بل هو أيقونة عريقة تجمع بين الأواني الطازجة يومياً وأفران الحطب وزوار إسطنبول من كل أنحاء العالم.",
       p: "كانت مهمتي تحويل هذا المطبخ الغني إلى تجربة هاتف ذكية لا تشتت الزائر، وتساعد السائح وأهل الحي على الوصول لطلبهم ومعرفة الأسعار بعملتهم بثوانٍ معدودة.",
       linkText: "عن المطعم وتاريخه",
       photoBadge: "مطعم جهانجير إسطنبول",
-      photoHeadline: "أكلات منزلية وفطائر فرن الحجر في قلب بيوغلو.",
+      photoHeadline: "أكلات منزلية والفطائر في قلب بيوغلو.",
       photoLocation: "جهانجير · إسطنبول",
       photoCoord: "41°01′55″ N",
       principles: [
@@ -612,7 +612,7 @@ export const devCaseStudyContent: Record<string, CaseStudyContent> = {
         },
         {
           symbol: "🔥",
-          title: "فطائر فرن الحجر الحطب",
+          title: "فطائر الفطائر الحطب",
           desc: "فطائر اللحم والجبن والمشكل تخرج ساخنة من فوهة الفرن الحجري.",
         },
         {

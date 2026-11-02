@@ -13,7 +13,7 @@ export type Dish = {
 export const modes: { id: FoodMode; label: string; tiny: string }[] = [
   { id: 'all', label: 'Kur sofrayı', tiny: 'Hepsinden' },
   { id: 'home', label: 'Ev yemeği', tiny: 'Tencereden' },
-  { id: 'oven', label: 'Taş fırın', tiny: 'Fırından' },
+  { id: 'oven', label: 'fırın', tiny: 'Fırından' },
   { id: 'quick', label: 'Hızlı bir şey', tiny: 'Pratik' },
   { id: 'popular', label: 'Çok sevilenler', tiny: 'Favoriler' },
 ];
@@ -24,8 +24,8 @@ export const dishes: Dish[] = [
     mode: 'home', art: '/images/products/et-sote-v2.jpg', note: 'Tencereden yeni',
   },
   {
-    id: 'karisik-pide', name: 'Karışık pide', description: 'Taş fırın hamurunda kıyma, kuşbaşı et, sucuk ve kaşar.', price: 350,
-    mode: 'oven', art: '/images/products/karisik-pide.jpg', note: 'Taş fırından',
+    id: 'karisik-pide', name: 'Karışık pide', description: 'fırın hamurunda kıyma, kuşbaşı et, sucuk ve kaşar.', price: 350,
+    mode: 'oven', art: '/images/products/karisik-pide.jpg', note: 'fırından',
   },
   {
     id: 'kuru-fasulye', name: 'Kuru fasulye', description: 'İspir fasulyesi; salçalı tereyağlı suyunda ağır ağır.', price: 220,

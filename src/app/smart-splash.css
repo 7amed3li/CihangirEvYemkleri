@@ -1,4 +1,4 @@
-/* Smart Splash Screen - Cihangir Ev Yemekleri & Taş Fırın Pide */
+/* Smart Splash Screen - Cihangir Ev Yemekleri & Pide */
 
 .cihangir-splash {
   position: fixed;
@@ -77,7 +77,7 @@
   animation: splash-pot-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
-/* Layer 3: Stone Oven Pide */
+/* Layer 3: Pide */
 .splash-layer-pide {
   z-index: 4;
   opacity: 0;

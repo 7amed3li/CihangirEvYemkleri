@@ -390,17 +390,17 @@ export const FAQ_PAGE_CONTENT: Record<Locale, FaqContent> = {
   tr: {
     badge: "Sıkça Sorulan Sorular",
     title: "Sıkça Sorulan Sorular (SSS)",
-    subtitle: "Yemeklerimiz, sipariş şeklimiz, taş fırın pidelerimiz ve çalışma düzenimiz hakkında merak edilenler.",
+    subtitle: "Yemeklerimiz, sipariş şeklimiz, fırın pidelerimiz ve çalışma düzenimiz hakkında merak edilenler.",
     callNotice: "Aklınıza takılan farklı bir soru veya özel siparişiniz mi var? Doğrudan bizi arayabilirsiniz.",
     callBtn: "Restoranı Arayın: 0212 251 36 96",
     items: [
       {
         q: "Menünüzde ne tür yemekler bulunuyor?",
-        a: "Her sabah taze pişirilen geleneksel tencere yemekleri, etli güveçler, sebze yemekleri, taze çorbalar ve taş fırında pişen çıtır pide çeşitleri sunuyoruz.",
+        a: "Her sabah taze pişirilen geleneksel tencere yemekleri, etli güveçler, sebze yemekleri, taze çorbalar ve fırında pişen çıtır pide çeşitleri sunuyoruz.",
       },
       {
         q: "Günün yemekleri menüsü her gün değişiyor mu?",
-        a: "Evet, sulu ev yemeklerimiz her sabah taze hazırlanır ve mevsime göre çeşitlenir. Taş fırın pidelerimiz ise her gün standart menümüzde yer alır.",
+        a: "Evet, sulu ev yemeklerimiz her sabah taze hazırlanır ve mevsime göre çeşitlenir. fırın pidelerimiz ise her gün standart menümüzde yer alır.",
       },
       {
         q: "Paket servis veya gel-al hizmetiniz var mı?",
@@ -483,7 +483,7 @@ export const FAQ_PAGE_CONTENT: Record<Locale, FaqContent> = {
     items: [
       {
         q: "Какую еду вы готовите?",
-        a: "Мы готовим традиционную турецкую домашнюю еду: рагу, тушеное мясо, супы, блюда из бобовых и свежее пиде из каменной печи.",
+        a: "Мы готовим традиционную турецкую домашнюю еду: рагу, тушеное мясо, супы, блюда из бобовых и свежее пиде.",
       },
       {
         q: "Меняется ли меню блюд дня?",
@@ -535,7 +535,7 @@ export const FAQ_PAGE_CONTENT: Record<Locale, FaqContent> = {
   fr: {
     badge: "Questions & Réponses",
     title: "Foire Aux Questions",
-    subtitle: "Tout ce qu'il faut savoir sur nos ragoûts maison, notre pide au four et nos horaires.",
+    subtitle: "Tout ce qu'il faut savoir sur nos ragoûts maison, notre pide et nos horaires.",
     callNotice: "Une question particulière ? Appelez-nous directement pour toute information.",
     callBtn: "Appelez-nous : 0212 251 36 96",
     items: [
@@ -703,11 +703,11 @@ export const ALLERGENS_PAGE_CONTENT: Record<Locale, AllergensContent> = {
     title: "Alerjen ve Çapraz Bulaşma Politikamız",
     subtitle: "Misafirlerimizin sağlığı ve güvenliği için mutfak ortamımız ve olası alerjenler hakkında şeffaf bilgilendirme.",
     warningTitle: "Önemli Alerjen & Çölyak Uyarısı",
-    warningText: "Mutfak alanımızda taş fırın pide üretimi yapıldığından buğday unu, susam, yumurta ve süt ürünleri ortak tezgahlarda işlenmektedir. Bu sebeple mutfağımızda %100 çapraz bulaşmasız ortam garantisi verilememektedir. İleri derecede çölyak veya gıda alerjisi bulunan misafirlerimizin sipariş öncesi doğrudan personelimizle görüşmesi önemle rica olunur.",
+    warningText: "Mutfak alanımızda fırın pide üretimi yapıldığından buğday unu, susam, yumurta ve süt ürünleri ortak tezgahlarda işlenmektedir. Bu sebeple mutfağımızda %100 çapraz bulaşmasız ortam garantisi verilememektedir. İleri derecede çölyak veya gıda alerjisi bulunan misafirlerimizin sipariş öncesi doğrudan personelimizle görüşmesi önemle rica olunur.",
     callBtn: "Personelimizle Görüşün: 0212 251 36 96",
     itemsTitle: "Temel Alerjenler ve Mutfak Kullanımı",
     glutenTitle: "Glüten & Buğday Unu",
-    glutenDesc: "Tüm taş fırın pidelerinde, makarnalarda ve tatlılarda bulunur. Havada asılı un partikülleri ortak ortamı etkileyebilir.",
+    glutenDesc: "Tüm fırın pidelerinde, makarnalarda ve tatlılarda bulunur. Havada asılı un partikülleri ortak ortamı etkileyebilir.",
     dairyTitle: "Süt ve Süt Ürünleri (Laktoz)",
     dairyDesc: "Kaşar peyniri, tereyağı ve yoğurt pidelerde, pilavlarda ve çorbalarda kullanılır.",
     nutsTitle: "Kuruyemişler ve Susam",
@@ -737,7 +737,7 @@ export const ALLERGENS_PAGE_CONTENT: Record<Locale, AllergensContent> = {
     title: "دليل المكونات ومسببات الحساسية",
     subtitle: "حرصاً منا على صحتكم وسلامتكم، نوضح هنا السياسة الواقعية لمطبخنا وطبيعة المكونات المستخدمة.",
     warningTitle: "تنبيه هام لمرضى الحساسية الشديدة وحساسية القمح (السيلياك)",
-    warningText: "نظراً لأن مطبخنا يحتوي على فرن حجري (Taş Fırın) لخبز البيدة والمعجنات طوال اليوم، فإن طحين القمح والسمسم ومنتجات الألبان تتواجد في بيئة العمل المشتركة. لذا، لا يمكننا تقديم ضمان طبي بنسبة 100% لخلو الأطباق تماماً من التلوث التبادلي (Cross-contamination). إذا كانت لديك حساسية شديدة، يُرجى التحدث مباشرة مع طاقمنا قبل الطلب.",
+    warningText: "نظراً لأن مطبخنا يحتوي على فرن حجري (fırın) لخبز البيدة والمعجنات طوال اليوم، فإن طحين القمح والسمسم ومنتجات الألبان تتواجد في بيئة العمل المشتركة. لذا، لا يمكننا تقديم ضمان طبي بنسبة 100% لخلو الأطباق تماماً من التلوث التبادلي (Cross-contamination). إذا كانت لديك حساسية شديدة، يُرجى التحدث مباشرة مع طاقمنا قبل الطلب.",
     callBtn: "التواصل المباشر مع المطعم: 0212 251 36 96",
     itemsTitle: "المكونات الشائعة وطبيعة الأطباق",
     glutenTitle: "الغلوتين ودقيق القمح (Gluten)",
@@ -805,7 +805,7 @@ export const ALLERGENS_PAGE_CONTENT: Record<Locale, AllergensContent> = {
     title: "Allergen- & Küchenrichtlinie",
     subtitle: "Transparente Auskunft zu Allergenen und Inhaltsstoffen in unserer Küche.",
     warningTitle: "Wichtiger Hinweis für Zöliakie-Betroffene & Allergiker",
-    warningText: "Da in unserer Backstube ganztägig Steinofenpide gebacken wird, befinden sich Weizenmehl (Gluten), Sesam und Milcherzeugnisse im gemeinsamen Arbeitsbereich. Eine Kreuzkontamination kann nicht zu 100% ausgeschlossen werden.",
+    warningText: "Da in unserer Backstube ganztägig Pide gebacken wird, befinden sich Weizenmehl (Gluten), Sesam und Milcherzeugnisse im gemeinsamen Arbeitsbereich. Eine Kreuzkontamination kann nicht zu 100% ausgeschlossen werden.",
     callBtn: "Personal ansprechen: 0212 251 36 96",
     itemsTitle: "Hauptherkunft der Allergene",
     glutenTitle: "Gluten & Weizenmehl",

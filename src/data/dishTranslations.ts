@@ -1194,7 +1194,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "至尊荟萃石炉皮迭（调味牛肉、土耳其蒜肠与融化黄芝士）"
     },
     "desc": {
-      "tr": "Taş fırında pişen çıtır pide hamurunda baharatlı kıyma, kuşbaşı dana eti, dilim sucuk ve erimiş bol kaşar peyniri ziyafeti.",
+      "tr": "fırında pişen çıtır pide hamurunda baharatlı kıyma, kuşbaşı dana eti, dilim sucuk ve erimiş bol kaşar peyniri ziyafeti.",
       "en": "Crisp stone-baked Turkish boat bread loaded with minced beef, tender beef cubes, spicy sucuk, and bubbly melted kashar cheese.",
       "ar": "فطيرة بيدة تركية مقرمشة مخبوزة بالفرن الحجري بحشوة غنية من اللحم المفروم وقطع اللحم والسجق وجبن القشقوان الذائب.",
       "ru": "Хрустящая лодочка из каменной печи с сочным мясным фаршем, кусочками говядины, суджуком и тягучим сыром кашар.",
@@ -1220,7 +1220,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "香浓拉丝双重土耳其卡沙尔黄芝士石炉皮迭"
     },
     "desc": {
-      "tr": "Taş fırının çıtır hamurunda eriyen bol miktarda taze kaşar peyniri ve kenarlarına sürülen mis kokulu köy tereyağı.",
+      "tr": "fırının çıtır hamurunda eriyen bol miktarda taze kaşar peyniri ve kenarlarına sürülen mis kokulu köy tereyağı.",
       "en": "Golden bubbly, gooey artisan kashar cheese melted inside a crispy boat crust, brushed with rich farm butter.",
       "ar": "جبن قشقوان تركي أصيل يذوب بكثافة فوق عجينة البيدة المقرمشة والمدهونة بالزبدة الفلاحي من الأطراف.",
       "ru": "Хрустящая лодочка из теста, наполненная щедрым слоем расплавленного тягучего сыра кашар с масляной корочкой.",
@@ -1246,7 +1246,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "古法油封焖牛肉粒配拉丝黄芝士双味石炉皮迭"
     },
     "desc": {
-      "tr": "Ağızda dağılan dana kavurma parçaları ile erimiş kaşar peynirinin taş fırında efsanevi buluşması.",
+      "tr": "Ağızda dağılan dana kavurma parçaları ile erimiş kaşar peynirinin fırında efsanevi buluşması.",
       "en": "Tender chunks of slow-braised beef kavurma paired with bubbly melted cheese inside a wood-fired crispy crust.",
       "ar": "قطع لحم قاورما بلدي تذوب في الفم تمتزج مع جبن القشقوان الذائب فوق عجينة الفطيرة المقرمشة بالفرن الحجري.",
       "ru": "Тающие во рту кусочки томлёной говядины кавурма в сочетании с горячим тягучим сыром кашар в хрустящей корочке.",
@@ -1272,7 +1272,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "传统古法原香油封焖牛肉纯肉石炉皮迭"
     },
     "desc": {
-      "tr": "Özel tereyağlı taş fırın hamurunda bol miktarda lokum gibi pişmiş dana kavurma lezzeti.",
+      "tr": "Özel tereyağlı fırın hamurunda bol miktarda lokum gibi pişmiş dana kavurma lezzeti.",
       "en": "Generously topped with traditional melt-in-your-mouth slow-braised beef kavurma on a buttery crisp flatbread crust.",
       "ar": "عجينة فطيرة هشة بالزبدة في الفرن الحجري مغطاة بسخاء بقطع لحم القاورما البلدي الشهية التي تذوب في الفم.",
       "ru": "Хрустящее тесто из печи с обильным слоем нежнейшей томлёной говядины кавурма, пропитанной соком.",
@@ -1298,7 +1298,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "经典风味香辛牛肉末与融化黄芝士石炉皮迭"
     },
     "desc": {
-      "tr": "Baharatlı dana kıyma harcının eriyen kaşar peyniriyle birleşip taş fırında nar gibi kızarması.",
+      "tr": "Baharatlı dana kıyma harcının eriyen kaşar peyniriyle birleşip fırında nar gibi kızarması.",
       "en": "Seasoned ground beef with sweet onions and tomatoes baked under a layer of molten bubbly kashar cheese.",
       "ar": "خلطة لحم بقري مفروم متبل بالبصل والطماطم تعلوها طبقة غنية من جبن القشقوان الذائب والمحمر بالفرن.",
       "ru": "Ароматный говяжий фарш с луком и томатами под слоем расплавленного золотистого сыра кашар.",
@@ -1324,7 +1324,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "招牌传统石炉烘烤香辛牛绞肉长舟皮迭"
     },
     "desc": {
-      "tr": "Taş fırında pişen çıtır kenarlı ince pide hamurunda soğan, domates ve baharatlarla harmanlanmış dana kıyma.",
+      "tr": "fırında pişen çıtır kenarlı ince pide hamurunda soğan, domates ve baharatlarla harmanlanmış dana kıyma.",
       "en": "Classic Turkish boat flatbread topped with finely minced beef, sautéed onions, tomatoes, and aromatic herbs.",
       "ar": "فطيرة البيدة الكلاسيكية الشهيرة بعجينة مقرمشة الأطراف محشوة باللحم المفروم والبصل والطماطم والبهارات التركية.",
       "ru": "Традиционная хрустящая лодочка с сочным фаршем из говядины, лука, спелых томатов и зелени.",
@@ -1350,7 +1350,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "安纳托利亚乡村手作纯白奶酪配欧芹石炉皮迭"
     },
     "desc": {
-      "tr": "Doğal köy peyniri, taze maydanoz ve tereyağının taş fırında hafifçe kızarmış çıtır lezzeti.",
+      "tr": "Doğal köy peyniri, taze maydanoz ve tereyağının fırında hafifçe kızarmış çıtır lezzeti.",
       "en": "Crumbly artisan Turkish white village cheese mixed with fresh parsley and butter, baked until golden and savory.",
       "ar": "جبن أبيض قروي طبيعي ممزوج بالبقدونس الطازج والزبدة ومخبوز بالفرن الحجري حتى القرمشة الذهبية.",
       "ru": "Натуральный деревенский белый сыр со свежей петрушкой и маслом, запечённый до аппетитной золотистости.",
@@ -1376,7 +1376,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "香嫩嫩牛肉块与拉丝黄芝士双料石炉皮迭"
     },
     "desc": {
-      "tr": "Marine edilmiş yumuşacık dana kuşbaşı etler, domates, biber ve erimiş kaşar peyniriyle çıtır taş fırın lezzeti.",
+      "tr": "Marine edilmiş yumuşacık dana kuşbaşı etler, domates, biber ve erimiş kaşar peyniriyle çıtır fırın lezzeti.",
       "en": "Marinated tender beef cubes, diced tomatoes, sweet peppers, and gooey melted kashar cheese baked in a wood-fired crust.",
       "ar": "قطع لحم عجل طرية متبلة مع الطماطم والفلفل وطبقة من جبن القشقوان الساخن الذائب في فطيرة مقرمشة.",
       "ru": "Кусочки маринованной нежной говядины, томаты, сладкий перец и слой расплавленного сыра кашар.",
@@ -1428,7 +1428,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "风味腌风干牛肉（帕斯图玛）配拉丝黄芝士石炉皮迭"
     },
     "desc": {
-      "tr": "Çemen kokulu nefis dana pastırma dilimleri ile erimiş sıcak kaşar peynirinin taş fırındaki eşsiz ziyafeti.",
+      "tr": "Çemen kokulu nefis dana pastırma dilimleri ile erimiş sıcak kaşar peynirinin fırındaki eşsiz ziyafeti.",
       "en": "Aromatic thinly sliced cured beef pastırma paired with bubbling hot melted kashar cheese in a crisp crust.",
       "ar": "شرائح بسطرمة لحم بقري تركي معتقة غنية بالبهارات تمتزج مع جبن القشقوان الساخن الذائب في الفرن الحجري.",
       "ru": "Тонкие ломтики ароматной пряной бастурмы (пастырмы) и расплавленный горячий сыр кашар на хрустящем тесте.",
@@ -1454,7 +1454,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "原汁香辛风干牛肉（帕斯图玛）石炉纯肉皮迭"
     },
     "desc": {
-      "tr": "Özel baharat çemeniyle olgunlaşan dana pastırma dilimlerinin taş fırının tereyağlı çıtır hamurunda pişmesi.",
+      "tr": "Özel baharat çemeniyle olgunlaşan dana pastırma dilimlerinin fırının tereyağlı çıtır hamurunda pişmesi.",
       "en": "Thin slices of artisan fenugreek-cured beef pastırma baked over crispy stone-oven flatbread brushed with butter.",
       "ar": "شرائح بسطرمة لحم بقري تركية معتقة بالبهارات الخاصة مخبوزة على عجينة الفطيرة المقرمشة بالزبدة في الفرن الحجري.",
       "ru": "Хрустящая лепёшка с ломтиками отборной вяленой говядины пастырмы со смесью восточных специй и маслом.",
@@ -1480,7 +1480,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "香浓牛肉小热狗烤香肠配融化芝士石炉皮迭"
     },
     "desc": {
-      "tr": "Dilimlenmiş leziz dana sosisler ve eriyen kaşar peynirinin çıtır taş fırın hamurundaki keyifli uyumu.",
+      "tr": "Dilimlenmiş leziz dana sosisler ve eriyen kaşar peynirinin çıtır fırın hamurundaki keyifli uyumu.",
       "en": "Sliced all-beef sausages and bubbling melted kashar cheese baked in our signature crispy stone-baked boat crust.",
       "ar": "شرائح نقانق لحم بقري شهية مع جبن القشقوان الذائب فوق عجينة الفطيرة المقرمشة المخبوزة بالفرن الحجري.",
       "ru": "Ломтики говяжьих сосисок под слоем тягучего сыра кашар на тонкой хрустящей лодочке из печи.",
@@ -1506,7 +1506,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "香辣土耳其蒜味牛肉苏朱克香肠与拉丝黄芝士石炉皮迭"
     },
     "desc": {
-      "tr": "Taş fırında pişen sarımsaklı kasap sucuğu dilimleri ile nar gibi kızaran bol kaşar peynirinin enfes dansı.",
+      "tr": "fırında pişen sarımsaklı kasap sucuğu dilimleri ile nar gibi kızaran bol kaşar peynirinin enfes dansı.",
       "en": "Savory slices of garlic-spiced Turkish beef sucuk embedded in rich melted kashar cheese on a crisp crust.",
       "ar": "شرائح سجق تركي بلدي حار بالثوم والبهارات تغرق في جبن القشقوان الذائب المخبوز حتى اللون الذهبي.",
       "ru": "Пикантные ломтики турецкого чесночного суджука, запечённые под щедрым слоем золотистого сыра кашар.",
@@ -1532,7 +1532,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "香辣土耳其蒜味苏朱克纯牛肉烤肠石炉皮迭"
     },
     "desc": {
-      "tr": "Taş fırının çıtır hamurunda kendi yağı ve baharatıyla nar gibi pişen enfes dilimlenmiş kasap sucuğu.",
+      "tr": "fırının çıtır hamurunda kendi yağı ve baharatıyla nar gibi pişen enfes dilimlenmiş kasap sucuğu.",
       "en": "Crisp wood-fired boat bread loaded with sizzling, spiced garlic beef sucuk slices crisped in its own juices.",
       "ar": "عجينة فطيرة مقرمشة بالفرن الحجري تعلوها شرائح السجق التركي البلدي المتبل والمحمر بدهنه الخاص.",
       "ru": "Хрустящая лепёшка с ломтиками пряного турецкого суджука, поджаренными в собственном ароматном соку.",
@@ -1584,7 +1584,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "特拉布宗黑海特产极品拉丝奶酪配纯香黄油皮迭"
     },
     "desc": {
-      "tr": "Karadeniz'in meşhur tel tel uzayan kolot peyniri ve ortasında eriyen taptaze yayık tereyağının taş fırın lezzeti.",
+      "tr": "Karadeniz'in meşhur tel tel uzayan kolot peyniri ve ortasında eriyen taptaze yayık tereyağının fırın lezzeti.",
       "en": "Famed Black Sea stretchy artisan Kolot cheese deeply melted inside an open oval crust with a pool of fresh churned butter.",
       "ar": "جبن كولوت الشهير من منطقة طرابزون بالبحر الأسود الذي يمتد كخيوط الحرير مع بحيرة من الزبدة الطبيعية المذابة في الوسط.",
       "ru": "Знаменитый тягучий сыр колот с берегов Чёрного моря, запечённый в овальной лодочке с лужицей свежего сливочного масла.",

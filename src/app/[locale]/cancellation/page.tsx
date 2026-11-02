@@ -40,7 +40,7 @@ export default async function CancellationPage({
     title: isRtl ? "سياسة إلغاء وتعديل الطلبات" : "Sipariş İptal ve İade Şartları",
     notice: isRtl
       ? "نظراً لأن أطباقنا وفطائر البيدة تُعد وتُخبز طازجة وساخنة فور تأكيد الطلب، نوضح فيما يلي الضوابط المعمول بها."
-      : "Yemeklerimiz ve taş fırın pidelerimiz sipariş anında taze ve sıcak olarak hazırlandığından iptal süreçleri aşağıda belirtilmiştir.",
+      : "Yemeklerimiz ve fırın pidelerimiz sipariş anında taze ve sıcak olarak hazırlandığından iptal süreçleri aşağıda belirtilmiştir.",
     sec1Title: isRtl ? "1. إلغاء الطلبات الفورية" : "1. Hazırlık Aşamasında İptal",
     sec1Body: isRtl
       ? "يمكن للعميل تعديل أو إلغاء الطلب عبر الاتصال الهاتفي الفوري بالمطعم قبل البدء في فرد العجين أو غرف الوجبة وتعبئتها. بمجرد بدء الطهي أو خروج الكابتن للتوصيل، يتعذر الإلغاء."

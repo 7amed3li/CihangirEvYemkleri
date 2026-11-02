@@ -256,13 +256,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
 
   const featureCards = [
     {
-      title: locale === "ar" ? "فرن حجري تقليدي" : locale === "en" ? "Stone Oven Pide" : "Geleneksel Taş Fırın",
+      title: locale === "ar" ? "فرن حجري تقليدي" : locale === "en" ? "Pide" : "Geleneksel Pide",
       desc:
         locale === "ar"
           ? "فطائر بيدة طازجة مقرمشة تُخبز فور طلبكم على نار الحجر الأصيل."
           : locale === "en"
           ? "Crispy artisan pide rolled and stone-baked fresh to your order."
-          : "Siparişinizle taze açılıp taş fırında pişen sıcacık çıtır pideler.",
+          : "Siparişinizle taze açılıp taptaze fırından çıkan sıcacık çıtır pideler.",
       icon: <StoneOven size={26} />,
     },
     {

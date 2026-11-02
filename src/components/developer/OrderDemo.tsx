@@ -38,7 +38,7 @@ const DEMO_ITEMS = {
   pide: [
     {
       id: "kiymali-kasarli",
-      title: { tr: "Kıymalı Kaşarlı Taş Fırın", en: "Minced Meat & Kaşar Pide", ar: "فطيرة باللحم المفروم والجبن" },
+      title: { tr: "Kıymalı Kaşarlı Pide", en: "Minced Meat & Kaşar Pide", ar: "فطيرة باللحم المفروم والجبن" },
       subtitle: { tr: "Meşe odunu ateşinde çıtır lezzet", en: "Wood-fired crispy artisan crust", ar: "مخبوزة على الحطب ومقرمشة" },
       basePrice: 310,
       image: "/images/products/sucuklu-pide.jpg",
@@ -133,7 +133,7 @@ export default function OrderDemo({ lang }: OrderDemoProps) {
           className={`phone-cat-btn ${activeTab === "pide" ? "active" : ""}`}
           onClick={() => setActiveTab("pide")}
         >
-          🔥 {locale === "ar" ? "فرن الحجر" : locale === "en" ? "Stone Oven Pide" : "Taş Fırın Pide"}
+          🔥 {locale === "ar" ? "فطائر البيدا" : locale === "en" ? "Pide" : "Pide Çeşitleri"}
         </button>
       </div>
 

@@ -234,7 +234,7 @@ const rawMenuData: MenuCategory[] = [
           id: "tas-kebabi-500",
           name: { tr: "Taş kebabı (Büyük)", en: "Tas Kebab Beef Stew (Large)", ar: "طاس كباب باللحم البقري (كبير)" },
           price: 500,
-          image: "/images/products/tas-kebabi-500-v2.jpg",
+          image: "/images/products/tas-kebabi-500-v3.jpg",
           tags: ["signature"],
           trending: true,
         },
@@ -242,7 +242,7 @@ const rawMenuData: MenuCategory[] = [
           id: "tas-kebabi-350",
           name: { tr: "Taş kebabı", en: "Tas Kebab Beef Stew", ar: "طاس كباب باللحم البقري" },
           price: 350,
-          image: "/images/products/tas-kebabi-350-v2.jpg",
+          image: "/images/products/tas-kebabi-350-v3.jpg",
           tags: [],
         },
         {

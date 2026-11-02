@@ -346,7 +346,7 @@ export default function DailyMenuManager() {
                 rows={3}
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                placeholder="Örn: Taş fırınımızda pişen taze güveç ve özel İspir fasulyesi..."
+                placeholder="Örn: fırınımızda pişen taze güveç ve özel İspir fasulyesi..."
                 className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9C7A3F]/50"
               />
             </div>

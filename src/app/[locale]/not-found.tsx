@@ -22,7 +22,7 @@ export default function LocalizedNotFound() {
         </h1>
 
         <p className="text-xs sm:text-sm text-[#76816E] leading-relaxed mb-8">
-          Aradığınız sayfa veya yemek bulunamadı. Lezzetli tencere yemeklerimizi ve taş fırın pidelerimizi inceleyebilirsiniz.
+          Aradığınız sayfa veya yemek bulunamadı. Lezzetli tencere yemeklerimizi ve fırın pidelerimizi inceleyebilirsiniz.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 w-full">
