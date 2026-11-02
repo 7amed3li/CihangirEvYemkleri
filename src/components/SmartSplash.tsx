@@ -1,10 +1,23 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const SPLASH_SESSION_KEY = "cihangir_splash_seen_session";
+
+const SPLASH_ASSETS = [
+  "/splash/red-ring.webp",
+  "/splash/pot-spoon.webp",
+  "/splash/pide.webp",
+  "/splash/garnish.webp",
+  "/splash/steam-a.webp",
+  "/splash/steam-b.webp",
+  "/splash/steam-c.webp",
+  "/splash/typography.webp",
+  "/splash/detail-rest.webp",
+  "/splash/logo-original.webp",
+];
 
 export default function SmartSplash() {
   const pathname = usePathname();
@@ -12,10 +25,22 @@ export default function SmartSplash() {
   const [show, setShow] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
   const stageRef = useRef<HTMLDivElement>(null);
+  const hasFinishedRef = useRef(false);
+
+  const finish = useCallback(() => {
+    if (hasFinishedRef.current) return;
+    hasFinishedRef.current = true;
+    setIsExiting(true);
+    try {
+      sessionStorage.setItem(SPLASH_SESSION_KEY, "1");
+    } catch (_) {}
+    setTimeout(() => setShow(false), 450);
+  }, []);
 
   useEffect(() => {
     if (pathname?.startsWith("/admin")) return;
     setMounted(true);
+
     // Replay policy: Show only once per browser session
     try {
       const seen = sessionStorage.getItem(SPLASH_SESSION_KEY);
@@ -24,16 +49,14 @@ export default function SmartSplash() {
       }
     } catch (_) {}
 
+    // Preload images into memory
+    SPLASH_ASSETS.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+
     // First eligible visit in session: show splash
     setShow(true);
-
-    const finish = () => {
-      setIsExiting(true);
-      try {
-        sessionStorage.setItem(SPLASH_SESSION_KEY, "1");
-      } catch (_) {}
-      setTimeout(() => setShow(false), 350);
-    };
 
     // Reduced motion check: fast transition (150ms)
     const prefersReducedMotion =
@@ -45,15 +68,15 @@ export default function SmartSplash() {
       return () => clearTimeout(t);
     }
 
-    // Default duration: 1.9s with 2.2s safe fallback
-    const mainTimer = setTimeout(finish, 1900);
-    const fallbackTimer = setTimeout(finish, 2200);
+    // Full 2.9s duration: all layers assemble by 1.6s, rest intact for ~1.3s, then smoothly fade
+    const mainTimer = setTimeout(finish, 2900);
+    const fallbackTimer = setTimeout(finish, 3400);
 
     return () => {
       clearTimeout(mainTimer);
       clearTimeout(fallbackTimer);
     };
-  }, []);
+  }, [pathname, finish]);
 
   if (!mounted || !show) return null;
 
@@ -63,6 +86,7 @@ export default function SmartSplash() {
       className={`cihangir-splash ${isExiting ? "is-exiting" : ""}`}
       role="presentation"
       aria-hidden="true"
+      onClick={finish}
     >
       <style jsx>{`
         .cihangir-splash {
@@ -75,10 +99,11 @@ export default function SmartSplash() {
           overflow: hidden;
           opacity: 1;
           visibility: visible;
-          transition: opacity 0.35s ease, visibility 0.35s ease;
+          transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.45s ease;
           pointer-events: auto;
+          cursor: pointer;
           /* CSS-only fallback to ensure hide even if JS freezes */
-          animation: css-fail-safe 0.1s 3.5s forwards;
+          animation: css-fail-safe 0.1s 3.8s forwards;
         }
 
         @keyframes css-fail-safe {
@@ -182,7 +207,22 @@ export default function SmartSplash() {
 
         .layer-master {
           opacity: 0;
-          animation: final-logo 0.3s ease-out 1.48s both;
+          animation: final-logo 0.35s ease-out 1.48s both;
+        }
+
+        .skip-hint {
+          position: absolute;
+          bottom: 24px;
+          font-size: 11px;
+          color: #253d2c;
+          opacity: 0.4;
+          letter-spacing: 0.5px;
+          transition: opacity 0.2s ease;
+          user-select: none;
+        }
+
+        .skip-hint:hover {
+          opacity: 0.8;
         }
 
         @keyframes signature-fade {
@@ -379,6 +419,8 @@ export default function SmartSplash() {
           priority
         />
       </div>
+
+      <div className="skip-hint">✕ Atlamak için dokunun</div>
     </div>
   );
 }
