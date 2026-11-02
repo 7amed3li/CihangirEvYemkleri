@@ -1,5 +1,6 @@
 import React from "react";
 import { Inter, Cairo } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { CurrencyProvider } from "@/context/CurrencyContext";
 import { AppProvider } from "@/context/AppContext";
 import SmartSplash from "@/components/SmartSplash";
@@ -56,6 +57,7 @@ export default function RootDocument({
           <CurrencyProvider>
             {showSplash && <SmartSplash />}
             {children}
+            <Analytics />
           </CurrencyProvider>
         </AppProvider>
       </body>
