@@ -72,8 +72,12 @@ export async function POST(req: Request) {
     return response;
   } catch (err: any) {
     console.error("[Setup API Error]:", err);
+    const detailMsg = err?.message ? ` (${err.message})` : "";
     return NextResponse.json(
-      { error: "Sistem kurulumu sırasında bir hata oluştu." },
+      { 
+        error: `Sistem kurulumu sırasında bir hata oluştu${detailMsg}.`,
+        detail: err?.message 
+      },
       { status: 500 }
     );
   }

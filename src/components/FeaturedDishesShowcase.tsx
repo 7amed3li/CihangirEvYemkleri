@@ -69,7 +69,7 @@ const featuredDishes: FeaturedDish[] = [
     badge: { tr: "TAŞ FIRIN", en: "STONE OVEN", ar: "فرن حجري" },
   },
   {
-    id: "kuzu-incik",
+    id: "elbasan",
     color: "#2F6F73",
     badge: { tr: "ÖZEL LEZZET", en: "SPECIAL", ar: "طبق مميز" },
   },

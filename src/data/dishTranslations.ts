@@ -86,32 +86,6 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "鲜嫩青椒填入调味牛肉末、香米与薄荷香草，在轻薄番茄浓汁中慢火焖煮。"
     }
   },
-  "ciftlik-kebabi": {
-    "name": {
-      "tr": "Çiftlik kebabı",
-      "en": "Farmhouse Beef & Vegetable Stew",
-      "ar": "كباب المزرعة باللحم والخضار المشكلة",
-      "ru": "Фермерский кебаб с овощами",
-      "fa": "کباب مزرعه با گوشت و سبزیجات",
-      "fr": "Ragoût fermier de bœuf et légumes",
-      "de": "Bauernhof-Rindergulasch mit Gemüse",
-      "it": "Stufato di manzo e verdure alla contadina",
-      "es": "Estofado de ternera campesino con verduras",
-      "zh": "农庄风味牛肉炖四时鲜蔬"
-    },
-    "desc": {
-      "tr": "Kuşbaşı dana eti, bezelye, havuç ve patatesin fırında lezzetlendirilerek güveçte buluştuğu doyurucu kebap.",
-      "en": "Tender beef cubes braised with sweet green peas, diced carrots, and potatoes in a fragrant, savory tomato sauce.",
-      "ar": "قطع لحم بقري طرية مطهوة في الفرن مع البازلاء والجزر والبطاطس في صلصة طماطم عطرية دافئة.",
-      "ru": "Кусочки нежной говядины, тушённые со сладким горошком, морковью и картофелем в ароматном соусе.",
-      "fa": "تکه‌های لطیف گوشت گوساله پخته شده با نخودفرنگی، هویج و سیب‌زمینی در سس گوجه معطر.",
-      "fr": "Morceaux de bœuf fondants mijotés avec petits pois, carottes et pommes de terre dans un jus mijoté.",
-      "de": "Zarte Rindfleischwürfel geschmort mit grünen Erbsen, Karotten und Kartoffeln in würziger Tomatensauce.",
-      "it": "Teneri bocconcini di manzo brasati con piselli, carote e patate in un saporito sugo di pomodoro.",
-      "es": "Trozos tiernos de ternera estofados con guisantes, zanahorias y patatas en sabrosa salsa de tomate.",
-      "zh": "鲜嫩牛肉块与甜豌豆、胡萝卜丁及土豆块在浓郁番茄酱汁中焗烤焖制。"
-    }
-  },
   "eksili-kofte": {
     "name": {
       "tr": "Ekşili köfte",
@@ -167,27 +141,27 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
   "et-sote": {
     "name": {
       "tr": "Et sote",
-      "en": "Sautéed Beef with Peppers & Tomatoes",
-      "ar": "سوتيه اللحم البقري مع الفلفل والطماطم",
-      "ru": "Соте из говядины с овощами",
-      "fa": "سوت گوشت گوساله با فلفل و گوجه",
-      "fr": "Sauté de bœuf aux poivrons et tomates",
-      "de": "Rinder-Sauté mit Paprika und Tomaten",
-      "it": "Sauté di manzo con peperoni e pomodori",
-      "es": "Salteado de ternera con pimientos y tomate",
-      "zh": "传统土耳其番茄椒香炒嫩牛肉"
+      "en": "Sautéed Beef with Mushrooms",
+      "ar": "سوتيه اللحم البقري مع المشروم والخضار",
+      "ru": "Соте из говядины с грибами",
+      "fa": "سوت گوشت گوساله با قارچ",
+      "fr": "Sauté de bœuf aux champignons",
+      "de": "Rinder-Sauté mit Champignons",
+      "it": "Sauté di manzo con funghi",
+      "es": "Salteado de ternera con champiñones",
+      "zh": "鲜菇炒嫩牛肉"
     },
     "desc": {
-      "tr": "Dana kuşbaşı etlerin taze domates, yeşil biber, soğan ve dağ kekiğiyle harlı ateşte sotelenmesi.",
-      "en": "Tender beef cubes quickly sautéed with sweet onions, green peppers, vine tomatoes, and wild mountain thyme.",
-      "ar": "مكعبات لحم بقري طرية مشوحة على نار حامية مع الطماطم الطازجة والفلفل الأخضر والبصل والزعتر البري.",
-      "ru": "Кубики нежной говядины, обжаренные на сильном огне со сладким луком, перцем, томатами и горным тимьяном.",
-      "fa": "تکه‌های لطیف گوشت گوساله تفت داده شده با پیاز، فلفل سبز، گوجه فرنگی تازه و آویشن کوهی.",
-      "fr": "Dés de bœuf saisis à feu vif avec oignons, poivrons verts, tomates fraîches et thym sauvage.",
-      "de": "Zarte Rinderwürfel scharf angebraten mit Zwiebeln, grünen Paprika, frischen Tomaten und Berg-Thymian.",
-      "it": "Bocconcini di manzo saltati a fuoco vivo con cipolle, peperoni dolci, pomodori freschi e timo selvatico.",
-      "es": "Dados de ternera salteados a fuego vivo con cebolla, pimientos verdes, tomates frescos y tomillo silvestre.",
-      "zh": "上选嫩牛肉丁在高火下与洋葱、青椒、鲜番茄与山生百里香快炒出浓郁原汁。"
+      "tr": "Dana kuşbaşı etlerin dilimlenmiş mantar, taze domates, soğan ve kekikli özel sosla harlı ateşte sotelenmesi.",
+      "en": "Tender beef cubes sautéed with fresh sliced mushrooms, onions, and vine tomatoes in a rich savory sauce.",
+      "ar": "مكعبات لحم بقري طرية مشوحة على نار حامية مع شرائح الفطر الطازج والبصل في صلصة طماطم مسبكة شهية.",
+      "ru": "Кубики нежной говядины, обжаренные со свежими грибами, луком и томатами в насыщенном соусе.",
+      "fa": "تکه‌های لطیف گوشت با قارچ ورقه‌شده، پیاز و گوجه در سسی غنی و خوش‌طعم.",
+      "fr": "Dés de bœuf tendres sautés aux champignons frais émincés, oignons et sauce tomate mijotée.",
+      "de": "Zarte Rindfleischwürfel scharf angebraten mit frischen Champignons, Zwiebeln und aromatischer Sauce.",
+      "it": "Bocconcini di manzo saltati con funghi freschi a fette, cipolle e ricco sugo di pomodoro.",
+      "es": "Trozos de ternera salteados con champiñones frescos en láminas, cebolla y sabrosa salsa casera.",
+      "zh": "上选嫩牛肉丁与新鲜鲜菇片、洋葱在浓厚番茄汁中热锅快炒。"
     }
   },
   "etli-nohut": {
@@ -476,56 +450,31 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "纯手工捏制的迷你牛肉馅面饺，淋上浓稠蒜泥酸奶与滋滋作响的热薄荷红椒黄油汁。"
     }
   },
-  "kori-mantarli-tavuk": {
-    "name": {
-      "tr": "Köri mantarlı tavuk",
-      "en": "Curry Mushroom Chicken",
-      "ar": "دجاج بالكاري والفطر الطازج",
-      "ru": "Курица с грибами в соусе карри",
-      "fa": "مرغ با قارچ و سس کاری",
-      "fr": "Poulet au curry et aux champignons",
-      "de": "Curry-Hähnchen mit Champignons",
-      "it": "Pollo al curry e funghi freschi",
-      "es": "Pollo al curry con champiñones frescos",
-      "zh": "金黄香浓咖喱蘑菇烩嫩鸡柳"
-    },
-    "desc": {
-      "tr": "Jülyen tavuk göğsü dilimleri ve taze kültür mantarlarının aromatik sarı köri sosuyla leziz buluşması.",
-      "en": "Tender chicken breast strips and fresh sliced mushrooms simmered in a fragrant golden curry sauce.",
-      "ar": "شرائح صدور دجاج طرية وفطر طازج مطهوة مع صلصة الكاري الصفراء العطرية الغنية.",
-      "ru": "Полоски куриного филе со свежими шампиньонами в ароматном золотистом соусе карри.",
-      "fa": "تکه‌های سینه مرغ لطیف همراه با قارچ تازه خرد شده در سس کاری طلایی و خوش‌عطر.",
-      "fr": "Émincé de poulet et champignons de Paris frais nappés d'une sauce parfumée au curry jaune.",
-      "de": "Zarte Hähnchenbruststreifen und frische Champignons in aromatischer goldgelber Currysauce.",
-      "it": "Straccetti di petto di pollo e funghi freschi trifolati in una fragrante salsa al curry dorato.",
-      "es": "Tiras de pechuga de pollo y champiñones frescos salteados en una aromática salsa de curry dorado.",
-      "zh": "鲜嫩鸡胸肉条与鲜切口蘑菇片，在浓郁芳香的明黄咖喱酱汁中细火烩煮。"
-    }
-  },
+
   "krema-kori-tavuk": {
     "name": {
-      "tr": "Kremalı köri tavuk",
-      "en": "Creamy Curry Chicken",
-      "ar": "دجاج بصلصة الكريمة والكاري الغنية",
-      "ru": "Курица в сливочно-карри соусе",
-      "fa": "مرغ خامه‌ای با ادویه کاری",
-      "fr": "Poulet crémeux au curry doux",
-      "de": "Hähnchen in cremiger Currysauce",
-      "it": "Pollo cremoso al curry delicato",
-      "es": "Pollo en salsa cremosa de curry suave",
-      "zh": "浓醇奶香咖喱炖鲜嫩鸡肉"
+      "tr": "Kremalı Mantarlı Tavuklu Köri",
+      "en": "Creamy Mushroom Curry Chicken",
+      "ar": "دجاج بالكاري والكريمة والمشروم",
+      "ru": "Курица с грибами в сливочно-карри соусе",
+      "fa": "مرغ خامه‌ای با قارچ و ادویه کاری",
+      "fr": "Poulet crémeux au curry et aux champignons",
+      "de": "Hähnchen mit Champignons in cremiger Currysauce",
+      "it": "Pollo cremoso al curry e funghi freschi",
+      "es": "Pollo con champiñones en salsa cremosa de curry",
+      "zh": "浓醇奶香咖喱蘑菇烩嫩鸡肉"
     },
     "desc": {
-      "tr": "Yumuşacık tavuk parçalarının yoğun yemek kreması ve hafif köri baharatıyla taçlandırıldığı enfes lezzet.",
-      "en": "Succulent chicken bites simmered in rich cooking cream with mild curry spices and cracked black pepper.",
-      "ar": "قطع دجاج طرية مغطاة بصلصة الكريمة الغنية ونكهة الكاري الهادئة مع الفلفل الأسود المجروش.",
-      "ru": "Нежные кусочки курицы в соусе из густых кулинарных сливок, мягких специй карри и свежемолотого перца.",
-      "fa": "تکه‌های لذیذ مرغ در سس غلیظ خامه پخت و پز همراه با ادویه کاری ملایم و فلفل سیاه.",
-      "fr": "Bouchées de poulet moelleuses enrobées d'une onctueuse crème fraîche et d'un doux mélange de curry.",
-      "de": "Zarte Hähnchenstücke sanft geköchelt in reichhaltiger Sahne mit milden Currygewürzen und Pfeffer.",
-      "it": "Bocconcini di pollo morbidissimi avvolti in una vellutata crema di panna e curry delicato.",
-      "es": "Trocitos tiernos de pollo cocinados en crema suave con especias de curry aromático y pimienta.",
-      "zh": "细嫩鸡腿肉丁浸润在醇厚烹饪淡奶油与温和香料咖喱中，缀以现磨黑胡椒碎。"
+      "tr": "Jülyen tavuk parçaları ve taze mantarların yoğun yemek kreması ve hafif köri baharatıyla kısık ateşte lezzetle harmanlanması.",
+      "en": "Succulent chicken bites and fresh sliced mushrooms simmered in rich cooking cream with fragrant mild curry spices.",
+      "ar": "قطع صدور دجاج طرية وشرائح فطر طازجة مطهوة في صلصة الكريمة الغنية ونكهة الكاري الهادئة اللذيذة.",
+      "ru": "Нежные кусочки курицы и свежие шампиньоны в соусе из густых кулинарных сливок и ароматного карри.",
+      "fa": "تکه‌های لذیذ مرغ و قارچ تازه در سس غلیظ خامه پخت و پز همراه با ادویه کاری ملایم و معطر.",
+      "fr": "Émincé de poulet et champignons frais mijotés dans une onctueuse crème au curry doux.",
+      "de": "Zarte Hähnchenstücke und frische Champignons in reichhaltiger Sahne-Currysauce.",
+      "it": "Bocconcini di pollo e funghi freschi avvolti in una vellutata crema di panna e curry.",
+      "es": "Trozos de pollo tierno y champiñones en salsa cremosa de curry suave.",
+      "zh": "细嫩鸡肉块与鲜切口蘑在浓厚烹饪奶油与温和香料咖喱中细火慢煨。"
     }
   },
   "kuru-fasulye": {
@@ -554,32 +503,7 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "选用伊兹皮尔顶级白豆，与土耳其黄油、洋葱及天然晒制椒酱慢熬，软糯起沙，香浓四溢。"
     }
   },
-  "kuzu-incik": {
-    "name": {
-      "tr": "Kuzu incik",
-      "en": "Slow-Braised Fall-off-the-Bone Lamb Shank",
-      "ar": "موزة ضأن مطهوة على نار هادئة حتى الذوبان",
-      "ru": "Тушёная баранья голяшка (кузу инджик)",
-      "fa": "ماهیچه بره پخته شده با عصاره گوشت",
-      "fr": "Souris d'agneau fondante confite",
-      "de": "Geschmorte Lammhaxe (Kuzu İncik)",
-      "it": "Stinco di agnello brasato a lenta cottura",
-      "es": "Jarrete de cordero estofado meloso",
-      "zh": "原汁慢炖脱骨羔羊小腿肉（羊腱子）"
-    },
-    "desc": {
-      "tr": "Kemikli kuzu inciğin kendi et suyunda saatlerce fırında pişerek kemiğinden ayrılacak kıvama gelmesi.",
-      "en": "A whole bone-in lamb shank slow-braised for hours in rich savory stock and herbs until fork-tender and succulent.",
-      "ar": "موزة ضأن كاملة بالعظم مطهوة لساعات طويلة في الفرن مع مرق اللحم والأعشاب حتى تنفصل عن العظم بنعومة.",
-      "ru": "Целая баранья голяшка на кости, часами томлённая в духовке в собственном бульоне до безупречной нежности.",
-      "fa": "ماهیچه کامل بره با استخوان، ساعت‌ها پخته شده در عصاره غنی گوشت و سبزیجات تا گوشت کاملاً از استخوان جدا شود.",
-      "fr": "Une souris d'agneau entière mijotée de longues heures dans un jus corsé jusqu'à ce que la viande se détache de l'os.",
-      "de": "Eine ganze Lammhaxe am Knochen, stundenlang im eigenen Saft butterweich geschmort.",
-      "it": "Un intero stinco di agnello con osso brasato per ore nei suoi succhi fino a diventare morbidissimo.",
-      "es": "Jarrete entero de cordero con hueso estofado lentamente en su jugo hasta quedar increíblemente tierno.",
-      "zh": "带骨整只羔羊小腿在香草与肉原汁中烤煨数小时，肉质酥烂脱骨，胶质满溢。"
-    }
-  },
+
   "mantar-tavuk-sote": {
     "name": {
       "tr": "Mantar tavuk sote",
@@ -724,16 +648,16 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "传统塔斯炖牛肉盅（大份特惠）"
     },
     "desc": {
-      "tr": "Büyük porsiyon: Lokum gibi dana kuşbaşı etlerin soğan, sarımsak ve zengin salçalı sosunda saatlerce demlenmesi.",
-      "en": "Generous portion of melt-in-your-mouth cubed beef simmered with sweet onions, garlic, and savory tomato jus.",
-      "ar": "وجبة كبيرة: قطع لحم بقري فاخرة طرية جداً مطهوة بعناية مع البصل والثوم ومرق الطماطم الغني اللذيذ.",
-      "ru": "Большая порция: нежнейшие кусочки говядины, тушённые с луком, чесноком и наваристым томатным соусом.",
-      "fa": "حجم بزرگ: تکه‌های لطیف و آبدار گوشت گوساله پخته شده در سس گوجه فرنگی غلیظ با پیاز و سیر.",
-      "fr": "Portion généreuse de dés de bœuf ultra fondants mijotés avec oignons, ail et riche réduction de tomates.",
-      "de": "Große Portion: Butterweiche Rindfleischwürfel geschmort mit Zwiebeln, Knoblauch und sämiger Tomatensauce.",
-      "it": "Porzione grande: bocconcini di manzo morbidissimi stufati con cipolle, aglio e denso fondo di pomodoro.",
-      "es": "Ración grande: tiernos bocados de ternera cocinados a fuego lento con cebolla, ajo y sabrosa salsa.",
-      "zh": "超大分量：精选优质牛肉丁与甜洋葱、大蒜一同在浓郁番茄高汤中久煨至肉酥汁浓。"
+      "tr": "Büyük porsiyon: Lokum gibi dana kuşbaşı etlerin patates küpleri, havuç ve zengin salçalı sosunda saatlerce demlenmesi.",
+      "en": "Generous portion: Tender beef cubes simmered with diced potatoes, carrots, and sweet onions in a rich savory tomato sauce.",
+      "ar": "حجم كبير: مكعبات لحم بقري طرية مطهوة على نار هادئة مع مكعبات البطاطس والجزر والبصل في مرق الطماطم المسبك اللذيذ.",
+      "ru": "Большая порция: нежнейшие кусочки говядины с картофелем, морковью и луком в наваристом томатном соусе.",
+      "fa": "حجم بزرگ: تکه‌های لطیف گوشت گوساله همراه با سیب‌زمینی مکعبی، هویج و پیاز در سس گوجه فرنگی غلیظ.",
+      "fr": "Portion généreuse: dés de bœuf fondants mijotés avec pommes de terre en dés, carottes et sauce tomate.",
+      "de": "Große Portion: Butterweiche Rindfleischwürfel geschmort mit Kartoffelwürfeln, Karotten und sämiger Sauce.",
+      "it": "Porzione grande: bocconcini di manzo morbidissimi stufati con dadini di patate, carote e delizioso sugo.",
+      "es": "Ración grande: tiernos bocados de ternera cocinados con dados de patata, zanahorias y sabrosa salsa casera.",
+      "zh": "超大分量：精选优质牛肉丁与土豆丁、胡萝卜在浓郁番茄高汤中久煨至肉酥汁浓。"
     }
   },
   "tas-kebabi-350": {
@@ -750,16 +674,16 @@ export const DISH_TRANSLATIONS: Record<string, DishLocalizedData> = {
       "zh": "传统塔斯炖牛肉盅（标准份）"
     },
     "desc": {
-      "tr": "Yumuşacık pişmiş dana kuşbaşı etlerin geleneksel soğanlı ve domates salçalı nefis sosla buluşması.",
-      "en": "Tender beef cubes slow-simmered in an authentic rich gravy of sweet caramelized onions and tomato puree.",
-      "ar": "قطع لحم بقري طرية مطهوة على نار هادئة في مرق غني بالبصل المكرمل وصلصة الطماطم الأصيلة.",
-      "ru": "Кубики нежной говядины, медленно томлённые в ароматном соусе из карамелизированного лука и томатов.",
-      "fa": "تکه‌های لذیذ گوشت گوساله که به آرامی در سسی غنی از پیاز کاراملی و رب گوجه سنتی پخته شده است.",
-      "fr": "Bocconcini de bœuf mijotés lentement dans une sauce riche aux oignons caramélisés et purée de tomate.",
-      "de": "Zarte Rinderwürfel langsam geschmort in einer aromatischen Sauce aus Zwiebeln und Tomatenmark.",
-      "it": "Bocconcini di manzo cotti lentamente in un saporito sugo di cipolle caramellate e passata di pomodoro.",
-      "es": "Trozos de ternera tierna estofados lentamente en una rica salsa de cebollas caramelizadas y tomate.",
-      "zh": "精切上肉块慢火浸于焦糖洋葱与鲜番茄调和的原汁浓汤中细炖而成。"
+      "tr": "Lokum gibi pişmiş dana kuşbaşı etlerin patates küpleri, havuç ve zengin salçalı sosunda saatlerce demlenmesi.",
+      "en": "Tender beef cubes slow-simmered with golden potato cubes, carrots, and sweet onions in savory tomato jus.",
+      "ar": "مكعبات لحم بقري طرية مطهوة على نار هادئة مع مكعبات البطاطس والجزر والبصل في مرق الطماطم المسبك اللذيذ.",
+      "ru": "Нежнейшие кусочки говядины, томлённые с картофелем, морковью и луком в насыщенном соусе.",
+      "fa": "تکه‌های لطیف گوشت گوساله پخته شده با سیب‌زمینی، هویج و پیاز در سس گوجه فرنگی معطر.",
+      "fr": "Bouchées de bœuf tendres mijotées avec dés de pommes de terre, carottes et réduction de tomates.",
+      "de": "Zarte Rindfleischwürfel geschmort mit Kartoffeln, Karotten und feiner Tomatensauce.",
+      "it": "Bocconcini di manzo morbidissimi stufati con patate, carote e saporito sugo di pomodoro.",
+      "es": "Dados de ternera tiernos estofados con dados de patata, zanahoria y sofrito tradicional.",
+      "zh": "嫩牛肉丁与金黄土豆丁、胡萝卜慢火煨炖，咸鲜浓郁，经典下饭家常菜。"
     }
   },
   "tavuk-haslama": {

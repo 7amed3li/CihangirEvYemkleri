@@ -289,6 +289,7 @@ export default function FoodCard({ item }: MenuItemProps) {
                 src={item.image}
                 alt={turkishTitle}
                 fill
+                priority={isFeatured}
                 style={{ objectFit: "cover" }}
                 sizes="(max-width: 640px) 112px, (max-width: 1024px) 144px, 130px"
                 onError={() => setImageError(true)}

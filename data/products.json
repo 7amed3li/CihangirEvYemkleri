@@ -25,15 +25,7 @@
       "Geleneksel Biber dolması taze malzemeleri (fresh authentic ingredients for Turkish Biber dolması)"
     ],
     "serving": "traditional Turkish ceramic plate"
-  },
-  {
-    "slug": "ciftlik-kebabi",
-    "name": "Çiftlik kebabı",
-    "category": "Ana Yemekler",
-    "ingredients": [
-      "Geleneksel Çiftlik kebabı taze malzemeleri (fresh authentic ingredients for Turkish Çiftlik kebabı)"
-    ],
-    "serving": "traditional Turkish ceramic plate"
+
   },
   {
     "slug": "eksili-kofte",
@@ -160,22 +152,14 @@
       "Geleneksel Kayseri mantısı taze malzemeleri (fresh authentic ingredients for Turkish Kayseri mantısı)"
     ],
     "serving": "traditional Turkish ceramic plate"
-  },
-  {
-    "slug": "kori-mantarli-tavuk",
-    "name": "Köri mantarlı tavuk",
-    "category": "Ana Yemekler",
-    "ingredients": [
-      "Geleneksel Köri mantarlı tavuk taze malzemeleri (fresh authentic ingredients for Turkish Köri mantarlı tavuk)"
-    ],
-    "serving": "traditional Turkish ceramic plate"
+
   },
   {
     "slug": "krema-kori-tavuk",
-    "name": "Krema köri tavuk",
+    "name": "Kremalı Mantarlı Tavuklu Köri",
     "category": "Ana Yemekler",
     "ingredients": [
-      "Geleneksel Krema köri tavuk taze malzemeleri (fresh authentic ingredients for Turkish Krema köri tavuk)"
+      "Geleneksel Kremalı Mantarlı Tavuklu Köri taze malzemeleri (tavuk göğsü, mantar, krema, köri baharatı)"
     ],
     "serving": "traditional Turkish ceramic plate"
   },
@@ -187,15 +171,7 @@
       "Geleneksel Kuru fasulye taze malzemeleri (fresh authentic ingredients for Turkish Kuru fasulye)"
     ],
     "serving": "traditional Turkish ceramic plate"
-  },
-  {
-    "slug": "kuzu-incik",
-    "name": "Kuzu incik",
-    "category": "Ana Yemekler",
-    "ingredients": [
-      "Geleneksel Kuzu incik taze malzemeleri (fresh authentic ingredients for Turkish Kuzu incik)"
-    ],
-    "serving": "traditional Turkish ceramic plate"
+
   },
   {
     "slug": "mantar-tavuk-sote",
