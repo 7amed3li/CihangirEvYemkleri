@@ -27,6 +27,22 @@ const nextConfig: NextConfig = {
         destination: "/admin",
         permanent: false,
       },
+      // Developer / Case Study aliases
+      {
+        source: "/tasarim-gelistirme",
+        destination: "/tr/tasarim-gelistirme",
+        permanent: false,
+      },
+      {
+        source: "/developer",
+        destination: "/tr/tasarim-gelistirme",
+        permanent: false,
+      },
+      {
+        source: "/:locale(tr|en|ar|ru|fa|fr|de|it|es|zh)/developer",
+        destination: "/:locale/tasarim-gelistirme",
+        permanent: false,
+      },
     ];
   },
 };

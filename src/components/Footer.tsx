@@ -287,7 +287,7 @@ export default function Footer({ locale, dict }: FooterProps) {
           </div>
           <p className="text-[#76816E] text-[10px] tracking-widest uppercase flex items-center gap-1">
             {t.devCredit}
-            <span className="text-[#596752] font-bold">Hamed Mohamed</span>
+            <Link href={`/${locale}/tasarim-gelistirme`} className="text-[#596752] font-bold hover:text-[#C64C32] hover:underline transition-colors" title="Tasarım ve Geliştirme — Hamed Mohamed">Hamed Mohamed</Link>
           </p>
         </div>
       </div>

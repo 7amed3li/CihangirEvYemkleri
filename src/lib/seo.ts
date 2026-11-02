@@ -27,6 +27,7 @@ export const STATIC_PUBLIC_ROUTES = [
   "/terms",
   "/privacy",
   "/cancellation",
+  "/tasarim-gelistirme",
 ] as const;
 
 /** Dish detail routes are generated from the same static data used by generateStaticParams. */

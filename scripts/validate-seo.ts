@@ -88,8 +88,8 @@ async function runSeoSuite() {
   const publicRoutes = getPublicRoutes();
   const dishIds = getDishIds();
   assert(
-    STATIC_PUBLIC_ROUTES.length === 10,
-    "Routes: 10 static public routes identified",
+    STATIC_PUBLIC_ROUTES.length === 11,
+    "Routes: 11 static public routes identified",
     `Got ${STATIC_PUBLIC_ROUTES.length}`
   );
   assert(
