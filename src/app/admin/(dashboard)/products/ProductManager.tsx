@@ -63,6 +63,7 @@ export default function ProductManager() {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
+  const [syncing, setSyncing] = useState(false);
 
   // Modals state
   const [editModalOpen, setEditModalOpen] = useState(false);
@@ -150,6 +151,26 @@ export default function ProductManager() {
   useEffect(() => {
     fetchProducts();
   }, [fetchProducts]);
+
+  // Sync menu from static data to DB
+  const handleSyncMenu = async () => {
+    setSyncing(true);
+    try {
+      const res = await fetch("/api/admin/seed", { method: "POST" });
+      const data = await res.json();
+      if (res.ok) {
+        await fetchCategories();
+        await fetchProducts();
+        alert(data.message || "Menü başarıyla veritabanına aktarıldı!");
+      } else {
+        alert(data.error || "Aktarım sırasında bir hata oluştu.");
+      }
+    } catch {
+      alert("Sunucuya bağlanırken bir hata oluştu.");
+    } finally {
+      setSyncing(false);
+    }
+  };
 
   // Open Create Modal
   const handleOpenCreate = () => {
@@ -407,8 +428,30 @@ export default function ProductManager() {
         ) : error ? (
           <div className="p-8 text-center text-xs text-red-600">{error}</div>
         ) : products.length === 0 ? (
-          <div className="py-16 text-center text-xs text-stone-400">
-            Kriterlere uygun ürün bulunamadı.
+          <div className="py-16 text-center text-xs text-stone-500 flex flex-col items-center justify-center gap-3">
+            <p className="font-medium text-stone-600">
+              {totalCount === 0
+                ? "Veritabanında henüz kayıtlı ürün bulunmamaktadır."
+                : "Arama veya filtre kriterlerine uygun ürün bulunamadı."}
+            </p>
+            {totalCount === 0 && (
+              <button
+                onClick={handleSyncMenu}
+                disabled={syncing}
+                className="mt-2 px-4 py-2.5 rounded-xl bg-[#2B2620] hover:bg-[#3D352D] text-white font-medium text-xs shadow-md transition-all flex items-center gap-2 cursor-pointer disabled:opacity-50"
+              >
+                {syncing ? (
+                  <>
+                    <CircleNotch size={16} className="animate-spin text-[#EDE3CE]" />
+                    <span>Menü İçe Aktarılıyor...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>⚡ Restoran Menüsünü Otomatik İçe Aktar (Tüm Yemekler & Pideler)</span>
+                  </>
+                )}
+              </button>
+            )}
           </div>
         ) : (
           <div className="overflow-x-auto">

@@ -4,12 +4,17 @@ import { requireAuth, requireMutationAuth } from "@/lib/auth/server-guard";
 import { productSchema } from "@/lib/validation/schemas";
 import { recordAuditLog } from "@/lib/audit/audit";
 import { Prisma } from "@prisma/client";
+import { seedDatabaseMenu } from "@/lib/db/seed-menu";
 
 export async function GET(req: Request) {
   const auth = await requireAuth();
   if (auth.errorResponse) return auth.errorResponse;
 
   try {
+    const totalInDb = await prisma.product.count();
+    if (totalInDb === 0) {
+      await seedDatabaseMenu();
+    }
     const { searchParams } = new URL(req.url);
     const page = Math.max(1, parseInt(searchParams.get("page") || "1", 10));
     const limit = Math.min(100, Math.max(1, parseInt(searchParams.get("limit") || "20", 10)));

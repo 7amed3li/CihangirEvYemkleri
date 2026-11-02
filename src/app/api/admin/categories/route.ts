@@ -3,13 +3,14 @@ import { prisma } from "@/lib/db/prisma";
 import { requireAuth, requireMutationAuth } from "@/lib/auth/server-guard";
 import { categorySchema } from "@/lib/validation/schemas";
 import { recordAuditLog } from "@/lib/audit/audit";
+import { seedDatabaseMenu } from "@/lib/db/seed-menu";
 
 export async function GET() {
   const auth = await requireAuth();
   if (auth.errorResponse) return auth.errorResponse;
 
   try {
-    const categories = await prisma.category.findMany({
+    let categories = await prisma.category.findMany({
       include: {
         translations: true,
         _count: {
@@ -18,6 +19,19 @@ export async function GET() {
       },
       orderBy: { orderIndex: "asc" },
     });
+
+    if (categories.length === 0) {
+      await seedDatabaseMenu();
+      categories = await prisma.category.findMany({
+        include: {
+          translations: true,
+          _count: {
+            select: { products: true },
+          },
+        },
+        orderBy: { orderIndex: "asc" },
+      });
+    }
 
     const formatted = categories.map((c) => {
       const trTrans = c.translations.find((t) => t.locale === "tr");
