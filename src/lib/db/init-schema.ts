@@ -141,3 +141,4 @@ export async function ensureDatabaseTables(): Promise<void> {
     throw error;
   }
 }
+
