@@ -124,3 +124,4 @@ export async function seedDatabaseMenu(force = false): Promise<{ count: number }
     throw error;
   }
 }
+

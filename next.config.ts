@@ -16,6 +16,17 @@ const nextConfig: NextConfig = {
       // previous redirect() behaviour, so a future language-negotiation step
       // can be added without a cached permanent redirect.
       { source: "/", destination: "/tr", permanent: false },
+      // Redirect localized admin paths to unlocalized canonical admin
+      {
+        source: "/:locale(tr|en|ar|ru|fa|fr|de|it|es|zh)/admin/:path*",
+        destination: "/admin/:path*",
+        permanent: false,
+      },
+      {
+        source: "/:locale(tr|en|ar|ru|fa|fr|de|it|es|zh)/admin",
+        destination: "/admin",
+        permanent: false,
+      },
     ];
   },
 };

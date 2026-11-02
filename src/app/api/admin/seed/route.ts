@@ -4,13 +4,20 @@ import { seedDatabaseMenu } from "@/lib/db/seed-menu";
 import { recordAuditLog } from "@/lib/audit/audit";
 
 export async function POST() {
-  const auth = await requireMutationAuth("OWNER");
+  const auth = await requireMutationAuth();
   if (auth.errorResponse) return auth.errorResponse;
+
+  if (auth.user.role !== "OWNER") {
+    return NextResponse.json(
+      { error: "Bu işlemi yalnızca restoran sahibi (OWNER) gerçekleştirebilir." },
+      { status: 403 }
+    );
+  }
 
   try {
     const result = await seedDatabaseMenu(true);
     await recordAuditLog({
-      userId: auth.user.id,
+      userId: auth.user.userId,
       action: "MANUAL_MENU_RESEED",
       entityType: "Product",
       entityId: "all",
@@ -30,3 +37,4 @@ export async function POST() {
     );
   }
 }
+
